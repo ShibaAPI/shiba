@@ -9,6 +9,10 @@ class SalesManagement(shiba.Shiba):
 
     def __init__(self, login, pwd, version, mode=""):
         self.nexttoken = 0
+        if mode is "test":
+            self.url = "https://ws.sandbox.priceminister.com/sales_ws?"
+        else:
+            self.url = "https://ws.priceminister.com/sales_ws?"
         super(SalesManagement, self).__init__(login, pwd, version, mode)
 
     def get_new_sales(self):
@@ -17,8 +21,7 @@ class SalesManagement(shiba.Shiba):
         url = self.url + "action=getnewsales&login=" + self.login \
             + "&pwd=" + self.pwd \
             + "&version=" + self.version
-        namespace = "http://pmcdn.priceminister.com/res/schema/getnewsales"
-        dictionary = self.__retrieve_dict_from_url(url, namespace)
+        dictionary = self.__retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/getnewsales")
         return dictionary
 
     def sale_action(self, itemid, action):

@@ -7,6 +7,10 @@ class MarketplaceManagement(shiba.Shiba):
     """ Marketplace informations retrieving, such as product lists and category mapping"""
 
     def __init__(self, login, pwd, version, mode=""):
+        if mode is "test":
+            self.url = "https://ws.sandbox.priceminister.com/"
+        else:
+            self.url = "https://ws.priceminister.com/"
         super(MarketplaceManagement, self).__init__(login, pwd, version, mode)
 
     def get_product_list(self, scope="", kw="", nav="", refs="", productids="", ppp=20, pnumber=1):
@@ -32,7 +36,7 @@ class MarketplaceManagement(shiba.Shiba):
             ppp = 20
         if int(pnumber) <= 0:
             pnumber = 1
-        url = self.url + "action=listing" \
+        url = self.url +  "listing_ws?action=listing" \
             + "&login=" + self.login \
             + "&version=" + self.version
         if len(scope) > 0:
@@ -49,12 +53,12 @@ class MarketplaceManagement(shiba.Shiba):
             url += productids if type(refs) != list else plist
         url += "&nbproductsperpage=" + str(ppp) \
             + "&pagenumber=" + str(pnumber)
-        dictionary = self.__retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/listing")
+        dictionary = self.__retrieve_dict_from_url(url, "http://www.priceminister.com/listing_ws/listing")
         return dictionary
 
     def get_category_map(self):
-        url = self.url + "action=categorymap" \
+        url = self.url + "categorymap_ws?action=categorymap" \
             + "&login=" + self.login \
             + "&version=" + self.version
-        dictionary = self.__retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/listing")
+        dictionary = self.__retrieve_dict_from_url(url, "http://www.priceminister.com/categorymap_ws/categorymap")
         return dictionary

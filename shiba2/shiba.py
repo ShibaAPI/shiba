@@ -16,10 +16,6 @@ class Shiba(object):
         self.login = str(login)
         self.pwd = str(pwd)
         self.version = str(version)
-        if mode is "test":
-            self.url = "https://ws.sandbox.priceminister.com/sales_ws?"
-        else:
-            self.url = "https://ws.priceminister.com/sales_ws?"
 
     @staticmethod
     def __retrieve_dict_from_url(url, namespace):
