@@ -2,21 +2,37 @@ import urllib2 as UL
 import xmltodict as X2D
 
 
-class ShibaMain(object):
-    def __init__(self, login, pwd, version):
+class Shiba(object):
+    def __init__(self, login, pwd, version, mode):
         """
         :param login: PriceMinister Seller login
-        :param pwd: PriceMinister Seller Token (see more at https://developer.priceminister.com/blog/fr/documentation/identification-by-token)
+        :param pwd: PriceMinister Seller Token
+        (see more at https://developer.priceminister.com/blog/fr/documentation/identification-by-token)
         :param version: PriceMinister WebServices version (usually formated as yyyy-mm-dd)
+        :param mode: give it "test" if you want to test this interface on a sandboxed version of PriceMinister
         """
         self.login = str(login)
         self.pwd = str(pwd)
         self.version = str(version)
+        if mode is "test"
+            self.url = "https://ws.sandbox.priceminister.com/sales_ws?"
+        else
+            self.url = "https://ws.priceminister.com/sales_ws?"
 
-    def retrieve_dict_from_url(self, url, namespace):
-        """#Give it an URL and a namespace to skip, will send you
+    @staticmethod
+    def __retrieve_dict_from_url(url, namespace):
+        """Give it an URL and a namespace to skip, will send you
         back a full dictionary based on received XML from WebService"""
         namespaces = {namespace: None}
         xml = UL.urlopen(url).read()
         ret = X2D.parse(xml, process_namespaces=True, namespaces=namespaces)
         return ret
+
+    @staticmethod
+    def __get_next_token(xml):
+        """This method permits to get a nexttoken value for scrolling into multiple pages result, give it a parsed
+        xml string into dictionary as parameter. If no token can be found, returns 0"""
+        primarynode = xml.keys()[0]
+        token = int(xml[primarynode]["response"]["nexttoken"])
+        inttoken = int(token)
+        return inttoken if inttoken > 0 else 0
