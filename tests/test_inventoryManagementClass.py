@@ -3,33 +3,30 @@
 #
 # testClassPlateforme
 # permet de tester unitairement la classe plateforme
-
-#TODO tests sur la plateforme de tests de priceminister
 #https://developer.priceminister.com/blog/fr/documentation/inventory-management/import-xml/product-types
 #https://developer.priceminister.com/blog/fr/documentation/inventory-management/import-xml/product-type-template
 #https://developer.priceminister.com/blog/fr/documentation/inventory-management/import-xml/generic-import-file0
 
-from nose.tools import *
+import unittest
+from shiba.InventoryManagement.inventorymanagement import InventoryManagement
 
-from ..brouillons.shiba.shiba.shiba.InventoryManagement.inventoryManagementClass import InventoryManagementClass
 
-
-class test_inventoryManagementClass(unittest.TestCase):
+class test_inventoryManagement(unittest.TestCase):
 
     def setUp(self):
-        self.login = 'login'
-        self.pwd = 'pwd'
-        self.version = 'version'
+        self.login = "nunux17"
+        self.pwd = "ca9f0ccdc28c4005b56c2857722b113a"
 
     def test_getProductTypes_1(self):
         """test de getProductTypes"""
 
-        inventorymanagement = InventoryManagementClass(self.login, self.pwd, self.version)
-        alias_list_result = inventorymanagement.getProductTypes()
-        self.assertTrue(len(alias_list_result) > 0)
-
+        IM = InventoryManagement(self.login, self.pwd, "https://ws.sandbox.priceminister.com/")
+        ptypes = IM.product_types()
+        print(ptypes    )
+        self.assertTrue(ptypes.has_key("producttypesresult"))
+"""
     def test_getProductTypeTemplate_1(self):
-        """test de getProductTypeTemplate"""
+        ""test de getProductTypeTemplate""
 
         alias = 'mev_livre_livre_ancien'
         inventorymanagement = InventoryManagementClass(self.login, self.pwd, self.version)
@@ -37,7 +34,7 @@ class test_inventoryManagementClass(unittest.TestCase):
         self.assertTrue(len(attributes_list_result) > 0)
 
     def test_createInventoryFile_1(self):
-        """test de createInventoryFile"""
+        ""test de createInventoryFile""
 
         items = {
             'alias1': {
@@ -71,3 +68,4 @@ class test_inventoryManagementClass(unittest.TestCase):
         xml_result = inventorymanagement.createInventoryFile(items)
         self.assertTrue(len(xml_result) > 0) #TODO des tests avec ET
 
+"""

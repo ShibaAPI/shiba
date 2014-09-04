@@ -5,22 +5,20 @@ import xmltodict as x2d
 
 
 class Shiba(object):
-    def __init__(self, login, pwd, version, domain="https://ws.priceminister.com/"):
+    def __init__(self, login, pwd, domain="https://ws.priceminister.com/"):
         """
         :param login: PriceMinister Seller login
         :param pwd: PriceMinister Seller Token
         (see more at https://developer.priceminister.com/blog/fr/documentation/identification-by-token)
-        :param version: PriceMinister WebServices version (usually formated as yyyy-mm-dd)
-        :param url: give it the sanbox URL version of WebServices if you want to test this interface
+        :param domain: give it the sanbox domain version of WebServices if you want to test this interface
         on a sandboxed version of PriceMinister
         """
         self.login = str(login)
         self.pwd = str(pwd)
-        self.version = str(version)
         self.domain = domain
 
     @staticmethod
-    def __retrieve_dict_from_url(url, namespace):
+    def retrieve_dict_from_url(url, namespace):
         """Give it an URL and a namespace to skip, will send you
         back a full dictionary based on received XML from WebService.
         :rtype : dictionary"""
