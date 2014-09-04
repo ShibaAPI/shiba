@@ -22,6 +22,8 @@ class Shiba(object):
         """Give it an , will send you back a full dictionary based on received XML from WebService.
         :rtype : dictionary"""
         xml = ul.urlopen(url).read()
+        f = open("xmldump", "w")
+        f.write(xml)
         ret = x2d.parse(xml, process_namespaces=False)
         return ret
 

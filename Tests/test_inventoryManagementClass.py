@@ -9,6 +9,7 @@
 
 import unittest
 from Shiba.inventorymanagement import InventoryManagement
+from testruntime import TestRuntime
 
 
 class InventoryManagementTest(unittest.TestCase):
@@ -18,6 +19,7 @@ class InventoryManagementTest(unittest.TestCase):
         self.login = "nunux17"
         self.pwd = "ca9f0ccdc28c4005b56c2857722b113a"
         self.sandbox = "https://ws.sandbox.priceminister.com/"
+        self.trun = TestRuntime()
 
     def product_types(self):
         """product_types return test"""
@@ -25,12 +27,58 @@ class InventoryManagementTest(unittest.TestCase):
         im = InventoryManagement(self.login, self.pwd, self.sandbox)
         ptypes = im.product_types()
         self.assertTrue(ptypes.has_key("producttypesresult"))
-"""
-    def product_type_template(self):
-""product_type_template tests on two scopes, for a fixed alias""
-        alias = "mev_livre_livre_ancien"
+
+    def product_type_template_test(self):
+        """product_type_template tests on two scopes, for a fixed alias, plus a fail result"""
+        alias = "insolites_produit"
         im = InventoryManagement(self.login, self.pwd, self.sandbox)
         ptemplate = im.product_type_template(alias, "")
-        print(ptemplate)
-        self.assertTrue(ptemplate.has_key("producttypetemplate"))
-            """
+        self.assertTrue("producttypetemplateresult" in ptemplate)
+        ptemplate = im.product_type_template(alias, "VALUES")
+        self.assertTrue(TestRuntime.dictanalysis(self.trun, ptemplate, ["hasvalues", "value"],))
+
+        """
+    def test_getProductTypeTemplate_1(self):
+        ""test de getProductTypeTemplate""
+
+        alias = 'mev_livre_livre_ancien'
+        inventorymanagement = InventoryManagementClass(self.login, self.pwd, self.version)
+        attributes_list_result = inventorymanagement.getProductTypeTemplate(alias)
+        self.assertTrue(len(attributes_list_result) > 0)
+
+    def test_createInventoryFile_1(self):
+        ""test de createInventoryFile""
+
+        items = {
+            'alias1': {
+                'productattributes': {
+                    'codebarres': 'EAN1234567890',
+                    'pid': 'PID1234567890',
+                },
+                'advertattributes': {
+                    'sellerReference': 'SKU12345SKU_1234567890',
+                    'sellingPrice': 35,
+                    'state': 15,
+                    'comment': 'super article!',
+                    'qty': 3,
+                },
+            },
+            'alias2': {
+                'productattributes': {
+                    'codebarres': 'EAN1234567890',
+                    'pid': 'PID1234567890',
+                },
+                'advertattributes': {
+                    'sellerReference': 'SKU12345SKU_1234567890',
+                    'sellingPrice': 35,
+                    'state': 15,
+                    'comment': 'super article!',
+                    'qty': 3,
+                },
+            },
+        }
+        inventorymanagement = InventoryManagementClass(self.login, self.pwd, self.version)
+        xml_result = inventorymanagement.createInventoryFile(items)
+        self.assertTrue(len(xml_result) > 0) #TODO des tests avec ET
+
+"""
