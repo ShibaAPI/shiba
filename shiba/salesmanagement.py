@@ -3,7 +3,7 @@
 #
 # class SalesManagement
 
-from .. import shiba
+import shiba
 
 
 class SalesManagement(shiba.Shiba):

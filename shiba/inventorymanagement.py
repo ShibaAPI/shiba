@@ -3,7 +3,7 @@
 #
 # class InventoryManagement
 
-from .. import shiba
+import shiba
 import urllib2 as ul
 
 

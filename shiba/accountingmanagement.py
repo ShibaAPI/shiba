@@ -3,7 +3,7 @@
 #
 # class AccountingManagement
 
-from .. import shiba
+import shiba
 
 
 class AccountingManagement(shiba.Shiba):

@@ -8,7 +8,7 @@
 #https://developer.priceminister.com/blog/fr/documentation/inventory-management/import-xml/generic-import-file0
 
 import unittest
-from shiba.InventoryManagement.inventorymanagement import InventoryManagement
+from shiba.inventorymanagement import InventoryManagement
 
 
 class InventoryManagementTest(unittest.TestCase):
@@ -27,7 +27,7 @@ class InventoryManagementTest(unittest.TestCase):
         self.assertTrue(ptypes.has_key("producttypesresult"))
 
     def product_type_template(self):
-        """product_type_template return test on
+        """product
 """
     def test_getProductTypeTemplate_1(self):
         ""test de getProductTypeTemplate""

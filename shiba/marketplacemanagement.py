@@ -4,7 +4,7 @@
 # class MarketplaceManagement
 
 
-from .. import shiba
+import shiba
 
 
 class MarketplaceManagement(shiba.Shiba):
