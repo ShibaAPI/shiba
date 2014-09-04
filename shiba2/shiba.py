@@ -28,3 +28,10 @@ class Shiba(object):
         xml = ul.urlopen(url).read()
         ret = x2d.parse(xml, process_namespaces=True, namespaces=namespaces)
         return ret
+
+    @staticmethod
+    def __create_xml_from_item_dict(inv):
+        """Generate XML from the "inv" parameter, which is a dictionary hierarchized as the XML structure described
+        in the WebServices documentation"""
+        xml = x2d.unparse(inv)
+        return xml
