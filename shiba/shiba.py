@@ -18,13 +18,11 @@ class Shiba(object):
         self.domain = domain
 
     @staticmethod
-    def retrieve_dict_from_url(url, namespace):
-        """Give it an URL and a namespace to skip, will send you
-        back a full dictionary based on received XML from WebService.
+    def retrieve_dict_from_url(url):
+        """Give it an , will send you back a full dictionary based on received XML from WebService.
         :rtype : dictionary"""
-        namespaces = {namespace: namespace}
         xml = ul.urlopen(url).read()
-        ret = x2d.parse(xml, process_namespaces=True, namespaces=namespaces)
+        ret = x2d.parse(xml, process_namespaces=False)
         return ret
 
     @staticmethod

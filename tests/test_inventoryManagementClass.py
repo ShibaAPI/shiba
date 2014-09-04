@@ -11,19 +11,23 @@ import unittest
 from shiba.InventoryManagement.inventorymanagement import InventoryManagement
 
 
-class test_inventoryManagement(unittest.TestCase):
+class InventoryManagementTest(unittest.TestCase):
 
     def setUp(self):
+        #TODO Login infos as arguments for tests
         self.login = "nunux17"
         self.pwd = "ca9f0ccdc28c4005b56c2857722b113a"
+        self.sandbox = "https://ws.sandbox.priceminister.com/"
 
-    def test_getProductTypes_1(self):
-        """test de getProductTypes"""
+    def product_types(self):
+        """product_types return test"""
 
-        IM = InventoryManagement(self.login, self.pwd, "https://ws.sandbox.priceminister.com/")
-        ptypes = IM.product_types()
-        print(ptypes    )
+        im = InventoryManagement(self.login, self.pwd, self.sandbox)
+        ptypes = im.product_types()
         self.assertTrue(ptypes.has_key("producttypesresult"))
+
+    def product_type_template(self):
+        """product_type_template return test on
 """
     def test_getProductTypeTemplate_1(self):
         ""test de getProductTypeTemplate""

@@ -6,6 +6,7 @@
 from .. import shiba
 import urllib2 as ul
 
+
 class InventoryManagement(shiba.Shiba):
     """This class permits you to manage your inventory, get informations about your products and even import products
     from XML to the PriceMinister platform"""
@@ -20,7 +21,7 @@ class InventoryManagement(shiba.Shiba):
             + "&login=" + self.login \
             + "&pwd=" + self.pwd \
             + "&version=" + version
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/stock_ws/producttypes")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def product_type_template(self, alias, scope=""):
@@ -36,7 +37,7 @@ class InventoryManagement(shiba.Shiba):
             + "&alias=" + str(alias)
         if len(scope) > 0:
             url += "&scope=" + str(scope)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/stock_ws/producttypetemplate")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def generic_import_report(self, fileid, nexttoken=0):
@@ -49,7 +50,7 @@ class InventoryManagement(shiba.Shiba):
             + "&fileid=" + str(fileid)
         if nexttoken != 0:
             url += "&nexttoken=" + str(nexttoken)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/stock_ws/genericimportreport")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def generic_import_file(self, data):
@@ -65,7 +66,7 @@ class InventoryManagement(shiba.Shiba):
         user_agent = "Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)"
         hea = {"User-Agent": user_agent}
         req = ul.Request(url, retfile, hea)
-        dictionary = self.retrieve_dict_from_url(req, "http://www.priceminister.com/stock_ws/genericimportfile")
+        dictionary = self.retrieve_dict_from_url(req)
         return dictionary
 
     def get_available_shipping_types(self):
@@ -75,7 +76,7 @@ class InventoryManagement(shiba.Shiba):
             + "&login=" + self.login \
             + "&pwd=" + self.pwd \
             + "&version=" + version
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/stock_ws/getavailableshippingtypes")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def export_inventory(self, scope="", nexttoken=0):
@@ -89,5 +90,5 @@ class InventoryManagement(shiba.Shiba):
             url += "&scope=" + str(scope)
         if nexttoken != 0:
             url += "&nexttoken=" + str(nexttoken)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/stock_ws/export")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary

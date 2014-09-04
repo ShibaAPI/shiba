@@ -55,7 +55,7 @@ class MarketplaceManagement(shiba.Shiba):
             url += productids if type(refs) != list else plist
         url += "&nbproductsperpage=" + str(ppp) \
             + "&pagenumber=" + str(pnumber)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/listing_ws/listing")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def get_category_map(self):
@@ -63,5 +63,5 @@ class MarketplaceManagement(shiba.Shiba):
         url = self.url + "categorymap_ws?action=categorymap" \
             + "&login=" + self.login \
             + "&version=" + version
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/categorymap_ws/categorymap")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary

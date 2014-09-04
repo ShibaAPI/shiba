@@ -21,7 +21,7 @@ class SalesManagement(shiba.Shiba):
         url = self.url + "action=getnewsales&login=" + self.login \
             + "&pwd=" + self.pwd \
             + "&version=" + version
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/getnewsales")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def sale_action(self, itemid, action):
@@ -33,7 +33,7 @@ class SalesManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version \
             + "&itemid=" + str(itemid)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/saleacceptance")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def get_current_sales(self, prepurchase=False, datefrom="", token=0):
@@ -51,7 +51,7 @@ class SalesManagement(shiba.Shiba):
             url += "&purchasedate=" + str(datefrom)
         if token != 0:
             url += "&nexttoken=" + str(token)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/getcurrentsales")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def get_billing_information(self, purchaseid):
@@ -63,7 +63,7 @@ class SalesManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version\
             + "&purchaseid=" + str(purchaseid)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/getbillinginformation")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def get_shipping_information(self, purchaseid):
@@ -76,7 +76,7 @@ class SalesManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version\
             + "&purchaseid=" + str(purchaseid)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/getshippinginformation")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def get_items_todo_list(self):
@@ -85,7 +85,7 @@ class SalesManagement(shiba.Shiba):
         url = self.url + "action=getitemtodolist&login=" + self.login\
             + "&pwd=" + self.pwd \
             + "&version=" + version
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/getitemtodolist")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def get_items_info(self, itemid):
@@ -96,7 +96,7 @@ class SalesManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version \
             + "&itemid=" + str(itemid)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/getiteminfos")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def cancel_item(self, itemid, comment):
@@ -109,7 +109,7 @@ class SalesManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version \
             + "&comment=" + str(comment)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/cancelitem")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def contact_us_about_item(self, itemid, message, mailparentid):
@@ -126,7 +126,7 @@ class SalesManagement(shiba.Shiba):
             + "&login=" + self.login \
             + "&pwd=" + self.pwd \
             + "&version=" + version
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/contactuseraboutitem")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def set_tracking_package_infos(self, itemid, transporter_name, tracking_number, tracking_url=""):
@@ -143,7 +143,7 @@ class SalesManagement(shiba.Shiba):
             + "&tracking_number=" + str(tracking_number)
         if len(tracking_url) > 0:
             url += "&tracking_url=" + str(tracking_url)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/settrackingpackageinfos")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def confirm_preorder(self, advertid, stock):
@@ -155,5 +155,5 @@ class SalesManagement(shiba.Shiba):
             + "&version=" + version \
             + "&advertid=" + str(advertid) \
             + "&stock=" + str(stock)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/settrackingpackageinfos")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary

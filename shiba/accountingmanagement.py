@@ -25,7 +25,7 @@ class AccountingManagement(shiba.Shiba):
             + "&operationcause=saletransfer"
         if len(lastoperationdate) > 0:
             url += "&lastoperationdate=" + str(lastoperationdate)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/wallet_ws/getoperations")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
 
     def get_compensation_details(self, compensationid):
@@ -36,5 +36,5 @@ class AccountingManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version \
             + "&compensationid=" + str(compensationid)
-        dictionary = self.retrieve_dict_from_url(url, "http://www.priceminister.com/wallet_ws/getcompensationdetails")
+        dictionary = self.retrieve_dict_from_url(url)
         return dictionary
