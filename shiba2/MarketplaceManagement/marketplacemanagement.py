@@ -1,4 +1,8 @@
-__author__ = "boguta_m"
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# class MarketplaceManagement
+
 
 from .. import shiba
 
@@ -6,12 +10,9 @@ from .. import shiba
 class MarketplaceManagement(shiba.Shiba):
     """ Marketplace informations retrieving, such as product lists and category mapping"""
 
-    def __init__(self, login, pwd, version, mode=""):
-        if mode is "test":
-            self.url = "https://ws.sandbox.priceminister.com/"
-        else:
-            self.url = "https://ws.priceminister.com/"
-        super(MarketplaceManagement, self).__init__(login, pwd, version, mode)
+    def __init__(self, login, pwd, version, domain="https://ws.priceminister.com/"):
+        super(MarketplaceManagement, self).__init__(login, pwd, version, domain)
+        self.url = self.domain
 
     def get_product_list(self, scope="", kw="", nav="", refs="", productids="", ppp=20, pnumber=1):
         """Prints a list from given parameters.

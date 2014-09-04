@@ -1,16 +1,16 @@
-__author__ = "boguta_m"
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# class InventoryManagement
 
 from .. import shiba
 
 class InventoryManagement(shiba.Shiba):
     """This class permits you to manage your inventory, get informations about your products and even import products
     from XML to the PriceMinister platform"""
-    def __init__(self, login, pwd, version, mode=""):
-        super(InventoryManagement, self).__init__(login, pwd, version, mode)
-        if mode is "test":
-            self.url = "https://ws.sandbox.priceminister.com/stock_ws?"
-        else:
-            self.url = "https://ws.priceminister.com/stock_ws?"
+    def __init__(self, login, pwd, version, domain="https://ws.priceminister.com/"):
+        super(InventoryManagement, self).__init__(login, pwd, version, domain)
+        self.url = self.domain + "stock_ws?"
 
     def product_types(self):
         """This method retrieve products types from PriceMinister, helping you to define your products attributes."""

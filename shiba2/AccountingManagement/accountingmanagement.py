@@ -1,4 +1,7 @@
-__author__ = "boguta_m"
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# class AccountingManagement
 
 from .. import shiba
 
@@ -6,12 +9,9 @@ from .. import shiba
 class AccountingManagement(shiba.Shiba):
     """Accounting Management class, showing global financial operations on your account, or specific financial details
         about an operation"""
-    def __init__(self, login, pwd, version, mode=""):
-        if mode is "test":
-            self.url = "https://ws.sandbox.priceminister.com/wallet_ws?"
-        else:
-            self.url = "https://ws.priceminister.com/wallet_ws?"
-        super(AccountingManagement, self).__init__(login, pwd, version, mode)
+    def __init__(self, login, pwd, version, domain="https://ws.priceminister.com/"):
+        super(AccountingManagement, self).__init__(login, pwd, version, domain)
+        self.url = self.domain + "wallet_ws?"
 
     def get_operations(self, lastoperationdate=""):
         """Get global operations which happened on your wallets, compensationid given back from XML can be used

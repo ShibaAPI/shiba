@@ -1,4 +1,7 @@
-__author__ = "boguta_m"
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# class SalesManagement
 
 from .. import shiba
 
@@ -7,13 +10,9 @@ class SalesManagement(shiba.Shiba):
     """Primary sales management class, gather all sales-related methods. Those methods returns a dictionary
     from the XML given as answer by the related WebService."""
 
-    def __init__(self, login, pwd, version, mode=""):
-        self.nexttoken = 0
-        if mode is "test":
-            self.url = "https://ws.sandbox.priceminister.com/sales_ws?"
-        else:
-            self.url = "https://ws.priceminister.com/sales_ws?"
-        super(SalesManagement, self).__init__(login, pwd, version, mode)
+    def __init__(self, login, pwd, version, domain="https://ws.priceminister.com/"):
+        super(SalesManagement, self).__init__(login, pwd, version, domain)
+        self.url = self.domain + "sales_ws?"
 
     def get_new_sales(self):
         """Calling get_new_sales method gives you back a dictionary from returned XML, featuring all the new sales which
@@ -35,13 +34,11 @@ class SalesManagement(shiba.Shiba):
         dictionary = self.__retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/saleacceptance")
         return dictionary
 
-    def get_current_sales(self, prepurchase=False, datefrom="", token=-1):
+    def get_current_sales(self, prepurchase=False, datefrom="", token=0):
         """Calling get_current_sales method gives you a dictionary gathering all current sales.
         :param prepurchase: Boolean which on True gives you the list of preordered sales
         :param datefrom: Formatted as "yyyy-mm-dd" string allows you to filter the sales only from the given date
         :param token: Next page token argument, leave at is it, only give 0 is you want the first page"""
-        if token == -1:
-            token = self.nexttoken
         url = self.url + "action=getcurrentsales&login=" + self.login \
             + "&pwd=" + self.pwd \
             + "&version=" + self.version
@@ -49,12 +46,9 @@ class SalesManagement(shiba.Shiba):
             url += "&ispendingorder=y"
         if len(datefrom) != 0:
             url += "&purchasedate=" + str(datefrom)
-        if token != 0 and self.nexttoken != 0:
-            url += "&nexttoken=" + str(self.nexttoken)
-        elif token != 0 and token > 0:
+        if token != 0:
             url += "&nexttoken=" + str(token)
         dictionary = self.__retrieve_dict_from_url(url, "http://www.priceminister.com/sales_ws/getcurrentsales")
-        self.nexttoken = self.__get_next_token(dictionary)
         return dictionary
 
     def get_billing_information(self, purchaseid):
