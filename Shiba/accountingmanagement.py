@@ -3,10 +3,12 @@
 #
 # class AccountingManagement
 
-import shiba
+
+import shibalogin
+from shibatools import ShibaTools
 
 
-class AccountingManagement(shiba.Shiba):
+class AccountingManagement(shibalogin.ShibaLogin):
     """Accounting Management class, showing global financial operations on your account, or specific financial details
         about an operation"""
     def __init__(self, login, pwd, domain="https://ws.priceminister.com/"):
@@ -25,7 +27,7 @@ class AccountingManagement(shiba.Shiba):
             + "&operationcause=saletransfer"
         if len(lastoperationdate) > 0:
             url += "&lastoperationdate=" + str(lastoperationdate)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def get_compensation_details(self, compensationid):
@@ -36,5 +38,5 @@ class AccountingManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version \
             + "&compensationid=" + str(compensationid)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary

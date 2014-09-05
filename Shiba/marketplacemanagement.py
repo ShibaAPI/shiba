@@ -4,10 +4,11 @@
 # class MarketplaceManagement
 
 
-import shiba
+import shibalogin
+from shibatools import ShibaTools
 
 
-class MarketplaceManagement(shiba.Shiba):
+class MarketplaceManagement(shibalogin.ShibaLogin):
     """ Marketplace informations retrieving, such as product lists and category mapping"""
 
     def __init__(self, login, pwd, domain="https://ws.priceminister.com/"):
@@ -55,7 +56,7 @@ class MarketplaceManagement(shiba.Shiba):
             url += productids if type(refs) != list else plist
         url += "&nbproductsperpage=" + str(ppp) \
             + "&pagenumber=" + str(pnumber)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def get_category_map(self):
@@ -63,5 +64,5 @@ class MarketplaceManagement(shiba.Shiba):
         url = self.url + "categorymap_ws?action=categorymap" \
             + "&login=" + self.login \
             + "&version=" + version
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary

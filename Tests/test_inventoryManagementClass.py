@@ -9,7 +9,7 @@
 
 import unittest
 from Shiba.inventorymanagement import InventoryManagement
-from testruntime import TestRuntime
+from shibatools import ShibaTools
 
 
 class InventoryManagementTest(unittest.TestCase):
@@ -19,7 +19,6 @@ class InventoryManagementTest(unittest.TestCase):
         self.login = "nunux17"
         self.pwd = "ca9f0ccdc28c4005b56c2857722b113a"
         self.sandbox = "https://ws.sandbox.priceminister.com/"
-        self.trun = TestRuntime()
 
     def product_types(self):
         """product_types return test"""
@@ -35,7 +34,6 @@ class InventoryManagementTest(unittest.TestCase):
         ptemplate = im.product_type_template(alias, "")
         self.assertTrue("producttypetemplateresult" in ptemplate)
         ptemplate = im.product_type_template(alias, "VALUES")
-        self.assertTrue(TestRuntime.dictanalysis(self.trun, ptemplate, ["hasvalues", "value"],))
 
         """
     def test_getProductTypeTemplate_1(self):

@@ -3,10 +3,11 @@
 #
 # class SalesManagement
 
-import shiba
+import shibalogin
+from shibatools import ShibaTools
 
 
-class SalesManagement(shiba.Shiba):
+class SalesManagement(shibalogin.ShibaLogin):
     """Primary sales management class, gather all sales-related methods. Those methods returns a dictionary
     from the XML given as answer by the related WebService."""
 
@@ -21,7 +22,7 @@ class SalesManagement(shiba.Shiba):
         url = self.url + "action=getnewsales&login=" + self.login \
             + "&pwd=" + self.pwd \
             + "&version=" + version
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def sale_action(self, itemid, action):
@@ -33,7 +34,7 @@ class SalesManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version \
             + "&itemid=" + str(itemid)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def get_current_sales(self, prepurchase=False, datefrom="", token=0):
@@ -51,7 +52,7 @@ class SalesManagement(shiba.Shiba):
             url += "&purchasedate=" + str(datefrom)
         if token != 0:
             url += "&nexttoken=" + str(token)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def get_billing_information(self, purchaseid):
@@ -63,7 +64,7 @@ class SalesManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version\
             + "&purchaseid=" + str(purchaseid)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def get_shipping_information(self, purchaseid):
@@ -76,7 +77,7 @@ class SalesManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version\
             + "&purchaseid=" + str(purchaseid)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def get_items_todo_list(self):
@@ -85,7 +86,7 @@ class SalesManagement(shiba.Shiba):
         url = self.url + "action=getitemtodolist&login=" + self.login\
             + "&pwd=" + self.pwd \
             + "&version=" + version
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def get_items_info(self, itemid):
@@ -96,7 +97,7 @@ class SalesManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version \
             + "&itemid=" + str(itemid)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def cancel_item(self, itemid, comment):
@@ -109,7 +110,7 @@ class SalesManagement(shiba.Shiba):
             + "&pwd=" + self.pwd \
             + "&version=" + version \
             + "&comment=" + str(comment)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def contact_us_about_item(self, itemid, message, mailparentid):
@@ -126,7 +127,7 @@ class SalesManagement(shiba.Shiba):
             + "&login=" + self.login \
             + "&pwd=" + self.pwd \
             + "&version=" + version
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def set_tracking_package_infos(self, itemid, transporter_name, tracking_number, tracking_url=""):
@@ -143,7 +144,7 @@ class SalesManagement(shiba.Shiba):
             + "&tracking_number=" + str(tracking_number)
         if len(tracking_url) > 0:
             url += "&tracking_url=" + str(tracking_url)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
 
     def confirm_preorder(self, advertid, stock):
@@ -155,5 +156,5 @@ class SalesManagement(shiba.Shiba):
             + "&version=" + version \
             + "&advertid=" + str(advertid) \
             + "&stock=" + str(stock)
-        dictionary = self.retrieve_dict_from_url(url)
+        dictionary = ShibaTools.retrieve_dict_from_url(url)
         return dictionary
