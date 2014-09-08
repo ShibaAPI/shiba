@@ -5,6 +5,7 @@
 
 from shibaconnection import ShibaConnection
 from shibatools import ShibaTools
+from shibaexceptions import *
 import datetime
 
 
@@ -13,7 +14,8 @@ class SalesManagement(object):
     from the XML given as answer by the related WebService."""
 
     def __init__(self, connection):
-        assert(isinstance(connection, ShibaConnection)), "error : you must give this instance a ShibaConnection instance"
+        if (isinstance(connection, ShibaConnection)) is False:
+            raise ShibaCallingError("error : you must give this instance a ShibaConnection instance")
         self.connection = connection
 
     def get_new_sales(self):
@@ -43,7 +45,10 @@ class SalesManagement(object):
         :param ispendingorder: pass "y" is you want to see all preordered sales, leave empty as default
         :param purchasedate: Formatted as "yyyy-mm-dd" string allows you to filter the sales only from the given date
         :param nexttoken: Next page token argument, leave at is it, only give 0 is you want the first page"""
-        assert(ispendingorder == "y" or ""), "error : ispendingorder parameter unexpected value"
+        if ispendingorder is not "" or "y":
+            raise ShibaCallingError("Shiba code error : ispendingorder parameter must be empty or 'y'")
+        if isinstance(purchasedate, datetime.datetime) is False and type(purchasedate) is not str:
+            raise ShibaCallingError("Shiba code error : purchasedate order parameter must be a datetime instance or str")
         if isinstance(purchasedate, datetime.datetime):
             purchasedate = purchasedate.strftime("%d/%m/%y-%H:%M:%S")
         inf = ShibaTools.inf_constructor(self.connection, "getcurrentsales", **locals())
@@ -112,7 +117,9 @@ class SalesManagement(object):
         """Send to buyer tracking infos, such as the transporter's name "transporter_name",
         tracking number "tracking_number" and the optional tracking url "trackin_url".
         Please note that giving "Autre" as transporter_name brings the tracking url as mandatory."""
-        assert (transporter_name == "Autre" and len(tracking_url) == 0, "error : tracking url is mandatory")
+        if transporter_name == "Autre" and len(tracking_url) == 0:
+            raise ShibaCallingError("Shiba code error : if 'Autre' is specified as transporter_name, a tracking_url"
+                                     "must be specified too")
         inf = ShibaTools.inf_constructor(self.connection, "settrackingpackageinfos", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
@@ -120,7 +127,8 @@ class SalesManagement(object):
 
     def confirm_preorder(self, advertid, stock):
         """Confirms preorders from the "advertid" item announce, will confirm "stock" items as confirmed orders."""
-        assert (stock <= 0, "error : stock must be a positive number")
+        if stock <= 0:
+            raise ShibaCallingError("Shiba code error : stock must be a positive number")
         inf = ShibaTools.inf_constructor(self.connection, "confirmpreoder", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)

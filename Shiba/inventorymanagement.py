@@ -4,6 +4,7 @@
 # class InventoryManagement
 
 from shibaconnection import ShibaConnection
+from shibaexceptions import *
 import urllib2 as ul
 from shibatools import ShibaTools
 
@@ -12,7 +13,8 @@ class InventoryManagement(object):
     """This class permits you to manage your inventory, get informations about your products and even import products
     from XML to the PriceMinister platform"""
     def __init__(self, connection):
-        assert(isinstance(connection, ShibaConnection)), "error : you must give this instance a ShibaConnection instance"
+        if isinstance(connection, ShibaConnection) is False:
+            raise ShibaCallingError("Shiba subclass init error : expecting a ShibaConnection instance")
         self.connection = connection
 
     def product_types(self):

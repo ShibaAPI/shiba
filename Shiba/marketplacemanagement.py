@@ -6,13 +6,15 @@
 
 from shibaconnection import ShibaConnection
 from shibatools import ShibaTools
+from shibaexceptions import *
 
 
 class MarketplaceManagement(object):
     """ Marketplace informations retrieving, such as product lists and category mapping"""
 
     def __init__(self, connection):
-        assert(isinstance(connection, ShibaConnection)), "error : you must give this instance a ShibaConnection instance"
+        if isinstance(connection, ShibaConnection) is False:
+            raise ShibaCallingError("Shiba subclass init error : expecting a ShibaConnection instance")
         self.connection = connection
 
     def get_product_list(self, scope="", kw="", nav="", refs="", productids="", nbproductsperpage="", pagenumber=""):
@@ -27,8 +29,8 @@ class MarketplaceManagement(object):
         :param nbproductsperpage: Products per page, default is 20.
         :param pagenumber: Page number, default is 1.
         """
-        assert(type(refs) is not list or str or type(productids) is not list or str,
-               "error : bad type given as refs or productids")
+        if type(refs) is not list or str or type(productids) is not list or str:
+            raise ShibaCallingError("Shiba code error : expected list or str as refs and/or productids parameters")
         inf = ShibaTools.inf_constructor(self.connection, "listing", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)

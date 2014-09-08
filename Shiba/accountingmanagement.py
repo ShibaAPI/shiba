@@ -5,6 +5,7 @@
 
 
 from shibaconnection import ShibaConnection
+from shibaexceptions import *
 from shibatools import ShibaTools
 import datetime
 
@@ -21,6 +22,8 @@ class AccountingManagement(object):
         in the get_compensation_details method below to get more detailed information about a specific operation.
         :param lastoperationdate: as follows : dd/mm/yyyy-hh:mm:ss and as string or datetime"""
         operationcause = "salestransfer"
+        if isinstance(lastoperationdate, datetime.datetime) is False and type(lastoperationdate) is not str:
+            raise ShibaCallingError("Shiba code error : lastoperationdate order parameter must be a datetime instance or str")
         if isinstance(lastoperationdate, datetime.datetime):
             lastoperationdate = lastoperationdate.strftime("%d/%m/%y-%H:%M:%S")
         inf = ShibaTools.inf_constructor(self.connection, "getoperations", **locals())
