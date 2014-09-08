@@ -12,12 +12,12 @@ import httplib
 import urllib2 as ul
 
 
+"""Tools used by Shiba data retrieving classes"""
 class ShibaTools(object):
     @staticmethod
-    """Tools used by Shiba data retrieving classes"""
     def __errors_check(self, obj):
         """Errors checking from the returned XML as object."""
-        if "errorresponse" is in obj.getchildren():
+        if "errorresponse" in obj.getchildren():
             if obj.errorresponse.error.code == "ParameterError":
                 raise ShibaParameterError("Problem with parameters : " + obj.errorresponse.error.message +
                 " Reason : " + obj.errorresponse.error.details.detail)
