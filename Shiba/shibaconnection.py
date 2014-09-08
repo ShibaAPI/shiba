@@ -5,7 +5,7 @@
 # Shiba initialization class
 
 
-class ShibaInit(object):
+class ShibaConnection(object):
     def __init__(self, login, pwd, domain="https://ws.priceminister.com/"):
         """
         :param login: PriceMinister Seller login

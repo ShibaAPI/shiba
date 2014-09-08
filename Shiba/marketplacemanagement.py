@@ -4,15 +4,16 @@
 # class MarketplaceManagement
 
 
-from shibainit import ShibaInit
+from shibaconnection import ShibaConnection
 from shibatools import ShibaTools
 
 
-class MarketplaceManagement(ShibaInit):
+class MarketplaceManagement(object):
     """ Marketplace informations retrieving, such as product lists and category mapping"""
 
-    def __init__(self, login, pwd, domain="https://ws.priceminister.com/"):
-        super(MarketplaceManagement, self).__init__(login, pwd, domain)
+    def __init__(self, connection):
+        assert(isinstance(connection, ShibaConnection)), "error : you must give this instance a ShibaConnection instance"
+        self.connection = connection
 
     def get_product_list(self, scope="", kw="", nav="", refs="", productids="", nbproductsperpage="", pagenumber=""):
         """Prints a list from given parameters.
@@ -28,13 +29,14 @@ class MarketplaceManagement(ShibaInit):
         """
         assert(type(refs) is not list or str or type(productids) is not list or str,
                "error : bad type given as refs or productids")
-        inf = ShibaTools.inf_constructor(ShibaInit, "listing", **locals())
-        url = ShibaTools.url_constructor(ShibaInit, inf)
+        inf = ShibaTools.inf_constructor(self.connection, "listing", **locals())
+        url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
     def get_category_map(self):
-        inf = ShibaTools.inf_constructor(ShibaInit, "categorymap", **locals())
-        url = ShibaTools.url_constructor(ShibaInit, inf)
+        """Lists items categories from the PriceMinister platform"""
+        inf = ShibaTools.inf_constructor(self.connection, "categorymap", **locals())
+        url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj

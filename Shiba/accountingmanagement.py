@@ -4,16 +4,17 @@
 # class AccountingManagement
 
 
-from shibainit import ShibaInit
+from shibaconnection import ShibaConnection
 from shibatools import ShibaTools
 import datetime
 
 
-class AccountingManagement(ShibaInit):
+class AccountingManagement(object):
     """Accounting Management class, showing global financial operations on your account, or specific financial details
         about an operation"""
-    def __init__(self, login, pwd, domain="https://ws.priceminister.com/"):
-        super(AccountingManagement, self).__init__(login, pwd, domain)
+    def __init__(self, connection):
+        assert(isinstance(connection, ShibaConnection)), "error : you must give this instance a ShibaConnection instance"
+        self.connection = connection
 
     def get_operations(self, lastoperationdate=""):
         """Get global operations which happened on your wallets, compensationid given back from XML can be used
@@ -22,14 +23,14 @@ class AccountingManagement(ShibaInit):
         operationcause = "salestransfer"
         if isinstance(lastoperationdate, datetime.datetime):
             lastoperationdate = lastoperationdate.strftime("%d/%m/%y-%H:%M:%S")
-        inf = ShibaTools.inf_constructor(ShibaInit, "getoperations", **locals())
-        url = ShibaTools.url_constructor(ShibaInit, inf)
+        inf = ShibaTools.inf_constructor(self.connection, "getoperations", **locals())
+        url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
     def get_compensation_details(self, compensationid):
         """Get a specific operation details from its "compensationid" found in the get_operation request return."""
-        inf = ShibaTools.inf_constructor(ShibaInit, "getcompensationdetails", **locals())
-        url = ShibaTools.url_constructor(ShibaInit, inf)
+        inf = ShibaTools.inf_constructor(self.connection, "getcompensationdetails", **locals())
+        url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj

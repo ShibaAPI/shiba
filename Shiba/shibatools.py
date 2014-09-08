@@ -6,7 +6,7 @@
 
 from lxml import objectify
 from lxml import etree
-from shibainit import ShibaInit
+from shibaconnection import ShibaConnection
 import urllib2 as ul
 
 
@@ -28,7 +28,7 @@ class ShibaTools(object):
 
     @staticmethod
     def inf_constructor(shibainit, action, **kwargs):
-        assert(isinstance(shibainit, ShibaInit)), "error : you must give a ShibaInit instance to information constructor"
+        assert(isinstance(shibainit, ShibaConnection)), "error : you must give a ShibaInit instance to information constructor"
         assert(action in shibainit.actionsinfo), "error : unknown action"
         cons = kwargs.update(shibainit.actionsinfo[action])
         return cons
