@@ -15,7 +15,11 @@ from Shiba.shibaconnection import ShibaConnection
 from Shiba.shibaexceptions import *
 from nose.tools import *
 
+import xmltodict
+from lxml import objectify
+
 import unittest
+import pdb
 
 
 class InventoryManagementTest(unittest.TestCase):
@@ -40,7 +44,6 @@ class InventoryManagementTest(unittest.TestCase):
         ptypes = self.init.product_types()
         self.assertTrue("producttypesresult" in ptypes.tag)
 
-    @raises(ShibaParameterError)
     def test_product_type_template(self):
         """product_type_template tests on two scopes, for a fixed alias, plus a fail result"""
         alias = "insolites_produit"
@@ -48,13 +51,28 @@ class InventoryManagementTest(unittest.TestCase):
         self.assertTrue("producttypetemplateresult" in ptemplate.tag)
         ptemplate = self.init.product_type_template(alias, "VALUES")
         self.assertTrue("producttypetemplateresult" in ptemplate.tag)
-        ptemplate = self.init.product_type_template(alias, "INVALIDSCOPE")
+
+    @raises(ShibaParameterError)
+    def test_product_type_template_fail(self):
+        self.init.product_type_template("INVALIDALIAS", "INVALIDSCOPE")
 
     def test_generic_import_file(self):
-        """generic_import_file test, from an hand-written XML"""
-        testdict =  {"item" : {"alias": "insolites_produit", "attributes" :
-            {"advert" : {"attribute" : {"key" : "sellerReference", "value": "3069"}}, "product": {"attribute": [{"key": "submitterreference", "value": "Livre très vieux"},
-                                                                         {"key": "title", "value": "livre vraiment tres vieux"},
-                                                                         {"key": "sellerReference", "value": "SKU133755000"}]}}}}
+        """generic_import_file test, from an XML file. Conversion is done by xmltodict from a dict or OrderedDict
+        , as well with objectify with an objectified ElementTree element"""
+        f = open("Assets/genericimportfile.xml", "rb")
+        testdict = xmltodict.parse(f)
         ret = self.init.generic_import_file(testdict)
-        print(ret) #TODO des tests avec ET
+        self.assertTrue("OK" == ret.response.status)
+        f = open("Assets/genericimportfile.xml", "rb")
+        testobj = objectify.parse(f)
+        ret = self.init.generic_import_file(testobj)
+        self.assertTrue("OK" == ret.response.status)
+
+    def test_generic_import_report(self):
+        f = open("Assets/genericimportfile.xml", "rb")
+        testobj = objectify.parse(f)
+        ret = self.init.generic_import_file(testobj)
+        importid = ret.response.importid
+        ret = self.init.generic_import_report(importid)
+        pdb.set_trace()
+        self.assertTrue("Reçu" == ret.response.file.status.text)

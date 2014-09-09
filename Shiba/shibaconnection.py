@@ -29,7 +29,8 @@ class ShibaConnection(object):
         self.actionsinfo = \
         {"producttypes": {"cat": "stock_ws", "version": "2011-11-29", "login": self.login, "pwd": self.pwd},
         "producttypetemplate": {"cat": "stock_ws", "version": "2013-05-14", "login": self.login, "pwd": self.pwd},
-        "genericimportfile": {"cat": "stock_ws", "version": "2011-11-29", "login": self.login, "pwd": self.pwd},
+        "genericimportfile": {"cat": "stock_ws", "version": "2012-09-11", "login": self.login, "pwd": self.pwd},
+        "genericimportreport": {"cat": "stock_ws", "version": "2011-11-29", "login": self.login, "pwd": self.pwd},
         "getavailableshippingtypes": {"cat": "sales_ws", "version": "2013-06-25", "login": self.login, "pwd": self.pwd},
         "export": {"cat": "stock_ws", "version": "2014-01-28", "login": self.login, "pwd": self.pwd},
         "listing": {"cat": "listing_ws", "version": "2014-01-28", "login": self.login, "pwd": self.pwd},

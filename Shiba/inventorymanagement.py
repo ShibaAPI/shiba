@@ -10,6 +10,8 @@ from shibaconnection import ShibaConnection
 from shibaexceptions import *
 from shibatools import ShibaTools
 
+import pdb
+
 class InventoryManagement(object):
     """This class permits you to manage your inventory, get informations about your products and even import products
     from XML to the PriceMinister platform"""
