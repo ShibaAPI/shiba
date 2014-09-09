@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<items>
+  <item> 
+    <attributes>    
+       <product>       
+            <attribute>              
+              <key>pid</key>
+              <value>123456789</value>
+            </attribute>          
+        </product>      
+        <advert>                  
+            <attribute>
+              <key>state</key>
+              <value>10</value>              
+            </attribute>          
+            <attribute>
+              <key>comment</key>
+              <value>Commentaire anonce</value>
+            </attribute>          
+            <attribute>
+              <key>sellingPrice</key>
+              <value>15,50</value>              
+            </attribute>          
+            <attribute>
+              <key>qty</key>
+              <value>15</value>              
+            </attribute>          
+            <attribute>
+              <key>sellerReference</key>
+              <value>PM010</value>              
+            </attribute>          
+        </advert>
+    </attributes>
+  </item>
+  <item>
+    <attributes>
+        <product>        
+            <attribute>
+              
+              <key>submitterreference</key>
+              <value>LT001</value>
+            </attribute>
+        </product>      
+        <advert>          
+            <attribute>
+              <key>state</key>
+              <value>0</value>              
+            </attribute>          
+            <attribute>
+              <key>comment</key>
+              <value>Test</value>              
+            </attribute>              
+            <attribute>
+              <key>sellingPrice</key>
+              <value>5499</value>              
+            </attribute>          
+            <attribute>
+              <key>qty</key>
+              <value>3</value>              
+            </attribute>          
+            <attribute>
+              <key>sellerReference</key>
+              <value>PM011</value>              
+            </attribute>          
+        </advert>
+
+    </attributes>
+  </item>
+  <item>
+    <attributes>    
+        <product>    
+			<attribute>
+          	<key>codebarres</key>
+          	<value>0000000000000</value>
+			</attribute>
+        </product>
+      
+        <advert>
+          
+            <attribute>
+              <key>state</key>
+              <value>20</value>              
+            </attribute>
+          
+            <attribute>
+              <key>comment</key>
+              <value>Cartes téléphoniques non fournies.</value>              
+            </attribute>
+          
+
+            <attribute>
+              <key>sellingPrice</key>
+              <value>366</value>              
+            </attribute>
+          
+            <attribute>
+              <key>qty</key>
+              <value>1</value>              
+            </attribute>
+          
+            <attribute>
+              <key>sellerReference</key>
+              <value>PM012</value>              
+            </attribute>
+          
+        </advert>
+
+    </attributes>
+  </item>
+</items>

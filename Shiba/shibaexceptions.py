@@ -5,6 +5,8 @@
 # Shiba exceptions classes
 
 
+from __future__ import unicode_literals
+
 """Those exception classes will usually be raised after an error returned from the WebServices"""
 class   ShibaException(Exception):
     """Main exception class, as you can catch the whole of Shiba exceptions from it"""
@@ -21,10 +23,6 @@ class   ShibaLoginError(ShibaException):
 class   ShibaConnectionError(ShibaException):
     """Shiba connection error, kind of an internal error: URL can't be reached, in case of bad URL formatting or
     internet connection failure (HTTP errors 404, 500...)."""
-    pass
-
-class   ShibaUnknownError(ShibaException):
-    """Exception for all other errors that can't be precisely defined."""
     pass
 
 class   ShibaCallingError(ShibaException):

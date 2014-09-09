@@ -3,6 +3,9 @@
 #
 # class SalesManagement
 
+
+from __future__ import unicode_literals
+
 from shibaconnection import ShibaConnection
 from shibatools import ShibaTools
 from shibaexceptions import *

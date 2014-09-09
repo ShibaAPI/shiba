@@ -4,6 +4,8 @@
 # class AccountingManagement
 
 
+from __future__ import unicode_literals
+
 from shibaconnection import ShibaConnection
 from shibaexceptions import *
 from shibatools import ShibaTools

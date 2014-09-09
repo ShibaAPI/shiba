@@ -7,21 +7,22 @@
 #https://developer.priceminister.com/blog/fr/documentation/inventory-management/import-xml/product-type-template
 #https://developer.priceminister.com/blog/fr/documentation/inventory-management/import-xml/generic-import-file0
 
-import unittest
+
+from __future__ import unicode_literals
+
 from Shiba.inventorymanagement import InventoryManagement
 from Shiba.shibaconnection import ShibaConnection
 from Shiba.shibaexceptions import *
 from nose.tools import *
-from lxml import objectify
-import pdb
-from lxml import objectify
+
+import unittest
 
 
 class InventoryManagementTest(unittest.TestCase):
 
     def setUp(self):
         try:
-            f = open("nosetests.cfg", "r")
+            f = open("Assets/nosetests.cfg", "r")
         except:
             raise ShibaCallingError("error : can't read login ID from the nosetests.cfg file")
         lines = [line.strip() for line in f]
@@ -47,40 +48,13 @@ class InventoryManagementTest(unittest.TestCase):
         self.assertTrue("producttypetemplateresult" in ptemplate.tag)
         ptemplate = self.init.product_type_template(alias, "VALUES")
         self.assertTrue("producttypetemplateresult" in ptemplate.tag)
-        ptemplate = None
         ptemplate = self.init.product_type_template(alias, "INVALIDSCOPE")
 
-"""
     def test_generic_import_file(self):
-        ""generic_import_file test, from a hand-written XML""
-        items = {
-            'alias1': {
-                'productattributes': {
-                    'codebarres': 'EAN1234567890',
-                    'pid': 'PID1234567890',
-                },
-                'advertattributes': {
-                    'sellerReference': 'SKU12345SKU_1234567890',
-                    'sellingPrice': 35,
-                    'state': 15,
-                    'comment': 'super article!',
-                    'qty': 3,
-                },
-            },
-            'alias2': {
-                'productattributes': {
-                    'codebarres': 'EAN1234567890',
-                    'pid': 'PID1234567890',
-                },
-                'advertattributes': {
-                    'sellerReference': 'SKU12345SKU_1234567890',
-                    'sellingPrice': 35,
-                    'state': 15,
-                    'comment': 'super article!',
-                    'qty': 3,
-                },
-            },
-        }
-        ret = self.init.generic_import_file(items)
-        print(ret)
-        self.assertTrue(len(xml_result) > 0) #TODO des tests avec ET"""
+        """generic_import_file test, from an hand-written XML"""
+        testdict =  {"item" : {"alias": "insolites_produit", "attributes" :
+            {"advert" : {"attribute" : {"key" : "sellerReference", "value": "3069"}}, "product": {"attribute": [{"key": "submitterreference", "value": "Livre très vieux"},
+                                                                         {"key": "title", "value": "livre vraiment tres vieux"},
+                                                                         {"key": "sellerReference", "value": "SKU133755000"}]}}}}
+        ret = self.init.generic_import_file(testdict)
+        print(ret) #TODO des tests avec ET

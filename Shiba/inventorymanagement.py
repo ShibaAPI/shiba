@@ -3,11 +3,12 @@
 #
 # class InventoryManagement
 
+
+from __future__ import unicode_literals
+
 from shibaconnection import ShibaConnection
 from shibaexceptions import *
-import urllib2 as ul
 from shibatools import ShibaTools
-
 
 class InventoryManagement(object):
     """This class permits you to manage your inventory, get informations about your products and even import products
@@ -45,13 +46,10 @@ class InventoryManagement(object):
         """Import XML file to your PriceMinister inventory trough a POST request.
         "data" parameter must be a obj containing your inventory wished to be imported. You must respect the XML
         hierarchy detailed from the WebService documentation inside the obj"""
+        data = ShibaTools.create_xml_from_item_obj(data)
         inf = ShibaTools.inf_constructor(self.connection, "genericimportfile")
         url = ShibaTools.url_constructor(self.connection, inf)
-        retfile = ShibaTools.create_xml_from_item_obj(data)
-        user_agent = "Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)"
-        hea = {"User-Agent": user_agent}
-        req = ul.Request(url, retfile, hea)
-        obj = ShibaTools.retrieve_obj_from_url(req)
+        obj = ShibaTools.retrieve_obj_from_url(url, data)
         return obj
 
     def get_available_shipping_types(self):
