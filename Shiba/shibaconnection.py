@@ -22,7 +22,7 @@ class ShibaConnection(object):
         self.login = str(login)
         self.pwd = str(pwd)
         if len(domain) == 0:
-            raise ShibaCallingError("Shiba init error : domain given is empty")
+            raise ShibaCallingError("Shiba init error : given domain is empty")
         self.domain = domain
         """URL generation relative dictionary, formatting URLs in methods from the given format, first '%s'
         is the action type, given as primary key"""

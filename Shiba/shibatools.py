@@ -47,7 +47,8 @@ class ShibaTools(object):
         :rtype : lxml.objectivy class"""
         try:
             if data is not None:
-                header = {"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)"}
+                header = {"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE; rv:1.9.0.10) "
+                                        "Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)"}
                 data = data.encode('utf-8')
                 d = ul.quote_plus(data)
                 d = {"file": d}
