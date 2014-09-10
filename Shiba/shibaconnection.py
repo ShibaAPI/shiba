@@ -11,7 +11,7 @@ from shibaexceptions import *
 
 
 class ShibaConnection(object):
-    def __init__(self, login, pwd, domain="https://ws.priceminister.com/"):
+    def __init__(self, login, pwd, domain="https://ws.priceminister.com"):
         """
         :param login: PriceMinister Seller login
         :param pwd: PriceMinister Seller Token
@@ -49,4 +49,4 @@ class ShibaConnection(object):
         "settrackingpackageinfos": {"cat": "sales_ws", "version": "2012-11-06", "login": self.login, "pwd": self.pwd},
         "confirmpreorder": {"cat": "sales_ws", "version": "2013-01-09", "login": self.login, "pwd": self.pwd},
         "getoperations": {"cat": "wallet_ws", "version": "2011-03-29", "login": self.login, "pwd": self.pwd},
-        "getcompensationdetails": {"cat": "wallet_ws", "version": "2011-03-29", "login": self.login, "pwd": self.pwd}}
+        "getcompensationdetails": {"cat": "sales_ws", "version": "2011-03-29", "login": self.login, "pwd": self.pwd}}

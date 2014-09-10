@@ -62,8 +62,9 @@ class InventoryManagement(object):
         return obj
 
     def export_inventory(self, scope="", nexttoken=""):
-        """Export adverts from your inventory, nexttoken pagination is available"""
-        inf = ShibaTools.inf_constructor(self.connection, "cancelitem", **locals())
+        """Export adverts from your inventory, nexttoken pagination is available.
+        PRICING is the only acceptable value for "scope", if not none."""
+        inf = ShibaTools.inf_constructor(self.connection, "export", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj

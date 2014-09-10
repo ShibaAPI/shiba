@@ -9,7 +9,8 @@ from __future__ import unicode_literals
 from shibaconnection import ShibaConnection
 from shibatools import ShibaTools
 from shibaexceptions import *
-import datetime
+
+from datetime import date
 
 
 class SalesManagement(object):
@@ -18,41 +19,43 @@ class SalesManagement(object):
 
     def __init__(self, connection):
         if (isinstance(connection, ShibaConnection)) is False:
-            raise ShibaCallingError("error : you must give this instance a ShibaConnection instance")
+            raise ShibaCallingError("error : you must give this class a ShibaConnection instance")
         self.connection = connection
 
     def get_new_sales(self):
         """Calling get_new_sales method gives you back a obj from returned XML, featuring all the new sales which
         have been done."""
-        inf = ShibaTools.inf_constructor(ShibaConnection, "getnewsales", **locals())
-        url = ShibaTools.url_constructor(ShibaConnection, inf)
+        inf = ShibaTools.inf_constructor(self.connection, "getnewsales", **locals())
+        url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
     def accept_sale(self, itemid):
         """Accept the "itemid" sale"""
-        inf = ShibaTools.inf_constructor(ShibaConnection, "acceptsale", **locals())
-        url = ShibaTools.url_constructor(ShibaConnection, inf)
+        inf = ShibaTools.inf_constructor(self.connection, "acceptsale", **locals())
+        url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
     def refuse_sale(self, itemid):
         """Refuse the "itemid" sale"""
-        inf = ShibaTools.inf_constructor(ShibaConnection, "refusesale", **locals())
-        url = ShibaTools.url_constructor(ShibaConnection, inf)
+        inf = ShibaTools.inf_constructor(self.connection, "refusesale", **locals())
+        url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
-    def get_current_sales(self, ispendingorder="", purchasedate="", nexttoken=""):
+    def get_current_sales(self, ispendingpreorder="", purchasedate="", nexttoken=""):
         """Calling get_current_sales method gives you a obj gathering all current sales.
-        :param ispendingorder: pass "y" is you want to see all preordered sales, leave empty as default
+        :param ispendingpreorder: pass "y" is you want to see all preordered sales, leave empty as default
         :param purchasedate: Formatted as "yyyy-mm-dd" string allows you to filter the sales only from the given date
         :param nexttoken: Next page token argument, leave at is it, only give 0 is you want the first page"""
-        if ispendingorder is not "" or "y":
-            raise ShibaCallingError("Shiba code error : ispendingorder parameter must be empty or 'y'")
-        if isinstance(purchasedate, datetime.datetime) is False and type(purchasedate) is not str:
-            raise ShibaCallingError("Shiba code error : purchasedate order parameter must be a datetime instance or str")
-        if isinstance(purchasedate, datetime.datetime):
+        if ispendingpreorder != "" and ispendingpreorder != "y":
+            raise ShibaCallingError("Shiba code error : ispendingpreorder parameter must be empty or 'y'")
+        if isinstance(purchasedate, date) is False and type(purchasedate) is not str and \
+                type(purchasedate) is not unicode:
+            raise ShibaCallingError("Shiba code error : purchasedate order parameter must be a datetime instance or str,"
+                                    " got " + unicode(type(purchasedate)) + " instead.")
+        if isinstance(purchasedate, date):
             purchasedate = purchasedate.strftime("%d/%m/%y-%H:%M:%S")
         inf = ShibaTools.inf_constructor(self.connection, "getcurrentsales", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
@@ -76,17 +79,17 @@ class SalesManagement(object):
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
-    def get_items_todo_list(self):
+    def get_item_todo_list(self):
         """Retriving a todo list on items, such as CLAIMS or MESSAGES from buyer or PriceMinister."""
-        inf = ShibaTools.inf_constructor(self.connection, "getitemstodolist", **locals())
+        inf = ShibaTools.inf_constructor(self.connection, "getitemtodolist", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
-    def get_items_info(self, itemid):
+    def get_item_infos(self, itemid):
         """This methods retrieves informations from an "itemid" item, such as state, history, messages linked to it
         and actions available for this item. WARNING : All messages related to asked item will be tagged as "read"."""
-        inf = ShibaTools.inf_constructor(self.connection, "getitemsinfo", **locals())
+        inf = ShibaTools.inf_constructor(self.connection, "getiteminfos", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
@@ -100,7 +103,7 @@ class SalesManagement(object):
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
-    def contact_us_about_item(self, itemid, message, mailparentid=""):
+    def contact_us_about_item(self, itemid, content, mailparentid=""):
         """This functionality permits to join the PriceMinister after-sales service as buyer or seller.
         Specify the mailparentid to reply to a previous mail exchange. Message is message content, and itemid is
         the item PriceMinister ID related to the claim."""
@@ -109,7 +112,7 @@ class SalesManagement(object):
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
-    def contact_user_about_item(self, itemid, message):
+    def contact_user_about_item(self, itemid, content):
         """Contact buyer of the "itemid" item in a regular way, sending him the "message"""
         inf = ShibaTools.inf_constructor(self.connection, "contactuseraboutitem", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
@@ -119,10 +122,11 @@ class SalesManagement(object):
     def set_tracking_package_infos(self, itemid, transporter_name, tracking_number, tracking_url=""):
         """Send to buyer tracking infos, such as the transporter's name "transporter_name",
         tracking number "tracking_number" and the optional tracking url "trackin_url".
-        Please note that giving "Autre" as transporter_name brings the tracking url as mandatory."""
+        Please note that giving "Autre" as transporter_name brings the tracking url as mandatory.
+        This WebService send an email to the "itemid" customer, including a link for package tracking"""
         if transporter_name == "Autre" and len(tracking_url) == 0:
-            raise ShibaCallingError("Shiba code error : if 'Autre' is specified as transporter_name, a tracking_url"
-                                     "must be specified too")
+            raise ShibaCallingError("Shiba code error : if 'Autre' is specified as transporter_name, a tracking_url "
+                                    "must be specified too")
         inf = ShibaTools.inf_constructor(self.connection, "settrackingpackageinfos", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
@@ -132,7 +136,7 @@ class SalesManagement(object):
         """Confirms preorders from the "advertid" item announce, will confirm "stock" items as confirmed orders."""
         if stock <= 0:
             raise ShibaCallingError("Shiba code error : stock must be a positive number")
-        inf = ShibaTools.inf_constructor(self.connection, "confirmpreoder", **locals())
+        inf = ShibaTools.inf_constructor(self.connection, "confirmpreorder", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj

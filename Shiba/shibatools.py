@@ -32,18 +32,21 @@ class ShibaTools(object):
         if "errorresponse" in obj.tag:
             if "ServerError" == obj.error.code:
                 raise ShibaParameterError("Parameter error : " + obj.error.message +
-                " Reason : " + obj.error.details.detail)
+                " - Reason : " + obj.error.details.detail)
             if "ParameterError" == obj.error.code:
                 raise ShibaParameterError("Parameter error : " + obj.error.message +
-                " Reason : " + obj.error.details.detail)
+                " - Reason : " + obj.error.details.detail)
             if "InvalidUserConnection" == obj.error.code:
-                raise ShibaLoginError("Invalid user connection : " + obj.errorresponse.error.message +
-                " Reason : " + obj.error.details.detail)
-            return True
+                raise ShibaLoginError("Invalid user connection : " + obj.error.message +
+                " - Reason : " + obj.error.details.detail)
+            if "InvalidUserRights" == obj.error.code:
+                raise ShibaRightsError("Invalid user rights : " + obj.error.message +
+                " - Reason : " + obj.error.details.detail)
+            return obj
         return False
 
     @staticmethod
-    def __post_request(url, data):
+    def post_request(url, data):
         """Method creating and submitting the multipart request of the wished to be imported XML file"""
         header = {"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE; rv:1.9.0.10) "
                                         "Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)"}
@@ -60,9 +63,11 @@ class ShibaTools(object):
         :rtype : lxml.objectivy class"""
         try:
             if data is not None:
-                xml = ShibaTools.__post_request(url, data)
+                xml = ShibaTools.post_request(url, data)
             else:
                 xml = ul2.urlopen(url).read()
+        except requests.ConnectionError:
+            raise ShibaConnectionError("HTTP error = Connection error - On URL: " + url)
         except ul2.HTTPError, e:
             raise ShibaConnectionError("HTTP error = " + unicode(e.code) + " - On URL: " + url)
         except ul2.URLError, e:
@@ -71,8 +76,21 @@ class ShibaTools(object):
             raise ShibaConnectionError("HTTP unknown error =" + " - On URL: " + url)
         xml = xml.decode('ISO-8859-1').encode('utf-8')
         print xml
-        obj = objectify.fromstring(xml)
-        ShibaTools.__errors_check(obj)
+        try:
+            obj = objectify.fromstring(xml)
+        except:
+            raise ShibaUnknownServiceError("Unknown error from service : Service returned : " + xml)
+        if ShibaTools.__errors_check(obj) is not False:
+            try:
+                if "Unknown error" == obj.error.code:
+                    raise ShibaServiceError("Unknown error from WebService (maybe the sale isn't confirmed yet?)"
+                                            " : " + obj.error.message + " - Reason : " + obj.error.details.detail)
+            except ShibaServiceError:
+                raise ShibaServiceError("Unknown error from WebService (maybe the sale isn't confirmed yet?)"
+                                            " : " + obj.error.message + " - Reason : " + obj.error.details.detail)
+            except:
+                raise ShibaUnknownServiceError("An unknown error from the WebService has occurred - XML dump : " +
+                                                etree.tostring(obj))
         return obj
 
     @staticmethod
@@ -96,17 +114,23 @@ class ShibaTools(object):
         if (isinstance(shibaconnection, ShibaConnection) is False):
             raise ShibaCallingError("Internal parameter error : shibaconnection parameter is not a ShibaConnection instance")
         if action not in shibaconnection.actionsinfo:
-            raise ShibaCallingError("Internal parameter error : action parameter is unknown from the actions list")
-        kwargs.update(shibaconnection.actionsinfo[action])
-        kwargs["action"] = action
-        return kwargs
+            raise ShibaCallingError("Internal parameter error : action parameter " + action + " is unknown from the actions list")
+        newkwargs = {}
+        for each in kwargs:
+            if kwargs[each] is not None and kwargs[each] != "":
+                newkwargs[each] = kwargs[each]
+        newkwargs.update(shibaconnection.actionsinfo[action])
+        newkwargs["action"] = action
+        return newkwargs
 
     @staticmethod
-    def url_constructor(shibainit, inf):
+    def url_constructor(shibaconnection, inf, domain=None):
         """URL constructor, formatting output and adding as many URL arguments as given"""
+        if domain is None:
+            domain = shibaconnection.domain
         pop = inf.pop("cat")
         if "self" in inf:
             inf.pop("self")
-        primary = "%s/%s?" % (shibainit.domain, pop)
+        primary = "%s/%s?" % (domain, pop)
         url = primary + ul.urlencode(inf)
         return url

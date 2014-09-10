@@ -17,7 +17,20 @@ class   ShibaParameterError(ShibaException):
     pass
 
 class   ShibaLoginError(ShibaException):
-    """Shiba login error, XML returner from the WebService told that the login informations given are incorrect."""
+    """Shiba login error, XML returned from the WebService told that the login informations given are incorrect."""
+    pass
+
+class   ShibaRightsError(ShibaException):
+    """Shiba rights error, means XML returned the specified login IDs aren't authorized to access/modify such ressource
+    from the asked WebService"""
+
+class   ShibaServiceError(ShibaException):
+    """Shiba service error, WebService told that an error have been encountered, but may can't precise where"""
+    pass
+
+class   ShibaUnknownServiceError(ShibaException):
+    """Shiba unknown service error, WebService has caused/encoutered an error, but we can't know why (followed by a
+    rough print of the XML retrieved"""
     pass
 
 class   ShibaConnectionError(ShibaException):

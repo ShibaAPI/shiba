@@ -31,16 +31,19 @@ class MarketplaceManagement(object):
         :param nbproductsperpage: Products per page, default is 20.
         :param pagenumber: Page number, default is 1.
         """
-        if type(refs) is not list or str or type(productids) is not list or str:
-            raise ShibaCallingError("Shiba code error : expected list or str as refs and/or productids parameters")
+        if (type(refs) is not list and type(refs) is not str and type(refs) is not unicode) or \
+                (type(productids) is not list and type(productids) is not str and type(productids) is not unicode):
+            raise ShibaCallingError("Shiba code error : expected list or str/unicode as refs and/or productids parameters"
+                                    ", got " + unicode(type(refs)) + " as refs and " + unicode(type(productids))
+                                    + " as productids instead.")
         inf = ShibaTools.inf_constructor(self.connection, "listing", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
+        url = ShibaTools.url_constructor(self.connection, inf, domain="http://ws.priceminister.com")
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
     def get_category_map(self):
         """Lists items categories from the PriceMinister platform"""
         inf = ShibaTools.inf_constructor(self.connection, "categorymap", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
+        url = ShibaTools.url_constructor(self.connection, inf, domain="http://ws.priceminister.com")
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
