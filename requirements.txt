@@ -1,6 +1,4 @@
 xmltodict
 lxml
-nosetests
-urllib2
-urllib
+nose
 requests
