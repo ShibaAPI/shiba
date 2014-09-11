@@ -10,19 +10,21 @@ from Shiba.shibatools import ShibaTools
 from Shiba.shibaexceptions import *
 from Shiba.shibaconnection import ShibaConnection
 
+import ConfigParser
+import os
+
 import unittest
 
 class ShibaToolsTest(unittest.TestCase):
     def setUp(self):
+        settings = ConfigParser.ConfigParser()
         try:
-            f = open("Assets/nosetests.cfg", "r")
+            settings.read(os.path.dirname(os.path.realpath(__file__)) + "/Assets/nosetests.cfg")
         except:
             raise ShibaCallingError("error : can't read login ID from the nosetests.cfg file")
-        lines = [line.strip() for line in f]
         try:
-            login = lines[0]
-            pwd = lines[1]
-            domain = lines[2]
+            login = settings.get(str("NoseConfig"), "login")
+            pwd = settings.get(str("NoseConfig"), "pwd")
         except:
             raise ShibaCallingError("error : configuration file doesn't seem to be regular")
         self.init = ShibaTools()

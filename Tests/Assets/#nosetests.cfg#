@@ -1,4 +1,4 @@
-[NoseConfig]
+[nose]
 login = nunux17
 pwd = 338c1b85e36c4a3285e7e7ceba86edaa
 domain = https://ws.sandbox.priceminister.com

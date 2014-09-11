@@ -22,7 +22,6 @@ from collections import OrderedDict
 import requests
 import xmltodict
 
-import pdb
 
 """Tools used by Shiba data retrieving classes"""
 class ShibaTools(object):

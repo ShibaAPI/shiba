@@ -14,19 +14,21 @@ from Shiba.shibaexceptions import *
 
 import unittest
 
+import ConfigParser
+import os
+
 class SalesManagementTest(unittest.TestCase):
     """SalesManagement class unit tests, as it's not possible to emulate a real seller profile, most of those tests
     are only verifying the proper handling of errors"""
     def setUp(self):
+        settings = ConfigParser.ConfigParser()
         try:
-            f = open("Assets/nosetests.cfg", "r")
+            settings.read(os.path.dirname(os.path.realpath(__file__)) + "/Assets/nosetests.cfg")
         except:
             raise ShibaCallingError("error : can't read login ID from the nosetests.cfg file")
-        lines = [line.strip() for line in f]
         try:
-            login = lines[0]
-            pwd = lines[1]
-            domain = "https://ws.sandbox.priceminister.com"
+            login = settings.get(str("NoseConfig"), "login")
+            pwd = settings.get(str("NoseConfig"), "pwd")
         except:
             raise ShibaCallingError("error : configuration file doesn't seem to be regular")
         self.init = SalesManagement(ShibaConnection(login, pwd, "https://ws.sandbox.priceminister.com"))
