@@ -111,7 +111,7 @@ class ShibaTools(object):
     def create_xml_from_item_obj(inv):
         """Generate XML from the "inv" parameter.
 
-        :param inv: is an object or a dict hierarchized as the XML structure described
+        :param inv: is an object or a dict hierarchized as the XML structure described \
         in the WebServices documentation. Take a look at the xmltodict or the lxml.objectify documentation too.
 
         :rtype: string output from objectified element or ElementTree element tostring() methods

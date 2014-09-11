@@ -22,14 +22,14 @@ class MarketplaceManagement(object):
     def get_product_list(self, scope="", kw="", nav="", refs="", productids="", nbproductsperpage="", pagenumber=""):
         """Prints a search list result from given parameters.
 
-        :param scope: None (classic results), "PRICING" (classic results plus 10 best announces)
+        :param scope: none (classic results), "PRICING" (classic results plus 10 best announces)
             or "LIMITED" (search in categories in which rapid put on sale is possible through WS)
-        :param kw: Research keyword
-        :param nav: Navigation category (url friendly ones, can be found on PriceMinister categories' URLs)
+        :param kw: research keyword
+        :param nav: navigation category (url friendly ones, can be found on PriceMinister categories' URLs)
         :param refs: EAN, or ISBN, as a string, each value separated by a coma ','.
-        :param productids: Same as refs but as products ID.
-        :param nbproductsperpage: Products per page, default is 20.
-        :param pagenumber: Page number, default is 1.
+        :param productids: same as refs but as products ID.
+        :param nbproductsperpage: products per page, default is 20.
+        :param pagenumber: page number, default is 1.
         """
         if (type(refs) is not list and type(refs) is not str and type(refs) is not unicode) or \
                 (type(productids) is not list and type(productids) is not str and type(productids) is not unicode):

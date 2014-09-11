@@ -11,21 +11,21 @@ from shibaexceptions import *
 
 
 class ShibaConnection(object):
-    def __init__(self, login, pwd, domain="https://ws.priceminister.com"):
-        """
+    """The main Shiba class, standing as an initialization and mandatory for each submodules instancing.
+
         :param login: PriceMinister Seller login
-        :param pwd: PriceMinister Seller Token
+        :param pwd: PriceMinister Seller Token \
         (see more at https://developer.priceminister.com/blog/fr/documentation/identification-by-token)
-        :param domain: give it the sandbox domain version of WebServices if you want to test this interface
-        on a sandboxed version of PriceMinister
+        :param domain: give it the sandbox domain version of WebServices if you want to test this interface \
+        on a sandboxed version of PriceMinister.
         """
+
+    def __init__(self, login, pwd, domain="https://ws.priceminister.com"):
         self.login = str(login)
         self.pwd = str(pwd)
         if len(domain) == 0:
             raise ShibaCallingError("Shiba init error : given domain is empty")
         self.domain = domain
-        """URL generation relative dictionary, formatting URLs in methods from the given format, first '%s'
-        is the action type, given as primary key"""
         self.actionsinfo = \
         {"producttypes": {"cat": "stock_ws", "version": "2011-11-29", "login": self.login, "pwd": self.pwd},
         "producttypetemplate": {"cat": "stock_ws", "version": "2013-05-14", "login": self.login, "pwd": self.pwd},
