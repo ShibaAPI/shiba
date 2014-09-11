@@ -59,18 +59,18 @@ class InventoryManagementTest(unittest.TestCase):
         """generic_import_file test, from an XML file. Conversion is done by xmltodict from a dict or OrderedDict
         , as well with objectify with an objectified ElementTree element"""
 
-        f = open("Assets/genericimportfile.xml", "rb")
+        f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
         testdict = xmltodict.parse(f)
         ret = self.init.generic_import_file(testdict)
         self.assertTrue("OK" == ret.response.status)
-        f = open("Assets/genericimportfile.xml", "rb")
+        f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
         testobj = objectify.parse(f)
         ret = self.init.generic_import_file(testobj)
         self.assertTrue("OK" == ret.response.status)
 
     def test_generic_import_report(self):
         """genreic_import_report method test from an import file call"""
-        f = open("Assets/genericimportfile.xml", "rb")
+        f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
         testobj = objectify.parse(f)
         ret = self.init.generic_import_file(testobj)
         importid = ret.response.importid
