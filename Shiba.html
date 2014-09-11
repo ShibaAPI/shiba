@@ -1,60 +1,211 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     
-    <title>Shiba package &mdash; Shiba  documentation</title>
+    <title>Shiba, from A to Z &mdash; Shiba  documentation</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+<!--[if IE 7]>
+<link rel="stylesheet" href="_static/css/font-awesome-ie7.min.css">
+<![endif]-->
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+}
+</style>
+<link rel="stylesheet" href="_static/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/bootstrap-responsive.min.css" type="text/css" />
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+<script type="text/javascript" src="_static/js/jquery.min.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+<script type="text/javascript" src="_static/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.show-sidebar').click(function(e) {
+       e.preventDefault();
+       if ($(".show-sidebar").html() == "Open Table Of Contents") {
+          $('.for-mobile').removeClass('hidden-phone');
+          $(".show-sidebar").html("Close Table Of Contents");
+       } else {
+          $(".show-sidebar").html("Open Table Of Contents");
+       }
+    });
+  });
+</script>
     <link rel="top" title="Shiba  documentation" href="index.html" />
-    <link rel="prev" title="Welcome to Shiba’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Getting started with Shiba" href="Getting started.html" /> 
   </head>
   <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Welcome to Shiba’s documentation!"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Shiba  documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="index.html">Shiba  documentation</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+              
+                <li>
+                <a href="genindex.html" title="General Index" accesskey="I">index</a>
+                </li>
+                <li>
+                <a href="py-modindex.html" title="Python Module Index" >modules</a>
+                </li>
+                <li>
+                <a href="Getting started.html" title="Getting started with Shiba" accesskey="P">previous</a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
-            
-  <div class="section" id="shiba-package">
-<h1>Shiba package<a class="headerlink" href="#shiba-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+    <!-- container -->
+    <div class="container-fluid">
+
+
+      
+      <div class="row-fluid hidden-desktop hidden-tablet">
+      
+<div class="span3 ">
+  <a class="visible-phone btn btn-small show-sidebar" data-toggle="collapse" data-target=".for-mobile">Open Table Of Contents</a>
+  <div class="for-mobile sidebar hidden-phone">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Shiba, from A to Z</a><ul>
+<li><a class="reference internal" href="#about-shiba-sub-management-modules">About Shiba sub management modules</a></li>
+<li><a class="reference internal" href="#module-Shiba.accountingmanagement">AccountingManagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.inventorymanagement">InventoryManagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.marketplacemanagement">MarketplaceManagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.salesmanagement">SalesManagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.shibaconnection">Shiba login ShibaConnection class</a></li>
+<li><a class="reference internal" href="#module-Shiba.shibaexceptions">Shiba exception classes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Getting started.html"
+                        title="previous chapter">Getting started with Shiba</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/Shiba.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox">
+  <h3>Quick search</h3>
+  <form class="search form-search" action="search.html" method="get">
+      <div class="input-append">
+        <input type="text" class="search-query" name="q">
+        <input type="submit" class="btn" value="Go" />
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div>
+      </div>
+      
+
+      <!-- row -->
+      <div class="row-fluid">
+         
+<div class="span3 visible-desktop visible-tablet">
+  <div class=" sidebar hidden-phone">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Shiba, from A to Z</a><ul>
+<li><a class="reference internal" href="#about-shiba-sub-management-modules">About Shiba sub management modules</a></li>
+<li><a class="reference internal" href="#module-Shiba.accountingmanagement">AccountingManagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.inventorymanagement">InventoryManagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.marketplacemanagement">MarketplaceManagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.salesmanagement">SalesManagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.shibaconnection">Shiba login ShibaConnection class</a></li>
+<li><a class="reference internal" href="#module-Shiba.shibaexceptions">Shiba exception classes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Getting started.html"
+                        title="previous chapter">Getting started with Shiba</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/Shiba.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox">
+  <h3>Quick search</h3>
+  <form class="search form-search" action="search.html" method="get">
+      <div class="input-append">
+        <input type="text" class="search-query" name="q">
+        <input type="submit" class="btn" value="Go" />
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="span9">
+          <div class="document">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="shiba-from-a-to-z">
+<h1>Shiba, from A to Z<a class="headerlink" href="#shiba-from-a-to-z" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about-shiba-sub-management-modules">
+<h2>About Shiba sub management modules<a class="headerlink" href="#about-shiba-sub-management-modules" title="Permalink to this headline">¶</a></h2>
+<p>All submodules included from the main <strong>Shiba</strong> package needs an instanced <em>ShibaConnection</em> class
+defining your login and an identification token as parameter.</p>
+<p>You can also tell it to deal with the sanboxed
+version for testing purposes.</p>
+<p><strong>Each method of each submodule</strong> returns an <em>lxml.objectify</em> element from the
+XML returned by the PriceMinister WebServices.</p>
+<p>You can find some documentation about it from the lxml <a class="reference external" href="http://lxml.de/objectify.html">documentation</a>.</p>
 </div>
 <div class="section" id="module-Shiba.accountingmanagement">
-<span id="shiba-accountingmanagement-module"></span><h2>Shiba.accountingmanagement module<a class="headerlink" href="#module-Shiba.accountingmanagement" title="Permalink to this headline">¶</a></h2>
+<span id="accountingmanagement-module"></span><h2>AccountingManagement module<a class="headerlink" href="#module-Shiba.accountingmanagement" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="Shiba.accountingmanagement.AccountingManagement">
 <em class="property">class </em><tt class="descclassname">Shiba.accountingmanagement.</tt><tt class="descname">AccountingManagement</tt><big>(</big><em>connection</em><big>)</big><a class="reference internal" href="_modules/Shiba/accountingmanagement.html#AccountingManagement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.accountingmanagement.AccountingManagement" title="Permalink to this definition">¶</a></dt>
@@ -71,15 +222,22 @@ about an operation</p>
 <dt id="Shiba.accountingmanagement.AccountingManagement.get_operations">
 <tt class="descname">get_operations</tt><big>(</big><em>lastoperationdate=u''</em><big>)</big><a class="reference internal" href="_modules/Shiba/accountingmanagement.html#AccountingManagement.get_operations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.accountingmanagement.AccountingManagement.get_operations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get global operations which happened on your wallet, compensationid given back from XML can be used
-in the get_compensation_details method below to get more detailed information about a specific operation.
-:param lastoperationdate: as follows : dd/mm/yyyy-hh:mm:ss and as string or date instance.</p>
+in the get_compensation_details method below to get more detailed information about a specific operation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lastoperationdate</strong> &#8211; as follows : dd/mm/yyyy-hh:mm:ss and as string or date instance.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
 
 </div>
 <div class="section" id="module-Shiba.inventorymanagement">
-<span id="shiba-inventorymanagement-module"></span><h2>Shiba.inventorymanagement module<a class="headerlink" href="#module-Shiba.inventorymanagement" title="Permalink to this headline">¶</a></h2>
+<span id="inventorymanagement-module"></span><h2>InventoryManagement module<a class="headerlink" href="#module-Shiba.inventorymanagement" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="Shiba.inventorymanagement.InventoryManagement">
 <em class="property">class </em><tt class="descclassname">Shiba.inventorymanagement.</tt><tt class="descname">InventoryManagement</tt><big>(</big><em>connection</em><big>)</big><a class="reference internal" href="_modules/Shiba/inventorymanagement.html#InventoryManagement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.inventorymanagement.InventoryManagement" title="Permalink to this definition">¶</a></dt>
@@ -167,7 +325,7 @@ Dedicated to help you making your own XML import file.</p>
 
 </div>
 <div class="section" id="module-Shiba.marketplacemanagement">
-<span id="shiba-marketplacemanagement-module"></span><h2>Shiba.marketplacemanagement module<a class="headerlink" href="#module-Shiba.marketplacemanagement" title="Permalink to this headline">¶</a></h2>
+<span id="marketplacemanagement-module"></span><h2>MarketplaceManagement module<a class="headerlink" href="#module-Shiba.marketplacemanagement" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="Shiba.marketplacemanagement.MarketplaceManagement">
 <em class="property">class </em><tt class="descclassname">Shiba.marketplacemanagement.</tt><tt class="descname">MarketplaceManagement</tt><big>(</big><em>connection</em><big>)</big><a class="reference internal" href="_modules/Shiba/marketplacemanagement.html#MarketplaceManagement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.marketplacemanagement.MarketplaceManagement" title="Permalink to this definition">¶</a></dt>
@@ -207,7 +365,7 @@ or &#8220;LIMITED&#8221; (search in categories in which rapid put on sale is pos
 
 </div>
 <div class="section" id="module-Shiba.salesmanagement">
-<span id="shiba-salesmanagement-module"></span><h2>Shiba.salesmanagement module<a class="headerlink" href="#module-Shiba.salesmanagement" title="Permalink to this headline">¶</a></h2>
+<span id="salesmanagement-module"></span><h2>SalesManagement module<a class="headerlink" href="#module-Shiba.salesmanagement" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="Shiba.salesmanagement.SalesManagement">
 <em class="property">class </em><tt class="descclassname">Shiba.salesmanagement.</tt><tt class="descname">SalesManagement</tt><big>(</big><em>connection</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement" title="Permalink to this definition">¶</a></dt>
@@ -422,23 +580,30 @@ This WebService send an email to the &#8220;itemid&#8221; customer, including a 
 
 </div>
 <div class="section" id="module-Shiba.shibaconnection">
-<span id="shiba-shibaconnection-module"></span><h2>Shiba.shibaconnection module<a class="headerlink" href="#module-Shiba.shibaconnection" title="Permalink to this headline">¶</a></h2>
+<span id="shiba-login-shibaconnection-class"></span><h2>Shiba login ShibaConnection class<a class="headerlink" href="#module-Shiba.shibaconnection" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="Shiba.shibaconnection.ShibaConnection">
 <em class="property">class </em><tt class="descclassname">Shiba.shibaconnection.</tt><tt class="descname">ShibaConnection</tt><big>(</big><em>login</em>, <em>pwd</em>, <em>domain=u'https://ws.priceminister.com'</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibaconnection.html#ShibaConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaconnection.ShibaConnection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
-<dl class="attribute">
-<dt id="Shiba.shibaconnection.ShibaConnection.domain">
-<tt class="descname">domain</tt><em class="property"> = None</em><a class="headerlink" href="#Shiba.shibaconnection.ShibaConnection.domain" title="Permalink to this definition">¶</a></dt>
-<dd><p>URL generation relative dictionary, formatting URLs in methods from the given format, first &#8216;%s&#8217;
-is the action type, given as primary key</p>
-</dd></dl>
-
+<p>The main Shiba class, standing as an initialization and mandatory for each submodules instancing.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>login</strong> &#8211; PriceMinister Seller login</li>
+<li><strong>pwd</strong> &#8211; PriceMinister Seller Token         (see more at <a class="reference external" href="https://developer.priceminister.com/blog/fr/documentation/identification-by-token">https://developer.priceminister.com/blog/fr/documentation/identification-by-token</a>)</li>
+<li><strong>domain</strong> &#8211; give it the sandbox domain version of WebServices if you want to test this interface         on a sandboxed version of PriceMinister.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
 <div class="section" id="module-Shiba.shibaexceptions">
-<span id="shiba-shibaexceptions-module"></span><h2>Shiba.shibaexceptions module<a class="headerlink" href="#module-Shiba.shibaexceptions" title="Permalink to this headline">¶</a></h2>
+<span id="shiba-exception-classes"></span><h2>Shiba exception classes<a class="headerlink" href="#module-Shiba.shibaexceptions" title="Permalink to this headline">¶</a></h2>
 <dl class="exception">
 <dt id="Shiba.shibaexceptions.ShibaCallingError">
 <em class="property">exception </em><tt class="descclassname">Shiba.shibaexceptions.</tt><tt class="descname">ShibaCallingError</tt><a class="reference internal" href="_modules/Shiba/shibaexceptions.html#ShibaCallingError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaexceptions.ShibaCallingError" title="Permalink to this definition">¶</a></dt>
@@ -500,169 +665,43 @@ rough print of the XML retrieved</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-Shiba.shibatools">
-<span id="shiba-shibatools-module"></span><h2>Shiba.shibatools module<a class="headerlink" href="#module-Shiba.shibatools" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="Shiba.shibatools.ShibaTools">
-<em class="property">class </em><tt class="descclassname">Shiba.shibatools.</tt><tt class="descname">ShibaTools</tt><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
-<dl class="staticmethod">
-<dt id="Shiba.shibatools.ShibaTools.create_xml_from_item_obj">
-<em class="property">static </em><tt class="descname">create_xml_from_item_obj</tt><big>(</big><em>inv</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools.create_xml_from_item_obj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools.create_xml_from_item_obj" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate XML from the &#8220;inv&#8221; parameter.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>inv</strong> &#8211; is an object or a dict hierarchized as the XML structure described         in the WebServices documentation. Take a look at the xmltodict or the lxml.objectify documentation too.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string output from objectified element or ElementTree element tostring() methods</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="Shiba.shibatools.ShibaTools.inf_constructor">
-<em class="property">static </em><tt class="descname">inf_constructor</tt><big>(</big><em>shibaconnection</em>, <em>action</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools.inf_constructor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools.inf_constructor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Just a selective concatenation of args given and related static data from the given action.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>shibaconnection</strong> &#8211; ShibaConnection class instance</li>
-<li><strong>action</strong> &#8211; string giving the action type for the WebService</li>
-<li><strong>kwargs</strong> &#8211; params to concatenate</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p>:rtype epured and updated dict</p>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="Shiba.shibatools.ShibaTools.post_request">
-<em class="property">static </em><tt class="descname">post_request</tt><big>(</big><em>url</em>, <em>data</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools.post_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools.post_request" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method creating and submitting the multipart request of the wished to be imported XML file.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; raw XML as text</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">plain text from servers response</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="Shiba.shibatools.ShibaTools.retrieve_obj_from_url">
-<em class="property">static </em><tt class="descname">retrieve_obj_from_url</tt><big>(</big><em>url</em>, <em>data=None</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools.retrieve_obj_from_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools.retrieve_obj_from_url" title="Permalink to this definition">¶</a></dt>
-<dd><p>Give it an URL, will send you back a instanced object based on received XML from WebService.
-You can also give it a dict or an objectified tree to POST a file (used for import webservice)
-:param url: fully formatted URL from url_constructor
-:param data: if not None, will send a POST request to URL instead of a GET one, with multipart sending of
-this parameter content</p>
-<p>:rtype : lxml.objectify class</p>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="Shiba.shibatools.ShibaTools.url_constructor">
-<em class="property">static </em><tt class="descname">url_constructor</tt><big>(</big><em>shibaconnection</em>, <em>inf</em>, <em>domain=None</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools.url_constructor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools.url_constructor" title="Permalink to this definition">¶</a></dt>
-<dd><p>URL constructor, formatting input and adding as many URL arguments as given.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>inf</strong> &#8211; info dict, from inf_constructor</li>
-<li><strong>domain</strong> &#8211; force URL domain, useful for some actions needing to go with http instead of https</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">formatted URL string</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-Shiba">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Shiba" title="Permalink to this headline">¶</a></h2>
-</div>
 </div>
 
 
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Shiba package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-Shiba.accountingmanagement">Shiba.accountingmanagement module</a></li>
-<li><a class="reference internal" href="#module-Shiba.inventorymanagement">Shiba.inventorymanagement module</a></li>
-<li><a class="reference internal" href="#module-Shiba.marketplacemanagement">Shiba.marketplacemanagement module</a></li>
-<li><a class="reference internal" href="#module-Shiba.salesmanagement">Shiba.salesmanagement module</a></li>
-<li><a class="reference internal" href="#module-Shiba.shibaconnection">Shiba.shibaconnection module</a></li>
-<li><a class="reference internal" href="#module-Shiba.shibaexceptions">Shiba.shibaexceptions module</a></li>
-<li><a class="reference internal" href="#module-Shiba.shibatools">Shiba.shibatools module</a></li>
-<li><a class="reference internal" href="#module-Shiba">Module contents</a></li>
-</ul>
-</li>
-</ul>
+        
+        
+      </div><!-- /row -->
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Welcome to Shiba&#8217;s documentation!</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/Shiba.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+      <!-- row -->
+      <div class="row-fluid">
+<div class="related navbar ">
+  <div class="navbar-inner">
+    <ul class="nav pull-right">
+      
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="py-modindex.html" title="Python Module Index" >modules</a></li>
+        <li><a href="Getting started.html" title="Getting started with Shiba" >previous</a></li>
+        <li><a href="index.html">Shiba  documentation</a></li> 
+      
+    </ul>
+  </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer>
+          &copy; Copyright 2014, Maxime Boguta.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.
+      </footer>
+      <!-- /footer -->
+
     </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Welcome to Shiba’s documentation!"
-             >previous</a> |</li>
-        <li><a href="index.html">Shiba  documentation</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2014, Maxime Boguta.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
-    </div>
+    <!-- /container -->
+
   </body>
 </html>

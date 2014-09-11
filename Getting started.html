@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Getting started with Shiba &mdash; Shiba  documentation</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+<!--[if IE 7]>
+<link rel="stylesheet" href="_static/css/font-awesome-ie7.min.css">
+<![endif]-->
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+}
+</style>
+<link rel="stylesheet" href="_static/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/bootstrap-responsive.min.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+<script type="text/javascript" src="_static/js/jquery.min.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+<script type="text/javascript" src="_static/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.show-sidebar').click(function(e) {
+       e.preventDefault();
+       if ($(".show-sidebar").html() == "Open Table Of Contents") {
+          $('.for-mobile').removeClass('hidden-phone');
+          $(".show-sidebar").html("Close Table Of Contents");
+       } else {
+          $(".show-sidebar").html("Open Table Of Contents");
+       }
+    });
+  });
+</script>
+    <link rel="top" title="Shiba  documentation" href="index.html" />
+    <link rel="next" title="Shiba, from A to Z" href="Shiba.html" />
+    <link rel="prev" title="Shiba - An API for PriceMinister WebServices" href="index.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="index.html">Shiba  documentation</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+              
+                <li>
+                <a href="genindex.html" title="General Index" accesskey="I">index</a>
+                </li>
+                <li>
+                <a href="py-modindex.html" title="Python Module Index" >modules</a>
+                </li>
+                <li>
+                <a href="Shiba.html" title="Shiba, from A to Z" accesskey="N">next</a>
+                </li>
+                <li>
+                <a href="index.html" title="Shiba - An API for PriceMinister WebServices" accesskey="P">previous</a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+
+      
+      <div class="row-fluid hidden-desktop hidden-tablet">
+      
+<div class="span3 ">
+  <a class="visible-phone btn btn-small show-sidebar" data-toggle="collapse" data-target=".for-mobile">Open Table Of Contents</a>
+  <div class="for-mobile sidebar hidden-phone">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Getting started with Shiba</a><ul>
+<li><a class="reference internal" href="#installing">Installing</a></li>
+<li><a class="reference internal" href="#how-does-this-works">How does this works?</a></li>
+<li><a class="reference internal" href="#i-want-an-example">I want an example!</a></li>
+<li><a class="reference internal" href="#testing">Testing</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Shiba - An API for PriceMinister WebServices</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Shiba.html"
+                        title="next chapter">Shiba, from A to Z</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/Getting started.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox">
+  <h3>Quick search</h3>
+  <form class="search form-search" action="search.html" method="get">
+      <div class="input-append">
+        <input type="text" class="search-query" name="q">
+        <input type="submit" class="btn" value="Go" />
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div>
+      </div>
+      
+
+      <!-- row -->
+      <div class="row-fluid">
+         
+<div class="span3 visible-desktop visible-tablet">
+  <div class=" sidebar hidden-phone">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Getting started with Shiba</a><ul>
+<li><a class="reference internal" href="#installing">Installing</a></li>
+<li><a class="reference internal" href="#how-does-this-works">How does this works?</a></li>
+<li><a class="reference internal" href="#i-want-an-example">I want an example!</a></li>
+<li><a class="reference internal" href="#testing">Testing</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Shiba - An API for PriceMinister WebServices</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Shiba.html"
+                        title="next chapter">Shiba, from A to Z</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/Getting started.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox">
+  <h3>Quick search</h3>
+  <form class="search form-search" action="search.html" method="get">
+      <div class="input-append">
+        <input type="text" class="search-query" name="q">
+        <input type="submit" class="btn" value="Go" />
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="span9">
+          <div class="document">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="getting-started-with-shiba">
+<h1>Getting started with Shiba<a class="headerlink" href="#getting-started-with-shiba" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installing">
+<h2>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h2>
+<p>You can get Shiba from PyPi python packet manager or directly from the GitHub repository</p>
+<ul class="simple">
+<li>From <strong>PyPi</strong>: <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">shiba</span></tt></li>
+<li>Or download the .tgz from the GitHub repository, extract, and run <tt class="docutils literal"><span class="pre">install.py</span> <span class="pre">install</span></tt></li>
+</ul>
+</div>
+<div class="section" id="how-does-this-works">
+<h2>How does this works?<a class="headerlink" href="#how-does-this-works" title="Permalink to this headline">¶</a></h2>
+<p>First, import the main <em>Shiba</em> module, and create an instance of the <em>shibaconnection.ShibaConnection</em> class with your login, token pasword and domain if you
+want to work on the sanboxed version of the <em>PriceMinister WebServices</em>.</p>
+<p>Then all you have to do is importing the management module you wish to work with, giving it your instanced connection class, and start dealing with those WebServices
+through its methods.</p>
+</div>
+<div class="section" id="i-want-an-example">
+<h2>I want an example!<a class="headerlink" href="#i-want-an-example" title="Permalink to this headline">¶</a></h2>
+<p>This example will show you how to get new sales information on your seller account:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">Shiba.shibaconnection</span> <span class="kn">import</span> <span class="n">ShibaConnection</span>
+<span class="kn">from</span> <span class="nn">Shiba.salesmanagement</span> <span class="kn">import</span> <span class="n">SalesManagement</span>
+
+<span class="n">init</span> <span class="o">=</span> <span class="n">ShibaConnection</span><span class="p">(</span><span class="s">&quot;mysellerlogin&quot;</span><span class="p">,</span> <span class="s">&quot;mytokenpwd&quot;</span><span class="p">)</span>
+<span class="n">salestool</span> <span class="o">=</span> <span class="n">SalesManagement</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+<span class="n">newsales</span> <span class="o">=</span> <span class="n">salestool</span><span class="o">.</span><span class="n">get_new_sales</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now you can scroll the <cite>lxml.objectify</cite> object returned by the method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">purchaseid</span> <span class="o">=</span> <span class="n">newsales</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">sale</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">purchaseid</span> <span class="c"># Getting the first sale on the list, retrieving the purchase ID</span>
+<span class="n">purchasedate</span> <span class="o">=</span> <span class="n">newsales</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">sale</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">purchasedate</span> <span class="c"># Retrieving the purchase date</span>
+</pre></div>
+</div>
+<p>And here we go! All you have to do is to implement those methods to your needs.</p>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>Shiba comes with its tests, run <tt class="docutils literal"><span class="pre">nosetests</span></tt> with a proper login and password (Nosetests configuration file in <tt class="docutils literal"><span class="pre">Tests/Assets</span></tt> as <tt class="docutils literal"><span class="pre">nosetests.cfg</span></tt>).</p>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row-fluid">
+<div class="related navbar ">
+  <div class="navbar-inner">
+    <ul class="nav pull-right">
+      
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="py-modindex.html" title="Python Module Index" >modules</a></li>
+        <li><a href="Shiba.html" title="Shiba, from A to Z" >next</a></li>
+        <li><a href="index.html" title="Shiba - An API for PriceMinister WebServices" >previous</a></li>
+        <li><a href="index.html">Shiba  documentation</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer>
+          &copy; Copyright 2014, Maxime Boguta.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

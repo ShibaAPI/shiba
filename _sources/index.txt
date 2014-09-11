@@ -3,14 +3,28 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+===================================================
+Shiba - An Python API for PriceMinister WebServices
+===================================================
+
+
 Welcome to Shiba's documentation!
 =================================
+Hope you will find what you're looking for!
 
-Contents:
+What is Shiba?
+--------------------
+**Shiba** is an API intended to bring an human handlable utilisation of the **PriceMinister WebServices** with **Python**.
+
+It works through modules, imported to your scripts to fit your needs.
+
+Contents
+____________________
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
+   Getting started
    Shiba
 
 

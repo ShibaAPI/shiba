@@ -1,10 +1,22 @@
-Shiba package
-=============
+Shiba, from A to Z
+==================
 
-Submodules
-----------
+About Shiba sub management modules
+-----------------------------------
+All submodules included from the main **Shiba** package needs an instanced *ShibaConnection* class
+defining your login and an identification token as parameter. 
 
-Shiba.accountingmanagement module
+You can also tell it to deal with the sanboxed
+version for testing purposes.
+
+**Each method of each submodule** returns an *lxml.objectify* element from the
+XML returned by the PriceMinister WebServices.
+
+You can find some documentation about it from the lxml documentation_.
+
+.. _documentation: http://lxml.de/objectify.html
+
+AccountingManagement module
 ---------------------------------
 
 .. automodule:: Shiba.accountingmanagement
@@ -12,7 +24,7 @@ Shiba.accountingmanagement module
     :undoc-members:
     :show-inheritance:
 
-Shiba.inventorymanagement module
+InventoryManagement module
 --------------------------------
 
 .. automodule:: Shiba.inventorymanagement
@@ -20,7 +32,7 @@ Shiba.inventorymanagement module
     :undoc-members:
     :show-inheritance:
 
-Shiba.marketplacemanagement module
+MarketplaceManagement module
 ----------------------------------
 
 .. automodule:: Shiba.marketplacemanagement
@@ -28,7 +40,7 @@ Shiba.marketplacemanagement module
     :undoc-members:
     :show-inheritance:
 
-Shiba.salesmanagement module
+SalesManagement module
 ----------------------------
 
 .. automodule:: Shiba.salesmanagement
@@ -36,35 +48,18 @@ Shiba.salesmanagement module
     :undoc-members:
     :show-inheritance:
 
-Shiba.shibaconnection module
-----------------------------
+Shiba login ShibaConnection class
+-----------------------------------
 
 .. automodule:: Shiba.shibaconnection
     :members:
     :undoc-members:
     :show-inheritance:
 
-Shiba.shibaexceptions module
+Shiba exception classes
 ----------------------------
 
 .. automodule:: Shiba.shibaexceptions
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-Shiba.shibatools module
------------------------
-
-.. automodule:: Shiba.shibatools
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-Module contents
----------------
-
-.. automodule:: Shiba
     :members:
     :undoc-members:
     :show-inheritance:
