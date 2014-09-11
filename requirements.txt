@@ -1,0 +1,5 @@
+xmltodict
+lxml
+nose
+requests
+ConfigParser

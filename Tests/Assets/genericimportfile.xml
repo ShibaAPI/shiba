@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<items>
+<item>
+	<attributes>
+		<advert>
+			<attribute><key>sellerReference</key><value><![CDATA[SKU1]]></value></attribute>			
+		</advert>
+		<shipping>
+		<package_weight>30</package_weight>
+		</shipping>
+	</attributes>
+</item>
+</items>
