@@ -20,7 +20,7 @@ class MarketplaceManagement(object):
         self.connection = connection
 
     def get_product_list(self, scope="", kw="", nav="", refs="", productids="", nbproductsperpage="", pagenumber=""):
-        """Prints a list from given parameters.
+        """Prints a search list result from given parameters.
 
         :param scope: None (classic results), "PRICING" (classic results plus 10 best announces)
         or "LIMITED" (search in categories in which rapid put on sale is possible through WS)

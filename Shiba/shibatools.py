@@ -27,7 +27,7 @@ import xmltodict
 class ShibaTools(object):
     @staticmethod
     def __errors_check(obj):
-        """Errors checking from the returned XML as object."""
+        """Errors checking from the returned XML as object. Handling errors as internal exceptions raising"""
         if "errorresponse" in obj.tag:
             if "ServerError" == obj.error.code:
                 raise ShibaParameterError("Parameter error : " + obj.error.message +
@@ -46,7 +46,8 @@ class ShibaTools(object):
 
     @staticmethod
     def post_request(url, data):
-        """Method creating and submitting the multipart request of the wished to be imported XML file"""
+        """Method creating and submitting the multipart request of the wished to be imported XML file
+        :param data: raw XML as text"""
         header = {"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE; rv:1.9.0.10) "
                                         "Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)"}
         data = data.encode('utf-8')
@@ -59,7 +60,7 @@ class ShibaTools(object):
     def retrieve_obj_from_url(url, data=None):
         """Give it an URL, will send you back a instanced object based on received XML from WebService.
         You can also give it a dict or an objectified tree to POST a file (used for import webservice)
-        :rtype : lxml.objectivy class"""
+        :rtype : lxml.objectify class"""
         try:
             if data is not None:
                 xml = ShibaTools.post_request(url, data)
@@ -94,8 +95,9 @@ class ShibaTools(object):
 
     @staticmethod
     def create_xml_from_item_obj(inv):
-        """Generate XML from the "inv" parameter, which is an object hierarchized as the XML structure described
-        in the WebServices documentation"""
+        """Generate XML from the "inv" parameter.
+        :param inv: is an object or a dict hierarchized as the XML structure described
+        in the WebServices documentation. Take a look at the xmltodict or the lxml.objectify documentation too."""
         if type(inv) is etree._ElementTree:
             return etree.tostring(inv)
         elif type(inv) is dict or type(inv) is OrderedDict:
@@ -110,6 +112,11 @@ class ShibaTools(object):
 
     @staticmethod
     def inf_constructor(shibaconnection, action, **kwargs):
+        """Just a selective concatenation of args given and related static data from the given action
+        :param shibaconnection: ShibaConnection class instance
+        :param action: string giving the action type for the WebService
+        :param kwargs: params to concatenate
+        :rtype epured and updated dict"""
         if (isinstance(shibaconnection, ShibaConnection) is False):
             raise ShibaCallingError("Internal parameter error : shibaconnection parameter is not a ShibaConnection instance")
         if action not in shibaconnection.actionsinfo:
@@ -117,14 +124,16 @@ class ShibaTools(object):
         newkwargs = {}
         for each in kwargs:
             if kwargs[each] is not None and kwargs[each] != "":
-                newkwargs[each] = kwargs[each]
+                newkwargs[each] = unicode(kwargs[each])
         newkwargs.update(shibaconnection.actionsinfo[action])
         newkwargs["action"] = action
         return newkwargs
 
     @staticmethod
     def url_constructor(shibaconnection, inf, domain=None):
-        """URL constructor, formatting output and adding as many URL arguments as given"""
+        """URL constructor, formatting input and adding as many URL arguments as given
+        :param inf: info dict, from inf_constructor
+        :param domain: force URL domain, useful for some actions needing to go with http instead of https"""
         if domain is None:
             domain = shibaconnection.domain
         pop = inf.pop("cat")
