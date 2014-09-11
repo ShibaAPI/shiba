@@ -120,14 +120,14 @@ class SalesManagement(object):
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 
-    def contact_us_about_item(self, itemid, content, mailparentid=""):
+    def contact_us_about_item(self, itemid, content, mailparentid):
         """This functionality permits to join the PriceMinister after-sales service as buyer or seller.
         Specify the mailparentid to reply to a previous mail exchange. Message is message content, and itemid is
         the item PriceMinister ID related to the claim.
 
         :param itemid: string for item ID
         :param content: message content
-        :param mailparentid: ID of previous answered mail (if exists)
+        :param mailparentid: ID of previous mail, you must have conversed with the customer before to get it
         """
         inf = ShibaTools.inf_constructor(self.connection, "contactusaboutitem", **locals())
         url = ShibaTools.url_constructor(self.connection, inf)
