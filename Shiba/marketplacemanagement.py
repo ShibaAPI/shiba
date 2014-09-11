@@ -23,7 +23,7 @@ class MarketplaceManagement(object):
         """Prints a search list result from given parameters.
 
         :param scope: None (classic results), "PRICING" (classic results plus 10 best announces)
-        or "LIMITED" (search in categories in which rapid put on sale is possible through WS)
+            or "LIMITED" (search in categories in which rapid put on sale is possible through WS)
         :param kw: Research keyword
         :param nav: Navigation category (url friendly ones, can be found on PriceMinister categories' URLs)
         :param refs: EAN, or ISBN, as a string, each value separated by a coma ','.
