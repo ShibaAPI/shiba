@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Shiba.shibaexceptions &mdash; Shiba  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Shiba  documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba  documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for Shiba.shibaexceptions</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#</span>
+<span class="c"># Class ShibaException and inherited ones</span>
+<span class="c"># Shiba exceptions classes</span>
+
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="sd">&quot;&quot;&quot;Those exception classes will usually be raised after an error returned from the WebServices&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="ShibaException"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibaexceptions.ShibaException">[docs]</a><span class="k">class</span>   <span class="nc">ShibaException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Main exception class, as you can catch the whole of Shiba exceptions from it&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="ShibaParameterError"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibaexceptions.ShibaParameterError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaParameterError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Shiba parameter error, XML returned from the WebService told that one or more parameters are incorrect.&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="ShibaLoginError"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibaexceptions.ShibaLoginError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaLoginError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Shiba login error, XML returned from the WebService told that the login informations given are incorrect.&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="ShibaRightsError"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibaexceptions.ShibaRightsError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaRightsError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Shiba rights error, means XML returned the specified login IDs aren&#39;t authorized to access/modify such ressource</span>
+<span class="sd">    from the asked WebService&quot;&quot;&quot;</span>
+</div>
+<div class="viewcode-block" id="ShibaServiceError"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibaexceptions.ShibaServiceError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaServiceError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Shiba service error, WebService told that an error have been encountered, but may can&#39;t precise where&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="ShibaUnknownServiceError"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibaexceptions.ShibaUnknownServiceError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaUnknownServiceError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Shiba unknown service error, WebService has caused/encoutered an error, but we can&#39;t know why (followed by a</span>
+<span class="sd">    rough print of the XML retrieved&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="ShibaConnectionError"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibaexceptions.ShibaConnectionError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaConnectionError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Shiba connection error, kind of an internal error: URL can&#39;t be reached, in case of bad URL formatting or</span>
+<span class="sd">    internet connection failure (HTTP errors 404, 500...).&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</div>
+<div class="viewcode-block" id="ShibaCallingError"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibaexceptions.ShibaCallingError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaCallingError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Shiba internal error, for code relative errors. If such an exception is raised, look at given parameters to</span>
+<span class="sd">    the API methods first as this is the major exception raising point for this type of exception&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba  documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Maxime Boguta.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

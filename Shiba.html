@@ -1,0 +1,668 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Shiba package &mdash; Shiba  documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Shiba  documentation" href="index.html" />
+    <link rel="prev" title="Welcome to Shiba’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Shiba’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Shiba  documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="shiba-package">
+<h1>Shiba package<a class="headerlink" href="#shiba-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-Shiba.accountingmanagement">
+<span id="shiba-accountingmanagement-module"></span><h2>Shiba.accountingmanagement module<a class="headerlink" href="#module-Shiba.accountingmanagement" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Shiba.accountingmanagement.AccountingManagement">
+<em class="property">class </em><tt class="descclassname">Shiba.accountingmanagement.</tt><tt class="descname">AccountingManagement</tt><big>(</big><em>connection</em><big>)</big><a class="reference internal" href="_modules/Shiba/accountingmanagement.html#AccountingManagement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.accountingmanagement.AccountingManagement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Accounting Management class, showing global financial operations on your account, or specific financial details
+about an operation</p>
+<dl class="method">
+<dt id="Shiba.accountingmanagement.AccountingManagement.get_compensation_details">
+<tt class="descname">get_compensation_details</tt><big>(</big><em>compensationid</em><big>)</big><a class="reference internal" href="_modules/Shiba/accountingmanagement.html#AccountingManagement.get_compensation_details"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.accountingmanagement.AccountingManagement.get_compensation_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a specific operation details from its &#8220;compensationid&#8221; found in the get_operation request return.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.accountingmanagement.AccountingManagement.get_operations">
+<tt class="descname">get_operations</tt><big>(</big><em>lastoperationdate=u''</em><big>)</big><a class="reference internal" href="_modules/Shiba/accountingmanagement.html#AccountingManagement.get_operations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.accountingmanagement.AccountingManagement.get_operations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get global operations which happened on your wallet, compensationid given back from XML can be used
+in the get_compensation_details method below to get more detailed information about a specific operation.
+:param lastoperationdate: as follows : dd/mm/yyyy-hh:mm:ss and as string or date instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Shiba.inventorymanagement">
+<span id="shiba-inventorymanagement-module"></span><h2>Shiba.inventorymanagement module<a class="headerlink" href="#module-Shiba.inventorymanagement" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Shiba.inventorymanagement.InventoryManagement">
+<em class="property">class </em><tt class="descclassname">Shiba.inventorymanagement.</tt><tt class="descname">InventoryManagement</tt><big>(</big><em>connection</em><big>)</big><a class="reference internal" href="_modules/Shiba/inventorymanagement.html#InventoryManagement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.inventorymanagement.InventoryManagement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>This class permits you to manage your inventory, get information about your products and even import products
+from XML to the PriceMinister platform</p>
+<dl class="method">
+<dt id="Shiba.inventorymanagement.InventoryManagement.export_inventory">
+<tt class="descname">export_inventory</tt><big>(</big><em>scope=u''</em>, <em>nexttoken=u''</em><big>)</big><a class="reference internal" href="_modules/Shiba/inventorymanagement.html#InventoryManagement.export_inventory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.inventorymanagement.InventoryManagement.export_inventory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export adverts from your inventory, nexttoken pagination is available.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scope</strong> &#8211; PRICING is the only acceptable value for it, if not empty.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.inventorymanagement.InventoryManagement.generic_import_file">
+<tt class="descname">generic_import_file</tt><big>(</big><em>data</em><big>)</big><a class="reference internal" href="_modules/Shiba/inventorymanagement.html#InventoryManagement.generic_import_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.inventorymanagement.InventoryManagement.generic_import_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import XML file to your PriceMinister inventory trough a POST request.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; must be a object/dict (OrderedDict is better) containing your inventory wished to be imported.         You must respect the XML hierarchy detailed from the WebService documentation inside the object/dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.inventorymanagement.InventoryManagement.generic_import_report">
+<tt class="descname">generic_import_report</tt><big>(</big><em>fileid</em>, <em>nexttoken=u''</em><big>)</big><a class="reference internal" href="_modules/Shiba/inventorymanagement.html#InventoryManagement.generic_import_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.inventorymanagement.InventoryManagement.generic_import_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the report from a previous XML import, used as verification for a proper XML import</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fileid</strong> &#8211; import file ID given from the generic_import_file return</li>
+<li><strong>nexttoken</strong> &#8211; used for pagination, can be used for a loop, its precised in the return from a first call         to this WebService</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.inventorymanagement.InventoryManagement.get_available_shipping_types">
+<tt class="descname">get_available_shipping_types</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Shiba/inventorymanagement.html#InventoryManagement.get_available_shipping_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.inventorymanagement.InventoryManagement.get_available_shipping_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves available shipping options at asking time</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.inventorymanagement.InventoryManagement.product_type_template">
+<tt class="descname">product_type_template</tt><big>(</big><em>alias</em>, <em>scope=u''</em><big>)</big><a class="reference internal" href="_modules/Shiba/inventorymanagement.html#InventoryManagement.product_type_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.inventorymanagement.InventoryManagement.product_type_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>This methods retrieve product type attributes from the product type given through the &#8220;alias&#8221; parameter.
+Dedicated to help you making your own XML import file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>alias</strong> &#8211; product alias as string</li>
+<li><strong>scope</strong> &#8211; can be either VALUES or None, VALUES as &#8220;scope&#8221; retrieve attributes values instead of only         attributes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.inventorymanagement.InventoryManagement.product_types">
+<tt class="descname">product_types</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Shiba/inventorymanagement.html#InventoryManagement.product_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.inventorymanagement.InventoryManagement.product_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method retrieve products types from PriceMinister, helping you to define your products attributes.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Shiba.marketplacemanagement">
+<span id="shiba-marketplacemanagement-module"></span><h2>Shiba.marketplacemanagement module<a class="headerlink" href="#module-Shiba.marketplacemanagement" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Shiba.marketplacemanagement.MarketplaceManagement">
+<em class="property">class </em><tt class="descclassname">Shiba.marketplacemanagement.</tt><tt class="descname">MarketplaceManagement</tt><big>(</big><em>connection</em><big>)</big><a class="reference internal" href="_modules/Shiba/marketplacemanagement.html#MarketplaceManagement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.marketplacemanagement.MarketplaceManagement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Marketplace informations retrieving, such as product lists and category mapping</p>
+<dl class="method">
+<dt id="Shiba.marketplacemanagement.MarketplaceManagement.get_category_map">
+<tt class="descname">get_category_map</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Shiba/marketplacemanagement.html#MarketplaceManagement.get_category_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.marketplacemanagement.MarketplaceManagement.get_category_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists items categories from the PriceMinister platform</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.marketplacemanagement.MarketplaceManagement.get_product_list">
+<tt class="descname">get_product_list</tt><big>(</big><em>scope=u''</em>, <em>kw=u''</em>, <em>nav=u''</em>, <em>refs=u''</em>, <em>productids=u''</em>, <em>nbproductsperpage=u''</em>, <em>pagenumber=u''</em><big>)</big><a class="reference internal" href="_modules/Shiba/marketplacemanagement.html#MarketplaceManagement.get_product_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.marketplacemanagement.MarketplaceManagement.get_product_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a search list result from given parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>scope</strong> &#8211; none (classic results), &#8220;PRICING&#8221; (classic results plus 10 best announces)
+or &#8220;LIMITED&#8221; (search in categories in which rapid put on sale is possible through WS)</li>
+<li><strong>kw</strong> &#8211; research keyword</li>
+<li><strong>nav</strong> &#8211; navigation category (url friendly ones, can be found on PriceMinister categories&#8217; URLs)</li>
+<li><strong>refs</strong> &#8211; EAN, or ISBN, as a string, each value separated by a coma &#8216;,&#8217;.</li>
+<li><strong>productids</strong> &#8211; same as refs but as products ID.</li>
+<li><strong>nbproductsperpage</strong> &#8211; products per page, default is 20.</li>
+<li><strong>pagenumber</strong> &#8211; page number, default is 1.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Shiba.salesmanagement">
+<span id="shiba-salesmanagement-module"></span><h2>Shiba.salesmanagement module<a class="headerlink" href="#module-Shiba.salesmanagement" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Shiba.salesmanagement.SalesManagement">
+<em class="property">class </em><tt class="descclassname">Shiba.salesmanagement.</tt><tt class="descname">SalesManagement</tt><big>(</big><em>connection</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Primary sales management class, gather all sales-related methods. Those methods (as all other
+methods) returns an object from the XML given as answer by the related WebService.</p>
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.accept_sale">
+<tt class="descname">accept_sale</tt><big>(</big><em>itemid</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.accept_sale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.accept_sale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accept the &#8220;itemid&#8221; sale.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>itemid</strong> &#8211; string for item ID</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.cancel_item">
+<tt class="descname">cancel_item</tt><big>(</big><em>itemid</em>, <em>comment</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.cancel_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.cancel_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method cancel the sale from the &#8220;itemid&#8221; item, after this one has been sold. WARNING : Cancelling
+a sale this way could harm your seller reputation. Use the &#8220;comment&#8221; param to specify the reason of this
+action to the related buyer (mandatory).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>itemid</strong> &#8211; string for item ID</li>
+<li><strong>comment</strong> &#8211; message to send to the buyer as reason for cancelling the sale</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.confirm_preorder">
+<tt class="descname">confirm_preorder</tt><big>(</big><em>advertid</em>, <em>stock</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.confirm_preorder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.confirm_preorder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Confirms preorders from the &#8220;advertid&#8221; item announce, will confirm &#8220;stock&#8221; items as confirmed orders for
+buyers who has preordered from the advert.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>advertid</strong> &#8211; advert ID as string</li>
+<li><strong>stock</strong> &#8211; string or integer, must be positive</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.contact_us_about_item">
+<tt class="descname">contact_us_about_item</tt><big>(</big><em>itemid</em>, <em>content</em>, <em>mailparentid=u''</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.contact_us_about_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.contact_us_about_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>This functionality permits to join the PriceMinister after-sales service as buyer or seller.
+Specify the mailparentid to reply to a previous mail exchange. Message is message content, and itemid is
+the item PriceMinister ID related to the claim.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>itemid</strong> &#8211; string for item ID</li>
+<li><strong>content</strong> &#8211; message content</li>
+<li><strong>mailparentid</strong> &#8211; ID of previous answered mail (if exists)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.contact_user_about_item">
+<tt class="descname">contact_user_about_item</tt><big>(</big><em>itemid</em>, <em>content</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.contact_user_about_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.contact_user_about_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contact buyer of the &#8220;itemid&#8221; item in a regular way, sending him a message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>itemid</strong> &#8211; string for item ID</li>
+<li><strong>content</strong> &#8211; message content</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.get_billing_information">
+<tt class="descname">get_billing_information</tt><big>(</big><em>purchaseid</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.get_billing_information"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.get_billing_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calling this method gives you accounting information about a confirmed order.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>purchaseid</strong> &#8211; is mandatory (same as found in get_new_sales report).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.get_current_sales">
+<tt class="descname">get_current_sales</tt><big>(</big><em>ispendingpreorder=u''</em>, <em>purchasedate=u''</em>, <em>nexttoken=u''</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.get_current_sales"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.get_current_sales" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calling get_current_sales method gives you a obj gathering all current sales.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ispendingpreorder</strong> &#8211; pass &#8220;y&#8221; is you want to see all preordered sales, leave empty as default</li>
+<li><strong>purchasedate</strong> &#8211; Formatted as &#8220;yyyy-mm-dd&#8221; string allows you to filter the sales only from the given date</li>
+<li><strong>nexttoken</strong> &#8211; Next page token argument, leave at is it, only give 0 is you want the first page</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.get_item_infos">
+<tt class="descname">get_item_infos</tt><big>(</big><em>itemid</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.get_item_infos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.get_item_infos" title="Permalink to this definition">¶</a></dt>
+<dd><p>This methods retrieves information from an &#8220;itemid&#8221; item, such as state, history, messages linked to it
+and actions available for this item. WARNING : All messages related to asked item will be tagged as &#8220;read&#8221;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>itemid</strong> &#8211; string for item ID</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.get_item_todo_list">
+<tt class="descname">get_item_todo_list</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.get_item_todo_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.get_item_todo_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieving a todo list on items, such as CLAIMS or MESSAGES from buyer or PriceMinister.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.get_new_sales">
+<tt class="descname">get_new_sales</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.get_new_sales"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.get_new_sales" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calling get_new_sales all the new sales which have been recently recensed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.get_shipping_information">
+<tt class="descname">get_shipping_information</tt><big>(</big><em>purchaseid</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.get_shipping_information"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.get_shipping_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quite similar to billing information method, but returns information about shipping for a given purchaseid
+Order forms are also available from this method return content.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>purchaseid</strong> &#8211; is mandatory (same as found in get_new_sales report).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.refuse_sale">
+<tt class="descname">refuse_sale</tt><big>(</big><em>itemid</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.refuse_sale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.refuse_sale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refuse the &#8220;itemid&#8221; sale.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>itemid</strong> &#8211; string for item ID</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Shiba.salesmanagement.SalesManagement.set_tracking_package_infos">
+<tt class="descname">set_tracking_package_infos</tt><big>(</big><em>itemid</em>, <em>transporter_name</em>, <em>tracking_number</em>, <em>tracking_url=u''</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.set_tracking_package_infos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.set_tracking_package_infos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send to buyer tracking information, such as the transporter&#8217;s name &#8220;transporter_name&#8221;,
+tracking number &#8220;tracking_number&#8221; and the optional tracking url &#8220;tracking_url&#8221;.
+Please note that giving &#8220;Autre&#8221; as transporter_name brings the tracking url as mandatory.
+This WebService send an email to the &#8220;itemid&#8221; customer, including a link for package tracking.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>itemid</strong> &#8211; string for item ID</li>
+<li><strong>transporter_name</strong> &#8211; transporter&#8217;s name, string expected</li>
+<li><strong>tracking_number</strong> &#8211; tracking number, preferably as string</li>
+<li><strong>tracking_url</strong> &#8211; tracking URL for the package, as string, mandatory if transporter_name is &#8216;Autre&#8217;</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Shiba.shibaconnection">
+<span id="shiba-shibaconnection-module"></span><h2>Shiba.shibaconnection module<a class="headerlink" href="#module-Shiba.shibaconnection" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Shiba.shibaconnection.ShibaConnection">
+<em class="property">class </em><tt class="descclassname">Shiba.shibaconnection.</tt><tt class="descname">ShibaConnection</tt><big>(</big><em>login</em>, <em>pwd</em>, <em>domain=u'https://ws.priceminister.com'</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibaconnection.html#ShibaConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaconnection.ShibaConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="attribute">
+<dt id="Shiba.shibaconnection.ShibaConnection.domain">
+<tt class="descname">domain</tt><em class="property"> = None</em><a class="headerlink" href="#Shiba.shibaconnection.ShibaConnection.domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>URL generation relative dictionary, formatting URLs in methods from the given format, first &#8216;%s&#8217;
+is the action type, given as primary key</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Shiba.shibaexceptions">
+<span id="shiba-shibaexceptions-module"></span><h2>Shiba.shibaexceptions module<a class="headerlink" href="#module-Shiba.shibaexceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="Shiba.shibaexceptions.ShibaCallingError">
+<em class="property">exception </em><tt class="descclassname">Shiba.shibaexceptions.</tt><tt class="descname">ShibaCallingError</tt><a class="reference internal" href="_modules/Shiba/shibaexceptions.html#ShibaCallingError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaexceptions.ShibaCallingError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Shiba.shibaexceptions.ShibaException" title="Shiba.shibaexceptions.ShibaException"><tt class="xref py py-class docutils literal"><span class="pre">Shiba.shibaexceptions.ShibaException</span></tt></a></p>
+<p>Shiba internal error, for code relative errors. If such an exception is raised, look at given parameters to
+the API methods first as this is the major exception raising point for this type of exception</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="Shiba.shibaexceptions.ShibaConnectionError">
+<em class="property">exception </em><tt class="descclassname">Shiba.shibaexceptions.</tt><tt class="descname">ShibaConnectionError</tt><a class="reference internal" href="_modules/Shiba/shibaexceptions.html#ShibaConnectionError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaexceptions.ShibaConnectionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Shiba.shibaexceptions.ShibaException" title="Shiba.shibaexceptions.ShibaException"><tt class="xref py py-class docutils literal"><span class="pre">Shiba.shibaexceptions.ShibaException</span></tt></a></p>
+<p>Shiba connection error, kind of an internal error: URL can&#8217;t be reached, in case of bad URL formatting or
+internet connection failure (HTTP errors 404, 500...).</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="Shiba.shibaexceptions.ShibaException">
+<em class="property">exception </em><tt class="descclassname">Shiba.shibaexceptions.</tt><tt class="descname">ShibaException</tt><a class="reference internal" href="_modules/Shiba/shibaexceptions.html#ShibaException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaexceptions.ShibaException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+<p>Main exception class, as you can catch the whole of Shiba exceptions from it</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="Shiba.shibaexceptions.ShibaLoginError">
+<em class="property">exception </em><tt class="descclassname">Shiba.shibaexceptions.</tt><tt class="descname">ShibaLoginError</tt><a class="reference internal" href="_modules/Shiba/shibaexceptions.html#ShibaLoginError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaexceptions.ShibaLoginError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Shiba.shibaexceptions.ShibaException" title="Shiba.shibaexceptions.ShibaException"><tt class="xref py py-class docutils literal"><span class="pre">Shiba.shibaexceptions.ShibaException</span></tt></a></p>
+<p>Shiba login error, XML returned from the WebService told that the login informations given are incorrect.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="Shiba.shibaexceptions.ShibaParameterError">
+<em class="property">exception </em><tt class="descclassname">Shiba.shibaexceptions.</tt><tt class="descname">ShibaParameterError</tt><a class="reference internal" href="_modules/Shiba/shibaexceptions.html#ShibaParameterError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaexceptions.ShibaParameterError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Shiba.shibaexceptions.ShibaException" title="Shiba.shibaexceptions.ShibaException"><tt class="xref py py-class docutils literal"><span class="pre">Shiba.shibaexceptions.ShibaException</span></tt></a></p>
+<p>Shiba parameter error, XML returned from the WebService told that one or more parameters are incorrect.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="Shiba.shibaexceptions.ShibaRightsError">
+<em class="property">exception </em><tt class="descclassname">Shiba.shibaexceptions.</tt><tt class="descname">ShibaRightsError</tt><a class="reference internal" href="_modules/Shiba/shibaexceptions.html#ShibaRightsError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaexceptions.ShibaRightsError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Shiba.shibaexceptions.ShibaException" title="Shiba.shibaexceptions.ShibaException"><tt class="xref py py-class docutils literal"><span class="pre">Shiba.shibaexceptions.ShibaException</span></tt></a></p>
+<p>Shiba rights error, means XML returned the specified login IDs aren&#8217;t authorized to access/modify such ressource
+from the asked WebService</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="Shiba.shibaexceptions.ShibaServiceError">
+<em class="property">exception </em><tt class="descclassname">Shiba.shibaexceptions.</tt><tt class="descname">ShibaServiceError</tt><a class="reference internal" href="_modules/Shiba/shibaexceptions.html#ShibaServiceError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaexceptions.ShibaServiceError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Shiba.shibaexceptions.ShibaException" title="Shiba.shibaexceptions.ShibaException"><tt class="xref py py-class docutils literal"><span class="pre">Shiba.shibaexceptions.ShibaException</span></tt></a></p>
+<p>Shiba service error, WebService told that an error have been encountered, but may can&#8217;t precise where</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="Shiba.shibaexceptions.ShibaUnknownServiceError">
+<em class="property">exception </em><tt class="descclassname">Shiba.shibaexceptions.</tt><tt class="descname">ShibaUnknownServiceError</tt><a class="reference internal" href="_modules/Shiba/shibaexceptions.html#ShibaUnknownServiceError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaexceptions.ShibaUnknownServiceError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Shiba.shibaexceptions.ShibaException" title="Shiba.shibaexceptions.ShibaException"><tt class="xref py py-class docutils literal"><span class="pre">Shiba.shibaexceptions.ShibaException</span></tt></a></p>
+<p>Shiba unknown service error, WebService has caused/encoutered an error, but we can&#8217;t know why (followed by a
+rough print of the XML retrieved</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-Shiba.shibatools">
+<span id="shiba-shibatools-module"></span><h2>Shiba.shibatools module<a class="headerlink" href="#module-Shiba.shibatools" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Shiba.shibatools.ShibaTools">
+<em class="property">class </em><tt class="descclassname">Shiba.shibatools.</tt><tt class="descname">ShibaTools</tt><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="staticmethod">
+<dt id="Shiba.shibatools.ShibaTools.create_xml_from_item_obj">
+<em class="property">static </em><tt class="descname">create_xml_from_item_obj</tt><big>(</big><em>inv</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools.create_xml_from_item_obj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools.create_xml_from_item_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate XML from the &#8220;inv&#8221; parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>inv</strong> &#8211; is an object or a dict hierarchized as the XML structure described         in the WebServices documentation. Take a look at the xmltodict or the lxml.objectify documentation too.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string output from objectified element or ElementTree element tostring() methods</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Shiba.shibatools.ShibaTools.inf_constructor">
+<em class="property">static </em><tt class="descname">inf_constructor</tt><big>(</big><em>shibaconnection</em>, <em>action</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools.inf_constructor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools.inf_constructor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Just a selective concatenation of args given and related static data from the given action.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>shibaconnection</strong> &#8211; ShibaConnection class instance</li>
+<li><strong>action</strong> &#8211; string giving the action type for the WebService</li>
+<li><strong>kwargs</strong> &#8211; params to concatenate</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:rtype epured and updated dict</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Shiba.shibatools.ShibaTools.post_request">
+<em class="property">static </em><tt class="descname">post_request</tt><big>(</big><em>url</em>, <em>data</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools.post_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools.post_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method creating and submitting the multipart request of the wished to be imported XML file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; raw XML as text</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">plain text from servers response</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Shiba.shibatools.ShibaTools.retrieve_obj_from_url">
+<em class="property">static </em><tt class="descname">retrieve_obj_from_url</tt><big>(</big><em>url</em>, <em>data=None</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools.retrieve_obj_from_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools.retrieve_obj_from_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give it an URL, will send you back a instanced object based on received XML from WebService.
+You can also give it a dict or an objectified tree to POST a file (used for import webservice)
+:param url: fully formatted URL from url_constructor
+:param data: if not None, will send a POST request to URL instead of a GET one, with multipart sending of
+this parameter content</p>
+<p>:rtype : lxml.objectify class</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Shiba.shibatools.ShibaTools.url_constructor">
+<em class="property">static </em><tt class="descname">url_constructor</tt><big>(</big><em>shibaconnection</em>, <em>inf</em>, <em>domain=None</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibatools.html#ShibaTools.url_constructor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibatools.ShibaTools.url_constructor" title="Permalink to this definition">¶</a></dt>
+<dd><p>URL constructor, formatting input and adding as many URL arguments as given.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>inf</strong> &#8211; info dict, from inf_constructor</li>
+<li><strong>domain</strong> &#8211; force URL domain, useful for some actions needing to go with http instead of https</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">formatted URL string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Shiba">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Shiba" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Shiba package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-Shiba.accountingmanagement">Shiba.accountingmanagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.inventorymanagement">Shiba.inventorymanagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.marketplacemanagement">Shiba.marketplacemanagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.salesmanagement">Shiba.salesmanagement module</a></li>
+<li><a class="reference internal" href="#module-Shiba.shibaconnection">Shiba.shibaconnection module</a></li>
+<li><a class="reference internal" href="#module-Shiba.shibaexceptions">Shiba.shibaexceptions module</a></li>
+<li><a class="reference internal" href="#module-Shiba.shibatools">Shiba.shibatools module</a></li>
+<li><a class="reference internal" href="#module-Shiba">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Shiba&#8217;s documentation!</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/Shiba.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Shiba’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Shiba  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Maxime Boguta.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

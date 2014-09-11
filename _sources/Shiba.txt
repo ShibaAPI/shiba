@@ -1,0 +1,70 @@
+Shiba package
+=============
+
+Submodules
+----------
+
+Shiba.accountingmanagement module
+---------------------------------
+
+.. automodule:: Shiba.accountingmanagement
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Shiba.inventorymanagement module
+--------------------------------
+
+.. automodule:: Shiba.inventorymanagement
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Shiba.marketplacemanagement module
+----------------------------------
+
+.. automodule:: Shiba.marketplacemanagement
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Shiba.salesmanagement module
+----------------------------
+
+.. automodule:: Shiba.salesmanagement
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Shiba.shibaconnection module
+----------------------------
+
+.. automodule:: Shiba.shibaconnection
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Shiba.shibaexceptions module
+----------------------------
+
+.. automodule:: Shiba.shibaexceptions
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Shiba.shibatools module
+-----------------------
+
+.. automodule:: Shiba.shibatools
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: Shiba
+    :members:
+    :undoc-members:
+    :show-inheritance:

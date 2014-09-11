@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Shiba.shibatools &mdash; Shiba  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Shiba  documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba  documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for Shiba.shibatools</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#</span>
+<span class="c"># Class ShibaTools</span>
+<span class="c"># Shiba runtime tools class</span>
+
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">httplib</span>
+<span class="kn">import</span> <span class="nn">urllib2</span> <span class="kn">as</span> <span class="nn">ul2</span>
+<span class="kn">import</span> <span class="nn">urllib</span> <span class="kn">as</span> <span class="nn">ul</span>
+
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">objectify</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+
+<span class="kn">from</span> <span class="nn">shibaconnection</span> <span class="kn">import</span> <span class="n">ShibaConnection</span>
+<span class="kn">from</span> <span class="nn">shibaexceptions</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">xmltodict</span>
+
+
+<span class="sd">&quot;&quot;&quot;Tools used by Shiba data retrieving classes&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="ShibaTools"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibatools.ShibaTools">[docs]</a><span class="k">class</span> <span class="nc">ShibaTools</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">__errors_check</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Errors checking from the returned XML as object. Handling errors as internal exceptions raising</span>
+
+<span class="sd">        :param obj: objectified element to check errors from</span>
+
+<span class="sd">        :rtype: objectified element if errors have been found, False if the WebService hasn&#39;t encountered an error</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s">&quot;errorresponse&quot;</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s">&quot;ServerError&quot;</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">code</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ShibaParameterError</span><span class="p">(</span><span class="s">&quot;Parameter error : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">message</span> <span class="o">+</span>
+                <span class="s">&quot; - Reason : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">details</span><span class="o">.</span><span class="n">detail</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s">&quot;ParameterError&quot;</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">code</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ShibaParameterError</span><span class="p">(</span><span class="s">&quot;Parameter error : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">message</span> <span class="o">+</span>
+                <span class="s">&quot; - Reason : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">details</span><span class="o">.</span><span class="n">detail</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s">&quot;InvalidUserConnection&quot;</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">code</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ShibaLoginError</span><span class="p">(</span><span class="s">&quot;Invalid user connection : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">message</span> <span class="o">+</span>
+                <span class="s">&quot; - Reason : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">details</span><span class="o">.</span><span class="n">detail</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s">&quot;InvalidUserRights&quot;</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">code</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ShibaRightsError</span><span class="p">(</span><span class="s">&quot;Invalid user rights : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">message</span> <span class="o">+</span>
+                <span class="s">&quot; - Reason : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">details</span><span class="o">.</span><span class="n">detail</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">obj</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShibaTools.post_request"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibatools.ShibaTools.post_request">[docs]</a>    <span class="k">def</span> <span class="nf">post_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Method creating and submitting the multipart request of the wished to be imported XML file.</span>
+
+<span class="sd">        :param data: raw XML as text</span>
+
+<span class="sd">        :rtype: plain text from servers response</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s">&quot;Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE; rv:1.9.0.10) &quot;</span>
+                                        <span class="s">&quot;Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)&quot;</span><span class="p">}</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;file&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
+
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShibaTools.retrieve_obj_from_url"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibatools.ShibaTools.retrieve_obj_from_url">[docs]</a>    <span class="k">def</span> <span class="nf">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Give it an URL, will send you back a instanced object based on received XML from WebService.</span>
+<span class="sd">        You can also give it a dict or an objectified tree to POST a file (used for import webservice)</span>
+<span class="sd">        :param url: fully formatted URL from url_constructor</span>
+<span class="sd">        :param data: if not None, will send a POST request to URL instead of a GET one, with multipart sending of</span>
+<span class="sd">        this parameter content</span>
+
+<span class="sd">        :rtype : lxml.objectify class</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">xml</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">post_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">xml</span> <span class="o">=</span> <span class="n">ul2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaConnectionError</span><span class="p">(</span><span class="s">&quot;HTTP error = Connection error - On URL: &quot;</span> <span class="o">+</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">ul2</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaConnectionError</span><span class="p">(</span><span class="s">&quot;HTTP error = &quot;</span> <span class="o">+</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; - On URL: &quot;</span> <span class="o">+</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">ul2</span><span class="o">.</span><span class="n">URLError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaConnectionError</span><span class="p">(</span><span class="s">&quot;URL error = &quot;</span> <span class="o">+</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; - On URL: &quot;</span> <span class="o">+</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">httplib</span><span class="o">.</span><span class="n">HTTPException</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaConnectionError</span><span class="p">(</span><span class="s">&quot;HTTP unknown error =&quot;</span> <span class="o">+</span> <span class="s">&quot; - On URL: &quot;</span> <span class="o">+</span> <span class="n">url</span><span class="p">)</span>
+        <span class="n">xml</span> <span class="o">=</span> <span class="n">xml</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;ISO-8859-1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="n">xml</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="n">objectify</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaUnknownServiceError</span><span class="p">(</span><span class="s">&quot;Unknown error from service : Service returned : &quot;</span> <span class="o">+</span> <span class="n">xml</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">__errors_check</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s">&quot;Unknown error&quot;</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">code</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">ShibaServiceError</span><span class="p">(</span><span class="s">&quot;Unknown error from WebService (maybe the sale isn&#39;t confirmed yet?)&quot;</span>
+                                            <span class="s">&quot; : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">message</span> <span class="o">+</span> <span class="s">&quot; - Reason : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">details</span><span class="o">.</span><span class="n">detail</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">ShibaServiceError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ShibaServiceError</span><span class="p">(</span><span class="s">&quot;Unknown error from WebService (maybe the sale isn&#39;t confirmed yet?)&quot;</span>
+                                        <span class="s">&quot; : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">message</span> <span class="o">+</span> <span class="s">&quot; - Reason : &quot;</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">details</span><span class="o">.</span><span class="n">detail</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ShibaUnknownServiceError</span><span class="p">(</span><span class="s">&quot;An unknown error from the WebService has occurred - XML dump : &quot;</span> <span class="o">+</span>
+                                                <span class="n">etree</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShibaTools.create_xml_from_item_obj"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibatools.ShibaTools.create_xml_from_item_obj">[docs]</a>    <span class="k">def</span> <span class="nf">create_xml_from_item_obj</span><span class="p">(</span><span class="n">inv</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Generate XML from the &quot;inv&quot; parameter.</span>
+
+<span class="sd">        :param inv: is an object or a dict hierarchized as the XML structure described \</span>
+<span class="sd">        in the WebServices documentation. Take a look at the xmltodict or the lxml.objectify documentation too.</span>
+
+<span class="sd">        :rtype: string output from objectified element or ElementTree element tostring() methods</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span> <span class="ow">is</span> <span class="n">etree</span><span class="o">.</span><span class="n">_ElementTree</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">etree</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">dict</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span> <span class="ow">is</span> <span class="n">OrderedDict</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">xmltodict</span><span class="o">.</span><span class="n">unparse</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;error from dictionary to xml : can&#39;t create XML from dictionary,&quot;</span>
+                                        <span class="s">&quot; refers to xmltodict documentation&quot;</span>
+                                        <span class="s">&quot;(you don&#39;t need to add a root element &#39;items&#39; to your items)&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;error : bad input parameter given, &quot;</span>
+                                    <span class="s">&quot;expecting dict, objectify object or ElementTree element&quot;</span><span class="p">)</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShibaTools.inf_constructor"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibatools.ShibaTools.inf_constructor">[docs]</a>    <span class="k">def</span> <span class="nf">inf_constructor</span><span class="p">(</span><span class="n">shibaconnection</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Just a selective concatenation of args given and related static data from the given action.</span>
+
+<span class="sd">        :param shibaconnection: ShibaConnection class instance</span>
+<span class="sd">        :param action: string giving the action type for the WebService</span>
+<span class="sd">        :param kwargs: params to concatenate</span>
+
+<span class="sd">        :rtype epured and updated dict</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">shibaconnection</span><span class="p">,</span> <span class="n">ShibaConnection</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;Internal parameter error : shibaconnection parameter is not &quot;</span>
+                                    <span class="s">&quot;a ShibaConnection instance&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">action</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">shibaconnection</span><span class="o">.</span><span class="n">actionsinfo</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;Internal parameter error : action parameter &quot;</span>
+                                    <span class="o">+</span> <span class="n">action</span> <span class="o">+</span> <span class="s">&quot; is unknown from the actions list&quot;</span><span class="p">)</span>
+        <span class="n">newkwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">each</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">each</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+                <span class="n">newkwargs</span><span class="p">[</span><span class="n">each</span><span class="p">]</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">each</span><span class="p">])</span>
+        <span class="n">newkwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">shibaconnection</span><span class="o">.</span><span class="n">actionsinfo</span><span class="p">[</span><span class="n">action</span><span class="p">])</span>
+        <span class="n">newkwargs</span><span class="p">[</span><span class="s">&quot;action&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">action</span>
+        <span class="k">return</span> <span class="n">newkwargs</span>
+</div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShibaTools.url_constructor"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibatools.ShibaTools.url_constructor">[docs]</a>    <span class="k">def</span> <span class="nf">url_constructor</span><span class="p">(</span><span class="n">shibaconnection</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;URL constructor, formatting input and adding as many URL arguments as given.</span>
+
+<span class="sd">        :param inf: info dict, from inf_constructor</span>
+<span class="sd">        :param domain: force URL domain, useful for some actions needing to go with http instead of https</span>
+
+<span class="sd">        :rtype: formatted URL string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">domain</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">domain</span> <span class="o">=</span> <span class="n">shibaconnection</span><span class="o">.</span><span class="n">domain</span>
+        <span class="n">pop</span> <span class="o">=</span> <span class="n">inf</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&quot;cat&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s">&quot;self&quot;</span> <span class="ow">in</span> <span class="n">inf</span><span class="p">:</span>
+            <span class="n">inf</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&quot;self&quot;</span><span class="p">)</span>
+        <span class="n">primary</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">/</span><span class="si">%s</span><span class="s">?&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">pop</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">primary</span> <span class="o">+</span> <span class="n">ul</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">inf</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">url</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba  documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Maxime Boguta.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

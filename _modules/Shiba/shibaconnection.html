@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Shiba.shibaconnection &mdash; Shiba  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Shiba  documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba  documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for Shiba.shibaconnection</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#</span>
+<span class="c"># Class ShibaInit</span>
+<span class="c"># Shiba initialization class</span>
+
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">shibaexceptions</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="ShibaConnection"><a class="viewcode-back" href="../../Shiba.html#Shiba.shibaconnection.ShibaConnection">[docs]</a><span class="k">class</span> <span class="nc">ShibaConnection</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">login</span><span class="p">,</span> <span class="n">pwd</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s">&quot;https://ws.priceminister.com&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param login: PriceMinister Seller login</span>
+<span class="sd">        :param pwd: PriceMinister Seller Token</span>
+<span class="sd">        (see more at https://developer.priceminister.com/blog/fr/documentation/identification-by-token)</span>
+<span class="sd">        :param domain: give it the sandbox domain version of WebServices if you want to test this interface</span>
+<span class="sd">        on a sandboxed version of PriceMinister</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">login</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">login</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">pwd</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;Shiba init error : given domain is empty&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">domain</span> <span class="o">=</span> <span class="n">domain</span>
+        <span class="sd">&quot;&quot;&quot;URL generation relative dictionary, formatting URLs in methods from the given format, first &#39;%s&#39;</span>
+<span class="sd">        is the action type, given as primary key&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actionsinfo</span> <span class="o">=</span> \
+        <span class="p">{</span><span class="s">&quot;producttypes&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;stock_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-11-29&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;producttypetemplate&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;stock_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2013-05-14&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;genericimportfile&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;stock_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2012-09-11&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;genericimportreport&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;stock_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-11-29&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;getavailableshippingtypes&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2013-06-25&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;export&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;stock_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2014-01-28&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;listing&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;listing_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2014-01-28&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;categorymap&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;categorymap_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-10-11&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;getnewsales&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2014-02-11&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;acceptsale&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2010-09-20&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;refusesale&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2010-09-20&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;getcurrentsales&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2014-02-11&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;getbillinginformation&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-03-29&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;getshippinginformation&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2014-02-11&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;getitemtodolist&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-09-01&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;getiteminfos&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-06-01&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;cancelitem&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-02-02&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;contactusaboutitem&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-09-01&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;contactuseraboutitem&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-02-02&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;settrackingpackageinfos&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2012-11-06&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;confirmpreorder&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2013-01-09&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;getoperations&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;wallet_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-03-29&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">},</span>
+        <span class="s">&quot;getcompensationdetails&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span> <span class="s">&quot;sales_ws&quot;</span><span class="p">,</span> <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;2011-03-29&quot;</span><span class="p">,</span> <span class="s">&quot;login&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">login</span><span class="p">,</span> <span class="s">&quot;pwd&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pwd</span><span class="p">}}</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba  documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Maxime Boguta.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
