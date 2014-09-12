@@ -19,7 +19,7 @@ of their account.
 Installation
 ------------
 
-Install via [pip](http://pip-installer.org/):
+Install via `pip`_:
 
 ::
 
@@ -63,9 +63,13 @@ Update the *shiba/Tests/assets/nosetests.cfg* with your PriceMinister credential
 
 Documentation
 --------------
-Documentation is available [here](http://ShibaAPI.github.io/shiba/) on **GitHub pages**.
-Extra documentation from the [PriceMinister developper blog](https://developer.priceminister.com/blog/) might be useful.
+Documentation is available on `GitHub pages`_.
+Extra documentation from the `PriceMinister developper blog`_ might be useful.
 
 Feel free to comment, report bugs, or even contribute!
 
 *Thank you!*
+
+.. _pip: http://pip-installer.org/
+.. _GitHub pages: http://ShibaAPI.github.io/shiba/)
+.. _PriceMinister developper blog: https://developer.priceminister.com/blog/
