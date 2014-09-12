@@ -13,5 +13,4 @@ setup(name= "Shiba",
       author_email= "maxime.boguta@epitech.eu",
       url= "https://github.com/ShibaAPI/shiba",
       download_url= "https://github.com/ShibaAPI/shiba/tarball/1.0",
-      keywords= ["api", "priceminister", "python", "webservices"],
-      classifiers= [])
+      keywords= ["api", "priceminister", "python", "webservices"])
