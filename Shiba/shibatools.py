@@ -89,7 +89,6 @@ class ShibaTools(object):
         except httplib.HTTPException:
             raise ShibaConnectionError("HTTP unknown error =" + " - On URL: " + url)
         xml = xml.decode('ISO-8859-1').encode('utf-8')
-        print xml
         try:
             obj = objectify.fromstring(xml)
         except:
