@@ -64,6 +64,7 @@ Update the *shiba/Tests/assets/nosetests.cfg* with your PriceMinister credential
 Documentation
 --------------
 Documentation is available on `GitHub pages`_.
+
 Extra documentation from the `PriceMinister developper blog`_ might be useful.
 
 Feel free to comment, report bugs, or even contribute!
