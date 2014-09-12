@@ -29,6 +29,10 @@ ____________________
    Getting started
    Shiba
 
+Releases and changelog
+----------------------
+*1.0.1* : Fixed bug on listing using lists as refs or product IDs
+*1.0* : Initial release
 
 Indices and tables
 ==================
