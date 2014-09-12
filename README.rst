@@ -72,5 +72,5 @@ Feel free to comment, report bugs, or even contribute!
 *Thank you!*
 
 .. _pip: http://pip-installer.org/
-.. _GitHub pages: http://ShibaAPI.github.io/shiba/)
+.. _GitHub pages: http://ShibaAPI.github.io/shiba/
 .. _PriceMinister developper blog: https://developer.priceminister.com/blog/
