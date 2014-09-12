@@ -1,5 +1,5 @@
 Shiba - A Python API for PriceMinister WebServices
-    Copyright (C) 2014 - Maxime Boguta
+    Copyright (C) 2014 - Maxime Boguta - Jocelyn Griselle - Nicolas Baccelli
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
