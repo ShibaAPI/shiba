@@ -36,13 +36,14 @@ Install from source:
 
 Quick starting with Shiba
 -------------------------
-Import the `shibaconnection` module first, then the module(s) you wish to work with.
+Import the *shibaconnection* module first, then the module(s) you wish to work with.
 
-Instance the ShibaConnection class with your credentials, then instance the other modules with the newly created ShibaConnection instance.
+Instance the *ShibaConnection* class with your credentials, then instance the other modules with the newly created *ShibaConnection* instance.
 
 You're good to go!
 
-Example:
+
+*Example:*
 
 ::
 
@@ -57,7 +58,7 @@ Testing Shiba
 -------------
 **Shiba** comes with its bunch of tests.
 Update the *shiba/Tests/assets/nosetests.cfg* with your PriceMinister credentials then run **nosetests** from the main package directory.
-**30** online tests must be OK.
+**30** online tests must be OK (*online* obviously means you need a fully working internet connection).
 
 
 Documentation
