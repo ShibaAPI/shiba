@@ -1,32 +1,34 @@
 Shiba
 =====
 
-shiba 1.0
+**shiba 1.0**
 
-Released: 11-Sep-2014
+Released: **11-Sep-2014**
 
 Introduction
 --------------
 
-Shiba is a Python package that provides interfaces to PriceMinister Web services. Currently, all features work
-with Python 2.6 and 2.7.
+**Shiba** is a Python package that provides interfaces to **PriceMinister Web services**. Currently, all features work
+with *Python 2.6* and *2.7*.
 
-Shiba supports all the Web services introduced by the PriceMinister developper blog.
+Shiba supports all the Web services introduced by the *PriceMinister developper blog*.
 
 The goal of Shiba is to provide PriceMinister active buyers/sellers an easy way to do their daily tasks for a good management
 of their account.
 
 Installation
-______________
+------------
 
 Install via [pip](http://pip-installer.org/):
 
 ::
+
 	$ pip install shiba
 
 Install from source:
 
 ::
+
 	$ git clone git://github.com/shibaAPI/shiba.git
 	$ cd shiba
 	$ python setup.py install
@@ -50,6 +52,12 @@ Example:
 	connection = ShibaConnection("mylogin", "mytoken")
 	sales = SalesManagement(connection)
 	newsales = sales.get_new_sales()
+
+Testing Shiba
+-------------
+**Shiba** comes with its bunch of tests.
+Update the *shiba/Tests/assets/nosetests.cfg* with your PriceMinister credentials then run **nosetests** from the main package directory.
+**30** online tests must be OK.
 
 
 Documentation
