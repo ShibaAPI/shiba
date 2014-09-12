@@ -33,9 +33,14 @@ class MarketplaceManagement(object):
         """
         if (type(refs) is not list and type(refs) is not str and type(refs) is not unicode) or \
                 (type(productids) is not list and type(productids) is not str and type(productids) is not unicode):
-            raise ShibaCallingError("Shiba code error : expected list or str/unicode as refs and/or productids parameters"
-                                    ", got " + unicode(type(refs)) + " as refs and " + unicode(type(productids))
-                                    + " as productids instead.")
+            raise ShibaCallingError \
+            ("Shiba code error : expected list or str/unicode as refs and/or productids parameters"
+                ", got " + unicode(type(refs)) + " as refs and " + unicode(type(productids))
+                + " as productids instead.")
+        if type(refs) is list:
+            refs = ','.join(refs)
+        if type(productids) is list:
+            productids = ','.join(productids)
         inf = ShibaTools.inf_constructor(self.connection, "listing", **locals())
         url = ShibaTools.url_constructor(self.connection, inf, domain="http://ws.priceminister.com")
         obj = ShibaTools.retrieve_obj_from_url(url)
