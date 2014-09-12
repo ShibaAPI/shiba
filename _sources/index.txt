@@ -10,6 +10,8 @@ Shiba - An Python API for PriceMinister WebServices
 
 Welcome to Shiba's documentation!
 =================================
+This is the documentation for the `Shiba API`_ project on GitHub.
+
 Hope you will find what you're looking for!
 
 What is Shiba?
@@ -35,3 +37,4 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+.. _Shiba API: https://github.com/ShibaAPI/shiba
