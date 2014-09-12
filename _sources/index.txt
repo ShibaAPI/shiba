@@ -31,8 +31,9 @@ ____________________
 
 Releases and changelog
 ----------------------
-*1.0.1* : Fixed bug on listing using lists as refs or product IDs
-*1.0* : Initial release
+**12-Sep-2014** *1.0.1* : Fixed bug on listing using lists as refs or product IDs
+
+**11-Sep-2014** *1.0* : Initial release
 
 Indices and tables
 ==================
