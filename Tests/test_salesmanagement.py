@@ -122,7 +122,7 @@ class SalesManagementTest(unittest.TestCase):
         """contact_us_about_item on an unknown product, must fail"""
         obj = None
         try:
-            obj = self.init.contact_us_about_item("1337", "message")
+            obj = self.init.contact_us_about_item("1337", "message", "1337")
         except ShibaServiceError:
             pass
         self.assertTrue(obj is None)
