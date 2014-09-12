@@ -3,10 +3,19 @@ Getting started with Shiba
 
 Installing
 ----------
-You can get Shiba from PyPi python packet manager or directly from the GitHub repository
+You can get Shiba from PyPi python packet manager or directly from the GitHub repository:
 
-- From **PyPi**: ``sudo pip install shiba``
-- Or download the .tgz from the GitHub repository, extract, and run ``install.py install``
+- From **PyPi**:
+
+  ``$ sudo pip install shiba``
+ 
+- Download the .tgz from the GitHub repository, extract, and run:
+
+  ``$ setup.py install``
+
+- From Git:
+
+  ``$ git clone git://github.com/shibaAPI/shiba.git && cd shiba && python setup.py install``
 
 How does this works?
 --------------------
