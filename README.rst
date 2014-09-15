@@ -1,4 +1,4 @@
-B1;3409;0cShiba
+Shiba
 =====
 
 **shiba 1.0.1**
