@@ -4,7 +4,9 @@ B1;3409;0cShiba
 **shiba 1.0.1**
 
 Released: **11-Sep-2014**
+
 Last release: **12-Sep-2014**
+
 Introduction
 --------------
 
