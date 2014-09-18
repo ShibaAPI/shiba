@@ -16,6 +16,9 @@ from lxml import etree
 
 from shibaconnection import ShibaConnection
 from shibaexceptions import *
+from shibaresponseobject import ShibaResponseObject
+
+import re
 
 from collections import OrderedDict
 
@@ -67,13 +70,15 @@ class ShibaTools(object):
 
     @staticmethod
     def retrieve_obj_from_url(url, data=None):
-        """Give it an URL, will send you back a instanced object based on received XML from WebService.
+        """Give it an URL, will send you back an object based on received XML from WebService, it removes and store
+        namespace as its not really useful for common usages of this API.
         You can also give it a dict or an objectified tree to POST a file (used for import webservice)
         :param url: fully formatted URL from url_constructor
         :param data: if not None, will send a POST request to URL instead of a GET one, with multipart sending of
         this parameter content
 
-        :rtype : lxml.objectify class
+        :rtype : ShibaResponseObject object, containing lxml.objectify class, raw XML as Unicode string and the
+        namespace from the XML.
         """
         try:
             if data is not None:
@@ -88,12 +93,14 @@ class ShibaTools(object):
             raise ShibaConnectionError("URL error = " + unicode(e.reason) + " - On URL: " + url)
         except httplib.HTTPException:
             raise ShibaConnectionError("HTTP unknown error =" + " - On URL: " + url)
-        xml = xml.decode('ISO-8859-1').encode('utf-8')
-        print xml
+        xml = xml.decode('ISO-8859-1')
         try:
-            obj = objectify.fromstring(xml)
+            namespace = re.search(pattern='xmlns="[^"]', string=xml).group()
+            xmlepured = re.sub(pattern=' xmlns="[^"]+"', repl='', string=xml, flags=0)
+            xmlepured = xmlepured.encode('utf-8')
+            obj = objectify.fromstring(xmlepured)
         except:
-            raise ShibaUnknownServiceError("Unknown error from service : Service returned : " + xml)
+            raise ShibaUnknownServiceError("Unknown error from service or from internal modules : Service returned : " + xml)
         if ShibaTools.__errors_check(obj) is not False:
             try:
                 if "Unknown error" == obj.error.code:
@@ -105,7 +112,7 @@ class ShibaTools(object):
             except:
                 raise ShibaUnknownServiceError("An unknown error from the WebService has occurred - XML dump : " +
                                                 etree.tostring(obj))
-        return obj
+        return ShibaResponseObject(namespace, obj, xml.encode('utf-8'))
 
     @staticmethod
     def create_xml_from_item_obj(inv):

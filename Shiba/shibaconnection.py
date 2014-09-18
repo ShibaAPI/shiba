@@ -16,16 +16,13 @@ class ShibaConnection(object):
         :param login: PriceMinister Seller login
         :param pwd: PriceMinister Seller Token \
         (see more at https://developer.priceminister.com/blog/fr/documentation/identification-by-token)
-        :param domain: give it the sandbox domain version of WebServices if you want to test this interface \
-        on a sandboxed version of PriceMinister.
+        :param sandbox: give it True if you want to test the API on a sandboxed version of PriceMinister.
         """
 
-    def __init__(self, login, pwd, domain="https://ws.priceminister.com"):
+    def __init__(self, login, pwd, sandbox=False):
         self.login = str(login)
         self.pwd = str(pwd)
-        if len(domain) == 0:
-            raise ShibaCallingError("Shiba init error : given domain is empty")
-        self.domain = domain
+        self.domain = "https://ws.priceminister.com" if sandbox is False else "https://ws.sandbox.priceminister.com"
         self.actionsinfo = \
         {"producttypes": {"cat": "stock_ws", "version": "2011-11-29", "login": self.login, "pwd": self.pwd},
         "producttypetemplate": {"cat": "stock_ws", "version": "2013-05-14", "login": self.login, "pwd": self.pwd},

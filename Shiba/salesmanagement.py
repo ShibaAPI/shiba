@@ -14,8 +14,7 @@ from datetime import date
 
 
 class SalesManagement(object):
-    """Primary sales management class, gather all sales-related methods. Those methods (as all other
-    methods) returns an object from the XML given as answer by the related WebService."""
+    """Primary sales management class, gather all sales-related methods."""
     def __init__(self, connection):
         if (isinstance(connection, ShibaConnection)) is False:
             raise ShibaCallingError("error : you must give this class a ShibaConnection instance")
