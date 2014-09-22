@@ -31,6 +31,8 @@ ____________________
 
 Releases and changelog
 ----------------------
+**22-Sep-2014** *1.1* : Return content from the Shiba methods is now more polyvalent, as its own object call *ShibaResponseObject*. The *content* attribute from returns is the previous *obj* itself, namespace freed. Namespace can be found into the *namespace* attribute, and raw XML from the Web Services is also now available into the *rawxml* attribute of the *ShibaResponseObject* class.
+
 **12-Sep-2014** *1.0.1* : Fixed bug on listing using lists as refs or product IDs
 
 **11-Sep-2014** *1.0* : Initial release
