@@ -7,7 +7,7 @@ from distutils.core import setup
 
 setup(name= "Shiba",
       packages= ["Shiba"],
-      version = "1.0",
+      version = "1.1",
       description= "A Python API for PriceMinister WebServices",
       author= "Maxime Boguta",
       author_email= "maxime.boguta@epitech.eu",
