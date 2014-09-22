@@ -63,8 +63,7 @@
 
 
 <div class="viewcode-block" id="SalesManagement"><a class="viewcode-back" href="../../Shiba.html#Shiba.salesmanagement.SalesManagement">[docs]</a><span class="k">class</span> <span class="nc">SalesManagement</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Primary sales management class, gather all sales-related methods. Those methods (as all other</span>
-<span class="sd">    methods) returns an object from the XML given as answer by the related WebService.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Primary sales management class, gather all sales-related methods.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">):</span>
         <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">ShibaConnection</span><span class="p">))</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;error : you must give this class a ShibaConnection instance&quot;</span><span class="p">)</span>

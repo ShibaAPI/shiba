@@ -1,18 +1,20 @@
 Shiba, from A to Z
-==================
+===================
 
 About Shiba sub management modules
 -----------------------------------
 All submodules included from the main **Shiba** package needs an instanced *ShibaConnection* class
-defining your login and an identification token as parameter. 
+defining your login and an identification token as parameter.
 
 You can also tell it to deal with the sanboxed
 version for testing purposes.
 
-**Each method of each submodule** returns an *lxml.objectify* element from the
-XML returned by the PriceMinister WebServices.
+**Each method of each submodule** returns a *ShibaResponseObject* element from the
+XML returned by the PriceMinister WebServices, give it a look from the section dedicated for this class.
 
-You can find some documentation about it from the lxml documentation_.
+ShibaResponseObject wraps an *ObjectifiedElement* from the *lxml.objectify* module as the main container for the retrieved data. This object is callabel through the *content* attribute.
+
+You can find some documentation about it looking into the lxml documentation_.
 
 .. _documentation: http://lxml.de/objectify.html
 
@@ -44,6 +46,15 @@ SalesManagement module
 ----------------------------
 
 .. automodule:: Shiba.salesmanagement
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+ShibaResponseObject module
+----------------------------
+Containing the object class returned by each method of the modules above.
+
+.. automodule:: Shiba.shibaresponseobject
     :members:
     :undoc-members:
     :show-inheritance:

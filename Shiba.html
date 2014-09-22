@@ -56,9 +56,10 @@
 defining your login and an identification token as parameter.</p>
 <p>You can also tell it to deal with the sanboxed
 version for testing purposes.</p>
-<p><strong>Each method of each submodule</strong> returns an <em>lxml.objectify</em> element from the
-XML returned by the PriceMinister WebServices.</p>
-<p>You can find some documentation about it from the lxml <a class="reference external" href="http://lxml.de/objectify.html">documentation</a>.</p>
+<p><strong>Each method of each submodule</strong> returns a <em>ShibaResponseObject</em> element from the
+XML returned by the PriceMinister WebServices, give it a look from the section dedicated for this class.</p>
+<p>ShibaResponseObject wraps an <em>ObjectifiedElement</em> from the <em>lxml.objectify</em> module as the main container for the retrieved data. This object is callabel through the <em>content</em> attribute.</p>
+<p>You can find some documentation about it looking into the lxml <a class="reference external" href="http://lxml.de/objectify.html">documentation</a>.</p>
 </div>
 <div class="section" id="module-Shiba.accountingmanagement">
 <span id="accountingmanagement-module"></span><h2>AccountingManagement module<a class="headerlink" href="#module-Shiba.accountingmanagement" title="Permalink to this headline">¶</a></h2>
@@ -226,8 +227,7 @@ or &#8220;LIMITED&#8221; (search in categories in which rapid put on sale is pos
 <dt id="Shiba.salesmanagement.SalesManagement">
 <em class="property">class </em><tt class="descclassname">Shiba.salesmanagement.</tt><tt class="descname">SalesManagement</tt><big>(</big><em>connection</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
-<p>Primary sales management class, gather all sales-related methods. Those methods (as all other
-methods) returns an object from the XML given as answer by the related WebService.</p>
+<p>Primary sales management class, gather all sales-related methods.</p>
 <dl class="method">
 <dt id="Shiba.salesmanagement.SalesManagement.accept_sale">
 <tt class="descname">accept_sale</tt><big>(</big><em>itemid</em><big>)</big><a class="reference internal" href="_modules/Shiba/salesmanagement.html#SalesManagement.accept_sale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.salesmanagement.SalesManagement.accept_sale" title="Permalink to this definition">¶</a></dt>
@@ -435,11 +435,38 @@ This WebService send an email to the &#8220;itemid&#8221; customer, including a 
 </dd></dl>
 
 </div>
+<div class="section" id="shibaresponseobject-module">
+<h2>ShibaResponseObject module<a class="headerlink" href="#shibaresponseobject-module" title="Permalink to this headline">¶</a></h2>
+<p>Containing the object class returned by each method of the modules above.</p>
+<span class="target" id="module-Shiba.shibaresponseobject"></span><dl class="class">
+<dt id="Shiba.shibaresponseobject.ShibaResponseObject">
+<em class="property">class </em><tt class="descclassname">Shiba.shibaresponseobject.</tt><tt class="descname">ShibaResponseObject</tt><big>(</big><em>namespace</em>, <em>obj</em>, <em>xml</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibaresponseobject.html#ShibaResponseObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaresponseobject.ShibaResponseObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>This class gathers all content from the returned XML. Separating the namespace for further usage and the actual
+content. The raw XML from the WebServices is also reachable from this object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>namespace</strong> &#8211; The namespace of the treated object, non really useful in our case but kept for further         development steps</li>
+<li><strong>obj</strong> &#8211; The actual content of the returned XML, as an ObjectifiedElement from the lxml.objectify module</li>
+<li><strong>xml</strong> &#8211; The raw XML returned by the WebServices</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Those arguments are stored into <em>content</em> for the ObjectifiedElement, <em>raw</em> for the raw and XML and <em>namespace</em> for
+the namespace of the XML, which have been removed.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="module-Shiba.shibaconnection">
 <span id="shiba-login-shibaconnection-class"></span><h2>Shiba login ShibaConnection class<a class="headerlink" href="#module-Shiba.shibaconnection" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="Shiba.shibaconnection.ShibaConnection">
-<em class="property">class </em><tt class="descclassname">Shiba.shibaconnection.</tt><tt class="descname">ShibaConnection</tt><big>(</big><em>login</em>, <em>pwd</em>, <em>domain=u'https://ws.priceminister.com'</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibaconnection.html#ShibaConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaconnection.ShibaConnection" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">Shiba.shibaconnection.</tt><tt class="descname">ShibaConnection</tt><big>(</big><em>login</em>, <em>pwd</em>, <em>sandbox=False</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibaconnection.html#ShibaConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaconnection.ShibaConnection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
 <p>The main Shiba class, standing as an initialization and mandatory for each submodules instancing.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -449,7 +476,7 @@ This WebService send an email to the &#8220;itemid&#8221; customer, including a 
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>login</strong> &#8211; PriceMinister Seller login</li>
 <li><strong>pwd</strong> &#8211; PriceMinister Seller Token         (see more at <a class="reference external" href="https://developer.priceminister.com/blog/fr/documentation/identification-by-token">https://developer.priceminister.com/blog/fr/documentation/identification-by-token</a>)</li>
-<li><strong>domain</strong> &#8211; give it the sandbox domain version of WebServices if you want to test this interface         on a sandboxed version of PriceMinister.</li>
+<li><strong>sandbox</strong> &#8211; give it True if you want to test the API on a sandboxed version of PriceMinister.</li>
 </ul>
 </td>
 </tr>
@@ -537,6 +564,7 @@ rough print of the XML retrieved</p>
 <li><a class="reference internal" href="#module-Shiba.inventorymanagement">InventoryManagement module</a></li>
 <li><a class="reference internal" href="#module-Shiba.marketplacemanagement">MarketplaceManagement module</a></li>
 <li><a class="reference internal" href="#module-Shiba.salesmanagement">SalesManagement module</a></li>
+<li><a class="reference internal" href="#shibaresponseobject-module">ShibaResponseObject module</a></li>
 <li><a class="reference internal" href="#module-Shiba.shibaconnection">Shiba login ShibaConnection class</a></li>
 <li><a class="reference internal" href="#module-Shiba.shibaexceptions">Shiba exception classes</a></li>
 </ul>

@@ -71,37 +71,39 @@
 </div>
 <div class="section" id="how-does-this-works">
 <h2>How does this works?<a class="headerlink" href="#how-does-this-works" title="Permalink to this headline">¶</a></h2>
-<p>First, import the main <em>Shiba</em> module, and create an instance of the <em>shibaconnection.ShibaConnection</em> class with your login, token pasword <a class="footnote-reference" href="#id2" id="id1">[1]</a> and domain if you
-want to work on the sanboxed version of the <em>PriceMinister WebServices</em>.</p>
-<p>Then all you have to do is importing the management module you wish to work with, giving it your instanced connection class, and start dealing with those WebServices
-through its methods.</p>
+<p>First, import the main <em>Shiba</em> module, and create an instance of the <em>shibaconnection.ShibaConnection</em> class with your login, token password <a class="footnote-reference" href="#id3" id="id1">[1]</a> and domain if you want to work on the sanboxed version of the <em>PriceMinister WebServices</em>.</p>
+<p>Then all you have to do is importing the management module you wish to work with, giving it your instanced connection class, and start dealing with those WebServices through its methods.</p>
 </div>
 <div class="section" id="i-want-an-example">
 <h2>I want an example!<a class="headerlink" href="#i-want-an-example" title="Permalink to this headline">¶</a></h2>
 <p>This example will show you how to get new sales information on your seller account:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">Shiba.shibaconnection</span> <span class="kn">import</span> <span class="n">ShibaConnection</span>
-<span class="kn">from</span> <span class="nn">Shiba.salesmanagement</span> <span class="kn">import</span> <span class="n">SalesManagement</span>
+<div class="highlight-python"><div class="highlight"><pre>from Shiba.shibaconnection import ShibaConnection
+from Shiba.salesmanagement import SalesManagement
 
-<span class="n">init</span> <span class="o">=</span> <span class="n">ShibaConnection</span><span class="p">(</span><span class="s">&quot;mysellerlogin&quot;</span><span class="p">,</span> <span class="s">&quot;mytokenpwd&quot;</span><span class="p">)</span>
-<span class="n">salestool</span> <span class="o">=</span> <span class="n">SalesManagement</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
-<span class="n">newsales</span> <span class="o">=</span> <span class="n">salestool</span><span class="o">.</span><span class="n">get_new_sales</span><span class="p">()</span>
+init = ShibaConnection(&quot;mysellerlogin&quot;, &quot;mytokenpwd&quot;[, sandbox=True &quot;&quot;&quot;For testing only purpose&quot;&quot;&quot;]) # Look at footnote [1]_ for some help on PriceMinister IDs
+salestool = SalesManagement(init)
+newsales = salestool.get_new_sales()
 </pre></div>
 </div>
-<p>Now you can scroll the <cite>lxml.objectify</cite> object returned by the method:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">purchaseid</span> <span class="o">=</span> <span class="n">newsales</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">sale</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">purchaseid</span> <span class="c"># Getting the first sale on the list, retrieving the purchase ID</span>
-<span class="n">purchasedate</span> <span class="o">=</span> <span class="n">newsales</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">sale</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">purchasedate</span> <span class="c"># Retrieving the purchase date</span>
+<p>Now you can scroll the <cite>ShibaResponseObject</cite> object returned by the method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">purchaseid</span> <span class="o">=</span> <span class="n">newsales</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">sale</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">purchaseid</span> <span class="c"># Getting the first sale on the list, retrieving the purchase ID</span>
+<span class="n">purchasedate</span> <span class="o">=</span> <span class="n">newsales</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">sales</span><span class="o">.</span><span class="n">sale</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">purchasedate</span> <span class="c"># Retrieving the purchase date</span>
+<span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">newsales</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">iterchildren</span><span class="p">():</span>
+       <span class="k">print</span> <span class="n">each</span><span class="o">.</span><span class="n">tag</span> <span class="c"># Will print each tag nodes from the first level</span>
+<span class="k">print</span> <span class="n">newsales</span><span class="o">.</span><span class="n">namespace</span> <span class="c"># Will print the current namespace (not that useful, but can help for some cases of further development)</span>
+<span class="k">print</span> <span class="n">newsales</span><span class="o">.</span><span class="n">rawxml</span> <span class="c"># Display the whole XML returned from WebServices and processed by Shiba</span>
 </pre></div>
 </div>
-<p>And here we go! All you have to do is to implement those methods to your needs.</p>
+<p>And here we go! All you have to do is to find the methods fitting your needs.</p>
 </div>
 <div class="section" id="testing">
 <h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
-<p>Shiba comes with its tests, run <tt class="docutils literal"><span class="pre">nosetests</span></tt> with a proper login and password (Nosetests configuration file in <tt class="docutils literal"><span class="pre">Tests/Assets</span></tt> as <tt class="docutils literal"><span class="pre">nosetests.cfg</span></tt>).</p>
+<p>Shiba comes with its tests, run <tt class="docutils literal"><span class="pre">nosetests</span></tt> with proper <strong>SANDBOX</strong> <a class="footnote-reference" href="#id3" id="id2">[1]</a> login and password (Nosetests configuration file in <tt class="docutils literal"><span class="pre">Tests/Assets</span></tt> as <tt class="docutils literal"><span class="pre">nosetests.cfg</span></tt>).</p>
 <p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
+<table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>To get your PriceMinister token ID, go to your PriceMinister account management, Account Settings, My Tokens page.</td></tr>
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> To get your PriceMinister token ID, go to your PriceMinister account management, Account Settings, My Tokens page. Please note that the <strong>Sandboxed IDs are stricly NOT the same as the actual PriceMinister platform ones</strong>, visit the <em>PriceMinister Sandbox</em> <a class="reference external" href="http://www.sandbox.priceminister.com">Website</a> for further help and for creating yourself a testing account.</td></tr>
 </tbody>
 </table>
 </div>
