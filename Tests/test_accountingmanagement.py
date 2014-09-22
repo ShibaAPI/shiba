@@ -38,12 +38,12 @@ class AccountingManagementTest(unittest.TestCase):
     def test_get_operations(self):
         """get_operations routine test, with date object as lastoperationdate too"""
         obj = self.init.get_operations()
-        self.assertTrue("getoperationsresult" in obj.tag)
+        self.assertTrue("getoperationsresult" in obj.content.tag)
         obj = self.init.get_operations("21/12/2012-00:00:00")
-        self.assertTrue(obj.request.lastoperationdate == "21/12/2012-00:00:00")
+        self.assertTrue(obj.content.request.lastoperationdate == "21/12/2012-00:00:00")
         testdate = date(2012, 12, 21)
         obj = self.init.get_operations(testdate)
-        self.assertTrue(obj.request.lastoperationdate == "21/12/12-00:00:00")
+        self.assertTrue(obj.content.request.lastoperationdate == "21/12/12-00:00:00")
         obj = None
         try:
             obj = self.init.get_operations("INVALIDDATE")

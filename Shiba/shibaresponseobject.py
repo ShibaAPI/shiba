@@ -15,6 +15,9 @@ class ShibaResponseObject(object):
         development steps
     :param obj: The actual content of the returned XML, as an ObjectifiedElement from the lxml.objectify module
     :param xml: The raw XML returned by the WebServices
+
+    Those arguments are stored into *content* for the ObjectifiedElement, *raw* for the raw and XML and *namespace* for
+    the namespace of the XML, which have been removed.
     """
 
     def __init__(self, namespace, obj, xml):

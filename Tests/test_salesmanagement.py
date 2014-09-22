@@ -36,7 +36,7 @@ class SalesManagementTest(unittest.TestCase):
     def test_get_new_sales(self):
         """regular get_new_sales test"""
         obj = self.init.get_new_sales()
-        self.assertTrue("getnewsalesresult" in obj.tag)
+        self.assertTrue("getnewsalesresult" in obj.content.tag)
 
     def test_accept_sale(self):
         """Only fail result, as accepting an actual sale is not simulable"""
@@ -63,19 +63,19 @@ class SalesManagementTest(unittest.TestCase):
     def test_get_current_sales(self):
         """get_current_sales test, on variable parameters, plus some fail results"""
         obj = self.init.get_current_sales()
-        self.assertTrue("getcurrentsalesresult" in obj.tag)
-        self.assertTrue(False == obj.request.ispendingpreorder)
+        self.assertTrue("getcurrentsalesresult" in obj.content.tag)
+        self.assertTrue(False == obj.content.request.ispendingpreorder)
         obj = self.init.get_current_sales(ispendingpreorder="y")
-        self.assertTrue("getcurrentsalesresult" in obj.tag)
-        self.assertTrue(True == obj.request.ispendingpreorder)
+        self.assertTrue("getcurrentsalesresult" in obj.content.tag)
+        self.assertTrue(True == obj.content.request.ispendingpreorder)
         try:
             self.init.get_current_sales(ispendingpreorder="n")
         except ShibaCallingError:
             pass
         obj = self.init.get_current_sales(purchasedate="WRONGDATE")
-        self.assertTrue(elem.tag is not "purchasedate" for elem in obj.response)
+        self.assertTrue(elem.content.tag is not "purchasedate" for elem in obj.content.response)
         obj = self.init.get_current_sales(purchasedate="2012-12-21")
-        self.assertTrue("21/12/2012" == obj.request.purchasedate)
+        self.assertTrue("21/12/2012" == obj.content.request.purchasedate)
 
     def test_get_billing_information(self):
         """get_billing_information test, will raise an error due to unknown purchaseid"""
@@ -98,7 +98,7 @@ class SalesManagementTest(unittest.TestCase):
     def test_get_items_todo_list(self):
         """get_items_todo_list routine test"""
         obj = self.init.get_item_todo_list()
-        self.assertTrue("getitemtodolistresult" in obj.tag)
+        self.assertTrue("getitemtodolistresult" in obj.content.tag)
 
     def test_get_item_infos(self):
         """get_item_infos on a unknown product, must fail"""

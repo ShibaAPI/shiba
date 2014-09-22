@@ -95,7 +95,11 @@ class ShibaTools(object):
             raise ShibaConnectionError("HTTP unknown error =" + " - On URL: " + url)
         xml = xml.decode('ISO-8859-1')
         try:
-            namespace = re.search(pattern='xmlns="[^"]', string=xml).group()
+            namespace = re.search(pattern='xmlns="[^"]', string=xml)
+            if namespace is not None:
+                namespace = namespace.group()
+            else:
+                namespace = ""
             xmlepured = re.sub(pattern=' xmlns="[^"]+"', repl='', string=xml, flags=0)
             xmlepured = xmlepured.encode('utf-8')
             obj = objectify.fromstring(xmlepured)

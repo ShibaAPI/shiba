@@ -32,10 +32,10 @@ class ShibaToolsTest(unittest.TestCase):
     def test_retrieve_obj_from_url(self):
         """retrieve_obj_from_url test with a remote XML file"""
         obj = self.init.retrieve_obj_from_url("http://www.w3schools.com/xml/note.xml")
-        self.assertTrue("note" in obj.tag)
-        self.assertTrue("to" in obj.to.tag and obj.to == "Tove")
-        self.assertTrue("heading" in obj.heading.tag and obj.heading == "Reminder")
-        self.assertTrue("body" in obj.body.tag and obj.body == "Don't forget me this weekend!")
+        self.assertTrue("note" in obj.content.tag)
+        self.assertTrue("to" in obj.content.to.tag and obj.content.to == "Tove")
+        self.assertTrue("heading" in obj.content.heading.tag and obj.content.heading == "Reminder")
+        self.assertTrue("body" in obj.content.body.tag and obj.content.body == "Don't forget me this weekend!")
 
     def test_post_request(self):
         """testing a post request with retrieve_obj_from_url"""

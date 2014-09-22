@@ -40,16 +40,16 @@ class InventoryManagementTest(unittest.TestCase):
         """product_types return test"""
 
         ptypes = self.init.product_types()
-        self.assertTrue("producttypesresult" in ptypes.tag)
+        self.assertTrue("producttypesresult" in ptypes.content.tag)
 
     def test_product_type_template(self):
         """product_type_template tests on two scopes, for a fixed alias, plus a fail result"""
 
         alias = "insolites_produit"
         ptemplate = self.init.product_type_template(alias, "")
-        self.assertTrue("producttypetemplateresult" in ptemplate.tag)
+        self.assertTrue("producttypetemplateresult" in ptemplate.content.tag)
         ptemplate = self.init.product_type_template(alias, "VALUES")
-        self.assertTrue("producttypetemplateresult" in ptemplate.tag)
+        self.assertTrue("producttypetemplateresult" in ptemplate.content.tag)
 
     @raises(ShibaParameterError)
     def test_product_type_template_fail(self):
@@ -62,20 +62,20 @@ class InventoryManagementTest(unittest.TestCase):
         f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
         testdict = xmltodict.parse(f)
         ret = self.init.generic_import_file(testdict)
-        self.assertTrue("OK" == ret.response.status)
+        self.assertTrue("OK" == ret.content.response.status)
         f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
         testobj = objectify.parse(f)
         ret = self.init.generic_import_file(testobj)
-        self.assertTrue("OK" == ret.response.status)
+        self.assertTrue("OK" == ret.content.response.status)
 
     def test_generic_import_report(self):
         """genreic_import_report method test from an import file call"""
         f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
         testobj = objectify.parse(f)
         ret = self.init.generic_import_file(testobj)
-        importid = ret.response.importid
+        importid = ret.content.response.importid
         ret = self.init.generic_import_report(importid)
-        self.assertTrue("file" == ret.response.file.filename)
+        self.assertTrue("file" == ret.content.response.file.filename)
 
     def test_get_available_shipping_types(self):
         try:
@@ -85,4 +85,4 @@ class InventoryManagementTest(unittest.TestCase):
 
     def test_export_inventory(self):
         obj = self.init.export_inventory()
-        self.assertTrue("inventoryresult" in obj.tag)
+        self.assertTrue("inventoryresult" in obj.content.tag)

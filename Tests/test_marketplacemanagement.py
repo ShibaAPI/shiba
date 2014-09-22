@@ -39,15 +39,15 @@ class MarketplaceManagementTest(unittest.TestCase):
         except ShibaParameterError:
             pass
         obj = self.init.get_product_list(kw="livre")
-        self.assertTrue("listingresult" in obj.tag)
+        self.assertTrue("listingresult" in obj.content.tag)
         try:
             obj = self.init.get_product_list(nbproductsperpage=-15, kw="livre")
         except ShibaParameterError:
             pass
         obj = self.init.get_product_list(kw="informatique", scope="PRICING")
-        self.assertTrue("listingresult" in obj.tag)
+        self.assertTrue("listingresult" in obj.content.tag)
 
     def test_get_category_map(self):
         """get_category_map regular test"""
         obj = self.init.get_category_map()
-        self.assertTrue("categorymap" in obj.tag)
+        self.assertTrue("categorymap" in obj.content.tag)
