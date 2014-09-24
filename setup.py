@@ -7,11 +7,11 @@ from setuptools import setup
 
 setup(name= "Shiba",
       packages= ["shiba"],
-      version = "1.1.1",
+      version = "1.1.1.01",
       description= "A Python API for PriceMinister WebServices",
       author= "Maxime Boguta",
       author_email= "maxime.boguta@epitech.eu",
       url= "https://github.com/ShibaAPI/shiba",
-      download_url= "https://github.com/ShibaAPI/shiba/tarball/1.1.1",
+      download_url= "https://github.com/ShibaAPI/shiba/tarball/1.1.01",
       keywords= ["api", "priceminister", "python", "webservices"],
       install_requires=["requests", "xmltodict", "lxml"],)
