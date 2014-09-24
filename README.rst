@@ -1,11 +1,11 @@
 Shiba
 =====
 
-**shiba 1.1**
+**shiba 1.1.1**
 
 Released: **11-Sep-2014**
 
-Last release: **22-Sep-2014**
+Last release: **24-Sep-2014**
 
 Introduction
 --------------
