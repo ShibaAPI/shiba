@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>shiba.accountingmanagement &mdash; Shiba 1.1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Shiba 1.1.1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba 1.1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for shiba.accountingmanagement</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#</span>
+<span class="c"># class AccountingManagement</span>
+
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">shibaconnection</span> <span class="kn">import</span> <span class="n">ShibaConnection</span>
+<span class="kn">from</span> <span class="nn">shibaexceptions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">shibatools</span> <span class="kn">import</span> <span class="n">ShibaTools</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+
+<div class="viewcode-block" id="AccountingManagement"><a class="viewcode-back" href="../../Shiba.html#shiba.accountingmanagement.AccountingManagement">[docs]</a><span class="k">class</span> <span class="nc">AccountingManagement</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Accounting Management class, showing global financial operations on your account, or specific financial details</span>
+<span class="sd">        about an operation&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">):</span>
+        <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">ShibaConnection</span><span class="p">)),</span> <span class="s">&quot;error : you must give this instance a ShibaConnection instance&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="n">connection</span>
+
+<div class="viewcode-block" id="AccountingManagement.get_operations"><a class="viewcode-back" href="../../Shiba.html#shiba.accountingmanagement.AccountingManagement.get_operations">[docs]</a>    <span class="k">def</span> <span class="nf">get_operations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lastoperationdate</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get global operations which happened on your wallet, compensationid given back from XML can be used</span>
+<span class="sd">        in the get_compensation_details method below to get more detailed information about a specific operation.</span>
+<span class="sd">        </span>
+<span class="sd">        :param lastoperationdate: as follows : dd/mm/yyyy-hh:mm:ss and as string or date instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">operationcause</span> <span class="o">=</span> <span class="s">&quot;salestransfer&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">lastoperationdate</span><span class="p">,</span> <span class="n">date</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">False</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">lastoperationdate</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span> <span class="ow">and</span> \
+                <span class="nb">type</span><span class="p">(</span><span class="n">lastoperationdate</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">unicode</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;Shiba code error : lastoperationdate parameter must be a datetime instance or str,&quot;</span>
+                                    <span class="s">&quot; got &quot;</span> <span class="o">+</span> <span class="nb">unicode</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">lastoperationdate</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot; instead.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">lastoperationdate</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+            <span class="n">lastoperationdate</span> <span class="o">=</span> <span class="n">lastoperationdate</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%d</span><span class="s">/%m/%y-%H:%M:%S&quot;</span><span class="p">)</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;getoperations&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="AccountingManagement.get_compensation_details"><a class="viewcode-back" href="../../Shiba.html#shiba.accountingmanagement.AccountingManagement.get_compensation_details">[docs]</a>    <span class="k">def</span> <span class="nf">get_compensation_details</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compensationid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get a specific operation details from its &quot;compensationid&quot; found in the get_operation request return.&quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;getcompensationdetails&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba 1.1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Maxime Boguta, Jocelyn Griselle, Nicolas Baccelli.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

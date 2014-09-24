@@ -21,7 +21,7 @@ You can find some documentation about it looking into the lxml documentation_.
 AccountingManagement module
 ---------------------------------
 
-.. automodule:: Shiba.accountingmanagement
+.. automodule:: shiba.accountingmanagement
     :members:
     :undoc-members:
     :show-inheritance:
@@ -29,7 +29,7 @@ AccountingManagement module
 InventoryManagement module
 --------------------------------
 
-.. automodule:: Shiba.inventorymanagement
+.. automodule:: shiba.inventorymanagement
     :members:
     :undoc-members:
     :show-inheritance:
@@ -37,7 +37,7 @@ InventoryManagement module
 MarketplaceManagement module
 ----------------------------------
 
-.. automodule:: Shiba.marketplacemanagement
+.. automodule:: shiba.marketplacemanagement
     :members:
     :undoc-members:
     :show-inheritance:
@@ -45,7 +45,7 @@ MarketplaceManagement module
 SalesManagement module
 ----------------------------
 
-.. automodule:: Shiba.salesmanagement
+.. automodule:: shiba.salesmanagement
     :members:
     :undoc-members:
     :show-inheritance:
@@ -54,7 +54,7 @@ ShibaResponseObject module
 ----------------------------
 Containing the object class returned by each method of the modules above.
 
-.. automodule:: Shiba.shibaresponseobject
+.. automodule:: shiba.shibaresponseobject
     :members:
     :undoc-members:
     :show-inheritance:
@@ -70,7 +70,7 @@ Shiba login ShibaConnection class
 Shiba exception classes
 ----------------------------
 
-.. automodule:: Shiba.shibaexceptions
+.. automodule:: shiba.shibaexceptions
     :members:
     :undoc-members:
     :show-inheritance:

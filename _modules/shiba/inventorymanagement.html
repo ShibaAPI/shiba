@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>shiba.inventorymanagement &mdash; Shiba 1.1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Shiba 1.1.1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba 1.1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for shiba.inventorymanagement</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#</span>
+<span class="c"># class InventoryManagement</span>
+
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">shibaconnection</span> <span class="kn">import</span> <span class="n">ShibaConnection</span>
+<span class="kn">from</span> <span class="nn">shibaexceptions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">shibatools</span> <span class="kn">import</span> <span class="n">ShibaTools</span>
+
+
+<div class="viewcode-block" id="InventoryManagement"><a class="viewcode-back" href="../../Shiba.html#shiba.inventorymanagement.InventoryManagement">[docs]</a><span class="k">class</span> <span class="nc">InventoryManagement</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This class permits you to manage your inventory, get information about your products and even import products</span>
+<span class="sd">    from XML to the PriceMinister platform&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">ShibaConnection</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;Shiba subclass init error : expecting a ShibaConnection instance&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="n">connection</span>
+
+<div class="viewcode-block" id="InventoryManagement.product_types"><a class="viewcode-back" href="../../Shiba.html#shiba.inventorymanagement.InventoryManagement.product_types">[docs]</a>    <span class="k">def</span> <span class="nf">product_types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This method retrieve products types from PriceMinister, helping you to define your products attributes.&quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;producttypes&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="InventoryManagement.product_type_template"><a class="viewcode-back" href="../../Shiba.html#shiba.inventorymanagement.InventoryManagement.product_type_template">[docs]</a>    <span class="k">def</span> <span class="nf">product_type_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alias</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This methods retrieve product type attributes from the product type given through the &quot;alias&quot; parameter.</span>
+<span class="sd">        Dedicated to help you making your own XML import file.</span>
+
+<span class="sd">        :param alias: product alias as string</span>
+<span class="sd">        :param scope: can be either VALUES or None, VALUES as &quot;scope&quot; retrieve attributes values instead of only \</span>
+<span class="sd">        attributes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;producttypetemplate&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="InventoryManagement.generic_import_report"><a class="viewcode-back" href="../../Shiba.html#shiba.inventorymanagement.InventoryManagement.generic_import_report">[docs]</a>    <span class="k">def</span> <span class="nf">generic_import_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fileid</span><span class="p">,</span> <span class="n">nexttoken</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Retrieves the report from a previous XML import, used as verification for a proper XML import</span>
+
+<span class="sd">        :param fileid: import file ID given from the generic_import_file return</span>
+<span class="sd">        :param nexttoken: used for pagination, can be used for a loop, its precised in the return from a first call \</span>
+<span class="sd">        to this WebService</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;genericimportreport&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="InventoryManagement.generic_import_file"><a class="viewcode-back" href="../../Shiba.html#shiba.inventorymanagement.InventoryManagement.generic_import_file">[docs]</a>    <span class="k">def</span> <span class="nf">generic_import_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Import XML file to your PriceMinister inventory trough a POST request.</span>
+
+<span class="sd">        :param data: must be a object/dict (OrderedDict is better) containing your inventory wished to be imported. \</span>
+<span class="sd">        You must respect the XML hierarchy detailed from the WebService documentation inside the object/dict</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">create_xml_from_item_obj</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;genericimportfile&quot;</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="InventoryManagement.get_available_shipping_types"><a class="viewcode-back" href="../../Shiba.html#shiba.inventorymanagement.InventoryManagement.get_available_shipping_types">[docs]</a>    <span class="k">def</span> <span class="nf">get_available_shipping_types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Retrieves available shipping options at asking time&quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;getavailableshippingtypes&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="InventoryManagement.export_inventory"><a class="viewcode-back" href="../../Shiba.html#shiba.inventorymanagement.InventoryManagement.export_inventory">[docs]</a>    <span class="k">def</span> <span class="nf">export_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">nexttoken</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Export adverts from your inventory, nexttoken pagination is available.</span>
+
+<span class="sd">        :param scope: PRICING is the only acceptable value for it, if not empty.&quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;export&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba 1.1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Maxime Boguta, Jocelyn Griselle, Nicolas Baccelli.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

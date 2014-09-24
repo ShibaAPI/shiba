@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>shiba.marketplacemanagement &mdash; Shiba 1.1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Shiba 1.1.1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba 1.1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for shiba.marketplacemanagement</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#</span>
+<span class="c"># class MarketplaceManagement</span>
+
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">shibaconnection</span> <span class="kn">import</span> <span class="n">ShibaConnection</span>
+<span class="kn">from</span> <span class="nn">shibatools</span> <span class="kn">import</span> <span class="n">ShibaTools</span>
+<span class="kn">from</span> <span class="nn">shibaexceptions</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="MarketplaceManagement"><a class="viewcode-back" href="../../Shiba.html#shiba.marketplacemanagement.MarketplaceManagement">[docs]</a><span class="k">class</span> <span class="nc">MarketplaceManagement</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Marketplace informations retrieving, such as product lists and category mapping&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">ShibaConnection</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;Shiba subclass init error : expecting a ShibaConnection instance&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="n">connection</span>
+
+<div class="viewcode-block" id="MarketplaceManagement.get_product_list"><a class="viewcode-back" href="../../Shiba.html#shiba.marketplacemanagement.MarketplaceManagement.get_product_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_product_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">kw</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">nav</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">refs</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">productids</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">nbproductsperpage</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">pagenumber</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Prints a search list result from given parameters.</span>
+
+<span class="sd">        :param scope: none (classic results), &quot;PRICING&quot; (classic results plus 10 best announces)</span>
+<span class="sd">            or &quot;LIMITED&quot; (search in categories in which rapid put on sale is possible through WS)</span>
+<span class="sd">        :param kw: research keyword</span>
+<span class="sd">        :param nav: navigation category (url friendly ones, can be found on PriceMinister categories&#39; URLs)</span>
+<span class="sd">        :param refs: EAN, or ISBN, as a string, each value separated by a coma &#39;,&#39;.</span>
+<span class="sd">        :param productids: same as refs but as products ID.</span>
+<span class="sd">        :param nbproductsperpage: products per page, default is 20.</span>
+<span class="sd">        :param pagenumber: page number, default is 1.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">unicode</span><span class="p">)</span> <span class="ow">or</span> \
+                <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">productids</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">productids</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">productids</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">unicode</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span> \
+            <span class="p">(</span><span class="s">&quot;Shiba code error : expected list or str/unicode as refs and/or productids parameters&quot;</span>
+                <span class="s">&quot;, got &quot;</span> <span class="o">+</span> <span class="nb">unicode</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">refs</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot; as refs and &quot;</span> <span class="o">+</span> <span class="nb">unicode</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">productids</span><span class="p">))</span>
+                <span class="o">+</span> <span class="s">&quot; as productids instead.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+            <span class="n">refs</span> <span class="o">=</span> <span class="s">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">productids</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+            <span class="n">productids</span> <span class="o">=</span> <span class="s">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">productids</span><span class="p">)</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;listing&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s">&quot;http://ws.priceminister.com&quot;</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="MarketplaceManagement.get_category_map"><a class="viewcode-back" href="../../Shiba.html#shiba.marketplacemanagement.MarketplaceManagement.get_category_map">[docs]</a>    <span class="k">def</span> <span class="nf">get_category_map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Lists items categories from the PriceMinister platform&quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;categorymap&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s">&quot;http://ws.priceminister.com&quot;</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba 1.1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Maxime Boguta, Jocelyn Griselle, Nicolas Baccelli.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

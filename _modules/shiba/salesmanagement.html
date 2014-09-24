@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>shiba.salesmanagement &mdash; Shiba 1.1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Shiba 1.1.1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba 1.1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for shiba.salesmanagement</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">#</span>
+<span class="c"># class SalesManagement</span>
+
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">shibaconnection</span> <span class="kn">import</span> <span class="n">ShibaConnection</span>
+<span class="kn">from</span> <span class="nn">shibatools</span> <span class="kn">import</span> <span class="n">ShibaTools</span>
+<span class="kn">from</span> <span class="nn">shibaexceptions</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+
+<div class="viewcode-block" id="SalesManagement"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement">[docs]</a><span class="k">class</span> <span class="nc">SalesManagement</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Primary sales management class, gather all sales-related methods.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">connection</span><span class="p">,</span> <span class="n">ShibaConnection</span><span class="p">))</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;error : you must give this class a ShibaConnection instance&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="n">connection</span>
+
+<div class="viewcode-block" id="SalesManagement.get_new_sales"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.get_new_sales">[docs]</a>    <span class="k">def</span> <span class="nf">get_new_sales</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Calling get_new_sales all the new sales which have been recently recensed.&quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;getnewsales&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.accept_sale"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.accept_sale">[docs]</a>    <span class="k">def</span> <span class="nf">accept_sale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itemid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Accept the &quot;itemid&quot; sale.</span>
+
+<span class="sd">        :param itemid: string for item ID</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;acceptsale&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.refuse_sale"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.refuse_sale">[docs]</a>    <span class="k">def</span> <span class="nf">refuse_sale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itemid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Refuse the &quot;itemid&quot; sale.</span>
+
+<span class="sd">        :param itemid: string for item ID</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;refusesale&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.get_current_sales"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.get_current_sales">[docs]</a>    <span class="k">def</span> <span class="nf">get_current_sales</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ispendingpreorder</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">purchasedate</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">nexttoken</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Calling get_current_sales method gives you a obj gathering all current sales.</span>
+
+<span class="sd">        :param ispendingpreorder: pass &quot;y&quot; is you want to see all preordered sales, leave empty as default</span>
+<span class="sd">        :param purchasedate: Formatted as &quot;yyyy-mm-dd&quot; string allows you to filter the sales only from the given date</span>
+<span class="sd">        :param nexttoken: Next page token argument, leave at is it, only give 0 is you want the first page</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">ispendingpreorder</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span> <span class="ow">and</span> <span class="n">ispendingpreorder</span> <span class="o">!=</span> <span class="s">&quot;y&quot;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;Shiba code error : ispendingpreorder parameter must be empty or &#39;y&#39;&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">purchasedate</span><span class="p">,</span> <span class="n">date</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">False</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">purchasedate</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span> <span class="ow">and</span> \
+                <span class="nb">type</span><span class="p">(</span><span class="n">purchasedate</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">unicode</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;Shiba code error : purchasedate order parameter must be a datetime &quot;</span>
+                                    <span class="s">&quot;instance or str, got &quot;</span> <span class="o">+</span> <span class="nb">unicode</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">purchasedate</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot; instead.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">purchasedate</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+            <span class="n">purchasedate</span> <span class="o">=</span> <span class="n">purchasedate</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%d</span><span class="s">/%m/%y-%H:%M:%S&quot;</span><span class="p">)</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;getcurrentsales&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.get_billing_information"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.get_billing_information">[docs]</a>    <span class="k">def</span> <span class="nf">get_billing_information</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">purchaseid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Calling this method gives you accounting information about a confirmed order.</span>
+
+<span class="sd">        :param purchaseid: is mandatory (same as found in get_new_sales report).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;getbillinginformation&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.get_shipping_information"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.get_shipping_information">[docs]</a>    <span class="k">def</span> <span class="nf">get_shipping_information</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">purchaseid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Quite similar to billing information method, but returns information about shipping for a given purchaseid</span>
+<span class="sd">        Order forms are also available from this method return content.</span>
+
+<span class="sd">        :param purchaseid: is mandatory (same as found in get_new_sales report).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;getshippinginformation&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.get_item_todo_list"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.get_item_todo_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_item_todo_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Retrieving a todo list on items, such as CLAIMS or MESSAGES from buyer or PriceMinister.&quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;getitemtodolist&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.get_item_infos"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.get_item_infos">[docs]</a>    <span class="k">def</span> <span class="nf">get_item_infos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itemid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This methods retrieves information from an &quot;itemid&quot; item, such as state, history, messages linked to it</span>
+<span class="sd">        and actions available for this item. WARNING : All messages related to asked item will be tagged as &quot;read&quot;.</span>
+
+<span class="sd">        :param itemid: string for item ID</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;getiteminfos&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.cancel_item"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.cancel_item">[docs]</a>    <span class="k">def</span> <span class="nf">cancel_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itemid</span><span class="p">,</span> <span class="n">comment</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This method cancel the sale from the &quot;itemid&quot; item, after this one has been sold. WARNING : Cancelling</span>
+<span class="sd">        a sale this way could harm your seller reputation. Use the &quot;comment&quot; param to specify the reason of this</span>
+<span class="sd">        action to the related buyer (mandatory).</span>
+
+<span class="sd">        :param itemid: string for item ID</span>
+<span class="sd">        :param comment: message to send to the buyer as reason for cancelling the sale</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;cancelitem&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.contact_us_about_item"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.contact_us_about_item">[docs]</a>    <span class="k">def</span> <span class="nf">contact_us_about_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itemid</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">mailparentid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This functionality permits to join the PriceMinister after-sales service as buyer or seller.</span>
+<span class="sd">        Specify the mailparentid to reply to a previous mail exchange. Message is message content, and itemid is</span>
+<span class="sd">        the item PriceMinister ID related to the claim.</span>
+
+<span class="sd">        :param itemid: string for item ID</span>
+<span class="sd">        :param content: message content</span>
+<span class="sd">        :param mailparentid: ID of previous mail, you must have conversed with the customer before to get it</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;contactusaboutitem&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.contact_user_about_item"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.contact_user_about_item">[docs]</a>    <span class="k">def</span> <span class="nf">contact_user_about_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itemid</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Contact buyer of the &quot;itemid&quot; item in a regular way, sending him a message.</span>
+
+<span class="sd">        :param itemid: string for item ID</span>
+<span class="sd">        :param content: message content</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;contactuseraboutitem&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.set_tracking_package_infos"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.set_tracking_package_infos">[docs]</a>    <span class="k">def</span> <span class="nf">set_tracking_package_infos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">itemid</span><span class="p">,</span> <span class="n">transporter_name</span><span class="p">,</span> <span class="n">tracking_number</span><span class="p">,</span> <span class="n">tracking_url</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Send to buyer tracking information, such as the transporter&#39;s name &quot;transporter_name&quot;,</span>
+<span class="sd">        tracking number &quot;tracking_number&quot; and the optional tracking url &quot;tracking_url&quot;.</span>
+<span class="sd">        Please note that giving &quot;Autre&quot; as transporter_name brings the tracking url as mandatory.</span>
+<span class="sd">        This WebService send an email to the &quot;itemid&quot; customer, including a link for package tracking.</span>
+
+<span class="sd">        :param itemid: string for item ID</span>
+<span class="sd">        :param transporter_name: transporter&#39;s name, string expected</span>
+<span class="sd">        :param tracking_number: tracking number, preferably as string</span>
+<span class="sd">        :param tracking_url: tracking URL for the package, as string, mandatory if transporter_name is &#39;Autre&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">transporter_name</span> <span class="o">==</span> <span class="s">&quot;Autre&quot;</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">tracking_url</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;Shiba code error : if &#39;Autre&#39; is specified as transporter_name, a tracking_url &quot;</span>
+                                    <span class="s">&quot;must be specified too&quot;</span><span class="p">)</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;settrackingpackageinfos&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span>
+</div>
+<div class="viewcode-block" id="SalesManagement.confirm_preorder"><a class="viewcode-back" href="../../Shiba.html#shiba.salesmanagement.SalesManagement.confirm_preorder">[docs]</a>    <span class="k">def</span> <span class="nf">confirm_preorder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">advertid</span><span class="p">,</span> <span class="n">stock</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Confirms preorders from the &quot;advertid&quot; item announce, will confirm &quot;stock&quot; items as confirmed orders for</span>
+<span class="sd">        buyers who has preordered from the advert.</span>
+
+<span class="sd">        :param advertid: advert ID as string</span>
+<span class="sd">        :param stock: string or integer, must be positive</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">stock</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ShibaCallingError</span><span class="p">(</span><span class="s">&quot;Shiba code error : stock must be a positive number&quot;</span><span class="p">)</span>
+        <span class="n">inf</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">inf_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="s">&quot;confirmpreorder&quot;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">url_constructor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="n">inf</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ShibaTools</span><span class="o">.</span><span class="n">retrieve_obj_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Shiba 1.1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Maxime Boguta, Jocelyn Griselle, Nicolas Baccelli.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
