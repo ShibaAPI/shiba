@@ -8,9 +8,9 @@
 
 from __future__ import unicode_literals
 
-from Shiba.inventorymanagement import InventoryManagement
-from Shiba.shibaconnection import ShibaConnection
-from Shiba.shibaexceptions import *
+from shiba.inventorymanagement import InventoryManagement
+from shiba.shibaconnection import ShibaConnection
+from shiba.shibaexceptions import *
 from nose.tools import *
 
 import xmltodict

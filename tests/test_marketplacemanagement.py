@@ -8,9 +8,9 @@
 
 from __future__ import unicode_literals
 
-from Shiba.marketplacemanagement import MarketplaceManagement
-from Shiba.shibaconnection import ShibaConnection
-from Shiba.shibaexceptions import *
+from shiba.marketplacemanagement import MarketplaceManagement
+from shiba.shibaconnection import ShibaConnection
+from shiba.shibaexceptions import *
 
 import unittest
 

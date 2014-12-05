@@ -43,3 +43,6 @@ class   ShibaCallingError(ShibaException):
     the API methods first as this is the major exception raising point for this type of exception"""
     pass
 
+class   ShibaQuotaExceededError(ShibaException):
+    """Shiba throtlle error, you have sumbitted too many request of a type within a certain amount of time"""
+    pass

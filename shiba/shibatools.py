@@ -47,8 +47,12 @@ class ShibaTools(object):
                 raise ShibaLoginError("Invalid user connection : " + obj.error.message +
                 " - Reason : " + obj.error.details.detail)
             if "InvalidUserRights" == obj.error.code:
-                raise ShibaRightsError("Invalid user rights : " + obj.error.message +
-                " - Reason : " + obj.error.details.detail)
+                if "Quota exceeded" in obj.error.message.text:
+                    raise ShibaQuotaExceededError("Too many requests : " + obj.error.message +
+                    " - Reason : " + obj.error.details.detail)
+                else:
+                    raise ShibaRightsError("Invalid user rights : " + obj.error.message +
+                    " - Reason : " + obj.error.details.detail)
             return obj
         return False
 
@@ -93,6 +97,8 @@ class ShibaTools(object):
             raise ShibaConnectionError("URL error = " + unicode(e.reason) + " - On URL: " + url)
         except httplib.HTTPException:
             raise ShibaConnectionError("HTTP unknown error =" + " - On URL: " + url)
+        except:
+            raise
         xml = xml.decode('ISO-8859-1')
         try:
             namespace = re.search(pattern='xmlns="[^"]', string=xml)

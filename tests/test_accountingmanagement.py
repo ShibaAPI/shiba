@@ -8,9 +8,9 @@
 
 from __future__ import unicode_literals
 
-from Shiba.accountingmanagement import AccountingManagement
-from Shiba.shibaconnection import ShibaConnection
-from Shiba.shibaexceptions import *
+from shiba.accountingmanagement import AccountingManagement
+from shiba.shibaconnection import ShibaConnection
+from shiba.shibaexceptions import *
 
 import os
 import ConfigParser

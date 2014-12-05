@@ -3,3 +3,4 @@ lxml
 nose
 requests
 ConfigParser
+mock
