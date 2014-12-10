@@ -466,7 +466,7 @@ the namespace of the XML, which have been removed.</p>
 <span id="shiba-login-shibaconnection-class"></span><h2>Shiba login ShibaConnection class<a class="headerlink" href="#module-Shiba.shibaconnection" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="Shiba.shibaconnection.ShibaConnection">
-<em class="property">class </em><tt class="descclassname">Shiba.shibaconnection.</tt><tt class="descname">ShibaConnection</tt><big>(</big><em>login</em>, <em>pwd</em>, <em>sandbox=False</em><big>)</big><a class="headerlink" href="#Shiba.shibaconnection.ShibaConnection" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">Shiba.shibaconnection.</tt><tt class="descname">ShibaConnection</tt><big>(</big><em>login</em>, <em>pwd</em>, <em>sandbox=False</em><big>)</big><a class="reference internal" href="_modules/Shiba/shibaconnection.html#ShibaConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Shiba.shibaconnection.ShibaConnection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
 <p>The main Shiba class, standing as an initialization and mandatory for each submodules instancing.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -522,6 +522,13 @@ internet connection failure (HTTP errors 404, 500...).</p>
 <em class="property">exception </em><tt class="descclassname">shiba.shibaexceptions.</tt><tt class="descname">ShibaParameterError</tt><a class="reference internal" href="_modules/shiba/shibaexceptions.html#ShibaParameterError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#shiba.shibaexceptions.ShibaParameterError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#shiba.shibaexceptions.ShibaException" title="shiba.shibaexceptions.ShibaException"><tt class="xref py py-class docutils literal"><span class="pre">shiba.shibaexceptions.ShibaException</span></tt></a></p>
 <p>Shiba parameter error, XML returned from the WebService told that one or more parameters are incorrect.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="shiba.shibaexceptions.ShibaQuotaExceededError">
+<em class="property">exception </em><tt class="descclassname">shiba.shibaexceptions.</tt><tt class="descname">ShibaQuotaExceededError</tt><a class="reference internal" href="_modules/shiba/shibaexceptions.html#ShibaQuotaExceededError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#shiba.shibaexceptions.ShibaQuotaExceededError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#shiba.shibaexceptions.ShibaException" title="shiba.shibaexceptions.ShibaException"><tt class="xref py py-class docutils literal"><span class="pre">shiba.shibaexceptions.ShibaException</span></tt></a></p>
+<p>Shiba throtlle error, you have sumbitted too many request of a type within a certain amount of time</p>
 </dd></dl>
 
 <dl class="exception">

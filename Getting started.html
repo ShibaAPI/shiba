@@ -66,12 +66,13 @@
 </li>
 <li><p class="first">From Git:</p>
 <p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git://github.com/shibaAPI/shiba.git</span> <span class="pre">&amp;&amp;</span> <span class="pre">cd</span> <span class="pre">shiba</span> <span class="pre">&amp;&amp;</span> <span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></tt></p>
+<p>If you have some errors while installing requirements, please install lxml from your package manager.</p>
 </li>
 </ul>
 </div>
 <div class="section" id="how-does-this-works">
 <h2>How does this works?<a class="headerlink" href="#how-does-this-works" title="Permalink to this headline">¶</a></h2>
-<p>First, import the main <em>Shiba</em> module, and create an instance of the <em>shibaconnection.ShibaConnection</em> class with your login, token password <a class="footnote-reference" href="#id3" id="id1">[1]</a> and domain if you want to work on the sanboxed version of the <em>PriceMinister WebServices</em>.</p>
+<p>First, import the main <em>Shiba</em> module, and create an instance of the <em>shibaconnection.ShibaConnection</em> class with your login, account token and domain if you want to work on the sanboxed version of the <em>PriceMinister WebServices</em>.</p>
 <p>Then all you have to do is importing the management module you wish to work with, giving it your instanced connection class, and start dealing with those WebServices through its methods.</p>
 </div>
 <div class="section" id="i-want-an-example">
@@ -80,7 +81,7 @@
 <div class="highlight-python"><div class="highlight"><pre>from Shiba.shibaconnection import ShibaConnection
 from Shiba.salesmanagement import SalesManagement
 
-init = ShibaConnection(&quot;mysellerlogin&quot;, &quot;mytokenpwd&quot;[, sandbox=True &quot;&quot;&quot;For testing only purpose&quot;&quot;&quot;]) # Look at footnote [1]_ for some help on PriceMinister IDs
+init = ShibaConnection(&quot;mysellerlogin&quot;, &quot;mytokenpwd&quot;[, sandbox=True &quot;&quot;&quot;For testing purpose only (use Sandbox IDs)&quot;&quot;&quot;])
 salestool = SalesManagement(init)
 newsales = salestool.get_new_sales()
 </pre></div>
@@ -98,14 +99,18 @@ newsales = salestool.get_new_sales()
 </div>
 <div class="section" id="testing">
 <h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
-<p>Shiba comes with its tests, run <tt class="docutils literal"><span class="pre">nosetests</span></tt> with proper <strong>SANDBOX</strong> <a class="footnote-reference" href="#id3" id="id2">[1]</a> login and password (Nosetests configuration file in <tt class="docutils literal"><span class="pre">Tests/Assets</span></tt> as <tt class="docutils literal"><span class="pre">nosetests.cfg</span></tt>).</p>
-<p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> To get your PriceMinister token ID, go to your PriceMinister account management, Account Settings, My Tokens page. Please note that the <strong>Sandboxed IDs are stricly NOT the same as the actual PriceMinister platform ones</strong>, visit the <em>PriceMinister Sandbox</em> <a class="reference external" href="http://www.sandbox.priceminister.com">Website</a> for further help and for creating yourself a testing account.</td></tr>
-</tbody>
-</table>
+<p>Shiba comes with its tests, both offline and online ones.</p>
+<p><em>New in 1.1.2</em>: Tests now running with mock.</p>
+<div class="section" id="offline-testing">
+<h3>Offline testing<a class="headerlink" href="#offline-testing" title="Permalink to this headline">¶</a></h3>
+<p>Move into the <em>offline</em> subdirectory of <em>tests/</em>, and simply run <em>nosetests</em>.</p>
+</div>
+<div class="section" id="online-testing">
+<h3>Online testing<a class="headerlink" href="#online-testing" title="Permalink to this headline">¶</a></h3>
+<p>If you want to run online test, you will primary need to get a <strong>PriceMinister sandbox account</strong> in order to proceed.</p>
+<p>Then open up the <em>tests/online/Assets/nosetests.cfg</em> file and fill it up with your sandbox <strong>login</strong> and <strong>token</strong> (not password).</p>
+<p>Then simply run <em>nosetests</em> inside the <em>online</em> tests folder.</p>
+</div>
 </div>
 </div>
 
@@ -121,7 +126,11 @@ newsales = salestool.get_new_sales()
 <li><a class="reference internal" href="#installing">Installing</a></li>
 <li><a class="reference internal" href="#how-does-this-works">How does this works?</a></li>
 <li><a class="reference internal" href="#i-want-an-example">I want an example!</a></li>
-<li><a class="reference internal" href="#testing">Testing</a></li>
+<li><a class="reference internal" href="#testing">Testing</a><ul>
+<li><a class="reference internal" href="#offline-testing">Offline testing</a></li>
+<li><a class="reference internal" href="#online-testing">Online testing</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

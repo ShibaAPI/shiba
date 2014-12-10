@@ -86,6 +86,7 @@
 </div>
 <div class="section" id="releases-and-changelog">
 <h3>Releases and changelog<a class="headerlink" href="#releases-and-changelog" title="Permalink to this headline">¶</a></h3>
+<p><strong>8-Dec-2014</strong> <em>1.1.2</em> : Set up a new explicit exception for throttling from PriceMinister, named <em>ShibaQuotaExceededError</em>. Testing is now available both offline (using mock XML) and online.</p>
 <p><strong>24-Sep-2014</strong> <em>1.1.1</em> : Added explicit and mandatory required dependencies to <em>setup.py</em>, indeed installing Shiba before didn&#8217;t install those.</p>
 <p>Changed package name from <em>Shiba</em> to <em>shiba</em>, according to the naming conventions.</p>
 <p><strong>22-Sep-2014</strong> <em>1.1</em> : Return content from the Shiba methods is now more polyvalent, as its own object call <em>ShibaResponseObject</em>. The <em>content</em> attribute from returns is the previous <em>obj</em> itself, namespace freed. Namespace can be found into the <em>namespace</em> attribute, and raw XML from the Web Services is also now available into the <em>rawxml</em> attribute of the <em>ShibaResponseObject</em> class.</p>

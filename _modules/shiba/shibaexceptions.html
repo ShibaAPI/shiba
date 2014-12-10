@@ -57,41 +57,55 @@
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
 
 <span class="sd">&quot;&quot;&quot;Those exception classes will usually be raised after an error returned from the WebServices&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="ShibaException"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaException">[docs]</a><span class="k">class</span>   <span class="nc">ShibaException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+
+
+<div class="viewcode-block" id="ShibaException"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaException">[docs]</a><span class="k">class</span> <span class="nc">ShibaException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Main exception class, as you can catch the whole of Shiba exceptions from it&quot;&quot;&quot;</span>
     <span class="k">pass</span>
+
 </div>
-<div class="viewcode-block" id="ShibaParameterError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaParameterError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaParameterError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+<div class="viewcode-block" id="ShibaParameterError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaParameterError">[docs]</a><span class="k">class</span> <span class="nc">ShibaParameterError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Shiba parameter error, XML returned from the WebService told that one or more parameters are incorrect.&quot;&quot;&quot;</span>
     <span class="k">pass</span>
+
 </div>
-<div class="viewcode-block" id="ShibaLoginError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaLoginError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaLoginError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+<div class="viewcode-block" id="ShibaLoginError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaLoginError">[docs]</a><span class="k">class</span> <span class="nc">ShibaLoginError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Shiba login error, XML returned from the WebService told that the login informations given are incorrect.&quot;&quot;&quot;</span>
     <span class="k">pass</span>
+
 </div>
-<div class="viewcode-block" id="ShibaRightsError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaRightsError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaRightsError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+<div class="viewcode-block" id="ShibaRightsError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaRightsError">[docs]</a><span class="k">class</span> <span class="nc">ShibaRightsError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Shiba rights error, means XML returned the specified login IDs aren&#39;t authorized to access/modify such ressource</span>
 <span class="sd">    from the asked WebService&quot;&quot;&quot;</span>
+
 </div>
-<div class="viewcode-block" id="ShibaServiceError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaServiceError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaServiceError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+<div class="viewcode-block" id="ShibaServiceError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaServiceError">[docs]</a><span class="k">class</span> <span class="nc">ShibaServiceError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Shiba service error, WebService told that an error have been encountered, but may can&#39;t precise where&quot;&quot;&quot;</span>
     <span class="k">pass</span>
+
 </div>
-<div class="viewcode-block" id="ShibaUnknownServiceError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaUnknownServiceError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaUnknownServiceError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+<div class="viewcode-block" id="ShibaUnknownServiceError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaUnknownServiceError">[docs]</a><span class="k">class</span> <span class="nc">ShibaUnknownServiceError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Shiba unknown service error, WebService has caused/encoutered an error, but we can&#39;t know why (followed by a</span>
 <span class="sd">    rough print of the XML retrieved&quot;&quot;&quot;</span>
     <span class="k">pass</span>
+
 </div>
-<div class="viewcode-block" id="ShibaConnectionError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaConnectionError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaConnectionError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+<div class="viewcode-block" id="ShibaConnectionError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaConnectionError">[docs]</a><span class="k">class</span> <span class="nc">ShibaConnectionError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Shiba connection error, kind of an internal error: URL can&#39;t be reached, in case of bad URL formatting or</span>
 <span class="sd">    internet connection failure (HTTP errors 404, 500...).&quot;&quot;&quot;</span>
     <span class="k">pass</span>
+
 </div>
-<div class="viewcode-block" id="ShibaCallingError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaCallingError">[docs]</a><span class="k">class</span>   <span class="nc">ShibaCallingError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+<div class="viewcode-block" id="ShibaCallingError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaCallingError">[docs]</a><span class="k">class</span> <span class="nc">ShibaCallingError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Shiba internal error, for code relative errors. If such an exception is raised, look at given parameters to</span>
 <span class="sd">    the API methods first as this is the major exception raising point for this type of exception&quot;&quot;&quot;</span>
     <span class="k">pass</span>
-</pre></div></div>
+
+</div>
+<div class="viewcode-block" id="ShibaQuotaExceededError"><a class="viewcode-back" href="../../Shiba.html#shiba.shibaexceptions.ShibaQuotaExceededError">[docs]</a><span class="k">class</span> <span class="nc">ShibaQuotaExceededError</span><span class="p">(</span><span class="n">ShibaException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Shiba throtlle error, you have sumbitted too many request of a type within a certain amount of time&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+</pre></div>
 
           </div>
         </div>
