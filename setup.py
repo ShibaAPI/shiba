@@ -5,7 +5,7 @@
 
 from setuptools import setup
 
-setup(name= "shiba",
+setup(name= "Shiba",
       packages= ["shiba"],
       version = "1.1.2",
       description= "A Python API for PriceMinister WebServices",
