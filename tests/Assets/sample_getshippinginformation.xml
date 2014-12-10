@@ -1,0 +1,42 @@
+<getshippinginformationresult xsi:schemaLocation="http://www.priceminister.com/res/schema/getshippinginformation   http://www.priceminister.com/res/schema/getshippinginformation/getshippinginformation.2011-03-29.xsd"   xmlns="   http://www.priceminister.com/res/schema/getshippinginformation"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <request>
+        <user>gribouillus</user>
+        <purchaseid>94410355</purchaseid>
+        <version>2011-03-29</version>
+    </request>
+    <response>
+        <sellerid>16876842</sellerid>
+        <lastversion>2011-03-29</lastversion>
+        <shippinginformation>
+            <shippingtype>So   Colissimo</shippingtype>
+            <prepaidlabel>
+                <available>Y</available>
+                <availabilitydetail>Prepaid   label available.</availabilitydetail>
+                <prepaidlabelurl><![CDATA[https://ws.colissimo.fr/soap.shippingclpV2/services/GetEtiquette?parcelNumber=6C00017420000&date=20110324&signature=0cc13c01065f7daf090bdbc65f63ac332ce8524fef0d479e00164e9499a17d10]]></prepaidlabelurl>
+                <trackinginformation>
+                    <trackingnumber>6C00017422390</trackingnumber>
+                    <trackingurl><![CDATA[http://www.colissimo.fr/portail_colissimo/suivre.do?parcelnumber=6C00017420000]]></trackingurl>
+                </trackinginformation>
+            </prepaidlabel>
+            <purchaseshippingcostprice>
+                <amount>0.0</amount>
+                <currency>EUR</currency>
+            </purchaseshippingcostprice>
+            <purchasebuyerlogin>testinteg</purchasebuyerlogin>
+            <purchasebuyeremail>ega_testinteg@priceminister.com</purchasebuyeremail>
+            <billingaddress>
+                <civility>Mme</civility>
+                <lastname><![CDATA[testinteg]]></lastname>
+                <firstname><![CDATA[testinteg]]></firstname>
+                <address1><![CDATA[137   rue du fbg de Roubaix]]></address1>
+                <address2><![CDATA[57, bd   de la Villette]]></address2>
+                <zipcode>75010</zipcode>
+                <city><![CDATA[Paris]]></city>
+                <country><![CDATA[France]]></country>
+                <countryalpha2>FX</countryalpha2>
+                <phonenumber1>0600000000</phonenumber1>
+                <phonenumber2>0600000000</phonenumber2>
+            </billingaddress>
+        </shippinginformation>
+    </response>
+</getshippinginformationresult>

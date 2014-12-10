@@ -1,0 +1,13 @@
+<contactusaboutitemresult>
+    <request>
+        <version>xxxx-xx-xx</version>
+        <user>vendeur</user>
+        <itemid>151031130</itemid>
+        <mailparentid>2890097599</mailparentid>
+        <content>bonjour voici un message</content>
+    </request>
+    <response>
+        <lastversion>xxxx-xx-xx</lastversion>
+        <status>SENT</status>
+    </response>
+</contactusaboutitemresult>

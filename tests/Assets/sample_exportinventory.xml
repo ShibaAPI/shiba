@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<inventoryresult>
+    <request>
+        <login>testimport2</login>
+        <scope>PRICING</scope>
+        <version>2012-10-23</version>
+    </request>
+    <response>
+        <nbresults>4</nbresults>
+        <advertlist>
+            <advert>
+                <productsummary>
+                    <productid>153669702</productid>
+                    <url><![CDATA[/offer/buy/153669702/pog-spide-man-sm-29-hammerhead.html]]></url>
+                    <headline><![CDATA[Pog Spide-Man Sm 29 (Hammerhead)]]></headline>
+                    <topic><![CDATA[Objets à collectionner]]></topic>
+                    <pricing>
+                        <adverts>
+                            <newadverts>
+
+                            </newadverts>
+                            <usedadverts>
+
+                                <advert>
+                                    <advertid>545912165</advertid>
+                                    <price>
+                                        <amount>0.9</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>1.0</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>LIKE_NEW</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>spikali</login>
+                                        <type>INDIVIDUAL</type>
+                                        <country>France</country>
+                                        <salescount>310</salescount>
+
+
+                                        <commitrate>0.96</commitrate>
+
+
+                                        <rating>4.86</rating>
+
+                                        <shippingtypes>NORMAL, SUIVI, RECOMMANDE, SO_RECOMMANDE, CHRONOPOST</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                            </usedadverts>
+                        </adverts>
+                    </pricing>
+
+                </productsummary>
+                <advertid>589371143</advertid>
+                <sku><![CDATA[3]]></sku>
+                <price>
+                    <amount>2.0</amount>
+                    <currency>EUR</currency>
+                </price>
+
+                <quality>NEW</quality>
+                <unlimitedquantity>false</unlimitedquantity>
+                <stock>1</stock>
+
+                <adverttype>NEW</adverttype>
+                <isnegotiable>true</isnegotiable>
+                <isoriginal>false</isoriginal>
+            </advert>
+            <advert>
+                <productsummary>
+                    <productid>1153771</productid>
+                    <url><![CDATA[/offer/buy/1153771/Le-Seigneur-Des-Anneaux-La-Communaute-De-L-anneau-The-Lord-Of-The-Ring-The-Fellowship-Of-The-Ring-DVD-Zone-2.html]]></url>
+                    <headline><![CDATA[Le Seigneur Des Anneaux - La Communauté De L'anneau - Édition Prestige]]></headline>
+                    <topic><![CDATA[DVD Zone 2]]></topic>
+                    <digest><![CDATA[Metropolitan Vidéo]]></digest>
+                    <caption><![CDATA[Peter Jackson]]></caption>
+                    <barcode>3384442024631</barcode>
+                    <pricing>
+                        <adverts>
+                            <newadverts>
+
+                                <advert>
+                                    <advertid>585418440</advertid>
+                                    <price>
+                                        <amount>6.98</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>NEW</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>3</stock>
+
+                                    <seller>
+
+                                        <login>laurius</login>
+                                        <type>PRO</type>
+                                        <country>France</country>
+                                        <salescount>56780</salescount>
+
+
+                                        <commitrate>0.99</commitrate>
+
+
+                                        <rating>4.91</rating>
+
+                                        <shippingtypes>NORMAL, RECOMMANDE</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>576183379</advertid>
+                                    <price>
+                                        <amount>6.98</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>NEW</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>3</stock>
+
+                                    <seller>
+
+                                        <login>cine-project</login>
+                                        <type>PRO</type>
+                                        <country>France</country>
+                                        <salescount>41090</salescount>
+
+
+                                        <commitrate>1.0</commitrate>
+
+
+                                        <rating>4.84</rating>
+
+                                        <shippingtypes>NORMAL, SUIVI, RECOMMANDE, CHRONOPOST</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>569375482</advertid>
+                                    <price>
+                                        <amount>9.9</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>NEW</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>Marginalia</login>
+                                        <type>PRO</type>
+                                        <country>France</country>
+                                        <salescount>6925</salescount>
+
+
+                                        <commitrate>0.92</commitrate>
+
+
+                                        <rating>4.57</rating>
+
+                                        <shippingtypes>NORMAL, SO_RECOMMANDE</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>348238532</advertid>
+                                    <price>
+                                        <amount>19.9</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>NEW</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>2</stock>
+
+                                    <seller>
+
+                                        <login>CINELINE</login>
+                                        <type>PRO</type>
+                                        <country>France</country>
+                                        <salescount>2910</salescount>
+
+
+                                        <commitrate>0.94</commitrate>
+
+
+                                        <rating>4.77</rating>
+
+                                        <shippingtypes>NORMAL, RECOMMANDE, SO_RECOMMANDE, CHRONOPOST</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                            </newadverts>
+                            <usedadverts>
+
+                                <advert>
+                                    <advertid>565119166</advertid>
+                                    <price>
+                                        <amount>1.0</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>GOOD</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>mg1981</login>
+                                        <type>INDIVIDUAL</type>
+                                        <country>France</country>
+                                        <salescount>25</salescount>
+
+
+                                        <commitrate>0.64</commitrate>
+
+
+                                        <rating>4.76</rating>
+
+                                        <shippingtypes>NORMAL, SUIVI, RECOMMANDE, SO_RECOMMANDE</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>591055088</advertid>
+                                    <price>
+                                        <amount>1.2</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>GOOD</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>grillito1</login>
+                                        <type>INDIVIDUAL</type>
+                                        <country>France</country>
+                                        <salescount>41</salescount>
+
+
+                                        <commitrate>0.98</commitrate>
+
+
+                                        <rating>4.82</rating>
+
+                                        <shippingtypes>NORMAL, SUIVI, RECOMMANDE, SO_RECOMMANDE, CHRONOPOST</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>574749199</advertid>
+                                    <price>
+                                        <amount>2.0</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>VERY_GOOD</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>vizioo333</login>
+                                        <type>INDIVIDUAL</type>
+                                        <country>France</country>
+                                        <salescount>38</salescount>
+
+
+                                        <commitrate>1.0</commitrate>
+
+
+                                        <rating>4.73</rating>
+
+                                        <shippingtypes>SO_RECOMMANDE</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>579235910</advertid>
+                                    <price>
+                                        <amount>2.0</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>VERY_GOOD</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>dieu12345</login>
+                                        <type>INDIVIDUAL</type>
+                                        <country>France</country>
+                                        <salescount>367</salescount>
+
+
+                                        <commitrate>0.92</commitrate>
+
+
+                                        <rating>4.72</rating>
+
+                                        <shippingtypes>SUIVI, RECOMMANDE, SO_RECOMMANDE</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>520037892</advertid>
+                                    <price>
+                                        <amount>2.0</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>VERY_GOOD</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>Yannick80</login>
+                                        <type>INDIVIDUAL</type>
+                                        <country>France</country>
+                                        <salescount>15</salescount>
+
+
+                                        <commitrate>0.71</commitrate>
+
+
+                                        <rating>4.54</rating>
+
+                                        <shippingtypes>SO_RECOMMANDE, CHRONOPOST</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                            </usedadverts>
+                        </adverts>
+                    </pricing>
+
+                </productsummary>
+                <advertid>591440075</advertid>
+                <sku><![CDATA[SKU35]]></sku>
+                <price>
+                    <amount>8.0</amount>
+                    <currency>EUR</currency>
+                </price>
+
+                <quality>NEW</quality>
+                <unlimitedquantity>false</unlimitedquantity>
+                <stock>1</stock>
+
+                <adverttype>NEW</adverttype>
+                <isnegotiable>true</isnegotiable>
+                <isoriginal>false</isoriginal>
+            </advert>
+            <advert>
+                <productsummary>
+                    <productid>171118248</productid>
+                    <url><![CDATA[/offer/buy/171118248/tapis-grattant-intinerair-40x60-cm-vert.html]]></url>
+                    <headline><![CDATA[Tapis Grattant Intinerair - 40x60 Cm - Vert]]></headline>
+                    <topic><![CDATA[Tapis de cuisine]]></topic>
+                    <complement><![CDATA[ Couleur Vert. ]]></complement>
+                    <caption><![CDATA[Autre]]></caption>
+                    <pricing>
+                        <adverts>
+                            <newadverts>
+
+                            </newadverts>
+                            <usedadverts>
+
+                            </usedadverts>
+                        </adverts>
+                    </pricing>
+
+                </productsummary>
+                <advertid>581420060</advertid>
+                <sku><![CDATA[328559]]></sku>
+                <price>
+                    <amount>13.08</amount>
+                    <currency>EUR</currency>
+                </price>
+
+                <quality>NEW</quality>
+                <unlimitedquantity>false</unlimitedquantity>
+                <stock>68</stock>
+
+                <comment><![CDATA[Envoi rapide et soigné.]]></comment>
+
+                <adverttype>NEW</adverttype>
+                <isnegotiable>true</isnegotiable>
+                <isoriginal>false</isoriginal>
+            </advert>
+            <advert>
+                <productsummary>
+                    <productid>112465077</productid>
+                    <url><![CDATA[/offer/buy/112465077/spiderman-3-de-sam-raimi-dvd-zone-2.html]]></url>
+                    <headline><![CDATA[Spider-Man 3 - Spiderman]]></headline>
+                    <topic><![CDATA[DVD Zone 2]]></topic>
+                    <digest><![CDATA[Studio : G.C.T.H.V.]]></digest>
+                    <caption><![CDATA[Sam Raimi]]></caption>
+                    <barcode>3280743122208</barcode>
+                    <pricing>
+                        <adverts>
+                            <newadverts>
+
+                            </newadverts>
+                            <usedadverts>
+
+                                <advert>
+                                    <advertid>560637490</advertid>
+                                    <price>
+                                        <amount>3.35</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>VERY_GOOD</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>saskia77</login>
+                                        <type>PRO</type>
+                                        <country>France</country>
+                                        <salescount>6520</salescount>
+
+
+                                        <commitrate>0.89</commitrate>
+
+
+                                        <rating>4.79</rating>
+
+                                        <shippingtypes>NORMAL, SUIVI, RECOMMANDE, SO_RECOMMANDE, CHRONOPOST</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>554692592</advertid>
+                                    <price>
+                                        <amount>3.5</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>LIKE_NEW</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>sissi47180</login>
+                                        <type>INDIVIDUAL</type>
+                                        <country>France</country>
+                                        <salescount>72</salescount>
+
+
+                                        <commitrate>0.87</commitrate>
+
+
+                                        <rating>4.71</rating>
+
+                                        <shippingtypes>NORMAL, SUIVI, SO_RECOMMANDE, CHRONOPOST</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>523406776</advertid>
+                                    <price>
+                                        <amount>4.0</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>LIKE_NEW</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>6</stock>
+
+                                    <seller>
+
+                                        <login>Patrick8268</login>
+                                        <type>INDIVIDUAL</type>
+                                        <country>France</country>
+                                        <salescount>382</salescount>
+
+
+                                        <commitrate>0.99</commitrate>
+
+
+                                        <rating>4.96</rating>
+
+                                        <shippingtypes>NORMAL, RECOMMANDE, SO_RECOMMANDE, CHRONOPOST</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>591023272</advertid>
+                                    <price>
+                                        <amount>4.5</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>LIKE_NEW</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>leptitfaitou</login>
+                                        <type>INDIVIDUAL</type>
+                                        <country>France</country>
+                                        <salescount>1</salescount>
+
+
+                                        <commitrate>1.0</commitrate>
+
+
+                                        <rating>5.0</rating>
+
+                                        <shippingtypes>NORMAL, SUIVI, RECOMMANDE</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                                <advert>
+                                    <advertid>557256174</advertid>
+                                    <price>
+                                        <amount>4.5</amount>
+                                        <currency>EUR</currency>
+                                    </price>
+
+                                    <shippingcost>
+                                        <amount>2.9</amount>
+                                        <currency>EUR</currency>
+                                    </shippingcost>
+                                    <shippingtype>NORMAL</shippingtype>
+
+                                    <quality>LIKE_NEW</quality>
+                                    <unlimitedquantity>false</unlimitedquantity>
+                                    <stock>1</stock>
+
+                                    <seller>
+
+                                        <login>Ladydiddi</login>
+                                        <type>INDIVIDUAL</type>
+                                        <country>France</country>
+                                        <salescount>25</salescount>
+
+
+                                        <commitrate>0.83</commitrate>
+
+
+                                        <rating>4.89</rating>
+
+                                        <shippingtypes>NORMAL, SUIVI, RECOMMANDE, SO_RECOMMANDE, CHRONOPOST</shippingtypes>
+                                    </seller>
+                                </advert>
+
+                            </usedadverts>
+                        </adverts>
+                    </pricing>
+
+                </productsummary>
+                <advertid>591425349</advertid>
+                <sku><![CDATA[SKUSKU]]></sku>
+                <price>
+                    <amount>1.0</amount>
+                    <currency>EUR</currency>
+                </price>
+
+                <quality>NEW</quality>
+                <unlimitedquantity>false</unlimitedquantity>
+                <stock>1</stock>
+
+                <adverttype>NEW</adverttype>
+                <isnegotiable>true</isnegotiable>
+                <isoriginal>false</isoriginal>
+            </advert>
+        </advertlist>
+    </response>
+</inventoryresult>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<getavailableshippingtypesresult>
+    <request>
+        <user><![CDATA[xxxxx]]></user>
+        <version>2013-06-25</version>
+    </request>
+    <response>
+        <lastversion>2013-06-25</lastversion>
+        <basic_types>
+            <mode>
+                <alias>NORMAL</alias>
+                <label><![CDATA[Normal]]></label>
+                <active>1</active>
+            </mode>
+            <mode>
+                <alias>SUIVI</alias>
+                <label><![CDATA[Suivi]]></label>
+                <active>0</active>
+            </mode>
+            <mode>
+                <alias>RECOMMANDE</alias>
+                <label><![CDATA[Recommandé]]></label>
+                <active>0</active>
+            </mode>
+            <mode>
+                <alias>EXPRESS_DELIVERY</alias>
+                <label><![CDATA[Livraison express]]></label>
+                <active>1</active>
+            </mode>
+        </basic_types>
+        <custom_types>
+
+            <mode>
+                <alias>AAAA</alias>
+                <label><![CDATA[Mode personnalisé 1]]></label>
+                <shipping_delay><![CDATA[]]></shipping_delay>
+                <active>1</active>
+            </mode>
+            <mode>
+                <alias>BBBB</alias>
+                <label><![CDATA[Mode personnalisé 2]]></label>
+                <shipping_delay><![CDATA[]]></shipping_delay>
+                <active>0</active>
+            </mode>
+            <mode>
+                <alias>TELE</alias>
+                <label><![CDATA[Téléportation]]></label>
+                <shipping_delay><![CDATA[]]></shipping_delay>
+                <active>1</active>
+            </mode>
+        </custom_types>
+    </response>
+</getavailableshippingtypesresult>

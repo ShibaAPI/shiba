@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<confirmpreorder xmlns="http://pmcdn.priceminister.com/res/schema/confirmpreorder" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmcdn.priceminister.com/res/schema/confirmpreorder http://pmcdn.priceminister.com/res/schema/confirmpreorder/confirmpreorder.2013-01-09.xsd">
+<request>
+<version>2013-01-09</version>
+<user>login</user>
+<advertid>601047302</advertid>
+<stock>1</stock>
+</request>
+<response>
+<lastversion>2013-01-09</lastversion>
+<statut>OK : no remaining item(s)</statut>
+</response>
+</confirmpreorder>

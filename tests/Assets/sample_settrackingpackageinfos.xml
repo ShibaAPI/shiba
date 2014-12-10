@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+
+
+
+
+<setshippingpackageinfosresult xmlns="http://akamai.pminteg.fr/res/schema/settrackingpackageinfos" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://akamai.pminteg.fr/res/schema/settrackingpackageinfos http://akamai.pminteg.fr/res/schema/settrackingpackageinfos/settrackingpackageinfos.2012-11-06.xsd">
+<request>
+<user>xxxxx</user>
+<itemid>312553677</itemid>
+<trackingNumber>11111111</trackingNumber>
+<trackingUrl>http://www.priceminister.com</trackingUrl>
+<transporterName>TNT</transporterName>
+<version>2012-11-06</version>
+</request>
+<response>
+<lastversion>2012-11-06</lastversion>
+<status>OK</status>
+</response>
+</setshippingpackageinfosresult>

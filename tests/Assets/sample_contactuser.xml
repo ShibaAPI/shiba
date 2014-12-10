@@ -1,0 +1,12 @@
+<contactuseraboutitemresult>
+    <request>
+        <version>2011-02-02</version>
+        <user>vendeur</user>
+        <itemid>1510313528</itemid>
+        <content>message a mon acheteur : voici le numéro de colis 123132</content>
+    </request>
+    <response>
+        <lastversion>2011-02-02</lastversion>
+        <status>SENT</status>
+    </response>
+</contactuseraboutitemresult>

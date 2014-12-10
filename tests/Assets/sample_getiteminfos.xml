@@ -1,0 +1,149 @@
+<getiteminfosresult xsi:schemaLocation="http://www.priceminister.com/res/schema/getiteminfos   http://www.priceminister.com/res/schema/getiteminfos/getiteminfos.2011-02-02.xsd" xmlns="http://www.priceminister.com/res/schema/getiteminfos"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <request>
+        <version>2011-02-02</version>
+        <user>vendeur</user>
+        <itemid>1510836652</itemid>
+    </request>
+    <response>
+        <lastversion>2011-02-02</lastversion>
+        <sellerid>109698070</sellerid>
+        <item>
+            <itemid>1518036652</itemid>
+            <date>10/02/2011-14:34</date>
+            <itemstatus>ON_HOLD</itemstatus>
+            <itemstate>CLAIMED_AMICABLE</itemstate>
+            <itemstatelabel><![CDATA[Réclamation   en cours. Traitement amiable avec l'acheteur]]></itemstatelabel>
+            <paymentstatus>Forthcoming</paymentstatus>
+            <sellerscore/>
+            <claim>
+                <creationdate>15/02/2011-11:46</creationdate>
+                <type>DAMAGED</type>
+                <state>NEW</state>
+                <amicable>Y</amicable>
+                <claimcomment><![CDATA[article   abimé, pouvez vous me renvoyer un nouvel exemplaire   ?]]></claimcomment>
+            </claim>
+            <availableactions>
+                <action>
+                    <title>Contacter   acheteur1</title>
+                    <description><![CDATA[Pour   contacter acheteur1 à propos de cet article (expédition, fonctionnement,   accessoires...)]]></description>
+                    <actioncode>contactuseraboutitem</actioncode>
+                </action>
+                <action>
+                    <title>Contacter PriceMinister</title>
+                    <description><![CDATA[Pour   apporter un complément d'information concernant la réclamation de   acheteur1]]></description>
+                    <actioncode>contactpriceministeraboutitem</actioncode>
+                </action>
+                <action>
+                    <title>Annuler la vente   de cet article</title>
+                    <description><![CDATA[Pour   annuler la transaction et demander à PriceMinister de rembourser   acheteur1]]></description>
+                    <actioncode>cancelitem</actioncode>
+                </action>
+            </availableactions>
+            <mail>
+                <mailid>
+                    2906818102
+                </mailid>
+                <senddate>
+                    15/02/2011-11:58
+                </senddate>
+                <sender>
+                    vendeur
+                </sender>
+                <recipient>
+                    PriceMinister
+                </recipient>
+                <object>
+                    <![CDATA[Concernant   la réclamation en cours (943746258/1510436652)]]>
+                </object>
+                <content>
+                    <![CDATA[Bonjour,   pouvez vous m'expliquer la démarche à suivre pour   retourner un nouvel article à l'acheteur ? serais je   remboursé ?]]>
+                </content>
+                <status>
+                    SENT
+                </status>
+            </mail>
+            <message>
+                <sender>
+                    vendeur
+                </sender>
+                <recipient>
+                    Acheteur1
+                </recipient>
+                <senddate>
+                    15/02/2011-11:50
+                </senddate>
+                <content>
+                    <![CDATA[Pouvez   vous nous retourner l'article à l'adresse précisé sur la facture ?   Cordialement,]]>
+                </content>
+                <status>
+                    SENT
+                </status>
+            </message>
+            <message>
+                <sender>
+                    acheteur
+                </sender>
+                <recipient>
+                    vendeur
+                </recipient>
+                <senddate>
+                    15/02/2011-11:47
+                </senddate>
+                <content>
+                    <![CDATA[Merci   d'avance pour votre aide !]]>
+                </content>
+                <status>
+                    UNREAD
+                </status>
+            </message>
+            <mail>
+                <mailid>2906185099</mailid>
+                <senddate>15/02/2011-11:46</senddate>
+                <sender>PriceMinister</sender>
+                <recipient>vendeur</recipient>
+                <object><![CDATA[Réclamation   sur votre vente (1551036652) - Service Clients PriceMinister]]></object>
+                <content><![CDATA[Bonjour   vendeur,
+L'acheteur   acheteur19 vient de faire une réclamation concernant votre vente :
+Commande :   943796258/9151036652 <   http://www.priceminister.com/purchase?action=itemmonitoring&itemid=1510346652   >
+Article : Harry   Potter Et Le Prince De Sang-Mêlé - Édition Spéciale 2 Dvd (DVD Zone 2)
+Réclamation :   Abimé
+Commentaire :   article abimé, pouvez vous me renvoyer un nouvel exemplaire ?
+A partir   d'aujourd'hui, 15/02/2011, vous avez 3 jours ouvrés pour trouver un   arrangement amiable directement avec acheteur1. (Notez que pendant cette   période, il est inutile de contacter le Service Clients de PriceMinister.)
+Pour répondre à la   réclamation de ACHETEUR1, envoyez-lui un message depuis la page "Suivi   de commande pour cet article <   http://www.pminteg.fr/purchase?action=itemmonitoring&itemid=151036652#item_state_action_block   >".
+Pour y accéder à   tout moment, rendez-vous dans la rubrique "Tous mes achats" de   votre compte, puis sur l'article concerné.
+Sur cette page,   vous retrouverez également toutes les informations importantes (messages   envoyés et reçus, événements...) concernant cet article.
+ACHETEUR1 indique   avoir reçu un article qui n'est pas conforme à votre annonce.
+Si vous estimez ne   pas être en mesure de résoudre le problème de l'acheteur (ex. : par un   échange de l'article non conforme, un rabais...), vous aurez la possibilité   d'annuler la vente, toujours depuis la page "Suivi de commande pour cet   article < http://www.priceminister.com/purchase?action=itemmonitoring&itemid=1510346652#item_state_action_block   >".
+Si vous et votre   acheteur ne trouvez aucune solution au problème après 3 jours ouvrés, le   Service Clients de PriceMinister reprendra en main le traitement de cette   réclamation, et vous contactera directement par e-mail.
+Merci de votre   confiance et à bientôt,
+PriceMinister <   http://www.priceminister.com >
+L'Achat-Vente   Garanti]]></content>
+                <status>UNREAD</status>
+            </mail>
+            <itemlog>
+                <creationdate>15/02/2011-11:46</creationdate>
+                <itemlogcode>AMICABLE_CLAIM_CREATION</itemlogcode>
+                <description><![CDATA[ACHETEUR1   a ouvert une réclamation.]]></description>
+                <complement><![CDATA[Commentaire   :  article abimé, pouvez vous me   renvoyer un nouvel exemplaire ?]]></complement>
+            </itemlog>
+            <itemlog>
+                <creationdate>15/02/2011-11:08</creationdate>
+                <itemlogcode>ITEM_COMMITTED</itemlogcode>
+                <description><![CDATA[Vous   avez confirmé la commande et vous êtes engagé(e) à livrer cet article.]]></description>
+                <complement><![CDATA[]]></complement>
+            </itemlog>
+            <itemlog>
+                <creationdate>15/02/2011-00:08</creationdate>
+                <itemlogcode>PM_REMIND</itemlogcode>
+                <description><![CDATA[Un   rappel vous a été envoyé par e-mail pour confirmer la commande.]]></description>
+                <complement><![CDATA[]]></complement>
+            </itemlog>
+            <itemlog>
+                <creationdate>10/02/2011-14:34</creationdate>
+                <itemlogcode>ITEM_REQUESTED</itemlogcode>
+                <description><![CDATA[ACHETEUR1   vous a passé commande pour cet article.]]></description>
+                <complement><![CDATA[]]></complement>
+            </itemlog>
+        </item>
+    </response>
+</getiteminfosresult>

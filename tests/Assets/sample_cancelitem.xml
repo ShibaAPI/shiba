@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<cancelitemresult xmlns="http://www.priceminister.com/res/schema/cancelitem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.priceminister.com/res/schema/cancelitem http://www.priceminister.com/res/schema/cancelitem/cancelitem.2011-02-02.xsd">
+    <request>
+        <version>2011-02-02</version>
+        <user>vendeur</user>
+        <itemid>1510361129</itemid>
+        <comment><![CDATA[je souhaite annuler la vente]]></comment>
+    </request>
+    <response>
+        <lastversion>2011-02-02</lastversion>
+        <status>CANCELLED</status>
+    </response>
+</cancelitemresult>

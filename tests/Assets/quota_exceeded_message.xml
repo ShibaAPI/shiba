@@ -1,0 +1,12 @@
+<errorresponse xmlns="http://pmcdn.priceminister.com/res/schema/error" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmcdn.priceminister.com/res/schema/error http://pmcdn.priceminister.com/res/schema/error/error.xsd">
+    <error>
+        <type>Sender</type>
+        <code>InvalidUserRights</code>
+        <message>Quota exceeded.</message>
+        <details>
+            <detail>
+                <![CDATA[ You have exceeded the maximum number of requests per hour. Please contact support.pro@priceminister.com for more information. ]]>
+            </detail>
+        </details>
+    </error>
+</errorresponse>

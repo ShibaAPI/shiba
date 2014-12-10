@@ -1,0 +1,4842 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<producttypetemplateresult>
+    <request>
+        <user>xxx</user>
+        <alias>video_produit</alias>
+
+        <scope>VALUES</scope>
+
+        <version>2012-09-11</version>
+    </request>
+    <response>
+        <prdtypelabel>Blu-ray - DVD - VHS</prdtypelabel>
+
+        <updatedate>2011-12-06T11:54:48</updatedate>
+
+        <attributes>
+
+
+
+
+
+            <product>
+
+                <attribute>
+                    <label>Identification produit</label>
+                    <key>pid</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Number</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Référence privée</label>
+                    <key>submitterreference</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Titre de la vidéo</label>
+                    <key>titre</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Réalisateur</label>
+                    <key>realisateur</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Genre de vidéo</label>
+                    <key>genredevideo</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>1</multivalued>
+                    <hasvalues>1</hasvalues>
+
+                    <valueslist>
+
+                        <value>Action</value>
+
+                        <value>Animation</value>
+
+                        <value>Animaux</value>
+
+                        <value>Apaisant</value>
+
+                        <value>Autres séries</value>
+
+                        <value>Aventure</value>
+
+                        <value>Beaux arts</value>
+
+                        <value>Beaux-Arts</value>
+
+                        <value>Biographie / Biopic</value>
+
+                        <value>Bollywood</value>
+
+                        <value>Catch</value>
+
+                        <value>Chasse &amp; Pêche</value>
+
+                        <value>Comédie</value>
+
+                        <value>Comédie dramatique</value>
+
+                        <value>Comédie musicale</value>
+
+                        <value>Comédie romantique</value>
+
+                        <value>Concert</value>
+
+                        <value>Conte</value>
+
+                        <value>Court-Métrage</value>
+
+                        <value>Cuisine</value>
+
+                        <value>Culture</value>
+
+                        <value>Culture Gay</value>
+
+                        <value>Culture urbaine</value>
+
+                        <value>Danse</value>
+
+                        <value>Documentaire</value>
+
+                        <value>Documentaire-fiction</value>
+
+                        <value>Drame</value>
+
+                        <value>Emotion</value>
+
+                        <value>Erotique</value>
+
+                        <value>Espionnage</value>
+
+                        <value>Fan Service</value>
+
+                        <value>Fantastique</value>
+
+                        <value>Film musical</value>
+
+                        <value>Football</value>
+
+                        <value>Freefight</value>
+
+                        <value>GORE</value>
+
+                        <value>grands classiques</value>
+
+                        <value>Guerre</value>
+
+                        <value>Hard-rock</value>
+
+                        <value>Historique</value>
+
+                        <value>Horreur</value>
+
+                        <value>Humour</value>
+
+                        <value>Japanimation</value>
+
+                        <value>Japanimation érotique</value>
+
+                        <value>Jardinage &amp; Déco</value>
+
+                        <value>Jazz &amp; Blues</value>
+
+                        <value>Jeux</value>
+
+                        <value>Karaoké</value>
+
+                        <value>Kickboxing &amp; Freefight</value>
+
+                        <value>Kung Fu</value>
+
+                        <value>Méthode</value>
+
+                        <value>Mini-series / Feuilletons</value>
+
+                        <value>Muet</value>
+
+                        <value>Musique classique</value>
+
+                        <value>Musique du monde</value>
+
+                        <value>Nature</value>
+
+                        <value>Opéra</value>
+
+                        <value>Péplum</value>
+
+                        <value>Policier</value>
+
+                        <value>Pour enfants</value>
+
+                        <value>R&amp;B &amp; Soul</value>
+
+                        <value>Rap</value>
+
+                        <value>Renovation-réparation</value>
+
+                        <value>Santé &amp; Bien-Être</value>
+
+                        <value>Science et Découvertes</value>
+
+                        <value>Science Fiction</value>
+
+                        <value>Série Anime / OAV</value>
+
+                        <value>Série d&#39;animation enfants</value>
+
+                        <value>Série TV</value>
+
+                        <value>Séries TV</value>
+
+                        <value>Sitcom</value>
+
+                        <value>Société et débats</value>
+
+                        <value>Spectacle</value>
+
+                        <value>Sport</value>
+
+                        <value>Sports mécaniques</value>
+
+                        <value>Techno / Electro</value>
+
+                        <value>Théâtre</value>
+
+                        <value>Thriller</value>
+
+                        <value>Variété Française</value>
+
+                        <value>Variété internationale</value>
+
+                        <value>Voyages</value>
+
+                        <value>Western</value>
+
+                    </valueslist>
+
+                </attribute>
+
+                <attribute>
+                    <label>Public</label>
+                    <key>public</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>1</hasvalues>
+
+                    <valueslist>
+
+                        <value>18</value>
+
+                        <value>16</value>
+
+                        <value>12</value>
+
+                        <value>10</value>
+
+                        <value>Tous</value>
+
+                    </valueslist>
+
+                </attribute>
+
+                <attribute>
+                    <label>Code-barres (EAN / ISBN)</label>
+                    <key>codebarres</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Type de support</label>
+                    <key>typedesupport</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>1</hasvalues>
+
+                    <valueslist>
+
+                        <value>Blu-Ray</value>
+
+                        <value>Blu-Ray 3D</value>
+
+                        <value>DVD Zone 1</value>
+
+                        <value>DVD Zone 2</value>
+
+                        <value>DVD Zone Autre</value>
+
+                        <value>HD-DVD</value>
+
+                        <value>VHS</value>
+
+                    </valueslist>
+
+                </attribute>
+
+                <attribute>
+                    <label>Zone</label>
+                    <key>zone</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>1</hasvalues>
+
+                    <valueslist>
+
+                        <value>Zone 0</value>
+
+                        <value>Zone 1</value>
+
+                        <value>Zone 2</value>
+
+                        <value>Zone 3</value>
+
+                        <value>Zone 4</value>
+
+                        <value>Zone 5</value>
+
+                        <value>Zone 6</value>
+
+                        <value>Zone 8</value>
+
+                        <value>Zone A</value>
+
+                        <value>Zone B</value>
+
+                        <value>Zone C</value>
+
+                    </valueslist>
+
+                </attribute>
+
+                <attribute>
+                    <label>Nombre de supports</label>
+                    <key>nbrDisc</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Number</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Prix d&#39;origine</label>
+                    <key>originalPrice</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Number</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Éditeur</label>
+                    <key>editeur</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Date de parution</label>
+                    <key>date</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Date</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Saga</label>
+                    <key>saga</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>1</hasvalues>
+
+                    <valueslist>
+
+                        <value>Autre</value>
+
+                        <value>1,2,3 Bo!</value>
+
+                        <value>10.5</value>
+
+                        <value>1000 morts</value>
+
+                        <value>2000 ans de christianisme</value>
+
+                        <value>2001</value>
+
+                        <value>2001 Maniacs</value>
+
+                        <value>20TH CENTURY BOYS</value>
+
+                        <value>21 jump street</value>
+
+                        <value>24 Heures Chrono</value>
+
+                        <value>28 jours plus tard</value>
+
+                        <value>3 Ninjas</value>
+
+                        <value>3 randonnées</value>
+
+                        <value>3 ténors</value>
+
+                        <value>30 Rock</value>
+
+                        <value>36ème chambre de Shaolin</value>
+
+                        <value>3D Maniak</value>
+
+                        <value>3RUN</value>
+
+                        <value>3X3 EYES</value>
+
+                        <value>4 randonnées</value>
+
+                        <value>5, rue Sésame</value>
+
+                        <value>64, Rue Du Zoo</value>
+
+                        <value>7 à la maison</value>
+
+                        <value>8mm</value>
+
+                        <value>A Chinese Ghost Story</value>
+
+                        <value>À la croisée des mondes</value>
+
+                        <value>À la Maison Blanche</value>
+
+                        <value>A Very British Gangster</value>
+
+                        <value>A.D. Police</value>
+
+                        <value>Abenobashi</value>
+
+                        <value>Absolutely Fabulous</value>
+
+                        <value>Action man</value>
+
+                        <value>ADI</value>
+
+                        <value>ADIBOU</value>
+
+                        <value>Aeon Flux</value>
+
+                        <value>Affrontement Nazi-US Army</value>
+
+                        <value>Afro Samurai</value>
+
+                        <value>Afterlife</value>
+
+                        <value>Aglaé et Sidonie</value>
+
+                        <value>AGRIPPINE</value>
+
+                        <value>Ah ! My Goddess</value>
+
+                        <value>Ai Yori Aoshi</value>
+
+                        <value>Aïcha</value>
+
+                        <value>Aigle de fer</value>
+
+                        <value>Ailes grises</value>
+
+                        <value>Air Bud</value>
+
+                        <value>Air Gear</value>
+
+                        <value>AirPort</value>
+
+                        <value>albator</value>
+
+                        <value>Albert, le 5ème mousquetaire</value>
+
+                        <value>Alexander</value>
+
+                        <value>Alf</value>
+
+                        <value>Alias</value>
+
+                        <value>Alien</value>
+
+                        <value>Allan Quatermain</value>
+
+                        <value>Allez raconte</value>
+
+                        <value>Alligator</value>
+
+                        <value>Allo Maman</value>
+
+                        <value>Ally McBeal</value>
+
+                        <value>Alone in the Dark</value>
+
+                        <value>alvin et les chipmunks</value>
+
+                        <value>American Girls</value>
+
+                        <value>American Graffiti</value>
+
+                        <value>American Pie</value>
+
+                        <value>American Psycho</value>
+
+                        <value>American Yakuza</value>
+
+                        <value>Amityville</value>
+
+                        <value>Amour, Gloire et Beauté</value>
+
+                        <value>Anaconda</value>
+
+                        <value>Ancienne Egypte</value>
+
+                        <value>Andromeda</value>
+
+                        <value>Andy Pandy</value>
+
+                        <value>Angel</value>
+
+                        <value>Angel Blade</value>
+
+                        <value>Angel Cop</value>
+
+                        <value>Angela 15 ans</value>
+
+                        <value>ANGELIC LAYER</value>
+
+                        <value>Angelina Ballerina</value>
+
+                        <value>Angélique</value>
+
+                        <value>Animal</value>
+
+                        <value>Anne, la maison aux pignons verts</value>
+
+                        <value>Another Gay Movie</value>
+
+                        <value>Antigone 34</value>
+
+                        <value>Antoine</value>
+
+                        <value>APHRODISIA</value>
+
+                        <value>aphrodites</value>
+
+                        <value>appleseed</value>
+
+                        <value>Aquarion</value>
+
+                        <value>Arabesque</value>
+
+                        <value>Arc the Lad</value>
+
+                        <value>Archibald le Koala</value>
+
+                        <value>ARCHIE</value>
+
+                        <value>Architectures</value>
+
+                        <value>Area 88</value>
+
+                        <value>Arena di Verona</value>
+
+                        <value>Argento Soma</value>
+
+                        <value>ARIA the Origination</value>
+
+                        <value>Arjuna</value>
+
+                        <value>Arma</value>
+
+                        <value>Arme ultime</value>
+
+                        <value>Armitage III</value>
+
+                        <value>Armour of God</value>
+
+                        <value>Arrested Development</value>
+
+                        <value>Arsène Lupin</value>
+
+                        <value>Arthur et les Minimoys</value>
+
+                        <value>Aseria l&#39;éternelle</value>
+
+                        <value>Ash and Scribbs</value>
+
+                        <value>Ashita No Joe</value>
+
+                        <value>Askadis</value>
+
+                        <value>Astérix</value>
+
+                        <value>Astérix &amp; Obélix</value>
+
+                        <value>Astro boy</value>
+
+                        <value>Astro le petit robot</value>
+
+                        <value>Atomic Betty</value>
+
+                        <value>Au bout de la nuit</value>
+
+                        <value>Au delà du réel</value>
+
+                        <value>Au nom de la loi</value>
+
+                        <value>Au plaisir de Dieu</value>
+
+                        <value>Au temps des mammouths</value>
+
+                        <value>Au-delà du rationnel</value>
+
+                        <value>Au-delà du réel</value>
+
+                        <value>Au-delà du réel : L&#39;aventure continue</value>
+
+                        <value>Austin Powers</value>
+
+                        <value>Autobus à impériale, L&#39;</value>
+
+                        <value>autre monde</value>
+
+                        <value>Avalon</value>
+
+                        <value>Avatar</value>
+
+                        <value>Avatar le dernier maître de l&#39;air</value>
+
+                        <value>Aventures de Guillaume Tell, Les</value>
+
+                        <value>Aventures en Inde</value>
+
+                        <value>Avocat d&#39;office</value>
+
+                        <value>Avocats et Associés</value>
+
+                        <value>Ayakashi</value>
+
+                        <value>AYASHI NO CERES</value>
+
+                        <value>Azumi</value>
+
+                        <value>Babar</value>
+
+                        <value>BABE</value>
+
+                        <value>Babel II</value>
+
+                        <value>Baby Blood</value>
+
+                        <value>Baby Cart</value>
+
+                        <value>Baby IQ</value>
+
+                        <value>Babylon 5</value>
+
+                        <value>Baki The grappler</value>
+
+                        <value>Bakugan</value>
+
+                        <value>Bali</value>
+
+                        <value>Bang Rajan</value>
+
+                        <value>BANLIEUE 13</value>
+
+                        <value>Barbapapa</value>
+
+                        <value>Barbershop</value>
+
+                        <value>Barbie</value>
+
+                        <value>Barom One</value>
+
+                        <value>Basic Instinct</value>
+
+                        <value>Basilisk</value>
+
+                        <value>Batman</value>
+
+                        <value>Bats</value>
+
+                        <value>BATTLE ROYALE</value>
+
+                        <value>Battlestar Galactica : 1978</value>
+
+                        <value>Battlestar Galactica : 1980</value>
+
+                        <value>Battlestar Galactica : 2003</value>
+
+                        <value>Battlestar Galactica : 2005</value>
+
+                        <value>Battlestar Rebellion</value>
+
+                        <value>Baywatch Nights</value>
+
+                        <value>Beast Fighter</value>
+
+                        <value>beatrix potter</value>
+
+                        <value>Beavis and Butt-Head</value>
+
+                        <value>Bébé Clifford</value>
+
+                        <value>Bébé Lilly</value>
+
+                        <value>Bécé Bégé</value>
+
+                        <value>BECK</value>
+
+                        <value>Beef</value>
+
+                        <value>Beethoven</value>
+
+                        <value>Belle et Sébastien</value>
+
+                        <value>Ben 10</value>
+
+                        <value>Benjamin Gates</value>
+
+                        <value>Berserk</value>
+
+                        <value>Betty Boop</value>
+
+                        <value>Beverly Hills 90210</value>
+
+                        <value>Beyblade</value>
+
+                        <value>Bibi Blocksberg</value>
+
+                        <value>BiBiFOC</value>
+
+                        <value>Bible Black</value>
+
+                        <value>Bienvenue dans le nanomonde</value>
+
+                        <value>Big Mamma</value>
+
+                        <value>Biker Mice from Mars</value>
+
+                        <value>Bill and Ted</value>
+
+                        <value>Bing et Bong</value>
+
+                        <value>bioman</value>
+
+                        <value>Bionic Woman</value>
+
+                        <value>bionicle</value>
+
+                        <value>Biotiful planète</value>
+
+                        <value>Black Books</value>
+
+                        <value>Black Butler</value>
+
+                        <value>Black Cat</value>
+
+                        <value>Black Lagoon</value>
+
+                        <value>Black Mask</value>
+
+                        <value>Blade</value>
+
+                        <value>BLAKE ET MORTIMER</value>
+
+                        <value>Blanche</value>
+
+                        <value>Bleach</value>
+
+                        <value>Bloodfist</value>
+
+                        <value>BloodRayne</value>
+
+                        <value>Bloodsport</value>
+
+                        <value>Blue Bloods</value>
+
+                        <value>Blue Crush</value>
+
+                        <value>Blue Dragon</value>
+
+                        <value>Blue Exorcist</value>
+
+                        <value>Blue Gender</value>
+
+                        <value>Blue Seed</value>
+
+                        <value>Blue Sonnet</value>
+
+                        <value>Blue Submarine</value>
+
+                        <value>Bob l&#39;éponge</value>
+
+                        <value>Bob le bricoleur</value>
+
+                        <value>Bob Morane</value>
+
+                        <value>Bobo</value>
+
+                        <value>Bobobo Bo BoBobo</value>
+
+                        <value>Body Chemistry</value>
+
+                        <value>Body Training</value>
+
+                        <value>Bodyguard</value>
+
+                        <value>bonanza</value>
+
+                        <value>BONES</value>
+
+                        <value>Bonne Nuit les Petits</value>
+
+                        <value>Boogeyman</value>
+
+                        <value>Boogiepop Phantom</value>
+
+                        <value>Borgman</value>
+
+                        <value>Borsalino</value>
+
+                        <value>Boston Justice</value>
+
+                        <value>Bouba</value>
+
+                        <value>Boule &amp; Bill</value>
+
+                        <value>BOULE ET BILL</value>
+
+                        <value>Bounty Hunters</value>
+
+                        <value>Boys Be</value>
+
+                        <value>Brainy Baby</value>
+
+                        <value>Bratz</value>
+
+                        <value>Bravo Gudule</value>
+
+                        <value>Breaking Bad</value>
+
+                        <value>bref,</value>
+
+                        <value>Bridget Jones</value>
+
+                        <value>Broken Saints</value>
+
+                        <value>Brotherhood</value>
+
+                        <value>Brothers &amp; Sisters</value>
+
+                        <value>Bruno le kid</value>
+
+                        <value>BTX</value>
+
+                        <value>Buffy contre les Vampires</value>
+
+                        <value>Bugs</value>
+
+                        <value>Burn Notice</value>
+
+                        <value>Burst Angel</value>
+
+                        <value>Buso Renkin</value>
+
+                        <value>Butch Cassidy et le Kid</value>
+
+                        <value>Butcher</value>
+
+                        <value>C&#39;est moi l&#39;espion</value>
+
+                        <value>C&#39;est Pas Sorcier</value>
+
+                        <value>ca m&#39;intéresse</value>
+
+                        <value>Cabin Fever</value>
+
+                        <value>Cadfaël</value>
+
+                        <value>Cage Rage</value>
+
+                        <value>Cajou</value>
+
+                        <value>Californication</value>
+
+                        <value>Calimero</value>
+
+                        <value>Call Me Fitz</value>
+
+                        <value>Camelot</value>
+
+                        <value>Caméra Café</value>
+
+                        <value>Camp ROCK</value>
+
+                        <value>Camping</value>
+
+                        <value>Camping Paradis</value>
+
+                        <value>Canaan</value>
+
+                        <value>Candyman</value>
+
+                        <value>Cannonball</value>
+
+                        <value>CAP SUR...</value>
+
+                        <value>Capitaine flam</value>
+
+                        <value>CAPTAIN AMERICA</value>
+
+                        <value>captain harlock</value>
+
+                        <value>Captain Herlock</value>
+
+                        <value>Captain Tylor</value>
+
+                        <value>Card Captor Sakura</value>
+
+                        <value>Carnets D&#39;expédition</value>
+
+                        <value>Carnets de plongée</value>
+
+                        <value>carnosaur</value>
+
+                        <value>caroline chérie</value>
+
+                        <value>Caroline et ses amis</value>
+
+                        <value>Cars</value>
+
+                        <value>Casimir</value>
+
+                        <value>Casper</value>
+
+                        <value>Casshan</value>
+
+                        <value>CASTLE</value>
+
+                        <value>cat&#39;s eyes</value>
+
+                        <value>Catherine - Il suffit d&#39;un amour</value>
+
+                        <value>Cédric</value>
+
+                        <value>Célestin</value>
+
+                        <value>Cendrillon : Disney</value>
+
+                        <value>Central Nuit</value>
+
+                        <value>Ceux qui chassent des Elfes</value>
+
+                        <value>chapeau melon et bottes de cuir</value>
+
+                        <value>chapi chapo</value>
+
+                        <value>Charlie</value>
+
+                        <value>charlie chan</value>
+
+                        <value>Charlie Jade</value>
+
+                        <value>Charlotte aux fraises</value>
+
+                        <value>Charmed</value>
+
+                        <value>Chasse : mode d&#39;emploi</value>
+
+                        <value>Chasseurs de dragons</value>
+
+                        <value>Che</value>
+
+                        <value>Cheers</value>
+
+                        <value>Chérie j&#39;ai retreci les gosses</value>
+
+                        <value>Chérie, ...</value>
+
+                        <value>Chien de flic</value>
+
+                        <value>Children of the Corn</value>
+
+                        <value>China O&#39;Brien</value>
+
+                        <value>Chinatown</value>
+
+                        <value>Chobits</value>
+
+                        <value>Choc des Titans, Le</value>
+
+                        <value>Chocola et Vanilla</value>
+
+                        <value>Chocotte minute</value>
+
+                        <value>Chris Colorado</value>
+
+                        <value>Chrno Crusade</value>
+
+                        <value>Chroniques De San Francisco</value>
+
+                        <value>Chronologie de la seconde guerre mondiale</value>
+
+                        <value>CHUCK</value>
+
+                        <value>Chucky, la Poupée de Sang</value>
+
+                        <value>Chuggington</value>
+
+                        <value>Cicak-Man</value>
+
+                        <value>Cinéma de notre temps</value>
+
+                        <value>City Slickers</value>
+
+                        <value>Clair de lune</value>
+
+                        <value>Claire et Tipoune</value>
+
+                        <value>CLAMP SCHOOL DETECTIVES</value>
+
+                        <value>Clara Sheller</value>
+
+                        <value>Classe Mannequin</value>
+
+                        <value>Classic Archive</value>
+
+                        <value>Claymore</value>
+
+                        <value>CLERKS</value>
+
+                        <value>Clifford</value>
+
+                        <value>Closer</value>
+
+                        <value>Cobaye</value>
+
+                        <value>Cobra</value>
+
+                        <value>Cococinel</value>
+
+                        <value>Cocoon</value>
+
+                        <value>Cocoshaker</value>
+
+                        <value>Code Geass</value>
+
+                        <value>Code Lyoko</value>
+
+                        <value>Code Quantum</value>
+
+                        <value>Cody Banks</value>
+
+                        <value>coeur de dragon</value>
+
+                        <value>coeur océan</value>
+
+                        <value>Collectionneur</value>
+
+                        <value>Collision</value>
+
+                        <value>Columbo</value>
+
+                        <value>Commandant Cousteau</value>
+
+                        <value>Comme Cendrillon</value>
+
+                        <value>Comme chiens et chats</value>
+
+                        <value>Comment ça marche</value>
+
+                        <value>Commissaire Moulin</value>
+
+                        <value>COMMISSAIRE SAN ANTONIO</value>
+
+                        <value>Compte à rebours</value>
+
+                        <value>Conan</value>
+
+                        <value>Conan Le Fils du Futur</value>
+
+                        <value>connaissance du monde</value>
+
+                        <value>Connie la vache</value>
+
+                        <value>Contacts</value>
+
+                        <value>Contes défaits</value>
+
+                        <value>Corneil et Bernie</value>
+
+                        <value>Corto Maltese</value>
+
+                        <value>Cosby Show</value>
+
+                        <value>Cosmocats</value>
+
+                        <value>Cosmos 1999</value>
+
+                        <value>Cougar Town</value>
+
+                        <value>Courts mais gay</value>
+
+                        <value>cousteau</value>
+
+                        <value>Cowboy Bebop</value>
+
+                        <value>CRACKER</value>
+
+                        <value>Crash Extreme</value>
+
+                        <value>Creamy</value>
+
+                        <value>Crest of the Stars</value>
+
+                        <value>Critters</value>
+
+                        <value>Crocodile</value>
+
+                        <value>Crocodile Dundee</value>
+
+                        <value>CrOW</value>
+
+                        <value>Crows Zero</value>
+
+                        <value>Cube</value>
+
+                        <value>Cutie Honey</value>
+
+                        <value>Cyber Tracker</value>
+
+                        <value>Cybersix</value>
+
+                        <value>Cyborg</value>
+
+                        <value>Cyborg Cop</value>
+
+                        <value>Cynthia ou le rythme de la vie</value>
+
+                        <value>D.GRAY-MAN</value>
+
+                        <value>Dai-Guard</value>
+
+                        <value>Daimaho Toge</value>
+
+                        <value>Dance in the Vampire Bund</value>
+
+                        <value>Danse ta vie</value>
+
+                        <value>Daphne in the Brilliant Blue</value>
+
+                        <value>Dark Angel</value>
+
+                        <value>DARKMAN</value>
+
+                        <value>Dead Like Me</value>
+
+                        <value>Dead or Alive</value>
+
+                        <value>DEAD ZONE</value>
+
+                        <value>Deadman Wonderland</value>
+
+                        <value>Deadwood</value>
+
+                        <value>DearS</value>
+
+                        <value>Death Bell</value>
+
+                        <value>Death Note</value>
+
+                        <value>Death Race, course à la mort</value>
+
+                        <value>Decadent Evil</value>
+
+                        <value>Delta force</value>
+
+                        <value>Démétan</value>
+
+                        <value>Démons</value>
+
+                        <value>DENIS LA MALICE</value>
+
+                        <value>Denvers le dernier dinosaure</value>
+
+                        <value>Desert Punk</value>
+
+                        <value>Desperate housewives</value>
+
+                        <value>Destination finale</value>
+
+                        <value>Destiny of Shrine Maiden</value>
+
+                        <value>Détective Conan</value>
+
+                        <value>Détour mortel</value>
+
+                        <value>Deux flics à Miami</value>
+
+                        <value>Devil in Miss Jones</value>
+
+                        <value>Devil May Cry</value>
+
+                        <value>Dexter</value>
+
+                        <value>Dharma and Greg</value>
+
+                        <value>Dhoom</value>
+
+                        <value>Dick le rebelle</value>
+
+                        <value>DICK TRACY</value>
+
+                        <value>Didou dessine moi</value>
+
+                        <value>Die Hard</value>
+
+                        <value>dirty dancing</value>
+
+                        <value>Dirty Pair</value>
+
+                        <value>Discipline</value>
+
+                        <value>Disney</value>
+
+                        <value>Django</value>
+
+                        <value>DN angel</value>
+
+                        <value>DNA2</value>
+
+                        <value>Docteur Dolittle</value>
+
+                        <value>Dokkoider</value>
+
+                        <value>Dokuro Chan</value>
+
+                        <value>Dollhouse</value>
+
+                        <value>Dominion Tank Police</value>
+
+                        <value>Don Camillo</value>
+
+                        <value>Donald Strachey</value>
+
+                        <value>Donjons et dragons</value>
+
+                        <value>Donnie Darko</value>
+
+                        <value>Dora</value>
+
+                        <value>Dorm Daze</value>
+
+                        <value>Douce nuit, sanglante nuit</value>
+
+                        <value>Dr Phibes</value>
+
+                        <value>Dr Slump</value>
+
+                        <value>Dracula Hammer</value>
+
+                        <value>Dragon Ball</value>
+
+                        <value>Dragon Ball Z</value>
+
+                        <value>Dream High</value>
+
+                        <value>Drôle de couple</value>
+
+                        <value>Drôles de Vikings</value>
+
+                        <value>DT Eightron</value>
+
+                        <value>Du vent dans les saules</value>
+
+                        <value>Dual</value>
+
+                        <value>duel masters</value>
+
+                        <value>Dumb and Dumber</value>
+
+                        <value>Durarara !!</value>
+
+                        <value>Duval and Moretti</value>
+
+                        <value>Dylan Dog</value>
+
+                        <value>Dynastie</value>
+
+                        <value>E&#39;s Otherwise</value>
+
+                        <value>Eat-Man</value>
+
+                        <value>Eating Out</value>
+
+                        <value>Echanges de corps</value>
+
+                        <value>Eckhart</value>
+
+                        <value>École paternelle</value>
+
+                        <value>Eden of the East</value>
+
+                        <value>Edgar Détective Cambrioleur</value>
+
+                        <value>El Cazador de la Bruja</value>
+
+                        <value>El Hazard</value>
+
+                        <value>Elemental Gerad</value>
+
+                        <value>Elfen Lied</value>
+
+                        <value>Elliot</value>
+
+                        <value>Emi magique</value>
+
+                        <value>Emma Harte</value>
+
+                        <value>Emmanuelle</value>
+
+                        <value>En quarantaine</value>
+
+                        <value>En territoire ennemi</value>
+
+                        <value>ENFER ET PARADIS</value>
+
+                        <value>Entre elle et lui</value>
+
+                        <value>Ergo Proxy</value>
+
+                        <value>Ernest le vampire</value>
+
+                        <value>Escaflowne</value>
+
+                        <value>Etat d&#39;alerte</value>
+
+                        <value>Eureka 7</value>
+
+                        <value>Evil Dead</value>
+
+                        <value>Excel Saga</value>
+
+                        <value>Exorciste SA</value>
+
+                        <value>Expendables</value>
+
+                        <value>Exterminator</value>
+
+                        <value>Extrême limite</value>
+
+                        <value>Extrêmes dinosaures</value>
+
+                        <value>EYESHIELD 21</value>
+
+                        <value>Face Caméra</value>
+
+                        <value>fairy tail</value>
+
+                        <value>Fame</value>
+
+                        <value>Famille Pirate</value>
+
+                        <value>Family Guy</value>
+
+                        <value>Family of Cops</value>
+
+                        <value>Fantastic Children</value>
+
+                        <value>FANTOMAS</value>
+
+                        <value>Fast and furious</value>
+
+                        <value>Fate/Stay Night</value>
+
+                        <value>FBI : Duo très spécial</value>
+
+                        <value>Fear Itself</value>
+
+                        <value>Feast</value>
+
+                        <value>Félix le chat</value>
+
+                        <value>Femmes de loi</value>
+
+                        <value>FernGully</value>
+
+                        <value>fifi brindacier</value>
+
+                        <value>Figure 17</value>
+
+                        <value>Final Fantasy</value>
+
+                        <value>Firestarter</value>
+
+                        <value>Fist Fighter</value>
+
+                        <value>FLAME OF RECCA</value>
+
+                        <value>Flander&#39;s Company</value>
+
+                        <value>Flash Gordon</value>
+
+                        <value>FLCL</value>
+
+                        <value>Flesh Gordon</value>
+
+                        <value>Flic de Beverly Hills</value>
+
+                        <value>Flicka</value>
+
+                        <value>Flics</value>
+
+                        <value>Flint</value>
+
+                        <value>Flipper</value>
+
+                        <value>Flower and Snake</value>
+
+                        <value>Fortress</value>
+
+                        <value>Fragile : poupée esclave</value>
+
+                        <value>FRANKENSTEIN</value>
+
+                        <value>Franklin</value>
+
+                        <value>Frasier</value>
+
+                        <value>Freddy</value>
+
+                        <value>Freedom</value>
+
+                        <value>Freeway</value>
+
+                        <value>French Connection</value>
+
+                        <value>Friday</value>
+
+                        <value>Fruits basket</value>
+
+                        <value>Full metal panic</value>
+
+                        <value>Full metal panic Fumoffu</value>
+
+                        <value>Fullmetal Alchemist</value>
+
+                        <value>Funky Cops</value>
+
+                        <value>fushigi yugi</value>
+
+                        <value>Futurama</value>
+
+                        <value>FX</value>
+
+                        <value>G-Taste</value>
+
+                        <value>Gad Guard</value>
+
+                        <value>Gadget and the Gadgetinis</value>
+
+                        <value>galaxy express 999</value>
+
+                        <value>Galaxy railways</value>
+
+                        <value>Gang des champions</value>
+
+                        <value>GAntz</value>
+
+                        <value>Garden of Sinners</value>
+
+                        <value>Garfield</value>
+
+                        <value>GASARAKI</value>
+
+                        <value>Gaspard le gardien du parc</value>
+
+                        <value>Gatchaman</value>
+
+                        <value>Gate Keepers</value>
+
+                        <value>Gédéon</value>
+
+                        <value>gen d&#39;hiroshima</value>
+
+                        <value>Gendarme (Louis de Funès)</value>
+
+                        <value>Gendarme - Louis de Funès</value>
+
+                        <value>Generator Gawl</value>
+
+                        <value>Genshiken</value>
+
+                        <value>George de la Jungle</value>
+
+                        <value>georgie</value>
+
+                        <value>Gestalt</value>
+
+                        <value>GET BACKERS</value>
+
+                        <value>Get Shorty</value>
+
+                        <value>Ghost Hunt</value>
+
+                        <value>Ghost in the Shell</value>
+
+                        <value>Ghost rider</value>
+
+                        <value>Ghost Talker&#39;s Daydream</value>
+
+                        <value>Ghoulies</value>
+
+                        <value>Giant Robo</value>
+
+                        <value>Gigi</value>
+
+                        <value>Gigolo</value>
+
+                        <value>Gilgamesh</value>
+
+                        <value>Ginger Snaps</value>
+
+                        <value>Gingerdead Man</value>
+
+                        <value>Girls and Sex</value>
+
+                        <value>Gladiformers</value>
+
+                        <value>Glass Fleet</value>
+
+                        <value>Glee</value>
+
+                        <value>go Diego</value>
+
+                        <value>goal</value>
+
+                        <value>Godannar</value>
+
+                        <value>Gokusen</value>
+
+                        <value>golden boy</value>
+
+                        <value>Golden Years</value>
+
+                        <value>Gonger</value>
+
+                        <value>Gothic</value>
+
+                        <value>Gowap</value>
+
+                        <value>Gravion</value>
+
+                        <value>GRAVITATION</value>
+
+                        <value>grease</value>
+
+                        <value>Gremlins</value>
+
+                        <value>gribouille</value>
+
+                        <value>Grindhouse</value>
+
+                        <value>GTO</value>
+
+                        <value>Guild</value>
+
+                        <value>Gun X Sword</value>
+
+                        <value>Gunbuster</value>
+
+                        <value>Gundam</value>
+
+                        <value>Gundam Wing</value>
+
+                        <value>Gungrave</value>
+
+                        <value>Gunparade March</value>
+
+                        <value>Guns</value>
+
+                        <value>Gunslinger Girl</value>
+
+                        <value>Gurren Lagann</value>
+
+                        <value>GUYVER</value>
+
+                        <value>Gwendoline</value>
+
+                        <value>H2</value>
+
+                        <value>Hack</value>
+
+                        <value>Hakkenden</value>
+
+                        <value>Halloween</value>
+
+                        <value>Hand Maid May</value>
+
+                        <value>Hannah Montana</value>
+
+                        <value>Hannibal Lecter</value>
+
+                        <value>happy days</value>
+
+                        <value>Happy Feet</value>
+
+                        <value>Happy Tree Friends</value>
+
+                        <value>Hard Time</value>
+
+                        <value>Haré guu</value>
+
+                        <value>Haré+Guu</value>
+
+                        <value>Harold et Kumar</value>
+
+                        <value>Harper&#39;s Island</value>
+
+                        <value>Harry Potter</value>
+
+                        <value>Haruka</value>
+
+                        <value>Hatsukoi Limited</value>
+
+                        <value>HAVEN</value>
+
+                        <value>Hawaii - Police d&#39;état</value>
+
+                        <value>Hawaii 5-0</value>
+
+                        <value>He Is My Master</value>
+
+                        <value>Heartland</value>
+
+                        <value>Heat Guy J</value>
+
+                        <value>Heidi</value>
+
+                        <value>Heimat</value>
+
+                        <value>Hellboy</value>
+
+                        <value>Hello Kitty</value>
+
+                        <value>Hellraiser</value>
+
+                        <value>HELLSING</value>
+
+                        <value>Heroes</value>
+
+                        <value>Heroic Trio</value>
+
+                        <value>Hidden</value>
+
+                        <value>High School of the Dead</value>
+
+                        <value>Highlander</value>
+
+                        <value>Higurashi</value>
+
+                        <value>Hikaru No Go</value>
+
+                        <value>Hinako</value>
+
+                        <value>Hinamizawa</value>
+
+                        <value>Histoire de fantômes chinois</value>
+
+                        <value>histoires fantastiques</value>
+
+                        <value>hitcher</value>
+
+                        <value>Hocus &amp; Lotus</value>
+
+                        <value>Hokuto no Ken</value>
+
+                        <value>Hollow Man</value>
+
+                        <value>honey</value>
+
+                        <value>Hooligans</value>
+
+                        <value>Hôpital Hilltop</value>
+
+                        <value>Horseland</value>
+
+                        <value>Hostel</value>
+
+                        <value>Hot School</value>
+
+                        <value>Hot Shots</value>
+
+                        <value>House</value>
+
+                        <value>House of the Dead</value>
+
+                        <value>How I Met Your Mother</value>
+
+                        <value>Hulk</value>
+
+                        <value>Human Crossroads</value>
+
+                        <value>Human Target</value>
+
+                        <value>Humanoid Kikaider</value>
+
+                        <value>Hunger Games</value>
+
+                        <value>Hunter</value>
+
+                        <value>Hunter X Hunter</value>
+
+                        <value>Hurlements</value>
+
+                        <value>Hyper tension</value>
+
+                        <value>Hypnose</value>
+
+                        <value>I My Me Strawberry Eggs</value>
+
+                        <value>I Wish You Were Here</value>
+
+                        <value>I&quot;s</value>
+
+                        <value>I&#39;s</value>
+
+                        <value>Ichi the Killer</value>
+
+                        <value>If These Walls Could Talk</value>
+
+                        <value>IGPX</value>
+
+                        <value>Ikki Tousen</value>
+
+                        <value>Il etait une fois l&#39;espace</value>
+
+                        <value>Imma Yojo</value>
+
+                        <value>Indecent Behavior</value>
+
+                        <value>Indiana Jones</value>
+
+                        <value>Infernal Affairs</value>
+
+                        <value>Infinite Ryvius</value>
+
+                        <value>Initial D</value>
+
+                        <value>Innocent Venus</value>
+
+                        <value>inspecteur gadget</value>
+
+                        <value>Inspecteur Leclerc enquête, L&#39;</value>
+
+                        <value>Inspecteur Tibbs</value>
+
+                        <value>Interlude</value>
+
+                        <value>International Vale Tudo Championship</value>
+
+                        <value>Into the West</value>
+
+                        <value>Inuyasha</value>
+
+                        <value>Ip Man</value>
+
+                        <value>Ippo le challenger</value>
+
+                        <value>Iria</value>
+
+                        <value>Iron Man</value>
+
+                        <value>Irresponsible Captain Tylor</value>
+
+                        <value>Izumo</value>
+
+                        <value>Jack Reed</value>
+
+                        <value>Jack Ryan</value>
+
+                        <value>jackass</value>
+
+                        <value>Jacob Jacob</value>
+
+                        <value>jag</value>
+
+                        <value>jalna</value>
+
+                        <value>James Bond</value>
+
+                        <value>Jane et le dragon</value>
+
+                        <value>Jason Bourne</value>
+
+                        <value>Jasper le pingouin</value>
+
+                        <value>Jay Jay le petit avion</value>
+
+                        <value>Jayce et les Conquérants</value>
+
+                        <value>Je suis curieuse</value>
+
+                        <value>JEAN DE FLORETTE</value>
+
+                        <value>Jeanne et Serge</value>
+
+                        <value>Jeepers Creepers</value>
+
+                        <value>Jem et les Hologrammes</value>
+
+                        <value>Jericho</value>
+
+                        <value>Jesse Stone</value>
+
+                        <value>Jeu Set et Match</value>
+
+                        <value>Jeune homme vert, Le</value>
+
+                        <value>JF Partagerait appartement</value>
+
+                        <value>jimmy neutron</value>
+
+                        <value>Jing, roi des voleurs</value>
+
+                        <value>Jo Gaillard</value>
+
+                        <value>Johan Falk</value>
+
+                        <value>Johnny English</value>
+
+                        <value>Jojo&#39;s Bizarre Adventure</value>
+
+                        <value>JOSELITO</value>
+
+                        <value>Joséphine ange gardien</value>
+
+                        <value>Journal d&#39;un dégonflé</value>
+
+                        <value>Ju-on</value>
+
+                        <value>Judo Boy</value>
+
+                        <value>Julia Corsi commissaire</value>
+
+                        <value>Julie Cuisine</value>
+
+                        <value>Julie Lescaut</value>
+
+                        <value>juliette je t&#39;aime</value>
+
+                        <value>JUNGLE FIGHT</value>
+
+                        <value>Jungle Jack</value>
+
+                        <value>Jungo</value>
+
+                        <value>jurassic park</value>
+
+                        <value>Juste un baiser</value>
+
+                        <value>Justified</value>
+
+                        <value>Jyu oh Sei</value>
+
+                        <value>K-1</value>
+
+                        <value>K-ON !</value>
+
+                        <value>Kacho-Ohji</value>
+
+                        <value>Kaiketsu zorori</value>
+
+                        <value>Kaleido star</value>
+
+                        <value>Kangoo Juniors</value>
+
+                        <value>Karas</value>
+
+                        <value>Karaté Kid</value>
+
+                        <value>Karol</value>
+
+                        <value>Ken le survivant</value>
+
+                        <value>Kenshin le vagabond</value>
+
+                        <value>Kibakichi</value>
+
+                        <value>Kickboxer</value>
+
+                        <value>Kid Paddle</value>
+
+                        <value>Kiddy Grade</value>
+
+                        <value>Kikabichi</value>
+
+                        <value>Kilari</value>
+
+                        <value>Kill Bill</value>
+
+                        <value>Killjoy</value>
+
+                        <value>Kimagure Orange Road</value>
+
+                        <value>King</value>
+
+                        <value>king kong</value>
+
+                        <value>King Rising</value>
+
+                        <value>Kiri le clown</value>
+
+                        <value>Koi Kaze</value>
+
+                        <value>KUNG FU PANDA</value>
+
+                        <value>Kurumi</value>
+
+                        <value>Kyo Kara Maoh !</value>
+
+                        <value>L&#39;abonné de la ligne U</value>
+
+                        <value>L&#39;âge de glace</value>
+
+                        <value>L&#39;âge du Verseau</value>
+
+                        <value>L&#39;agence tous risques</value>
+
+                        <value>L&#39;âme des guerriers</value>
+
+                        <value>L&#39;arme fatale</value>
+
+                        <value>L&#39;arnaque</value>
+
+                        <value>L&#39;ART DE LA GUERRE</value>
+
+                        <value>L&#39;école des champions</value>
+
+                        <value>L&#39;effet papillon</value>
+
+                        <value>L&#39;ère des Shura</value>
+
+                        <value>L&#39;étalon noir</value>
+
+                        <value>L&#39;exorciste chinois</value>
+
+                        <value>L&#39;Histoire sans fin</value>
+
+                        <value>L&#39;homme de fer</value>
+
+                        <value>L&#39;île à Lili</value>
+
+                        <value>L&#39;ile au trésor</value>
+
+                        <value>L&#39;île perdue</value>
+
+                        <value>l&#39;instit</value>
+
+                        <value>L&#39;internat</value>
+
+                        <value>L&#39;odyssée de Kino</value>
+
+                        <value>L&#39;odyssée du Kameleon</value>
+
+                        <value>L&#39;oiseau Bleu</value>
+
+                        <value>L&#39;ours Benjamin</value>
+
+                        <value>La 7ème compagnie</value>
+
+                        <value>La bande à Picsou</value>
+
+                        <value>la bataille des planètes</value>
+
+                        <value>La Belle et la Bête : La série</value>
+
+                        <value>La Blue Girl</value>
+
+                        <value>La Boum</value>
+
+                        <value>La boutique de Michelle &amp; Michel</value>
+
+                        <value>La Cage Aux Folles</value>
+
+                        <value>La caméra explore le temps</value>
+
+                        <value>La castagne</value>
+
+                        <value>La chambre des dames</value>
+
+                        <value>la chatte</value>
+
+                        <value>La chevauchée des Valkyries</value>
+
+                        <value>La cite de Dieu - La cité des hommes</value>
+
+                        <value>La coccinelle</value>
+
+                        <value>la colline a des yeux</value>
+
+                        <value>La comtesse de Charny</value>
+
+                        <value>La condition de l&#39;homme</value>
+
+                        <value>La créature du marais</value>
+
+                        <value>La Crim</value>
+
+                        <value>La croisière s&#39;amuse</value>
+
+                        <value>La dernière séance</value>
+
+                        <value>La famille Addams</value>
+
+                        <value>La famille Berenstain</value>
+
+                        <value>La Famille Delajungle</value>
+
+                        <value>LA FAMILLE PASSIFLORE</value>
+
+                        <value>La Famille Trompette</value>
+
+                        <value>La féline</value>
+
+                        <value>La Femme Scorpion</value>
+
+                        <value>La fille des enfers</value>
+
+                        <value>La fille du 20H</value>
+
+                        <value>La florentine</value>
+
+                        <value>La légende de Fong Sai-Yuk</value>
+
+                        <value>La légende de Zatoichi</value>
+
+                        <value>La légende du Singe Roi</value>
+
+                        <value>La loi du fugitif</value>
+
+                        <value>La maison des Rocheville</value>
+
+                        <value>La Malédiction</value>
+
+                        <value>La mélancolie de Haruhi Suzumiya</value>
+
+                        <value>La Momie</value>
+
+                        <value>La mort en ligne</value>
+
+                        <value>La Mouche</value>
+
+                        <value>La Mutante</value>
+
+                        <value>La nouvelle malle des Indes</value>
+
+                        <value>La nuit au musée</value>
+
+                        <value>la panthère rose</value>
+
+                        <value>La petite Olympe et les Dieux</value>
+
+                        <value>La petite souris</value>
+
+                        <value>La planète des singes</value>
+
+                        <value>La poliziotta</value>
+
+                        <value>La Princesse du Nil</value>
+
+                        <value>La prison de verre</value>
+
+                        <value>La Révolution Française</value>
+
+                        <value>La rivière Espérance</value>
+
+                        <value>La sorcière de l&#39;Ouest</value>
+
+                        <value>La trilogie d&#39;Apu</value>
+
+                        <value>La vallée des poupées</value>
+
+                        <value>La véritable histoire du Petit Chaperon Rouge</value>
+
+                        <value>La vérité si je mens</value>
+
+                        <value>Lady Chatterley</value>
+
+                        <value>LADY OSCAR</value>
+
+                        <value>Lagon Bleu</value>
+
+                        <value>Laguna Beach</value>
+
+                        <value>Lake Placid</value>
+
+                        <value>Lamu</value>
+
+                        <value>largo winch</value>
+
+                        <value>Lassie</value>
+
+                        <value>Last Exile</value>
+
+                        <value>Last Seduction</value>
+
+                        <value>Laura ou la passion du théâtre</value>
+
+                        <value>Le bahut des tordus</value>
+
+                        <value>Le bonheur au bout du chemin</value>
+
+                        <value>Le bras armé de la loi</value>
+
+                        <value>Le caméléon</value>
+
+                        <value>LE CERCLE</value>
+
+                        <value>Le cercle de feu</value>
+
+                        <value>Le chant des rêves</value>
+
+                        <value>Le chevalier d&#39;Eon</value>
+
+                        <value>Le chien de Noël</value>
+
+                        <value>Le Cirque du Soeil</value>
+
+                        <value>Le coeur a ses raisons</value>
+
+                        <value>Le coeur des hommes</value>
+
+                        <value>Le comte de Monte-Cristo</value>
+
+                        <value>Le cygne et la princesse</value>
+
+                        <value>Le Diamant du Nil</value>
+
+                        <value>Le feu sur la glace</value>
+
+                        <value>Le fils du cordonnier</value>
+
+                        <value>Le flic de Hong Kong</value>
+
+                        <value>Le Frelon Vert</value>
+
+                        <value>le genre humain</value>
+
+                        <value>Le grand pardon</value>
+
+                        <value>Le grand patron</value>
+
+                        <value>Le jeu de la mort</value>
+
+                        <value>Le journal de Meg</value>
+
+                        <value>Le juge est une femme</value>
+
+                        <value>Le justicier de Shanghaï</value>
+
+                        <value>Le livre de la jungle</value>
+
+                        <value>Le manège enchanté</value>
+
+                        <value>Le manga de A à Z</value>
+
+                        <value>Le manoir des vices</value>
+
+                        <value>Le marin des mers de Chine</value>
+
+                        <value>Le miel et les abeilles</value>
+
+                        <value>Le monde de Narnia</value>
+
+                        <value>Le monde secret du Père-Noël</value>
+
+                        <value>Le Monocle</value>
+
+                        <value>le nidouille</value>
+
+                        <value>Le palace en délire</value>
+
+                        <value>Le Parrain</value>
+
+                        <value>Le Petit Nicolas</value>
+
+                        <value>Le petit tracteur rouge</value>
+
+                        <value>Le portrait de Petite Cosette</value>
+
+                        <value>Le prince et la sirène</value>
+
+                        <value>Le prince et moi</value>
+
+                        <value>Le Projet Blair Witch</value>
+
+                        <value>le retour des morts vivants</value>
+
+                        <value>Le riche et le pauvre</value>
+
+                        <value>Le roi Leo</value>
+
+                        <value>LE ROI SCORPION</value>
+
+                        <value>Le sabre du plaisir</value>
+
+                        <value>Le Sang De La Vigne</value>
+
+                        <value>Le Secret du Sable Bleu</value>
+
+                        <value>Le Seigneur des Anneaux</value>
+
+                        <value>Le sens du devoir</value>
+
+                        <value>Le syndicat du crime</value>
+
+                        <value>Le tigre</value>
+
+                        <value>LE TOUR DU MONDE EN 80 JOURS</value>
+
+                        <value>Le transporteur</value>
+
+                        <value>Le Vent dans les Saules</value>
+
+                        <value>Legend of the Seeker</value>
+
+                        <value>léo et popi</value>
+
+                        <value>léonard</value>
+
+                        <value>Les 12 Royaumes</value>
+
+                        <value>Les 4 fantastiques</value>
+
+                        <value>les 4 filles du Docteur March</value>
+
+                        <value>Les 4400</value>
+
+                        <value>Les 5 dernières minutes</value>
+
+                        <value>LES AMAZONES</value>
+
+                        <value>Les anges de Boston</value>
+
+                        <value>Les Années Collège</value>
+
+                        <value>Les archives couleurs</value>
+
+                        <value>Les Aventures de Prince Noir</value>
+
+                        <value>Les aventures de Tsatsiki</value>
+
+                        <value>Les aventures de Zepi et Zinia</value>
+
+                        <value>Les aventures du Bosco</value>
+
+                        <value>Les aventures du Cdt Cousteau</value>
+
+                        <value>Les aventures du Lapin Bleu</value>
+
+                        <value>Les Bisounours</value>
+
+                        <value>Les Blagues De Toto</value>
+
+                        <value>Les Bodin&#39;s</value>
+
+                        <value>Les boeuf-carottes</value>
+
+                        <value>Les bons conseils de Celestin</value>
+
+                        <value>Les brigades du tigre</value>
+
+                        <value>Les Bronzés</value>
+
+                        <value>Les cadavres exquis de Patricia Highsmith</value>
+
+                        <value>Les cadets de la forêt</value>
+
+                        <value>Les Canopus</value>
+
+                        <value>les charlots</value>
+
+                        <value>Les Chevaliers Du Ciel</value>
+
+                        <value>Les chiens : Les connaître, les comprendre</value>
+
+                        <value>Les chimpanzés de l&#39;espace</value>
+
+                        <value>Les coeurs brûlés</value>
+
+                        <value>Les contes d&#39;Avonlea</value>
+
+                        <value>Les contes de la crypte</value>
+
+                        <value>Les contes de la terre</value>
+
+                        <value>Les contes du cimetière</value>
+
+                        <value>Les Copains De La Forêt</value>
+
+                        <value>Les Cordier juge et flic</value>
+
+                        <value>Les couples légendaires du 20ème siècle</value>
+
+                        <value>Les démons du maïs</value>
+
+                        <value>Les Dents De La Mer</value>
+
+                        <value>Les enquêtes de Miss Malard</value>
+
+                        <value>Les entrechats</value>
+
+                        <value>Les Experts</value>
+
+                        <value>Les Experts : Manhattan</value>
+
+                        <value>Les Experts : Miami</value>
+
+                        <value>Les fables de la fontaine</value>
+
+                        <value>Les Familles Sylvanians</value>
+
+                        <value>Les faucheurs de marguerites</value>
+
+                        <value>Les gens de Mogador</value>
+
+                        <value>Les gladiateurs</value>
+
+                        <value>Les gnomes</value>
+
+                        <value>Les Griffin</value>
+
+                        <value>Les Guerriers du Bronx</value>
+
+                        <value>les histoires du père castor</value>
+
+                        <value>Les hydronautes</value>
+
+                        <value>les incorruptibles</value>
+
+                        <value>Les Jumelles de St-Clare</value>
+
+                        <value>Les Killer Tomatoes</value>
+
+                        <value>Les Lascars</value>
+
+                        <value>Les légendes de Tatonka</value>
+
+                        <value>Les Maîtres de l&#39;Univers</value>
+
+                        <value>Les malheurs de Sophie</value>
+
+                        <value>Les merveilleux contes de Hans Christian Andersen</value>
+
+                        <value>Les Messagers</value>
+
+                        <value>Les Minijusticiers</value>
+
+                        <value>les mondes engloutis</value>
+
+                        <value>Les Muppets</value>
+
+                        <value>les mystères de l&#39;ouest</value>
+
+                        <value>Les Nouveaux Voyages de Gulliver</value>
+
+                        <value>Les oursons volants</value>
+
+                        <value>Les pervers du métro</value>
+
+                        <value>Les pervers du train</value>
+
+                        <value>Les Petits Einsteins</value>
+
+                        <value>Les pingouins de Madagascar</value>
+
+                        <value>LES RANDONNEURS</value>
+
+                        <value>Les Razmoket</value>
+
+                        <value>Les rebelles de la forêt</value>
+
+                        <value>Les ripoux</value>
+
+                        <value>Les routes du paradis</value>
+
+                        <value>Les rues de San Francisco</value>
+
+                        <value>Les samouraïs de l&#39;éternel</value>
+
+                        <value>Les Sauvetout</value>
+
+                        <value>Les schtroumpfs</value>
+
+                        <value>Les Sept mercenaires</value>
+
+                        <value>Les Simpson</value>
+
+                        <value>Les Sims</value>
+
+                        <value>LES SOURIS DES QUATRE SAISONS</value>
+
+                        <value>Les sous-doués</value>
+
+                        <value>Les trois mères</value>
+
+                        <value>Les trois Mousquetaires</value>
+
+                        <value>Les Visiteurs</value>
+
+                        <value>Les voyages de Balthazar</value>
+
+                        <value>Les Wirdozes</value>
+
+                        <value>Licensed by Royalty</value>
+
+                        <value>Lie to Me</value>
+
+                        <value>Life on Mars</value>
+
+                        <value>Lingeries</value>
+
+                        <value>Lip Service</value>
+
+                        <value>Little Cars</value>
+
+                        <value>Little people</value>
+
+                        <value>LOCH NESS</value>
+
+                        <value>Lodoss</value>
+
+                        <value>Lola and Virginia</value>
+
+                        <value>Londres, Police Judiciaire</value>
+
+                        <value>Lone Gunmen</value>
+
+                        <value>Lonesome Dove</value>
+
+                        <value>Lost Universe</value>
+
+                        <value>Louie The Rune Soldier</value>
+
+                        <value>Louis la brocante</value>
+
+                        <value>Loulou de Montmartre</value>
+
+                        <value>Love Hina</value>
+
+                        <value>LUCIE</value>
+
+                        <value>LUCKY LUKE</value>
+
+                        <value>lxd</value>
+
+                        <value>M1</value>
+
+                        <value>Mac Gyver</value>
+
+                        <value>Macross</value>
+
+                        <value>Mad Max</value>
+
+                        <value>Mad Men</value>
+
+                        <value>Mad Mission</value>
+
+                        <value>Madagascar</value>
+
+                        <value>madame Claude</value>
+
+                        <value>Madame le juge</value>
+
+                        <value>Madeline</value>
+
+                        <value>Mafia Blues</value>
+
+                        <value>Mafiosa</value>
+
+                        <value>Magic Baskets</value>
+
+                        <value>Magic Call-Girl</value>
+
+                        <value>Magic Kids</value>
+
+                        <value>MAGIC KNIGHT RAYEARTH</value>
+
+                        <value>Magic Warriors</value>
+
+                        <value>Magical Doremi</value>
+
+                        <value>Magicien d&#39;Oz</value>
+
+                        <value>Magicien d&#39;Oz (le)</value>
+
+                        <value>Magister Negima</value>
+
+                        <value>Mahoromatic</value>
+
+                        <value>MAIGRET</value>
+
+                        <value>Maître Da Costa</value>
+
+                        <value>Maman j&#39;ai raté l&#39;avion</value>
+
+                        <value>Maniac Cop</value>
+
+                        <value>Manny Et Ses Outils</value>
+
+                        <value>Manon</value>
+
+                        <value>Mär</value>
+
+                        <value>Marcelino</value>
+
+                        <value>Mariés deux enfants</value>
+
+                        <value>Mario</value>
+
+                        <value>Marion, profession détective</value>
+
+                        <value>Marley &amp; Moi</value>
+
+                        <value>Mars Daybreak</value>
+
+                        <value>Marsupilami</value>
+
+                        <value>Martian Successor Nadesico</value>
+
+                        <value>MARY HIGGINS CLARK</value>
+
+                        <value>Mash</value>
+
+                        <value>Mask</value>
+
+                        <value>Massacre à la Tronçonneuse</value>
+
+                        <value>Master Keaton</value>
+
+                        <value>Masters of Horror</value>
+
+                        <value>Matrix</value>
+
+                        <value>Max et Compagnie</value>
+
+                        <value>Maya l&#39;abeille</value>
+
+                        <value>McBain</value>
+
+                        <value>Meatballs</value>
+
+                        <value>Medium</value>
+
+                        <value>MegaMan NT Warrior</value>
+
+                        <value>Men In Black</value>
+
+                        <value>Merlin : Série</value>
+
+                        <value>Mermaid Forest</value>
+
+                        <value>Mes Amis Tigrou Et Winnie</value>
+
+                        <value>mesrine</value>
+
+                        <value>Metal hurlant</value>
+
+                        <value>Metrosexuality</value>
+
+                        <value>Mezzo</value>
+
+                        <value>Mezzo Forte</value>
+
+                        <value>Michiko e Hatchin</value>
+
+                        <value>Midori Days</value>
+
+                        <value>Mikido</value>
+
+                        <value>Millenium</value>
+
+                        <value>Millenium - US</value>
+
+                        <value>Millennium</value>
+
+                        <value>MIMI CRACRA</value>
+
+                        <value>mimic</value>
+
+                        <value>Minipouss</value>
+
+                        <value>Minuscule</value>
+
+                        <value>mirrors</value>
+
+                        <value>Mise à prix</value>
+
+                        <value>Miss Spider</value>
+
+                        <value>Mission Alcatraz</value>
+
+                        <value>Mission Impossible</value>
+
+                        <value>mister bean</value>
+
+                        <value>Modern Family</value>
+
+                        <value>Mohicans de Paris, Les</value>
+
+                        <value>Moldiver</value>
+
+                        <value>Mon beau-père et moi</value>
+
+                        <value>Mon curé</value>
+
+                        <value>Mon Petit Poney</value>
+
+                        <value>Mon voisin le tueur</value>
+
+                        <value>Mondwest</value>
+
+                        <value>Monsieur est servi</value>
+
+                        <value>Monster</value>
+
+                        <value>Monster Rancher</value>
+
+                        <value>Moomins</value>
+
+                        <value>Moonlight Mile</value>
+
+                        <value>Mortal Combat</value>
+
+                        <value>Motel</value>
+
+                        <value>Moyashimon</value>
+
+                        <value>MPD Psycho</value>
+
+                        <value>mr ripley</value>
+
+                        <value>Murder Princess</value>
+
+                        <value>Murder Rooms</value>
+
+                        <value>Muryoh</value>
+
+                        <value>Musashi - La voie du pistolet</value>
+
+                        <value>Mutant X</value>
+
+                        <value>My Hime</value>
+
+                        <value>My Name Is Earl</value>
+
+                        <value>My Santa</value>
+
+                        <value>My Sassy Girl</value>
+
+                        <value>Mystères de Paris, Les</value>
+
+                        <value>Nabari</value>
+
+                        <value>Naftaline</value>
+
+                        <value>NAJICA</value>
+
+                        <value>NANA</value>
+
+                        <value>nanaka</value>
+
+                        <value>Nanako</value>
+
+                        <value>Nanny McPhee</value>
+
+                        <value>Naruto</value>
+
+                        <value>Natural 2 Duo</value>
+
+                        <value>Nazca</value>
+
+                        <value>NCIS</value>
+
+                        <value>Nell</value>
+
+                        <value>Neon Genesis Evangelion</value>
+
+                        <value>Nerdz</value>
+
+                        <value>NESTOR BURMA</value>
+
+                        <value>New York District</value>
+
+                        <value>Newport Beach</value>
+
+                        <value>Nicky Larson</value>
+
+                        <value>Nicolas Le Floch</value>
+
+                        <value>NieA_7</value>
+
+                        <value>NIer</value>
+
+                        <value>Night of the Demons</value>
+
+                        <value>Night Watch</value>
+
+                        <value>Nightmares and Dreamscapes</value>
+
+                        <value>Nightwalker</value>
+
+                        <value>Nikita</value>
+
+                        <value>Nils Holgersson</value>
+
+                        <value>Ninja Scroll</value>
+
+                        <value>No Money</value>
+
+                        <value>Noir</value>
+
+                        <value>Norman Normal</value>
+
+                        <value>Numb3rs</value>
+
+                        <value>Nurse Jackie</value>
+
+                        <value>NYPD Blue</value>
+
+                        <value>Ocean&#39;s</value>
+
+                        <value>Olive et Tom</value>
+
+                        <value>Omega Code</value>
+
+                        <value>Once a Thief</value>
+
+                        <value>One Piece</value>
+
+                        <value>ONG BAK</value>
+
+                        <value>Oni tensei</value>
+
+                        <value>Open Water</value>
+
+                        <value>Operation Delta Force</value>
+
+                        <value>Ordian</value>
+
+                        <value>Orgasmes écarlates</value>
+
+                        <value>Orphen</value>
+
+                        <value>oss 117</value>
+
+                        <value>Oswald</value>
+
+                        <value>Otaku no video</value>
+
+                        <value>Où es tu ?</value>
+
+                        <value>Ouf le Prof</value>
+
+                        <value>Ouran Host Club</value>
+
+                        <value>Outlanders</value>
+
+                        <value>outlaw star</value>
+
+                        <value>Outpost</value>
+
+                        <value>Overman King Gainer</value>
+
+                        <value>OZ</value>
+
+                        <value>ozie boo!</value>
+
+                        <value>P&#39;tit bazar</value>
+
+                        <value>P.J.</value>
+
+                        <value>PABLO</value>
+
+                        <value>PACIFIC BLUE</value>
+
+                        <value>Pain, amour</value>
+
+                        <value>Pandi-Panda</value>
+
+                        <value>Pandora Hearts</value>
+
+                        <value>Panyo Panyo Di Gi Charat</value>
+
+                        <value>Panzer Robot</value>
+
+                        <value>Papa Schultz</value>
+
+                        <value>Papivole</value>
+
+                        <value>Paradise Kiss</value>
+
+                        <value>Paranoia Agent</value>
+
+                        <value>Paranormal Activity</value>
+
+                        <value>patlabor</value>
+
+                        <value>Pause Café</value>
+
+                        <value>Peace Maker Kurogane</value>
+
+                        <value>Pédale douce</value>
+
+                        <value>Pense Bêtes</value>
+
+                        <value>Père Castor</value>
+
+                        <value>Perry Mason</value>
+
+                        <value>pet shop</value>
+
+                        <value>Petit Hibou</value>
+
+                        <value>Petit Ours</value>
+
+                        <value>Petit Potam</value>
+
+                        <value>Philadelphia</value>
+
+                        <value>Pic Pic André</value>
+
+                        <value>Pierre le facteur</value>
+
+                        <value>Pigeon Boy</value>
+
+                        <value>Piggly</value>
+
+                        <value>Piranhas</value>
+
+                        <value>Pirates des Caraïbes</value>
+
+                        <value>Pitt and Kantrop</value>
+
+                        <value>PJ</value>
+
+                        <value>planète des singes</value>
+
+                        <value>Planète hurlante</value>
+
+                        <value>Planètes</value>
+
+                        <value>Please Teacher</value>
+
+                        <value>Plusters</value>
+
+                        <value>Poigne de fer et séduction</value>
+
+                        <value>Point Pleasant</value>
+
+                        <value>Pokémon</value>
+
+                        <value>pole position</value>
+
+                        <value>Police Academy</value>
+
+                        <value>Poltergeist</value>
+
+                        <value>poly</value>
+
+                        <value>Popetown</value>
+
+                        <value>Popeye</value>
+
+                        <value>Popples</value>
+
+                        <value>Porky&#39;s</value>
+
+                        <value>Pororo Le Petit Pingouin</value>
+
+                        <value>Pourquoi je me suis marié</value>
+
+                        <value>Power Rangers</value>
+
+                        <value>Predator</value>
+
+                        <value>Premiers baisers</value>
+
+                        <value>Pretty Little Liars</value>
+
+                        <value>Prey</value>
+
+                        <value>Pride</value>
+
+                        <value>Pride Bushido</value>
+
+                        <value>Pride GP</value>
+
+                        <value>prince noir</value>
+
+                        <value>Princess Jellyfish</value>
+
+                        <value>Princess Nine</value>
+
+                        <value>Princess Princess</value>
+
+                        <value>Princesse Saphir</value>
+
+                        <value>Princesse Sarah</value>
+
+                        <value>Princesse Sissi</value>
+
+                        <value>Princesse Starla</value>
+
+                        <value>Princesse Tutu</value>
+
+                        <value>Prison Break</value>
+
+                        <value>Prison on Fire</value>
+
+                        <value>Private Practice</value>
+
+                        <value>Profiler</value>
+
+                        <value>Profils paysans</value>
+
+                        <value>Profit</value>
+
+                        <value>Prophecy</value>
+
+                        <value>PSYCHOSE</value>
+
+                        <value>Pucca</value>
+
+                        <value>pulse</value>
+
+                        <value>PUMPKINHEAD</value>
+
+                        <value>Punk Rock Holocaust</value>
+
+                        <value>Puppet Master</value>
+
+                        <value>pusher</value>
+
+                        <value>Python</value>
+
+                        <value>Quatermass</value>
+
+                        <value>Queer As Folk</value>
+
+                        <value>RAHXEPHON</value>
+
+                        <value>Rainbow Brite</value>
+
+                        <value>Rambo</value>
+
+                        <value>Ranma 1/2</value>
+
+                        <value>Rantanplan</value>
+
+                        <value>Rats</value>
+
+                        <value>Rave Master</value>
+
+                        <value>Rayearth</value>
+
+                        <value>Re-Animator</value>
+
+                        <value>Read or Die</value>
+
+                        <value>REC</value>
+
+                        <value>Red Blooded American Girl</value>
+
+                        <value>Red Scorpion</value>
+
+                        <value>Reeker</value>
+
+                        <value>Relentless</value>
+
+                        <value>rémi sans famille</value>
+
+                        <value>Remington Steele</value>
+
+                        <value>Resident Evil</value>
+
+                        <value>Retour du Saint, Le</value>
+
+                        <value>Retour Vers Le Futur</value>
+
+                        <value>Revanche d&#39;une blonde</value>
+
+                        <value>Révélations</value>
+
+                        <value>Revenge of the Nerds</value>
+
+                        <value>Rex chien flic</value>
+
+                        <value>Riddick</value>
+
+                        <value>Rin : Daughters of Mnemosyne</value>
+
+                        <value>Ring</value>
+
+                        <value>ringo</value>
+
+                        <value>RIS police scientifique</value>
+
+                        <value>Road Trip</value>
+
+                        <value>Robbie le renne</value>
+
+                        <value>Robert Langdon</value>
+
+                        <value>Robin des bois</value>
+
+                        <value>Robocop</value>
+
+                        <value>Robotech</value>
+
+                        <value>rocambole</value>
+
+                        <value>Rocket Jo</value>
+
+                        <value>Rocket Power</value>
+
+                        <value>Rocky</value>
+
+                        <value>rody le petit cid</value>
+
+                        <value>ROLIE POLIE OLIE</value>
+
+                        <value>Romanzo Criminale</value>
+
+                        <value>Roseanne</value>
+
+                        <value>Roswell</value>
+
+                        <value>Rozen Maiden</value>
+
+                        <value>Rudy</value>
+
+                        <value>Rumbling Hearts</value>
+
+                        <value>Rupan</value>
+
+                        <value>Rupert</value>
+
+                        <value>Rupert l&#39;Ours</value>
+
+                        <value>Rush Hour</value>
+
+                        <value>S.O.S. Bout du monde</value>
+
+                        <value>S.W.A.T.</value>
+
+                        <value>Sabata</value>
+
+                        <value>Sabrina apprentie sorcière</value>
+
+                        <value>Sadamitsu le destructeur</value>
+
+                        <value>Saga des morts vivants</value>
+
+                        <value>Sailor guerrières</value>
+
+                        <value>Saint Seiya</value>
+
+                        <value>SAIYUKI</value>
+
+                        <value>Sakon</value>
+
+                        <value>Sakura Taisen</value>
+
+                        <value>Sakura Wars</value>
+
+                        <value>Sam et Sally</value>
+
+                        <value>Sam le Pompier</value>
+
+                        <value>Sammy (Samy)</value>
+
+                        <value>Samouraï 7</value>
+
+                        <value>Samourai Pizza Cat&#39;s</value>
+
+                        <value>Samson</value>
+
+                        <value>Samurai Champloo</value>
+
+                        <value>Samurai Deeper Kyo</value>
+
+                        <value>Samurai Girls</value>
+
+                        <value>San Ku Kaï</value>
+
+                        <value>sandokan</value>
+
+                        <value>Saturday Night Fever</value>
+
+                        <value>Saturnin</value>
+
+                        <value>Sauvez Willy</value>
+
+                        <value>Save the Last Dance</value>
+
+                        <value>Saw</value>
+
+                        <value>Scanners</value>
+
+                        <value>scarecrow</value>
+
+                        <value>Scary movie</value>
+
+                        <value>Schulmeister</value>
+
+                        <value>Scooby doo</value>
+
+                        <value>Scrapped Princess</value>
+
+                        <value>Scream</value>
+
+                        <value>Scryed</value>
+
+                        <value>Seaquest</value>
+
+                        <value>Serial Experiments Lain</value>
+
+                        <value>Service non compris</value>
+
+                        <value>Service secret, The</value>
+
+                        <value>Sex and the city</value>
+
+                        <value>Sex and Zen</value>
+
+                        <value>Sexcrimes</value>
+
+                        <value>Sexe Intentions</value>
+
+                        <value>Sexy Dance</value>
+
+                        <value>Shadowchaser</value>
+
+                        <value>Shakugan no shana</value>
+
+                        <value>SHAMAN KING</value>
+
+                        <value>Shanghaï Kid</value>
+
+                        <value>shangri-la</value>
+
+                        <value>Shaolin Wuzang</value>
+
+                        <value>Sharivan</value>
+
+                        <value>Shark</value>
+
+                        <value>Shark Attack</value>
+
+                        <value>she-ra</value>
+
+                        <value>Shérif fais-moi peur</value>
+
+                        <value>Sherlock Holmes</value>
+
+                        <value>Shi Ki</value>
+
+                        <value>Shin Angel</value>
+
+                        <value>Shin Hokuto no Ken</value>
+
+                        <value>Shinobu, l&#39;apprentie ninja</value>
+
+                        <value>Short Circuit</value>
+
+                        <value>Shrek</value>
+
+                        <value>Shurato</value>
+
+                        <value>Shuriken School</value>
+
+                        <value>Silent Möbius</value>
+
+                        <value>Silverhawks</value>
+
+                        <value>Simetierre</value>
+
+                        <value>Simon Eskenazy</value>
+
+                        <value>Simsala Grimm</value>
+
+                        <value>sissi</value>
+
+                        <value>Sister Act</value>
+
+                        <value>Six Contes Moraux</value>
+
+                        <value>Skippy le Kangourou</value>
+
+                        <value>Skysurfer Strike Force</value>
+
+                        <value>Slam dunk</value>
+
+                        <value>Slayers</value>
+
+                        <value>Sleepaway Camp</value>
+
+                        <value>Sleeper Cell</value>
+
+                        <value>Slow Step</value>
+
+                        <value>Slumber Party Massacre</value>
+
+                        <value>Smoke Brooklyn Boogie</value>
+
+                        <value>Smokey and the Bandit</value>
+
+                        <value>Snake Plissken</value>
+
+                        <value>Sniper</value>
+
+                        <value>SoDA</value>
+
+                        <value>Sol Bianca</value>
+
+                        <value>Solty Rei</value>
+
+                        <value>Sonic</value>
+
+                        <value>sons of anarchy</value>
+
+                        <value>Sorcerer Hunters</value>
+
+                        <value>SOS crocos</value>
+
+                        <value>SOS Polluards</value>
+
+                        <value>Soul Eater</value>
+
+                        <value>Soul Hunter</value>
+
+                        <value>Souris des Villes, Souris des Champ</value>
+
+                        <value>Souris souris</value>
+
+                        <value>Sous le signe de l&#39;épée</value>
+
+                        <value>Sous le signe des mousquetaires</value>
+
+                        <value>Souten no Ken</value>
+
+                        <value>South Park</value>
+
+                        <value>Souviens-toi, l&#39;été dernier</value>
+
+                        <value>Spartacus : Le sang des Gladiateurs</value>
+
+                        <value>SPEED</value>
+
+                        <value>Speed Grapher</value>
+
+                        <value>Spider-Man</value>
+
+                        <value>Spiders</value>
+
+                        <value>Spirit of Wonder</value>
+
+                        <value>Spirou</value>
+
+                        <value>Spy kids</value>
+
+                        <value>St Trinian&#39;s</value>
+
+                        <value>Star Trek</value>
+
+                        <value>Star Wars</value>
+
+                        <value>Stargate</value>
+
+                        <value>Starship Operators</value>
+
+                        <value>starship troopers</value>
+
+                        <value>Steenfort</value>
+
+                        <value>Step Up Love Story</value>
+
+                        <value>Stepfather</value>
+
+                        <value>Steven Seagal : Lawman</value>
+
+                        <value>Storm Riders / Storm Warriors</value>
+
+                        <value>Stratos 4</value>
+
+                        <value>Strawberry Marshmallow</value>
+
+                        <value>Street Fighter</value>
+
+                        <value>StreetDance</value>
+
+                        <value>Stuart Little</value>
+
+                        <value>Submarine Super 99</value>
+
+                        <value>Subspecies</value>
+
+                        <value>Sueurs froides</value>
+
+                        <value>Suicide Club</value>
+
+                        <value>Summerslam</value>
+
+                        <value>Super Noël</value>
+
+                        <value>Superman</value>
+
+                        <value>Supernana</value>
+
+                        <value>Sur le fil</value>
+
+                        <value>Surf Trip</value>
+
+                        <value>Susy aux fleurs magiques</value>
+
+                        <value>Swordsman</value>
+
+                        <value>Tales</value>
+
+                        <value>Taxi</value>
+
+                        <value>Taxi pervers</value>
+
+                        <value>Tchaou et Grodo</value>
+
+                        <value>Tekken</value>
+
+                        <value>Tenchi Muyo</value>
+
+                        <value>Terminator</value>
+
+                        <value>Terre de lumière</value>
+
+                        <value>Terre Indigo</value>
+
+                        <value>Terreur</value>
+
+                        <value>Tetsuo</value>
+
+                        <value>Texhnolyze</value>
+
+                        <value>The Arrival</value>
+
+                        <value>The Big Bang Theory</value>
+
+                        <value>The Big O</value>
+
+                        <value>The Black Adder (La Vipère Noire)</value>
+
+                        <value>the blues brothers</value>
+
+                        <value>The cell</value>
+
+                        <value>The Descent</value>
+
+                        <value>The Eye</value>
+
+                        <value>The Good Wife</value>
+
+                        <value>The Grudge</value>
+
+                        <value>The Guard</value>
+
+                        <value>The Hills</value>
+
+                        <value>The Howling</value>
+
+                        <value>The L Word</value>
+
+                        <value>The Mangler</value>
+
+                        <value>The Marine</value>
+
+                        <value>THE MASK</value>
+
+                        <value>The Practice</value>
+
+                        <value>The Punisher</value>
+
+                        <value>The Riches</value>
+
+                        <value>The Skulls</value>
+
+                        <value>The Substitute</value>
+
+                        <value>The Thing</value>
+
+                        <value>The Third</value>
+
+                        <value>The Twins Effect</value>
+
+                        <value>The Unborn</value>
+
+                        <value>The Unit</value>
+
+                        <value>The Unnamable</value>
+
+                        <value>The Vampire Chronicles</value>
+
+                        <value>The Vampire Diaries</value>
+
+                        <value>The WALKING DEAD</value>
+
+                        <value>The Wombles</value>
+
+                        <value>Théo ou la batte de la victoire</value>
+
+                        <value>Thibaud ou les Croisades</value>
+
+                        <value>Thriller</value>
+
+                        <value>thunderbirds</value>
+
+                        <value>Tiger Cage</value>
+
+                        <value>Tiger Claws</value>
+
+                        <value>Time Bokan</value>
+
+                        <value>Timecop</value>
+
+                        <value>Tintin</value>
+
+                        <value>Titeuf</value>
+
+                        <value>Tokyo Demon Campus</value>
+
+                        <value>Tokyo Marble Chocolate</value>
+
+                        <value>Tokyo Tribe 2</value>
+
+                        <value>tokyo underground</value>
+
+                        <value>Tolérance zéro</value>
+
+                        <value>tom et Jerry</value>
+
+                        <value>Tom et le méchant matou</value>
+
+                        <value>TOM SAWYER</value>
+
+                        <value>tom tom et nana</value>
+
+                        <value>Tomb raider</value>
+
+                        <value>Tony Rome</value>
+
+                        <value>Top Squad</value>
+
+                        <value>Tortues Ninja</value>
+
+                        <value>Toumaï - Elephant Boy</value>
+
+                        <value>Toupie Et Binou</value>
+
+                        <value>Tout Doux Dinky</value>
+
+                        <value>Toy Story</value>
+
+                        <value>Transformers</value>
+
+                        <value>Transmorphers</value>
+
+                        <value>Traque sur Internet</value>
+
+                        <value>Treize à la douzaine</value>
+
+                        <value>Tremors</value>
+
+                        <value>Très cher frère</value>
+
+                        <value>Trigun</value>
+
+                        <value>Trilogie de la vengeance</value>
+
+                        <value>Trilogie de Marcel Pagnol</value>
+
+                        <value>Trilogie du dollar</value>
+
+                        <value>Trilogie René Féret</value>
+
+                        <value>Trinity Blood</value>
+
+                        <value>Trois hommes et un couffin</value>
+
+                        <value>Tron</value>
+
+                        <value>Troubles secrets - Sombres secrets</value>
+
+                        <value>Troupe d&#39;élite</value>
+
+                        <value>True Blood</value>
+
+                        <value>Tsubasa Chronicle</value>
+
+                        <value>Tsukihime</value>
+
+                        <value>turbulences</value>
+
+                        <value>Twilight</value>
+
+                        <value>Two Moon Junction</value>
+
+                        <value>UFC</value>
+
+                        <value>Ultraviolet</value>
+
+                        <value>ulysse 31</value>
+
+                        <value>Un éléphant ça trompe énormément</value>
+
+                        <value>Un gars du Queens</value>
+
+                        <value>Un homme nommé cheval</value>
+
+                        <value>Un justicier dans la ville</value>
+
+                        <value>Un seul deviendra invincible</value>
+
+                        <value>Un village français</value>
+
+                        <value>underworld</value>
+
+                        <value>Une flic de choc</value>
+
+                        <value>Une nuit en enfer</value>
+
+                        <value>Une vie nouvelle</value>
+
+                        <value>Une virée en enfer</value>
+
+                        <value>Universal Soldier</value>
+
+                        <value>Urban Legend</value>
+
+                        <value>UROTSUKIDOJI</value>
+
+                        <value>US Seals</value>
+
+                        <value>Utena</value>
+
+                        <value>V</value>
+
+                        <value>Valérian et Laureline</value>
+
+                        <value>Vampire Hunter</value>
+
+                        <value>Vampire knight</value>
+
+                        <value>Vampire Princess Miyu</value>
+
+                        <value>Van Wilder</value>
+
+                        <value>Vanessa et la magie des rêves</value>
+
+                        <value>Vendredi 13</value>
+
+                        <value>Vérité oblige</value>
+
+                        <value>Very Bad Trip</value>
+
+                        <value>Vic le Viking</value>
+
+                        <value>Vie est à nous, La</value>
+
+                        <value>Viewtiful Joe</value>
+
+                        <value>Vitaminix</value>
+
+                        <value>Viva La Bam</value>
+
+                        <value>Voltron</value>
+
+                        <value>Voyage au centre de la Terre</value>
+
+                        <value>Waldemar Daninsky</value>
+
+                        <value>Walker Texas ranger</value>
+
+                        <value>Wall Street</value>
+
+                        <value>Wallander</value>
+
+                        <value>WarGames</value>
+
+                        <value>Warlock</value>
+
+                        <value>Watchers</value>
+
+                        <value>Wattoo Wattoo</value>
+
+                        <value>Wayne&#39;s World</value>
+
+                        <value>Weib Kreuz</value>
+
+                        <value>Westworld</value>
+
+                        <value>Whistle</value>
+
+                        <value>Wild 7</value>
+
+                        <value>Wild Arm</value>
+
+                        <value>Wildfire</value>
+
+                        <value>Windy Tales</value>
+
+                        <value>Winnetou le Mescalero</value>
+
+                        <value>Wishmaster</value>
+
+                        <value>Witch Hunter Robin</value>
+
+                        <value>Witchouse</value>
+
+                        <value>Wolf&#39;s Rain</value>
+
+                        <value>Wrestlemania</value>
+
+                        <value>Wulong</value>
+
+                        <value>X de Clamp</value>
+
+                        <value>X files</value>
+
+                        <value>X Or</value>
+
+                        <value>X-Men</value>
+
+                        <value>XIII</value>
+
+                        <value>Xtro</value>
+
+                        <value>XXX</value>
+
+                        <value>xxxHolic</value>
+
+                        <value>YAKARI</value>
+
+                        <value>Yakitate Japan</value>
+
+                        <value>Yakuza</value>
+
+                        <value>Young Guns</value>
+
+                        <value>Youth Literature</value>
+
+                        <value>Yu Yu Hakusho</value>
+
+                        <value>Yukikaze</value>
+
+                        <value>Zatchbell</value>
+
+                        <value>Zebraman</value>
+
+                        <value>Zettai Shonen</value>
+
+                        <value>Zoé créatrice</value>
+
+                        <value>Zoé Kézako</value>
+
+                        <value>Zombi</value>
+
+                        <value>Zombie Diaries</value>
+
+                        <value>zombie loan</value>
+
+                        <value>Zorro</value>
+
+                        <value>Zu</value>
+
+                    </valueslist>
+
+                </attribute>
+
+                <attribute>
+                    <label>Domaine d&#39;utilisation</label>
+                    <key>domainedutilisation</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>1</hasvalues>
+
+                    <valueslist>
+
+                        <value>Location</value>
+
+                        <value>Vente</value>
+
+                    </valueslist>
+
+                </attribute>
+
+                <attribute>
+                    <label>Nationalité</label>
+                    <key>nationalite</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>1</multivalued>
+                    <hasvalues>1</hasvalues>
+
+                    <valueslist>
+
+                        <value>Afghanistan</value>
+
+                        <value>Afrique du Sud</value>
+
+                        <value>Albanie</value>
+
+                        <value>Algérie</value>
+
+                        <value>Allemagne</value>
+
+                        <value>Andorre</value>
+
+                        <value>Angola</value>
+
+                        <value>Arabie saoudite</value>
+
+                        <value>Argentine</value>
+
+                        <value>Arménie</value>
+
+                        <value>Australie</value>
+
+                        <value>Autriche</value>
+
+                        <value>Azerbaïdjan</value>
+
+                        <value>Bahamas</value>
+
+                        <value>Bahreïn</value>
+
+                        <value>Bangladesh</value>
+
+                        <value>Belgique</value>
+
+                        <value>Belize</value>
+
+                        <value>Bénin (Dahomey)</value>
+
+                        <value>Bermudes</value>
+
+                        <value>Bhoutan</value>
+
+                        <value>Biélorussie</value>
+
+                        <value>Birmanie</value>
+
+                        <value>Bolivie</value>
+
+                        <value>Bosnie-Herzegovine</value>
+
+                        <value>Botswana</value>
+
+                        <value>Brunei</value>
+
+                        <value>Bulgarie</value>
+
+                        <value>Burkina Faso</value>
+
+                        <value>Burundi</value>
+
+                        <value>Cambodge</value>
+
+                        <value>Cameroun</value>
+
+                        <value>Canada</value>
+
+                        <value>Cap Vert</value>
+
+                        <value>Centrafrique</value>
+
+                        <value>Chili</value>
+
+                        <value>Chine</value>
+
+                        <value>Chypre</value>
+
+                        <value>Colombie</value>
+
+                        <value>Comores</value>
+
+                        <value>Congo</value>
+
+                        <value>Costa Rica</value>
+
+                        <value>Côte d&#39;Ivoire</value>
+
+                        <value>Croatie</value>
+
+                        <value>Cuba</value>
+
+                        <value>Danemark</value>
+
+                        <value>Djibouti</value>
+
+                        <value>Dubaï</value>
+
+                        <value>Égypte</value>
+
+                        <value>Emirats Arabes Unis</value>
+
+                        <value>Equateur</value>
+
+                        <value>Erythrée</value>
+
+                        <value>Espagne</value>
+
+                        <value>Estonie</value>
+
+                        <value>Etats-Unis</value>
+
+                        <value>Fidji</value>
+
+                        <value>Finlande</value>
+
+                        <value>France</value>
+
+                        <value>Gabon</value>
+
+                        <value>Géorgie</value>
+
+                        <value>Gibraltar</value>
+
+                        <value>Grèce</value>
+
+                        <value>Groenland</value>
+
+                        <value>Guadeloupe</value>
+
+                        <value>Guatemala</value>
+
+                        <value>Guinée</value>
+
+                        <value>Guyane</value>
+
+                        <value>Haïti</value>
+
+                        <value>Honduras</value>
+
+                        <value>Hong Kong</value>
+
+                        <value>Hongrie</value>
+
+                        <value>Inde</value>
+
+                        <value>Irak</value>
+
+                        <value>Iran</value>
+
+                        <value>Iraq</value>
+
+                        <value>Islande</value>
+
+                        <value>Israël</value>
+
+                        <value>Italie</value>
+
+                        <value>Jamaïque</value>
+
+                        <value>Japon</value>
+
+                        <value>Jordanie</value>
+
+                        <value>Kazakhstan</value>
+
+                        <value>Kenya</value>
+
+                        <value>Kirghizstan</value>
+
+                        <value>Kosovo</value>
+
+                        <value>Koweït</value>
+
+                        <value>Laos</value>
+
+                        <value>Lesotho</value>
+
+                        <value>Lettonie</value>
+
+                        <value>Liban</value>
+
+                        <value>Libéria</value>
+
+                        <value>Libye</value>
+
+                        <value>Liechtenstein</value>
+
+                        <value>Lituanie</value>
+
+                        <value>Luxembourg</value>
+
+                        <value>Macao</value>
+
+                        <value>Macédoine</value>
+
+                        <value>Madagascar</value>
+
+                        <value>Malaisie</value>
+
+                        <value>Malawi</value>
+
+                        <value>Maldives</value>
+
+                        <value>Mali</value>
+
+                        <value>Malte</value>
+
+                        <value>Maroc</value>
+
+                        <value>Maurice</value>
+
+                        <value>Mauritanie</value>
+
+                        <value>Mexique</value>
+
+                        <value>Moldavie</value>
+
+                        <value>Monaco</value>
+
+                        <value>Mongolie</value>
+
+                        <value>Monténégro</value>
+
+                        <value>Mozambique</value>
+
+                        <value>Népal</value>
+
+                        <value>Nicaragua</value>
+
+                        <value>Niger</value>
+
+                        <value>Nigeria</value>
+
+                        <value>Norvège</value>
+
+                        <value>Nouvelle-Calédonie</value>
+
+                        <value>Nouvelle-Zélande</value>
+
+                        <value>Oman</value>
+
+                        <value>Ouganda</value>
+
+                        <value>Ouzbékistan</value>
+
+                        <value>Pakistan</value>
+
+                        <value>Palestine</value>
+
+                        <value>Panama</value>
+
+                        <value>Papouasie - Nouvelle Guinée</value>
+
+                        <value>Paraguay</value>
+
+                        <value>Pérou</value>
+
+                        <value>Philippines</value>
+
+                        <value>Pologne</value>
+
+                        <value>Portugal</value>
+
+                        <value>Qatar</value>
+
+                        <value>Rats</value>
+
+                        <value>République dominicaine</value>
+
+                        <value>Roumanie</value>
+
+                        <value>Royaume-Uni</value>
+
+                        <value>Russie</value>
+
+                        <value>Rwanda</value>
+
+                        <value>Sahara</value>
+
+                        <value>Salvador</value>
+
+                        <value>Sénégal</value>
+
+                        <value>Serbie</value>
+
+                        <value>Seychelles</value>
+
+                        <value>Sierra Léone</value>
+
+                        <value>Singapour</value>
+
+                        <value>Slovaquie</value>
+
+                        <value>Slovénie</value>
+
+                        <value>Somalie</value>
+
+                        <value>Soudan</value>
+
+                        <value>Sri Lanka</value>
+
+                        <value>Suède</value>
+
+                        <value>Suisse</value>
+
+                        <value>Swaziland</value>
+
+                        <value>Syrie</value>
+
+                        <value>Tadjikistan</value>
+
+                        <value>Taiwan</value>
+
+                        <value>Tanzanie</value>
+
+                        <value>Tchad</value>
+
+                        <value>Tchéchénie</value>
+
+                        <value>Tchécoslovaquie</value>
+
+                        <value>Thaïlande</value>
+
+                        <value>Timor Oriental</value>
+
+                        <value>Togo</value>
+
+                        <value>Trinité et Tobago</value>
+
+                        <value>Tunisie</value>
+
+                        <value>Turkménistan</value>
+
+                        <value>Turquie</value>
+
+                        <value>Uruguay</value>
+
+                        <value>Vatican</value>
+
+                        <value>Venezuela</value>
+
+                        <value>Vietnam</value>
+
+                        <value>Wallis et Futuna</value>
+
+                        <value>Yemen</value>
+
+                        <value>Yougoslavie</value>
+
+                        <value>Zaïre</value>
+
+                        <value>Zambie</value>
+
+                        <value>Zimbabwe</value>
+
+                    </valueslist>
+
+                </attribute>
+
+                <attribute>
+                    <label>Année de sortie en salles</label>
+                    <key>anneedesortieensalles</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>1</hasvalues>
+
+                    <valueslist>
+
+                        <value>20</value>
+
+                        <value>****</value>
+
+                        <value>0</value>
+
+                        <value>0000</value>
+
+                        <value>0001</value>
+
+                        <value>01/0</value>
+
+                        <value>0164</value>
+
+                        <value>0904</value>
+
+                        <value>1</value>
+
+                        <value>1007</value>
+
+                        <value>105</value>
+
+                        <value>109</value>
+
+                        <value>11/2</value>
+
+                        <value>1111</value>
+
+                        <value>1196</value>
+
+                        <value>1198</value>
+
+                        <value>1200</value>
+
+                        <value>168</value>
+
+                        <value>18/0</value>
+
+                        <value>1887</value>
+
+                        <value>1896</value>
+
+                        <value>1897</value>
+
+                        <value>1898</value>
+
+                        <value>1900</value>
+
+                        <value>1902</value>
+
+                        <value>1905</value>
+
+                        <value>1907</value>
+
+                        <value>1908</value>
+
+                        <value>1911</value>
+
+                        <value>1912</value>
+
+                        <value>1913</value>
+
+                        <value>1914</value>
+
+                        <value>1915</value>
+
+                        <value>1916</value>
+
+                        <value>1917</value>
+
+                        <value>1918</value>
+
+                        <value>1919</value>
+
+                        <value>1920</value>
+
+                        <value>1921</value>
+
+                        <value>1922</value>
+
+                        <value>1923</value>
+
+                        <value>1924</value>
+
+                        <value>1925</value>
+
+                        <value>1926</value>
+
+                        <value>1927</value>
+
+                        <value>1928</value>
+
+                        <value>1929</value>
+
+                        <value>1930</value>
+
+                        <value>1931</value>
+
+                        <value>1932</value>
+
+                        <value>1933</value>
+
+                        <value>1934</value>
+
+                        <value>1935</value>
+
+                        <value>1936</value>
+
+                        <value>1937</value>
+
+                        <value>1938</value>
+
+                        <value>1939</value>
+
+                        <value>1940</value>
+
+                        <value>1941</value>
+
+                        <value>1942</value>
+
+                        <value>1943</value>
+
+                        <value>1944</value>
+
+                        <value>1945</value>
+
+                        <value>1946</value>
+
+                        <value>1947</value>
+
+                        <value>1948</value>
+
+                        <value>1949</value>
+
+                        <value>1950</value>
+
+                        <value>1951</value>
+
+                        <value>1952</value>
+
+                        <value>1953</value>
+
+                        <value>1954</value>
+
+                        <value>1955</value>
+
+                        <value>1956</value>
+
+                        <value>1957</value>
+
+                        <value>1958</value>
+
+                        <value>1959</value>
+
+                        <value>1960</value>
+
+                        <value>1961</value>
+
+                        <value>1962</value>
+
+                        <value>1963</value>
+
+                        <value>1964</value>
+
+                        <value>1965</value>
+
+                        <value>1966</value>
+
+                        <value>1967</value>
+
+                        <value>1968</value>
+
+                        <value>1969</value>
+
+                        <value>1970</value>
+
+                        <value>1971</value>
+
+                        <value>1972</value>
+
+                        <value>1973</value>
+
+                        <value>1974</value>
+
+                        <value>1975</value>
+
+                        <value>1976</value>
+
+                        <value>1977</value>
+
+                        <value>1978</value>
+
+                        <value>1979</value>
+
+                        <value>198</value>
+
+                        <value>1980</value>
+
+                        <value>1981</value>
+
+                        <value>1982</value>
+
+                        <value>1983</value>
+
+                        <value>1984</value>
+
+                        <value>1985</value>
+
+                        <value>1986</value>
+
+                        <value>1987</value>
+
+                        <value>1988</value>
+
+                        <value>1989</value>
+
+                        <value>199</value>
+
+                        <value>1990</value>
+
+                        <value>1991</value>
+
+                        <value>1992</value>
+
+                        <value>1993</value>
+
+                        <value>1994</value>
+
+                        <value>1995</value>
+
+                        <value>1996</value>
+
+                        <value>1997</value>
+
+                        <value>1998</value>
+
+                        <value>1999</value>
+
+                        <value>200</value>
+
+                        <value>2000</value>
+
+                        <value>2001</value>
+
+                        <value>2002</value>
+
+                        <value>2003</value>
+
+                        <value>2004</value>
+
+                        <value>2005</value>
+
+                        <value>2006</value>
+
+                        <value>2007</value>
+
+                        <value>2008</value>
+
+                        <value>2009</value>
+
+                        <value>2010</value>
+
+                        <value>2011</value>
+
+                        <value>2012</value>
+
+                        <value>2020</value>
+
+                        <value>2021</value>
+
+                        <value>203</value>
+
+                        <value>204</value>
+
+                        <value>206</value>
+
+                        <value>208</value>
+
+                        <value>2088</value>
+
+                        <value>2099</value>
+
+                        <value>2996</value>
+
+                        <value>30/0</value>
+
+                        <value>508</value>
+
+                        <value>7172</value>
+
+                        <value>7976</value>
+
+                        <value>82</value>
+
+                        <value>90</value>
+
+                        <value>95</value>
+
+                        <value>984</value>
+
+                        <value>?</value>
+
+                        <value>????</value>
+
+                        <value>Bugs</value>
+
+                        <value>dfgd</value>
+
+                        <value>hhj</value>
+
+                        <value>La s</value>
+
+                        <value>mai</value>
+
+                        <value>n/n</value>
+
+                        <value>Néan</value>
+
+                        <value>Non</value>
+
+                        <value>NULL</value>
+
+                        <value>sans</value>
+
+                        <value>USA</value>
+
+                    </valueslist>
+
+                </attribute>
+
+                <attribute>
+                    <label>Acteur</label>
+                    <key>acteur1</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Acteur</label>
+                    <key>acteur2</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Acteur</label>
+                    <key>acteur3</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Acteur</label>
+                    <key>acteur4</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Langue(s) audio</label>
+                    <key>languesaudio</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>1</multivalued>
+                    <hasvalues>1</hasvalues>
+
+                    <valueslist>
+
+                        <value>Albanais</value>
+
+                        <value>Allemand</value>
+
+                        <value>Anglais</value>
+
+                        <value>Arabe</value>
+
+                        <value>Bengali</value>
+
+                        <value>Catalan</value>
+
+                        <value>Chinois</value>
+
+                        <value>Coréen</value>
+
+                        <value>Croate</value>
+
+                        <value>Danois</value>
+
+                        <value>Espagnol</value>
+
+                        <value>Esperanto</value>
+
+                        <value>Finlandais</value>
+
+                        <value>Français</value>
+
+                        <value>Grec</value>
+
+                        <value>Hébreu</value>
+
+                        <value>Hindi</value>
+
+                        <value>Hollandais</value>
+
+                        <value>Italien</value>
+
+                        <value>Japonais</value>
+
+                        <value>Latin</value>
+
+                        <value>Lituanien</value>
+
+                        <value>Musique</value>
+
+                        <value>Néerlandais</value>
+
+                        <value>Norvégien</value>
+
+                        <value>Polonais</value>
+
+                        <value>Portugais</value>
+
+                        <value>Russe</value>
+
+                        <value>Serbe</value>
+
+                        <value>Suédois</value>
+
+                        <value>Thaïlandais</value>
+
+                        <value>Turc</value>
+
+                        <value>Vietnamien</value>
+
+                    </valueslist>
+
+                </attribute>
+
+                <attribute>
+                    <label>Langue(s) sous-titres</label>
+                    <key>languessoustitres</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>1</multivalued>
+                    <hasvalues>1</hasvalues>
+
+                    <valueslist>
+
+                        <value>Albanais</value>
+
+                        <value>Alien</value>
+
+                        <value>Allemand</value>
+
+                        <value>Anglais</value>
+
+                        <value>Arabe</value>
+
+                        <value>Basque</value>
+
+                        <value>Bengali</value>
+
+                        <value>Breton</value>
+
+                        <value>Bulgare</value>
+
+                        <value>Catalan</value>
+
+                        <value>Chinois</value>
+
+                        <value>Coréen</value>
+
+                        <value>Corse</value>
+
+                        <value>Croate</value>
+
+                        <value>Espagnol</value>
+
+                        <value>Esperanto</value>
+
+                        <value>Finlandais</value>
+
+                        <value>Français</value>
+
+                        <value>Grec</value>
+
+                        <value>Hébreu</value>
+
+                        <value>Hindi</value>
+
+                        <value>Hollandais</value>
+
+                        <value>Italien</value>
+
+                        <value>Japonais</value>
+
+                        <value>Latin</value>
+
+                        <value>Néerlandais</value>
+
+                        <value>Norvégien</value>
+
+                        <value>Polonais</value>
+
+                        <value>Portugais</value>
+
+                        <value>Russe</value>
+
+                        <value>Serbe</value>
+
+                        <value>Suédois</value>
+
+                        <value>Thaïlandais</value>
+
+                        <value>Turc</value>
+
+                        <value>Vietnamien</value>
+
+                    </valueslist>
+
+                </attribute>
+
+                <attribute>
+                    <label>Descriptif produit</label>
+                    <key>prdEdito</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+            </product>
+
+
+            <advert>
+
+                <attribute>
+                    <label>Identification annonce</label>
+                    <key>aid</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Number</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Etat du produit</label>
+                    <key>state</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Number</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Commentaire de votre annonce</label>
+                    <key>comment</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Collection</label>
+                    <key>collectible</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Boolean</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Prix de vente</label>
+                    <key>sellingPrice</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Number</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Stock illimité</label>
+                    <key>qtyUnlimited</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Boolean</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Stock</label>
+                    <key>qty</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Number</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Votre référence cachée</label>
+                    <key>sellerReference</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Votre commentaire caché</label>
+                    <key>privateComment</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+                <attribute>
+                    <label>Description personnalisée</label>
+                    <key>customizedAdvertDetail</key>
+                    <mandatory>0</mandatory>
+                    <valuetype>Text</valuetype>
+
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+
+                </attribute>
+
+            </advert>
+
+
+            <media>
+                <attribute>
+                    <label>url image</label>
+                    <key>image_url</key>
+                    <mandatory>1</mandatory>
+                    <valuetype>Text</valuetype>
+                    <multivalued>0</multivalued>
+                    <hasvalues>0</hasvalues>
+                </attribute>
+            </media>
+
+            <campaigns>
+                <campaign>
+
+                    <attribute>
+                        <label>Identifiant de la campagne</label>
+                        <key>productsCampaignId</key>
+                        <mandatory>1</mandatory>
+                        <valuetype>Number</valuetype>
+                        <multivalued>0</multivalued>
+                        <hasvalues>0</hasvalues>
+                    </attribute>
+
+                    <attribute>
+                        <label>Prix de référence</label>
+                        <key>productsCampaignRefPrice</key>
+                        <mandatory>0</mandatory>
+                        <valuetype>Number</valuetype>
+                        <multivalued>0</multivalued>
+                        <hasvalues>0</hasvalues>
+                    </attribute>
+
+                    <attribute>
+                        <label>Pourcentage de réduction</label>
+                        <key>productsCampaignPct</key>
+                        <mandatory>0</mandatory>
+                        <valuetype>Number</valuetype>
+                        <multivalued>0</multivalued>
+                        <hasvalues>0</hasvalues>
+                    </attribute>
+
+                    <attribute>
+                        <label>Prix "promo"</label>
+                        <key>productsCampaignPrice</key>
+                        <mandatory>0</mandatory>
+                        <valuetype>Number</valuetype>
+                        <multivalued>0</multivalued>
+                        <hasvalues>0</hasvalues>
+                    </attribute>
+
+                </campaign>
+            </campaigns>
+        </attributes>
+    </response>
+</producttypetemplateresult>

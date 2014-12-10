@@ -14,25 +14,27 @@ from shiba.shibaexceptions import *
 
 import unittest
 
-import ConfigParser
 import os
+import mock
+
+
+def mock_get_product_list(*args, **kwargs):
+    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getproductlist.xml'))
+    return datas
+
+
+def mock_get_category_map(*args, **kwargs):
+    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getcategorymap.xml'))
+    return datas
+
 
 class MarketplaceManagementTest(unittest.TestCase):
 
     def setUp(self):
-        settings = ConfigParser.ConfigParser()
-        try:
-            settings.read(os.path.dirname(os.path.realpath(__file__)) + "/Assets/nosetests.cfg")
-        except:
-            raise ShibaCallingError("error : can't read login ID from the nosetests.cfg file")
-        try:
-            login = settings.get(str("NoseConfig"), "login")
-            pwd = settings.get(str("NoseConfig"), "pwd")
-        except:
-            raise ShibaCallingError("error : configuration file doesn't seem to be regular")
-        self.init = MarketplaceManagement(ShibaConnection(login, pwd, "https://ws.sandbox.priceminister.com"))
+        self.init = MarketplaceManagement(ShibaConnection("test", "test" "https://ws.sandbox.priceminister.com"))
 
-    def test_get_product_list(self):
+    @mock.patch('urllib2.urlopen', side_effect=mock_get_product_list)
+    def test_get_product_list(self, urlopen):
         """testing get_product_list methods with different queries, with some invalid ones as well"""
         try:
             obj = self.init.get_product_list()
@@ -47,7 +49,8 @@ class MarketplaceManagementTest(unittest.TestCase):
         obj = self.init.get_product_list(kw="informatique", scope="PRICING")
         self.assertTrue("listingresult" in obj.content.tag)
 
-    def test_get_category_map(self):
+    @mock.patch('urllib2.urlopen', side_effect=mock_get_category_map)
+    def test_get_category_map(self, urlopen):
         """get_category_map regular test"""
         obj = self.init.get_category_map()
         self.assertTrue("categorymap" in obj.content.tag)

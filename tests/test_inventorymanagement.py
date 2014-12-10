@@ -11,54 +11,62 @@ from __future__ import unicode_literals
 from shiba.inventorymanagement import InventoryManagement
 from shiba.shibaconnection import ShibaConnection
 from shiba.shibaexceptions import *
-from nose.tools import *
 
 import xmltodict
 from lxml import objectify
 
 import unittest
 
-import ConfigParser
 import os
+import mock
+
+
+def mock_product_types(*args, **kwargs):
+    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getproducttypes.xml'))
+    return datas
+
+
+def mock_product_type_template(*args, **kwargs):
+    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getproducttypetemplate.xml'))
+    return datas
+
+
+def mock_get_available_shipping_types(*args, **kwargs):
+    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getavailableshippingtypes.xml'))
+    return datas
+
+
+def mock_export_inventory(*args, **kwargs):
+    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_exportinventory.xml'))
+    return datas
+
+
+def mock_generic_import_file(*args, **kwargs):
+    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_genericimportfile.xml'))
+    return datas.read()
+
 
 class InventoryManagementTest(unittest.TestCase):
-
     def setUp(self):
-        settings = ConfigParser.ConfigParser()
-        try:
-            settings.read(os.path.dirname(os.path.realpath(__file__)) + "/Assets/nosetests.cfg")
-        except:
-            raise ShibaCallingError("error : can't read login ID from the nosetests.cfg file")
-        try:
-            login = settings.get(str("NoseConfig"), "login")
-            pwd = settings.get(str("NoseConfig"), "pwd")
-        except:
-            raise ShibaCallingError("error : configuration file doesn't seem to be regular")
-        self.init = InventoryManagement(ShibaConnection(login, pwd, "https://ws.sandbox.priceminister.com"))
+        self.init = InventoryManagement(ShibaConnection("test", "test", sandbox=True))
 
-    def test_product_types(self):
+    @mock.patch('urllib2.urlopen', side_effect=mock_product_types)
+    def test_product_types(self, urlopen):
         """product_types return test"""
-
         ptypes = self.init.product_types()
         self.assertTrue("producttypesresult" in ptypes.content.tag)
 
-    def test_product_type_template(self):
+    @mock.patch('urllib2.urlopen', side_effect=mock_product_type_template)
+    def test_product_type_template(self, urlopen):
         """product_type_template tests on two scopes, for a fixed alias, plus a fail result"""
-
         alias = "insolites_produit"
         ptemplate = self.init.product_type_template(alias, "")
         self.assertTrue("producttypetemplateresult" in ptemplate.content.tag)
-        ptemplate = self.init.product_type_template(alias, "VALUES")
-        self.assertTrue("producttypetemplateresult" in ptemplate.content.tag)
 
-    @raises(ShibaParameterError)
-    def test_product_type_template_fail(self):
-        self.init.product_type_template("INVALIDALIAS", "INVALIDSCOPE")
-
-    def test_generic_import_file(self):
+    @mock.patch('shiba.shibatools.ShibaTools.post_request', side_effect=mock_generic_import_file)
+    def test_generic_import_file(self, post_request):
         """generic_import_file test, from an XML file. Conversion is done by xmltodict from a dict or OrderedDict
         , as well with objectify with an objectified ElementTree element"""
-
         f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
         testdict = xmltodict.parse(f)
         ret = self.init.generic_import_file(testdict)
@@ -68,21 +76,12 @@ class InventoryManagementTest(unittest.TestCase):
         ret = self.init.generic_import_file(testobj)
         self.assertTrue("OK" == ret.content.response.status)
 
-    def test_generic_import_report(self):
-        """genreic_import_report method test from an import file call"""
-        f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
-        testobj = objectify.parse(f)
-        ret = self.init.generic_import_file(testobj)
-        importid = ret.content.response.importid
-        ret = self.init.generic_import_report(importid)
-        self.assertTrue("file" == ret.content.response.file.filename)
+    @mock.patch('urllib2.urlopen', side_effect=mock_get_available_shipping_types)
+    def test_get_available_shipping_types(self, urlopen):
+        obj = self.init.get_available_shipping_types()
+        self.assertTrue("getavailableshippingtypesresult" in obj.content.tag)
 
-    def test_get_available_shipping_types(self):
-        try:
-            self.init.get_available_shipping_types()
-        except ShibaRightsError:
-            pass
-
-    def test_export_inventory(self):
+    @mock.patch('urllib2.urlopen', side_effect=mock_export_inventory)
+    def test_export_inventory(self, urlopen):
         obj = self.init.export_inventory()
         self.assertTrue("inventoryresult" in obj.content.tag)

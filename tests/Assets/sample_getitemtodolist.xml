@@ -1,0 +1,20 @@
+<getitemtodolistresult>
+    <request>
+        <version>xxxx-xx-xx</version>
+        <user>xxxx</user>
+    </request>
+    <response>
+        <lastversion>xxxx-xx-xx</lastversion>
+        <sellerid>18352654</sellerid>
+        <items>
+            <item>
+                <itemid>159177464</itemid>
+                <causes>
+                    <cause>CLAIM</cause>
+                    <cause>UNREAD_MESSAGE_FROM_CUSTOMER_SERVICE</cause>
+                    <cause>UNREAD_MESSAGE_FROM_BUYER</cause>
+                </causes>
+            </item>
+        </items>
+    </response>
+</getitemtodolistresult>

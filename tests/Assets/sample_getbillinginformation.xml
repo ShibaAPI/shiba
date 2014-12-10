@@ -1,0 +1,52 @@
+<getbillinginformationresult xsi:schemaLocation="http://www.priceminister.com/res/schema/getbillinginformation http://www.priceminister.com/res/schema/getbillinginformation/getbillinginformation.2011-03-29.xsd" xmlns="http://www.priceminister.com/res/schema/getbillinginformation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <request>
+        <user>vendeur</user>
+        <purchaseid>94414000</purchaseid>
+        <version>2011-03-29</version>
+    </request>
+    <response>
+        <sellerid>18941715</sellerid>
+        <lastversion>2011-03-29</lastversion>
+        <billinginformation>
+            <items>
+                <item>
+                    <itemid>151069653</itemid>
+                    <sku><![CDATA[sku1234]]></sku>
+                    <headline><![CDATA[Cable Usb (Synchronisation Et Charge) Pour Apple Ipod, Iphone]]></headline>
+                    <category><![CDATA[Câble data]]></category>
+                    <itemstatus>ACCEPTED</itemstatus>
+                    <itemsaleprice>
+                        <amount>0.9</amount>
+                        <currency>EUR</currency>
+                    </itemsaleprice>
+                    <shippingsaleprice>
+                        <amount>2.9</amount>
+                        <currency>EUR</currency>
+                    </shippingsaleprice>
+                    <itemcommissionvatrate>19.6</itemcommissionvatrate>
+                    <itemcommissionexcltax>
+                        <amount>0.37</amount>
+                        <currency>EUR</currency>
+                    </itemcommissionexcltax>
+                    <itemcommissionvat>
+                        <amount>0.07</amount>
+                        <currency>EUR</currency>
+                    </itemcommissionvat>
+                    <shippingcommissionvatrate>19.6</shippingcommissionvatrate>
+                    <shippingcommissionexcltax>
+                        <amount>0.59</amount>
+                        <currency>EUR</currency>
+                    </shippingcommissionexcltax>
+                    <shippingcommissionvat>
+                        <amount>0.11</amount>
+                        <currency>EUR</currency>
+                    </shippingcommissionvat>
+                    <paymentamount>
+                        <amount>2.66</amount>
+                        <currency>EUR</currency>
+                    </paymentamount>
+                </item>
+            </items>
+        </billinginformation>
+    </response>
+</getbillinginformationresult>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<producttypesresult>
+    <request>
+        <user>xxxxx</user>
+        <version>2011-11-29</version>
+    </request>
+    <response>
+        <producttypetemplate>
+            <alias>mev_livre_livre_ancien</alias>
+            <label>Livres</label>
+            <updatedate>2011-12-06T11:54:48</updatedate>
+        </producttypetemplate>
+
+        <producttypetemplate>
+            <alias>mev_lot_livres</alias>
+            <label>Lot de Livres et de Revues</label>
+            <updatedate>2011-12-06T11:54:48</updatedate>
+        </producttypetemplate>
+    </response>
+
+</producttypesresult>

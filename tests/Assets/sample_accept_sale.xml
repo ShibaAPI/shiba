@@ -1,0 +1,11 @@
+<saleacceptanceresult xmlns="http://www.priceminister.com/sales_ws/saleacceptance" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.priceminister.com/sales_ws/saleacceptance http://www.priceminister.com/res/co/0/www/www/56991/2010-09-20sale_acceptance.xsd">
+    <request>
+        <user>vendeur</user>
+        <version>2010-09-20</version>
+        <itemid>1046920728</itemid>
+    </request>
+    <response>
+        <lastversion>2010-09-20</lastversion>
+        <status>Refused</status>
+    </response>
+</saleacceptanceresult>	
