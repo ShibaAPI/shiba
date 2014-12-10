@@ -1,11 +1,11 @@
 Shiba
 =====
 
-**shiba 1.1.1**
+**shiba 1.1.2**
 
 Released: **11-Sep-2014**
 
-Last release: **24-Sep-2014**
+Last release: **10-Dec-2014**
 
 Introduction
 --------------
@@ -59,8 +59,7 @@ You're good to go!
 Testing Shiba
 -------------
 **Shiba** comes with its bunch of tests.
-Update the *shiba/Tests/assets/nosetests.cfg* with your PriceMinister credentials then run **nosetests** from the main package directory.
-**30** online tests must be OK (*online* obviously means you need a fully working internet connection).
+Please refer to documentation for some information about testing options.
 
 
 Documentation
