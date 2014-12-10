@@ -21,7 +21,7 @@ You can get Shiba from PyPi python packet manager or directly from the GitHub re
 
 How does this works?
 --------------------
-First, import the main *Shiba* module, and create an instance of the *shibaconnection.ShibaConnection* class with your login, token password [1]_ and domain if you want to work on the sanboxed version of the *PriceMinister WebServices*.
+First, import the main *Shiba* module, and create an instance of the *shibaconnection.ShibaConnection* class with your login, account token and domain if you want to work on the sanboxed version of the *PriceMinister WebServices*.
 
 Then all you have to do is importing the management module you wish to work with, giving it your instanced connection class, and start dealing with those WebServices through its methods.
 
@@ -34,7 +34,7 @@ This example will show you how to get new sales information on your seller accou
 	from Shiba.shibaconnection import ShibaConnection
 	from Shiba.salesmanagement import SalesManagement
 
-	init = ShibaConnection("mysellerlogin", "mytokenpwd"[, sandbox=True """For testing only purpose"""]) # Look at footnote [1]_ for some help on PriceMinister IDs
+	init = ShibaConnection("mysellerlogin", "mytokenpwd"[, sandbox=True """For testing purpose only (use Sandbox IDs)"""])
 	salestool = SalesManagement(init)
 	newsales = salestool.get_new_sales()
 
@@ -51,6 +51,18 @@ And here we go! All you have to do is to find the methods fitting your needs.
 
 Testing
 ----------
-Shiba comes with its tests, get a virtualenv up and run ``nosetests``.
+Shiba comes with its tests, both offline and online ones.
 
 *New in 1.1.2*: Tests now running with mock.
+
+Offline testing
+^^^^^^^^^^^^^^^
+Move into the *offline* subdirectory of *tests/*, and simply run *nosetests*.
+
+Online testing
+^^^^^^^^^^^^^^^
+If you want to run online test, you will primary need to get a **PriceMinister sandbox account** in order to proceed.
+
+Then open up the *tests/online/Assets/nosetests.cfg* file and fill it up with your sandbox **login** and **token** (not password).
+
+Then simply run *nosetests* inside the *online* tests folder.

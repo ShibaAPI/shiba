@@ -31,7 +31,7 @@ ____________________
 
 Releases and changelog
 ----------------------
-**8-Dec-2014** *1.1.2* : Set up a new explicit exception for throttling from PriceMinister, named *ShibaQuotaExceededError*. Tests now with mocks instead of remote polling.
+**8-Dec-2014** *1.1.2* : Set up a new explicit exception for throttling from PriceMinister, named *ShibaQuotaExceededError*. Testing is now available both offline (using mock XML) and online.
 
 **24-Sep-2014** *1.1.1* : Added explicit and mandatory required dependencies to *setup.py*, indeed installing Shiba before didn't install those.
 
