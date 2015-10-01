@@ -15,13 +15,13 @@ This is the documentation for the `Shiba API`_ project on GitHub.
 Hope you will find what you're looking for!
 
 What is Shiba?
---------------------
+--------------
 **Shiba** is an API intended to bring an human handlable utilisation of the **PriceMinister WebServices** with **Python**.
 
 It works through modules, imported to your scripts to fit your needs.
 
 Contents
-____________________
+________
 
 .. toctree::
    :maxdepth: 2

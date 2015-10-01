@@ -33,10 +33,10 @@ class MarketplaceManagement(object):
         """
         if (type(refs) is not list and type(refs) is not str and type(refs) is not unicode) or \
                 (type(productids) is not list and type(productids) is not str and type(productids) is not unicode):
-            raise ShibaCallingError \
-            ("Shiba code error : expected list or str/unicode as refs and/or productids parameters"
-                ", got " + unicode(type(refs)) + " as refs and " + unicode(type(productids))
-                + " as productids instead.")
+            raise ShibaCallingError(
+                "Shiba code error : expected list or str/unicode as refs and/or productids parameters, got " +
+                unicode(type(refs)) + " as refs and " + unicode(type(productids)) +
+                " as productids instead.")
         if type(refs) is list:
             refs = ','.join(refs)
         if type(productids) is list:

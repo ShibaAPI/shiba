@@ -1,8 +1,8 @@
 Shiba, from A to Z
-===================
+==================
 
 About Shiba sub management modules
------------------------------------
+----------------------------------
 All submodules included from the main **Shiba** package needs an instanced *ShibaConnection* class
 defining your login and an identification token as parameter.
 
@@ -19,7 +19,7 @@ You can find some documentation about it looking into the lxml documentation_.
 .. _documentation: http://lxml.de/objectify.html
 
 AccountingManagement module
----------------------------------
+---------------------------
 
 .. automodule:: shiba.accountingmanagement
     :members:
@@ -27,7 +27,7 @@ AccountingManagement module
     :show-inheritance:
 
 InventoryManagement module
---------------------------------
+--------------------------
 
 .. automodule:: shiba.inventorymanagement
     :members:
@@ -35,7 +35,7 @@ InventoryManagement module
     :show-inheritance:
 
 MarketplaceManagement module
-----------------------------------
+----------------------------
 
 .. automodule:: shiba.marketplacemanagement
     :members:
@@ -43,7 +43,7 @@ MarketplaceManagement module
     :show-inheritance:
 
 SalesManagement module
-----------------------------
+----------------------
 
 .. automodule:: shiba.salesmanagement
     :members:
@@ -51,7 +51,7 @@ SalesManagement module
     :show-inheritance:
 
 ShibaResponseObject module
-----------------------------
+--------------------------
 Containing the object class returned by each method of the modules above.
 
 .. automodule:: shiba.shibaresponseobject
@@ -60,7 +60,7 @@ Containing the object class returned by each method of the modules above.
     :show-inheritance:
 
 Shiba login ShibaConnection class
------------------------------------
+---------------------------------
 
 .. automodule:: Shiba.shibaconnection
     :members:
@@ -68,7 +68,7 @@ Shiba login ShibaConnection class
     :show-inheritance:
 
 Shiba exception classes
-----------------------------
+-----------------------
 
 .. automodule:: shiba.shibaexceptions
     :members:
