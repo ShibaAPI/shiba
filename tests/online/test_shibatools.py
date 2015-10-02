@@ -6,14 +6,15 @@
 
 from __future__ import unicode_literals
 
-from Shiba.shibatools import ShibaTools
-from Shiba.shibaexceptions import *
-from Shiba.shibaconnection import ShibaConnection
+from shiba.shibatools import ShibaTools
+from shiba.shibaexceptions import *
+from shiba.shibaconnection import ShibaConnection
 
 import ConfigParser
 import os
 
 import unittest
+
 
 class ShibaToolsTest(unittest.TestCase):
     def setUp(self):
@@ -32,15 +33,21 @@ class ShibaToolsTest(unittest.TestCase):
     def test_retrieve_obj_from_url(self):
         """retrieve_obj_from_url test with a remote XML file"""
         obj = self.init.retrieve_obj_from_url("http://www.w3schools.com/xml/note.xml")
-        self.assertTrue("note" in obj.content.tag)
+        self.assertIn("note", obj.content.tag)
         self.assertTrue("to" in obj.content.to.tag and obj.content.to == "Tove")
         self.assertTrue("heading" in obj.content.heading.tag and obj.content.heading == "Reminder")
         self.assertTrue("body" in obj.content.body.tag and obj.content.body == "Don't forget me this weekend!")
 
     def test_post_request(self):
-        """testing a post request with retrieve_obj_from_url"""
-        ret = self.init.post_request("http://postcatcher.in/catchers/54107375e4a183020000118c", "THIS IS SOME CONTENT")
-        self.assertTrue(ret == "Created" or "Application Error" in ret)
+        """
+        Testing a post request with retrieve_obj_from_url
+        This test method is dependant of the service used.
+        (i.e., the content of the assert would change if the test service changes).
+        http://httpbin.org/post returns the POST data you send.
+        """
+        post_data = "Who do you think you are to give me advice about dating?"
+        ret = self.init.post_request("http://httpbin.org/post", post_data)
+        self.assertIn(post_data, ret)
 
     def test_create_obj_from_xml(self):
         """This function is entirely implicitely tested from the InventoryManagementTest.test_generic_import_file"""
@@ -50,13 +57,15 @@ class ShibaToolsTest(unittest.TestCase):
         connection = ShibaConnection("test", "test")
         action = "genericimportreport"
         ret = self.init.inf_constructor(connection, action, inf1="info1", inf2="info2")
-        self.assertTrue("inf1" in ret and "inf2" in ret)
-        self.assertTrue(ret["inf1"] == "info1" and ret["action"] == "genericimportreport")
+        self.assertIn("inf1", ret)
+        self.assertIn("inf2", ret)
+        self.assertEqual(ret["inf1"], "info1")
+        self.assertEqual(ret["action"], "genericimportreport")
 
     def test_url_constructor(self):
         connection = ShibaConnection("test", "test")
         action = "genericimportreport"
         ret = self.init.inf_constructor(connection, action, inf1="info1", inf2="info2")
         url = self.init.url_constructor(connection, ret)
-        self.assertTrue("https://ws.priceminister.com/stock_ws?pwd=test&version=2011-11-29&action=genericimportreport&"
-                        "login=test&inf2=info2&inf1=info1" == url)
+        self.assertEqual("https://ws.priceminister.com/stock_ws?pwd=test&version=2011-11-29&action=genericimportreport&"
+                         "login=test&inf2=info2&inf1=info1", url)

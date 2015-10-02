@@ -42,7 +42,7 @@ class MarketplaceManagement(object):
         if type(productids) is list:
             productids = ','.join(productids)
         inf = ShibaTools.inf_constructor(self.connection, "listing", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf, domain="http://ws.priceminister.com")
+        url = ShibaTools.url_constructor(self.connection, inf, domain="https://ws.priceminister.com")
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
 

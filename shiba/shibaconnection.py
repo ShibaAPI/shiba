@@ -31,7 +31,7 @@ class ShibaConnection(object):
             "getavailableshippingtypes": {"cat": "sales_ws", "version": "2013-06-25", "login": self.login,
                                           "pwd": self.pwd},
             "export": {"cat": "stock_ws", "version": "2014-01-28", "login": self.login, "pwd": self.pwd},
-            "listing": {"cat": "listing_ws", "version": "2014-01-28", "login": self.login, "pwd": self.pwd},
+            "listing": {"cat": "listing_ssl_ws", "version": "2015-07-05", "login": self.login, "pwd": self.pwd},
             "categorymap": {"cat": "categorymap_ws", "version": "2011-10-11", "login": self.login, "pwd": self.pwd},
             "getnewsales": {"cat": "sales_ws", "version": "2014-02-11", "login": self.login, "pwd": self.pwd},
             "acceptsale": {"cat": "sales_ws", "version": "2010-09-20", "login": self.login, "pwd": self.pwd},

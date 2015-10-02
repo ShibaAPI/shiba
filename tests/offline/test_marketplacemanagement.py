@@ -41,16 +41,16 @@ class MarketplaceManagementTest(unittest.TestCase):
         except ShibaParameterError:
             pass
         obj = self.init.get_product_list(kw="livre")
-        self.assertTrue("listingresult" in obj.content.tag)
+        self.assertIn("listingresult", obj.content.tag)
         try:
             obj = self.init.get_product_list(nbproductsperpage=-15, kw="livre")
         except ShibaParameterError:
             pass
         obj = self.init.get_product_list(kw="informatique", scope="PRICING")
-        self.assertTrue("listingresult" in obj.content.tag)
+        self.assertIn("listingresult", obj.content.tag)
 
     @mock.patch('urllib2.urlopen', side_effect=mock_get_category_map)
     def test_get_category_map(self, urlopen):
         """get_category_map regular test"""
         obj = self.init.get_category_map()
-        self.assertTrue("categorymap" in obj.content.tag)
+        self.assertIn("categorymap", obj.content.tag)

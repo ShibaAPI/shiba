@@ -37,7 +37,7 @@ class ShibaToolsTest(unittest.TestCase):
     def test_retrieve_obj_from_url(self, urlopen):
         """retrieve_obj_from_url test with a remote XML file"""
         obj = self.init.retrieve_obj_from_url("http://www.w3schools.com/xml/note.xml")
-        self.assertTrue("note" in obj.content.tag)
+        self.assertIn("note", obj.content.tag)
         self.assertTrue("to" in obj.content.to.tag and obj.content.to == "Tove")
         self.assertTrue("heading" in obj.content.heading.tag and obj.content.heading == "Reminder")
         self.assertTrue("body" in obj.content.body.tag and obj.content.body == "Don't forget me this weekend!")
@@ -50,16 +50,18 @@ class ShibaToolsTest(unittest.TestCase):
         connection = ShibaConnection("test", "test")
         action = "genericimportreport"
         ret = self.init.inf_constructor(connection, action, inf1="info1", inf2="info2")
-        self.assertTrue("inf1" in ret and "inf2" in ret)
-        self.assertTrue(ret["inf1"] == "info1" and ret["action"] == "genericimportreport")
+        self.assertIn("inf1", ret)
+        self.assertIn("inf2", ret)
+        self.assertEqual(ret["inf1"], "info1")
+        self.assertEqual(ret["action"], "genericimportreport")
 
     def test_url_constructor(self):
         connection = ShibaConnection("test", "test")
         action = "genericimportreport"
         ret = self.init.inf_constructor(connection, action, inf1="info1", inf2="info2")
         url = self.init.url_constructor(connection, ret)
-        self.assertTrue("https://ws.priceminister.com/stock_ws?pwd=test&version=2011-11-29&action=genericimportreport&"
-                        "login=test&inf2=info2&inf1=info1" == url)
+        self.assertEqual("https://ws.priceminister.com/stock_ws?pwd=test&version=2011-11-29&action=genericimportreport&"
+                         "login=test&inf2=info2&inf1=info1", url)
 
     @mock.patch('shiba.shibatools.ShibaTools.post_request', side_effect=return_quota_exceeded_messages)
     def test_assert_quota_exeeded(self, post_request):
@@ -69,4 +71,3 @@ class ShibaToolsTest(unittest.TestCase):
         f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
         testdict = xmltodict.parse(f)
         self.assertRaises(ShibaQuotaExceededError, inventory.generic_import_file, data=testdict)
-
