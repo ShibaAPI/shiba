@@ -5,7 +5,7 @@ Shiba
 
 Released: **11-Sep-2014**
 
-Last release: **19-Oct-20105**
+Last release: **19-Oct-2015**
 
 Introduction
 ------------
