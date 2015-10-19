@@ -8,14 +8,15 @@
 
 from __future__ import unicode_literals
 
-from Shiba.marketplacemanagement import MarketplaceManagement
-from Shiba.shibaconnection import ShibaConnection
-from Shiba.shibaexceptions import *
+from shiba.marketplacemanagement import MarketplaceManagement
+from shiba.shibaconnection import ShibaConnection
+from shiba.shibaexceptions import *
 
 import unittest
 
 import ConfigParser
 import os
+
 
 class MarketplaceManagementTest(unittest.TestCase):
 
@@ -39,15 +40,15 @@ class MarketplaceManagementTest(unittest.TestCase):
         except ShibaParameterError:
             pass
         obj = self.init.get_product_list(kw="livre")
-        self.assertTrue("listingresult" in obj.content.tag)
+        self.assertIn("listingresult", obj.content.tag)
         try:
             obj = self.init.get_product_list(nbproductsperpage=-15, kw="livre")
         except ShibaParameterError:
             pass
         obj = self.init.get_product_list(kw="informatique", scope="PRICING")
-        self.assertTrue("listingresult" in obj.content.tag)
+        self.assertIn("listingresult", obj.content.tag)
 
     def test_get_category_map(self):
         """get_category_map regular test"""
         obj = self.init.get_category_map()
-        self.assertTrue("categorymap" in obj.content.tag)
+        self.assertIn("categorymap", obj.content.tag)

@@ -89,7 +89,7 @@ class SalesManagementTest(unittest.TestCase):
     def test_get_new_sales(self, urlopen):
         """regular get_new_sales test"""
         obj = self.init.get_new_sales()
-        self.assertTrue("getnewsalesresult" in obj.content.tag)
+        self.assertIn("getnewsalesresult", obj.content.tag)
 
     @mock.patch('urllib2.urlopen', side_effect=mock_accept_sale)
     def test_accept_sale(self, urlopen):
@@ -119,8 +119,8 @@ class SalesManagementTest(unittest.TestCase):
     def test_get_current_sales(self, urlopen):
         """get_current_sales test, on variable parameters, plus some fail results"""
         obj = self.init.get_current_sales()
-        self.assertTrue("getcurrentsalesresult" in obj.content.tag)
-        self.assertTrue(False == obj.content.request.ispendingpreorder)
+        self.assertIn("getcurrentsalesresult", obj.content.tag)
+        self.assertFalse(obj.content.request.ispendingpreorder)
         try:
             self.init.get_current_sales(ispendingpreorder="n")
         except ShibaCallingError:
@@ -132,65 +132,65 @@ class SalesManagementTest(unittest.TestCase):
     def test_get_billing_information(self, urlopen):
         """get_billing_information test, will raise an error due to unknown purchaseid"""
         obj = self.init.get_billing_information("1337")
-        self.assertTrue(obj.content.tag == "getbillinginformationresult")
+        self.assertEqual(obj.content.tag, "getbillinginformationresult")
 
     @mock.patch('urllib2.urlopen', side_effect=mock_get_shipping_information)
     def test_get_shipping_information(self, urlopen):
         """get_billing_information test"""
         obj = None
         obj = self.init.get_shipping_information("1337")
-        self.assertTrue(obj.content.tag == "getshippinginformationresult")
+        self.assertEqual(obj.content.tag, "getshippinginformationresult")
 
     @mock.patch('urllib2.urlopen', side_effect=mock_get_items_todo_list)
     def test_get_items_todo_list(self, urlopen):
         """get_items_todo_list routine test"""
         obj = self.init.get_item_todo_list()
-        self.assertTrue("getitemtodolistresult" in obj.content.tag)
+        self.assertIn("getitemtodolistresult", obj.content.tag)
 
     @mock.patch('urllib2.urlopen', side_effect=mock_get_item_infos)
     def test_get_item_infos(self, urlopen):
         """get_item_infos on a product"""
         obj = self.init.get_item_infos("181063")
-        self.assertTrue(obj.content.tag == "getiteminfosresult")
+        self.assertEqual(obj.content.tag, "getiteminfosresult")
 
     @mock.patch('urllib2.urlopen', side_effect=mock_cancel_item)
     def test_cancel_item(self, urlopen):
         """cancel_item test"""
         obj = self.init.cancel_item("1337", "comment")
-        self.assertTrue(obj.content.tag == "cancelitemresult")
+        self.assertEqual(obj.content.tag, "cancelitemresult")
 
     @mock.patch('urllib2.urlopen', side_effect=mock_contactus)
     def test_contact_us_about_item(self, urlopen):
         """contact_us_about_item test"""
         obj = self.init.contact_us_about_item("1337", "message", "1337")
-        self.assertTrue(obj.content.tag == "contactusaboutitemresult")
+        self.assertEqual(obj.content.tag, "contactusaboutitemresult")
 
     @mock.patch('urllib2.urlopen', side_effect=mock_contactuser)
     def test_contact_user_about_item(self, urlopen):
         """contact_user_about_item on a product"""
         obj = self.init.contact_user_about_item("1337", "message")
-        self.assertTrue(obj.content.tag == "contactuseraboutitemresult")
+        self.assertEqual(obj.content.tag, "contactuseraboutitemresult")
 
     @mock.patch('urllib2.urlopen', side_effect=mock_set_tracking_package_infos)
     def test_set_tracking_package_infos(self, urlopen):
         """set_tracking_package_infos on a product. Testing internal error catching as well."""
         obj = self.init.set_tracking_package_infos("1337", "UPS", "0000000000")
-        self.assertTrue(obj.content.tag == "setshippingpackageinfosresult")
+        self.assertEqual(obj.content.tag, "setshippingpackageinfosresult")
         obj = None
         try:
             obj = self.init.set_tracking_package_infos("1337", "Autre", "0000000000")
         except ShibaCallingError:
             pass
-        self.assertTrue(obj is None)
+        self.assertIsNone(obj)
 
     @mock.patch('urllib2.urlopen', side_effect=mock_confirm_preorder)
     def test_confirm_preorder(self, urlopen):
         """confirm_preorder on an advert. Testing internal error catching as well."""
         obj = self.init.confirm_preorder("1337", 1)
-        self.assertTrue(obj.content.tag == "confirmpreorder")
+        self.assertEqual(obj.content.tag, "confirmpreorder")
         obj = None
         try:
             obj = self.init.confirm_preorder("1337", -8)
         except ShibaCallingError:
             pass
-        self.assertTrue(obj is None)
+        self.assertIsNone(obj)

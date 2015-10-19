@@ -10,7 +10,6 @@ from __future__ import unicode_literals
 
 from shiba.inventorymanagement import InventoryManagement
 from shiba.shibaconnection import ShibaConnection
-from shiba.shibaexceptions import *
 
 import xmltodict
 from lxml import objectify
@@ -54,14 +53,14 @@ class InventoryManagementTest(unittest.TestCase):
     def test_product_types(self, urlopen):
         """product_types return test"""
         ptypes = self.init.product_types()
-        self.assertTrue("producttypesresult" in ptypes.content.tag)
+        self.assertIn("producttypesresult", ptypes.content.tag)
 
     @mock.patch('urllib2.urlopen', side_effect=mock_product_type_template)
     def test_product_type_template(self, urlopen):
         """product_type_template tests on two scopes, for a fixed alias, plus a fail result"""
         alias = "insolites_produit"
         ptemplate = self.init.product_type_template(alias, "")
-        self.assertTrue("producttypetemplateresult" in ptemplate.content.tag)
+        self.assertIn("producttypetemplateresult", ptemplate.content.tag)
 
     @mock.patch('shiba.shibatools.ShibaTools.post_request', side_effect=mock_generic_import_file)
     def test_generic_import_file(self, post_request):
@@ -70,18 +69,18 @@ class InventoryManagementTest(unittest.TestCase):
         f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
         testdict = xmltodict.parse(f)
         ret = self.init.generic_import_file(testdict)
-        self.assertTrue("OK" == ret.content.response.status)
+        self.assertEqual("OK", ret.content.response.status)
         f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
         testobj = objectify.parse(f)
         ret = self.init.generic_import_file(testobj)
-        self.assertTrue("OK" == ret.content.response.status)
+        self.assertEqual("OK", ret.content.response.status)
 
     @mock.patch('urllib2.urlopen', side_effect=mock_get_available_shipping_types)
     def test_get_available_shipping_types(self, urlopen):
         obj = self.init.get_available_shipping_types()
-        self.assertTrue("getavailableshippingtypesresult" in obj.content.tag)
+        self.assertIn("getavailableshippingtypesresult", obj.content.tag)
 
     @mock.patch('urllib2.urlopen', side_effect=mock_export_inventory)
     def test_export_inventory(self, urlopen):
         obj = self.init.export_inventory()
-        self.assertTrue("inventoryresult" in obj.content.tag)
+        self.assertIn("inventoryresult", obj.content.tag)

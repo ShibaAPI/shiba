@@ -8,9 +8,9 @@
 
 from __future__ import unicode_literals
 
-from Shiba.accountingmanagement import AccountingManagement
-from Shiba.shibaconnection import ShibaConnection
-from Shiba.shibaexceptions import *
+from shiba.accountingmanagement import AccountingManagement
+from shiba.shibaconnection import ShibaConnection
+from shiba.shibaexceptions import *
 
 import os
 import ConfigParser
@@ -38,18 +38,18 @@ class AccountingManagementTest(unittest.TestCase):
     def test_get_operations(self):
         """get_operations routine test, with date object as lastoperationdate too"""
         obj = self.init.get_operations()
-        self.assertTrue("getoperationsresult" in obj.content.tag)
+        self.assertIn("getoperationsresult", obj.content.tag)
         obj = self.init.get_operations("21/12/2012-00:00:00")
-        self.assertTrue(obj.content.request.lastoperationdate == "21/12/2012-00:00:00")
+        self.assertEqual(obj.content.request.lastoperationdate, "21/12/2012-00:00:00")
         testdate = date(2012, 12, 21)
         obj = self.init.get_operations(testdate)
-        self.assertTrue(obj.content.request.lastoperationdate == "21/12/12-00:00:00")
+        self.assertEqual(obj.content.request.lastoperationdate, "21/12/12-00:00:00")
         obj = None
         try:
             obj = self.init.get_operations("INVALIDDATE")
         except ShibaParameterError:
             pass
-        self.assertTrue(obj is None)
+        self.assertIsNone(obj)
 
     def test_get_compensation_details(self):
         """get_compensation_details test, must fail"""
@@ -58,4 +58,4 @@ class AccountingManagementTest(unittest.TestCase):
             obj = self.init.get_compensation_details("1337")
         except ShibaParameterError:
             pass
-        self.assertTrue(obj is None)
+        self.assertIsNone(obj)

@@ -25,8 +25,9 @@ from collections import OrderedDict
 import requests
 import xmltodict
 
-
 """Tools used by Shiba data retrieving classes"""
+
+
 class ShibaTools(object):
     @staticmethod
     def __errors_check(obj):
@@ -39,20 +40,20 @@ class ShibaTools(object):
         if "errorresponse" in obj.tag:
             if "ServerError" == obj.error.code:
                 raise ShibaParameterError("Parameter error : " + obj.error.message +
-                " - Reason : " + obj.error.details.detail)
+                                          " - Reason : " + obj.error.details.detail)
             if "ParameterError" == obj.error.code:
                 raise ShibaParameterError("Parameter error : " + obj.error.message +
-                " - Reason : " + obj.error.details.detail)
+                                          " - Reason : " + obj.error.details.detail)
             if "InvalidUserConnection" == obj.error.code:
                 raise ShibaLoginError("Invalid user connection : " + obj.error.message +
-                " - Reason : " + obj.error.details.detail)
+                                      " - Reason : " + obj.error.details.detail)
             if "InvalidUserRights" == obj.error.code:
                 if "Quota exceeded" in obj.error.message.text:
                     raise ShibaQuotaExceededError("Too many requests : " + obj.error.message +
-                    " - Reason : " + obj.error.details.detail)
+                                                  " - Reason : " + obj.error.details.detail)
                 else:
                     raise ShibaRightsError("Invalid user rights : " + obj.error.message +
-                    " - Reason : " + obj.error.details.detail)
+                                           " - Reason : " + obj.error.details.detail)
             return obj
         return False
 
@@ -65,12 +66,11 @@ class ShibaTools(object):
         :rtype: plain text from servers response
         """
         header = {"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE; rv:1.9.0.10) "
-                                        "Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)"}
+                                "Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)"}
         data = data.encode('utf-8')
         d = {"file": data}
         r = requests.post(url, files=d, headers=header)
         return r.text
-
 
     @staticmethod
     def retrieve_obj_from_url(url, data=None):
@@ -110,7 +110,8 @@ class ShibaTools(object):
             xmlepured = xmlepured.encode('utf-8')
             obj = objectify.fromstring(xmlepured)
         except:
-            raise ShibaUnknownServiceError("Unknown error from service or from internal modules : Service returned : " + xml)
+            raise ShibaUnknownServiceError(
+                "Unknown error from service or from internal modules : Service returned : " + xml)
         if ShibaTools.__errors_check(obj) is not False:
             try:
                 if "Unknown error" == obj.error.code:
@@ -121,7 +122,7 @@ class ShibaTools(object):
                                         " : " + obj.error.message + " - Reason : " + obj.error.details.detail)
             except:
                 raise ShibaUnknownServiceError("An unknown error from the WebService has occurred - XML dump : " +
-                                                etree.tostring(obj))
+                                               etree.tostring(obj))
         return ShibaResponseObject(namespace, obj, xml.encode('utf-8'))
 
     @staticmethod
@@ -160,8 +161,8 @@ class ShibaTools(object):
             raise ShibaCallingError("Internal parameter error : shibaconnection parameter is not "
                                     "a ShibaConnection instance")
         if action not in shibaconnection.actionsinfo:
-            raise ShibaCallingError("Internal parameter error : action parameter "
-                                    + action + " is unknown from the actions list")
+            raise ShibaCallingError("Internal parameter error : action parameter " +
+                                    action + " is unknown from the actions list")
         newkwargs = {}
         for each in kwargs:
             if kwargs[each] is not None and kwargs[each] != "":

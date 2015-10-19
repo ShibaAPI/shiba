@@ -10,15 +10,11 @@ from __future__ import unicode_literals
 
 from shiba.accountingmanagement import AccountingManagement
 from shiba.shibaconnection import ShibaConnection
-from shiba.shibaexceptions import *
 
 import os
-import ConfigParser
 
 import unittest
 import mock
-
-from datetime import date
 
 
 def mock_get_operations(*args, **kwargs):
@@ -40,12 +36,12 @@ class AccountingManagementTest(unittest.TestCase):
     def test_get_operations(self, urlopen):
         """get_operations routine test"""
         obj = self.init.get_operations()
-        self.assertTrue("getoperationsresult" in obj.content.tag)
-        self.assertTrue(obj.content.request.user == "vendeur")
-        self.assertTrue(obj.content.request.operationcause == "salestransfer")
+        self.assertIn("getoperationsresult", obj.content.tag)
+        self.assertEqual(obj.content.request.user, "vendeur")
+        self.assertEqual(obj.content.request.operationcause, "salestransfer")
 
     @mock.patch('urllib2.urlopen', side_effect=mock_get_compensation_details)
     def test_get_compensation_details(self, urlopen):
         """get_compensation_details test"""
         obj = self.init.get_compensation_details("1337")
-        self.assertTrue(obj.content.tag == "getcompensationdetailsresult")
+        self.assertEqual(obj.content.tag, "getcompensationdetailsresult")

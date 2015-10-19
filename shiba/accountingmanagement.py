@@ -17,7 +17,8 @@ class AccountingManagement(object):
     """Accounting Management class, showing global financial operations on your account, or specific financial details
         about an operation"""
     def __init__(self, connection):
-        assert(isinstance(connection, ShibaConnection)), "error : you must give this instance a ShibaConnection instance"
+        assert(isinstance(connection, ShibaConnection)),\
+            "error : you must give this instance a ShibaConnection instance"
         self.connection = connection
 
     def get_operations(self, lastoperationdate=""):
