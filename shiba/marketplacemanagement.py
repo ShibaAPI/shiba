@@ -49,6 +49,6 @@ class MarketplaceManagement(object):
     def get_category_map(self):
         """Lists items categories from the PriceMinister platform"""
         inf = ShibaTools.inf_constructor(self.connection, "categorymap", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf, domain="http://ws.priceminister.com")
+        url = ShibaTools.url_constructor(self.connection, inf, domain="https://ws.priceminister.com")
         obj = ShibaTools.retrieve_obj_from_url(url)
         return obj
