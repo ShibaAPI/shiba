@@ -85,5 +85,10 @@ class InventoryManagementTest(unittest.TestCase):
             pass
 
     def test_export_inventory(self):
+        """
+        This test fails if you do not use a PRO ACCOUNT.
+        :return:
+        """
+        print("This test fails if you do not use a PRO ACCOUNT.")
         obj = self.init.export_inventory()
         self.assertIn("inventoryresult", obj.content.tag)
