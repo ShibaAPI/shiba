@@ -49,6 +49,6 @@ class MarketplaceManagement(object):
     def get_category_map(self):
         """Lists items categories from the PriceMinister platform"""
         inf = inf_constructor(self.connection, "categorymap", **locals())
-        url = url_constructor(self.connection, inf, domain="https://ws.priceminister.com")
+        url = url_constructor(self.connection, inf, domain="http://ws.priceminister.com")
         obj = retrieve_obj_from_url(url)
         return obj
