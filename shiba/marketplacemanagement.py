@@ -41,8 +41,10 @@ class MarketplaceManagement(object):
             refs = ','.join(refs)
         if type(productids) is list:
             productids = ','.join(productids)
+        if kw != u'':
+            pass
         inf = inf_constructor(self.connection, "listing", **locals())
-        url = url_constructor(self.connection, inf, domain="https://ws.priceminister.com")
+        url = url_constructor(self.connection, inf)
         obj = retrieve_obj_from_url(url)
         return obj
 
