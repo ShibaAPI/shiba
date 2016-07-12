@@ -62,7 +62,7 @@ class InventoryManagementTest(unittest.TestCase):
         ptemplate = self.init.product_type_template(alias, "")
         self.assertIn("producttypetemplateresult", ptemplate.content.tag)
 
-    @mock.patch('shiba.shibatools.ShibaTools.post_request', side_effect=mock_generic_import_file)
+    @mock.patch('shiba.shibatools.post_request', side_effect=mock_generic_import_file)
     def test_generic_import_file(self, post_request):
         """generic_import_file test, from an XML file. Conversion is done by xmltodict from a dict or OrderedDict
         , as well with objectify with an objectified ElementTree element"""

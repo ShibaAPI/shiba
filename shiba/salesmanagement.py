@@ -7,7 +7,7 @@
 from __future__ import unicode_literals
 
 from shibaconnection import ShibaConnection
-from shibatools import ShibaTools
+from shibatools import *
 from shibaexceptions import *
 
 from datetime import date
@@ -22,9 +22,9 @@ class SalesManagement(object):
 
     def get_new_sales(self):
         """Calling get_new_sales all the new sales which have been recently recensed."""
-        inf = ShibaTools.inf_constructor(self.connection, "getnewsales", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "getnewsales", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def accept_sale(self, itemid):
@@ -32,9 +32,9 @@ class SalesManagement(object):
 
         :param itemid: string for item ID
         """
-        inf = ShibaTools.inf_constructor(self.connection, "acceptsale", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "acceptsale", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def refuse_sale(self, itemid):
@@ -42,9 +42,9 @@ class SalesManagement(object):
 
         :param itemid: string for item ID
         """
-        inf = ShibaTools.inf_constructor(self.connection, "refusesale", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "refusesale", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def get_current_sales(self, ispendingpreorder="", purchasedate="", nexttoken=""):
@@ -62,9 +62,9 @@ class SalesManagement(object):
                                     "instance or str, got " + unicode(type(purchasedate)) + " instead.")
         if isinstance(purchasedate, date):
             purchasedate = purchasedate.strftime("%d/%m/%y-%H:%M:%S")
-        inf = ShibaTools.inf_constructor(self.connection, "getcurrentsales", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "getcurrentsales", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def get_billing_information(self, purchaseid):
@@ -72,9 +72,9 @@ class SalesManagement(object):
 
         :param purchaseid: is mandatory (same as found in get_new_sales report).
         """
-        inf = ShibaTools.inf_constructor(self.connection, "getbillinginformation", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "getbillinginformation", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def get_shipping_information(self, purchaseid):
@@ -83,16 +83,16 @@ class SalesManagement(object):
 
         :param purchaseid: is mandatory (same as found in get_new_sales report).
         """
-        inf = ShibaTools.inf_constructor(self.connection, "getshippinginformation", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "getshippinginformation", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def get_item_todo_list(self):
         """Retrieving a todo list on items, such as CLAIMS or MESSAGES from buyer or PriceMinister."""
-        inf = ShibaTools.inf_constructor(self.connection, "getitemtodolist", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "getitemtodolist", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def get_item_infos(self, itemid):
@@ -101,9 +101,9 @@ class SalesManagement(object):
 
         :param itemid: string for item ID
         """
-        inf = ShibaTools.inf_constructor(self.connection, "getiteminfos", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "getiteminfos", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def cancel_item(self, itemid, comment):
@@ -114,9 +114,9 @@ class SalesManagement(object):
         :param itemid: string for item ID
         :param comment: message to send to the buyer as reason for cancelling the sale
         """
-        inf = ShibaTools.inf_constructor(self.connection, "cancelitem", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "cancelitem", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def contact_us_about_item(self, itemid, content, mailparentid):
@@ -128,9 +128,9 @@ class SalesManagement(object):
         :param content: message content
         :param mailparentid: ID of previous mail, you must have conversed with the customer before to get it
         """
-        inf = ShibaTools.inf_constructor(self.connection, "contactusaboutitem", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "contactusaboutitem", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def contact_user_about_item(self, itemid, content):
@@ -139,9 +139,9 @@ class SalesManagement(object):
         :param itemid: string for item ID
         :param content: message content
         """
-        inf = ShibaTools.inf_constructor(self.connection, "contactuseraboutitem", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "contactuseraboutitem", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def set_tracking_package_infos(self, itemid, transporter_name, tracking_number, tracking_url=""):
@@ -158,9 +158,9 @@ class SalesManagement(object):
         if transporter_name == "Autre" and len(tracking_url) == 0:
             raise ShibaCallingError("Shiba code error : if 'Autre' is specified as transporter_name, a tracking_url "
                                     "must be specified too")
-        inf = ShibaTools.inf_constructor(self.connection, "settrackingpackageinfos", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "settrackingpackageinfos", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def confirm_preorder(self, advertid, stock):
@@ -172,7 +172,7 @@ class SalesManagement(object):
         """
         if int(stock) <= 0:
             raise ShibaCallingError("Shiba code error : stock must be a positive number")
-        inf = ShibaTools.inf_constructor(self.connection, "confirmpreorder", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "confirmpreorder", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj

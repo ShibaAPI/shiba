@@ -8,7 +8,7 @@ from __future__ import unicode_literals
 
 from shibaconnection import ShibaConnection
 from shibaexceptions import *
-from shibatools import ShibaTools
+from shibatools import *
 
 from datetime import date
 
@@ -34,14 +34,14 @@ class AccountingManagement(object):
                                     " got " + unicode(type(lastoperationdate)) + " instead.")
         if isinstance(lastoperationdate, date):
             lastoperationdate = lastoperationdate.strftime("%d/%m/%y-%H:%M:%S")
-        inf = ShibaTools.inf_constructor(self.connection, "getoperations", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "getoperations", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def get_compensation_details(self, compensationid):
         """Get a specific operation details from its "compensationid" found in the get_operation request return."""
-        inf = ShibaTools.inf_constructor(self.connection, "getcompensationdetails", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf)
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "getcompensationdetails", **locals())
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url)
         return obj

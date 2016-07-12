@@ -7,7 +7,7 @@
 from __future__ import unicode_literals
 
 from shibaconnection import ShibaConnection
-from shibatools import ShibaTools
+from shibatools import *
 from shibaexceptions import *
 
 
@@ -41,14 +41,14 @@ class MarketplaceManagement(object):
             refs = ','.join(refs)
         if type(productids) is list:
             productids = ','.join(productids)
-        inf = ShibaTools.inf_constructor(self.connection, "listing", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf, domain="https://ws.priceminister.com")
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "listing", **locals())
+        url = url_constructor(self.connection, inf, domain="https://ws.priceminister.com")
+        obj = retrieve_obj_from_url(url)
         return obj
 
     def get_category_map(self):
         """Lists items categories from the PriceMinister platform"""
-        inf = ShibaTools.inf_constructor(self.connection, "categorymap", **locals())
-        url = ShibaTools.url_constructor(self.connection, inf, domain="https://ws.priceminister.com")
-        obj = ShibaTools.retrieve_obj_from_url(url)
+        inf = inf_constructor(self.connection, "categorymap", **locals())
+        url = url_constructor(self.connection, inf, domain="https://ws.priceminister.com")
+        obj = retrieve_obj_from_url(url)
         return obj
