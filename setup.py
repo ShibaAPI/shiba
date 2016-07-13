@@ -12,6 +12,6 @@ setup(name="Shiba",
       author="Maxime Boguta",
       author_email="maxime.boguta@epitech.eu",
       url="https://github.com/ShibaAPI/shiba",
-      download_url="https://github.com/ShibaAPI/shiba/tarball/1.1.4",
+      # download_url="https://github.com/ShibaAPI/shiba/tarball/1.1.4",
       keywords=["api", "priceminister", "python", "webservices"],
       install_requires=["requests", "xmltodict", "lxml", "nose"],)
