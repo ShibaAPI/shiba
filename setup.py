@@ -21,7 +21,6 @@ requirements = [
     "requests",
     "xmltodict",
     "lxml",
-    "nose"
 ]
 
 version = ''
