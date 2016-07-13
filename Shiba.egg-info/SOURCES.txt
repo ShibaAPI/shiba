@@ -6,6 +6,7 @@ Shiba.egg-info/SOURCES.txt
 Shiba.egg-info/dependency_links.txt
 Shiba.egg-info/requires.txt
 Shiba.egg-info/top_level.txt
+Shiba.egg-info/zip-safe
 shiba/__init__.py
 shiba/accountingmanagement.py
 shiba/inventorymanagement.py
@@ -15,3 +16,16 @@ shiba/shibaconnection.py
 shiba/shibaexceptions.py
 shiba/shibaresponseobject.py
 shiba/shibatools.py
+tests/__init__.py
+tests/offline/__init__.py
+tests/offline/test_accountingmanagement.py
+tests/offline/test_inventorymanagement.py
+tests/offline/test_marketplacemanagement.py
+tests/offline/test_salesmanagement.py
+tests/offline/test_shibatools.py
+tests/online/__init__.py
+tests/online/test_accountingmanagement.py
+tests/online/test_inventorymanagement.py
+tests/online/test_marketplacemanagement.py
+tests/online/test_salesmanagement.py
+tests/online/test_shibatools.py
