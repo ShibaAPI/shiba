@@ -8,7 +8,6 @@
 from __future__ import unicode_literals
 
 import httplib
-import urllib2 as ul2
 import urllib as ul
 
 from lxml import objectify
@@ -86,18 +85,15 @@ def retrieve_obj_from_url(url, data=None):
         if data is not None:
             xml = post_request(url, data)
         else:
-            xml = ul2.urlopen(url).read()
+            xml = requests.get(url).text
     except requests.ConnectionError:
         raise ShibaConnectionError("HTTP error = Connection error - On URL: " + url)
-    except ul2.HTTPError, e:
-        raise ShibaConnectionError("HTTP error = " + unicode(e.code) + " - On URL: " + url)
-    except ul2.URLError, e:
+    except requests.HTTPError as e:
         raise ShibaConnectionError("URL error = " + unicode(e.reason) + " - On URL: " + url)
     except httplib.HTTPException:
         raise ShibaConnectionError("HTTP unknown error =" + " - On URL: " + url)
     except:
         raise
-    xml = xml.decode('ISO-8859-1')
     try:
         namespace = re.search(pattern='xmlns="[^"]', string=xml)
         if namespace is not None:

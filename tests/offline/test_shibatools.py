@@ -6,6 +6,7 @@
 
 from __future__ import unicode_literals
 
+from requests import Response
 from shiba.shibatools import *
 from shiba.shibaexceptions import *
 from shiba.shibaconnection import ShibaConnection
@@ -21,7 +22,9 @@ import unittest
 
 def return_xml_for_url(*args, **kwargs):
     datas = open(os.path.join(os.path.dirname(__file__), 'Assets/note.xml'))
-    return datas
+    response = Response()
+    response._content = datas.read()
+    return response
 
 
 def return_quota_exceeded_messages(*args, **kwargs):
@@ -33,7 +36,7 @@ class ShibaToolsTest(unittest.TestCase):
     def setUp(self):
         pass
 
-    @mock.patch('urllib2.urlopen', side_effect=return_xml_for_url)
+    @mock.patch('requests.get', side_effect=return_xml_for_url)
     def test_retrieve_obj_from_url(self, urlopen):
         """retrieve_obj_from_url test with a remote XML file"""
         obj = retrieve_obj_from_url("http://www.w3schools.com/xml/note.xml")
