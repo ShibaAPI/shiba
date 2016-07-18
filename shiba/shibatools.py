@@ -14,9 +14,10 @@ from lxml import etree
 from lxml import objectify
 
 from shibaconnection import ShibaConnection
-from shibaresponseobject import (ShibaResponseObject, ShibaParameterError, ShibaLoginError, ShibaQuotaExceededError,
-                                 ShibaRightsError, ShibaConnectionError, ShibaUnknownServiceError, ShibaServiceError,
-                                 ShibaCallingError)
+from shibaresponseobject import ShibaResponseObject
+from shibaexceptions import (ShibaParameterError, ShibaLoginError, ShibaQuotaExceededError,
+                             ShibaRightsError, ShibaConnectionError, ShibaUnknownServiceError, ShibaServiceError,
+                             ShibaCallingError)
 
 
 def __errors_check(obj):

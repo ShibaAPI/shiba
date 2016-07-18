@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from shibaconnection import ShibaConnection
-from shibaresponseobject import ShibaCallingError
+from shibaexceptions import ShibaCallingError
 from shibatools import inf_constructor, url_constructor, retrieve_obj_from_url, create_xml_from_item_obj
 
 

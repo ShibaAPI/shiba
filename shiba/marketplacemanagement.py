@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from shibaconnection import ShibaConnection
 from shibatools import inf_constructor, url_constructor, retrieve_obj_from_url
 
-from shibaresponseobject import ShibaCallingError
+from shibaexceptions import ShibaCallingError
 
 
 class MarketplaceManagement(object):
