@@ -13,12 +13,8 @@ matrix:
       env: TOX_ENV=py34
     - python: 3.5
       env: TOX_ENV=py35
-    - python: nightly
-      env: TOX_ENV=py36
     - python: pypy
       env: TOX_ENV=pypy
-    - python: 3.5
-      env: TOX_ENV=flake8
 
 # env:
 #   - SHIBA_API_PASSWORD=
