@@ -3,6 +3,7 @@ from __future__ import unicode_literals, print_function
 import os
 import pytest
 
+from codecs import open
 from contextlib import contextmanager
 
 from requests import Response
@@ -10,17 +11,17 @@ from requests import Response
 
 def make_requests_get_mock(filename):
     def mockreturn(*args, **kwargs):
-        datas = open(os.path.join(os.path.dirname(__file__), 'Assets', filename))
         response = Response()
-        response._content = datas.read()
+        with open(os.path.join(os.path.dirname(__file__), 'Assets', filename), 'r', 'ISO-8859-1') as fd:
+            response._content = fd.read().encode('utf-8')
         return response
     return mockreturn
 
 
 def make_simple_text_mock(filename):
     def mockreturn(*args, **kwargs):
-        datas = open(os.path.join(os.path.dirname(__file__), 'Assets', filename))
-        return datas.read()
+        with open(os.path.join(os.path.dirname(__file__), 'Assets', filename), 'r', 'ISO-8859-1') as fd:
+            return fd.read()
     return mockreturn
 
 

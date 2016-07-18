@@ -2,22 +2,28 @@
 """ Tools used by Shiba data retrieving classes"""
 from __future__ import unicode_literals
 
-from collections import OrderedDict
 import re
-import urllib as ul
+from collections import OrderedDict
 
-import httplib
 import requests
 import xmltodict
 
 from lxml import etree
 from lxml import objectify
 
-from shibaconnection import ShibaConnection
-from shibaresponseobject import ShibaResponseObject
-from shibaexceptions import (ShibaParameterError, ShibaLoginError, ShibaQuotaExceededError,
-                             ShibaRightsError, ShibaConnectionError, ShibaUnknownServiceError, ShibaServiceError,
-                             ShibaCallingError)
+from .shibaconnection import ShibaConnection
+from .shibaresponseobject import ShibaResponseObject
+from .shibaexceptions import (ShibaParameterError, ShibaLoginError, ShibaQuotaExceededError,
+                              ShibaRightsError, ShibaConnectionError, ShibaUnknownServiceError, ShibaServiceError,
+                              ShibaCallingError)
+from .compat import is_py3, to_unicode
+
+if is_py3:
+    from http.client import HTTPException
+    from urllib.parse import urlencode
+else:
+    from urllib import urlencode
+    from httplib import HTTPException
 
 
 def __errors_check(obj):
@@ -82,8 +88,8 @@ def retrieve_obj_from_url(url, data=None):
     except requests.ConnectionError:
         raise ShibaConnectionError("HTTP error = Connection error - On URL: " + url)
     except requests.HTTPError as e:
-        raise ShibaConnectionError("URL error = " + unicode(e.reason) + " - On URL: " + url)
-    except httplib.HTTPException:
+        raise ShibaConnectionError("URL error = " + to_unicode(e.reason) + " - On URL: " + url)
+    except HTTPException:
         raise ShibaConnectionError("HTTP unknown error =" + " - On URL: " + url)
     except:
         raise
@@ -153,7 +159,7 @@ def inf_constructor(shibaconnection, action, **kwargs):
     newkwargs = {}
     for each in kwargs:
         if kwargs[each] is not None and kwargs[each] != "":
-            newkwargs[each] = unicode(kwargs[each])
+            newkwargs[each] = to_unicode(kwargs[each])
     newkwargs.update(shibaconnection.actionsinfo[action])
     newkwargs["action"] = action
     return newkwargs
@@ -176,5 +182,5 @@ def url_constructor(shibaconnection, inf, domain=None):
     ordered_inf = OrderedDict()
     for k in sorted([key for key in inf]):
         ordered_inf[k] = inf[k]
-    url = primary + ul.urlencode(ordered_inf)
+    url = primary + urlencode(ordered_inf)
     return url

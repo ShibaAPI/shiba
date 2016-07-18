@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from shibaconnection import ShibaConnection
-from shibatools import inf_constructor, url_constructor, retrieve_obj_from_url
-
-from shibaexceptions import ShibaCallingError
-
 from datetime import date
+
+from .shibaconnection import ShibaConnection
+from .shibaexceptions import ShibaCallingError
+from .shibatools import inf_constructor, url_constructor, retrieve_obj_from_url
+from .compat import basestring
 
 
 class SalesManagement(object):
@@ -51,11 +51,11 @@ class SalesManagement(object):
         :param nexttoken: Next page token argument, leave at is it, only give 0 is you want the first page
         """
         if ispendingpreorder != "" and ispendingpreorder != "y":
-            raise ShibaCallingError("Shiba code error : ispendingpreorder parameter must be empty or 'y'")
-        if isinstance(purchasedate, date) is False and type(purchasedate) is not str and \
-                type(purchasedate) is not unicode:
-            raise ShibaCallingError("Shiba code error : purchasedate order parameter must be a datetime "
-                                    "instance or str, got " + unicode(type(purchasedate)) + " instead.")
+            raise ShibaCallingError("ispendingpreorder parameter must be empty or 'y'")
+
+        if not isinstance(purchasedate, date) and not isinstance(purchasedate, basestring):
+            raise ValueError("expected string or date for 'purchasedate', got '%s'" % type(purchasedate))
+
         if isinstance(purchasedate, date):
             purchasedate = purchasedate.strftime("%d/%m/%y-%H:%M:%S")
         inf = inf_constructor(self.connection, "getcurrentsales", **locals())

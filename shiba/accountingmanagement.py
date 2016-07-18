@@ -3,17 +3,20 @@ from __future__ import unicode_literals
 
 from datetime import date
 
-from shibaconnection import ShibaConnection
-from shibaexceptions import ShibaCallingError
-from shibatools import inf_constructor, url_constructor, retrieve_obj_from_url
+from .shibaconnection import ShibaConnection
+from .shibatools import inf_constructor, url_constructor, retrieve_obj_from_url
+
+from .compat import basestring
 
 
 class AccountingManagement(object):
-    """Accounting Management class, showing global financial operations on your account, or specific financial details
-        about an operation"""
+    """ Accounting Management class, showing global financial operations on your account, or specific financial details
+        about an operation
+    """
+
     def __init__(self, connection):
-        assert(isinstance(connection, ShibaConnection)),\
-            "error : you must give this instance a ShibaConnection instance"
+        if not isinstance(connection, ShibaConnection):
+            raise ValueError("expecting a ShibaConnection instance, got '%s'" % type(connection))
         self.connection = connection
 
     def get_operations(self, lastoperationdate=""):
@@ -23,10 +26,10 @@ class AccountingManagement(object):
         :param lastoperationdate: as follows : dd/mm/yyyy-hh:mm:ss and as string or date instance.
         """
         operationcause = "salestransfer"
-        if isinstance(lastoperationdate, date) is False and type(lastoperationdate) is not str and \
-                type(lastoperationdate) is not unicode:
-            raise ShibaCallingError("Shiba code error : lastoperationdate parameter must be a datetime instance or str,"
-                                    " got " + unicode(type(lastoperationdate)) + " instead.")
+
+        if not isinstance(lastoperationdate, date) and not isinstance(lastoperationdate, basestring):
+            raise ValueError("expected string or date for 'lastoperationdate', got '%s'" % type(lastoperationdate))
+
         if isinstance(lastoperationdate, date):
             lastoperationdate = lastoperationdate.strftime("%d/%m/%y-%H:%M:%S")
         inf = inf_constructor(self.connection, "getoperations", **locals())

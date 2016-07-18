@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from shibaconnection import ShibaConnection
-from shibatools import inf_constructor, url_constructor, retrieve_obj_from_url
-
-from shibaexceptions import ShibaCallingError
+from .shibaconnection import ShibaConnection
+from .shibatools import inf_constructor, url_constructor, retrieve_obj_from_url
+from .compat import basestring
 
 
 class MarketplaceManagement(object):
     """ Marketplace informations retrieving, such as product lists and category mapping"""
 
     def __init__(self, connection):
-        if isinstance(connection, ShibaConnection) is False:
-            raise ShibaCallingError("Shiba subclass init error : expecting a ShibaConnection instance")
+        if not isinstance(connection, ShibaConnection):
+            raise ValueError("expecting a ShibaConnection instance, got '%s'" % type(connection))
         self.connection = connection
 
     def get_product_list(self, scope="", kw="", nav="", refs="", productids="", nbproductsperpage="", pagenumber=""):
@@ -27,17 +26,18 @@ class MarketplaceManagement(object):
         :param nbproductsperpage: products per page, default is 20.
         :param pagenumber: page number, default is 1.
         """
-        if (type(refs) is not list and type(refs) is not str and type(refs) is not unicode) or \
-                (type(productids) is not list and type(productids) is not str and type(productids) is not unicode):
-            raise ShibaCallingError(
-                "Shiba code error : expected list or str/unicode as refs and/or productids parameters, got " +
-                unicode(type(refs)) + " as refs and " + unicode(type(productids)) +
-                " as productids instead.")
-        if type(refs) is list:
+        if not isinstance(refs, basestring) and not isinstance(refs, list):
+            raise ValueError("expected string or list for 'refs', got '%s'" % type(refs))
+
+        if not isinstance(productids, basestring) and not isinstance(productids, list):
+            raise ValueError("expected string or list for 'productids', got '%s'" % type(productids))
+
+        if isinstance(refs, list):
             refs = ','.join(refs)
-        if type(productids) is list:
+        if isinstance(productids, list):
             productids = ','.join(productids)
         if kw != u'':
+            # TODO: and ???
             pass
         inf = inf_constructor(self.connection, "listing", **locals())
         url = url_constructor(self.connection, inf)
