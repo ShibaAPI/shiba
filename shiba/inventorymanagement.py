@@ -1,14 +1,9 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# class InventoryManagement
-
-
 from __future__ import unicode_literals
 
 from shibaconnection import ShibaConnection
-from shibaexceptions import *
-from shibatools import *
+from shibaresponseobject import ShibaCallingError
+from shibatools import inf_constructor, url_constructor, retrieve_obj_from_url, create_xml_from_item_obj
 
 
 class InventoryManagement(object):

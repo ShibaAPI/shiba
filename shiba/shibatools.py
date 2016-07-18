@@ -1,30 +1,22 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Class ShibaTools
-# Shiba runtime tools class
-
-
+""" Tools used by Shiba data retrieving classes"""
 from __future__ import unicode_literals
 
-import httplib
+from collections import OrderedDict
+import re
 import urllib as ul
 
-from lxml import objectify
-from lxml import etree
-
-from shibaconnection import ShibaConnection
-from shibaexceptions import *
-from shibaresponseobject import ShibaResponseObject
-
-import re
-
-from collections import OrderedDict
-
+import httplib
 import requests
 import xmltodict
 
-"""Tools used by Shiba data retrieving classes"""
+from lxml import etree
+from lxml import objectify
+
+from shibaconnection import ShibaConnection
+from shibaresponseobject import (ShibaResponseObject, ShibaParameterError, ShibaLoginError, ShibaQuotaExceededError,
+                                 ShibaRightsError, ShibaConnectionError, ShibaUnknownServiceError, ShibaServiceError,
+                                 ShibaCallingError)
 
 
 def __errors_check(obj):

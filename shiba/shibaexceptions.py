@@ -1,13 +1,6 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Class ShibaException and inherited ones
-# Shiba exceptions classes
-
-
+""" Those exception classes will usually be raised after an error returned from the WebServices."""
 from __future__ import unicode_literals
-
-"""Those exception classes will usually be raised after an error returned from the WebServices"""
 
 
 class ShibaException(Exception):

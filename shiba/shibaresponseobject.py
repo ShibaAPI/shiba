@@ -1,9 +1,4 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Class ShibaReturn
-# Shiba return class
-
 from __future__ import unicode_literals
 
 

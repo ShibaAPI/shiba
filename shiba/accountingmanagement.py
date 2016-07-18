@@ -1,16 +1,11 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# class AccountingManagement
-
-
 from __future__ import unicode_literals
 
-from shibaconnection import ShibaConnection
-from shibaexceptions import *
-from shibatools import *
-
 from datetime import date
+
+from shibaconnection import ShibaConnection
+from shibaresponseobject import ShibaCallingError
+from shibatools import inf_constructor, url_constructor, retrieve_obj_from_url
 
 
 class AccountingManagement(object):

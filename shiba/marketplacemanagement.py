@@ -1,14 +1,10 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# class MarketplaceManagement
-
-
 from __future__ import unicode_literals
 
 from shibaconnection import ShibaConnection
-from shibatools import *
-from shibaexceptions import *
+from shibatools import inf_constructor, url_constructor, retrieve_obj_from_url
+
+from shibaresponseobject import ShibaCallingError
 
 
 class MarketplaceManagement(object):

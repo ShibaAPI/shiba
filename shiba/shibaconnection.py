@@ -1,13 +1,5 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Class ShibaInit
-# Shiba initialization class
-
-
 from __future__ import unicode_literals
-
-from shibaexceptions import *
 
 
 class ShibaConnection(object):
