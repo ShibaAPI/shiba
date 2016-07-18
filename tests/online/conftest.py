@@ -2,19 +2,19 @@
 from __future__ import unicode_literals, print_function
 
 import os
-import ConfigParser
 
 import pytest
 
 from shiba.shibaconnection import ShibaConnection
 
 
-@pytest.fixture
+ONLINE_TEST_DISABLED = os.environ.get("SHIBA_API_LOGIN", None) is None
+
+
+@pytest.fixture(params=[pytest.mark.skipif(ONLINE_TEST_DISABLED,  reason='need online credentials')('parameter')])
 def connection():
-    settings = ConfigParser.ConfigParser()
-    settings.read(os.path.dirname(os.path.realpath(__file__)) + "/Assets/nosetests.cfg")
-    login = settings.get(str("NoseConfig"), "login")
-    password = settings.get(str("NoseConfig"), "pwd")
+    login = os.environ['SHIBA_API_LOGIN']
+    password = os.environ['SHIBA_API_PASSWORD']
     return ShibaConnection(login, password, "https://ws.sandbox.priceminister.com")
 
 
