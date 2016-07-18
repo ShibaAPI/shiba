@@ -4,29 +4,33 @@ sudo: false
 language: python
 
 matrix:
-    include:
-      - python: 2.7
-        env: TOX_ENV=py27
-      - python: 3.3
-        env: TOX_ENV=py33
-      - python: 3.4
-        env: TOX_ENV=py34
-      - python: 3.5
-        env: TOX_ENV=py35
-      - python: nightly
-        env: TOX_ENV=py36
-      - python: pypy
-        env: TOX_ENV=pypy
-      - python: 3.5
-        env: TOX_ENV=flake8
+  include:
+    - python: 2.7
+      env: TOX_ENV=py27
+    - python: 3.3
+      env: TOX_ENV=py33
+    - python: 3.4
+      env: TOX_ENV=py34
+    - python: 3.5
+      env: TOX_ENV=py35
+    - python: nightly
+      env: TOX_ENV=py36
+    - python: pypy
+      env: TOX_ENV=pypy
+    - python: 3.5
+      env: TOX_ENV=flake8
+
+# env:
+#   - SHIBA_API_PASSWORD=
+#   - SHIBA_API_LOGIN=
 
 install:
-    - pip install tox
+  - pip install tox
 
 script: tox -e $TOX_ENV
 
 after_success:
-    # Report coverage results to codecov.io
-    # and export tox environment variables
-    - pip install codecov
-    - codecov -e TOX_ENV TRAVIS_OS_NAME
+  # Report coverage results to codecov.io
+  # and export tox environment variables
+  - pip install codecov
+  - codecov -e TOX_ENV TRAVIS_OS_NAME
