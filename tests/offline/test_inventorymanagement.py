@@ -1,95 +1,60 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Class InventoryManagementTest
-# Testing InventoryManagement Class methods
-# https://developer.priceminister.com/blog/fr/documentation/inventory-management
-
-
 from __future__ import unicode_literals
 
-from requests import Response
+import os.path as op
 from shiba.inventorymanagement import InventoryManagement
 from shiba.shibaconnection import ShibaConnection
 
 import xmltodict
 from lxml import objectify
 
-import unittest
-
-import os
-import mock
+from . import make_requests_get_mock, make_simple_text_mock
 
 
-def mock_product_types(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getproducttypes.xml'))
-    response = Response()
-    response._content = datas.read()
-    return response
+def test_product_types(monkeypatch):
+    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getproducttypes.xml'))
+    inventory_management = InventoryManagement(ShibaConnection("test", "test", sandbox=True))
+    ptypes = inventory_management.product_types()
+    assert "producttypesresult" in ptypes.content.tag
 
 
-def mock_product_type_template(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getproducttypetemplate.xml'))
-    response = Response()
-    response._content = datas.read()
-    return response
+def test_product_type_template(monkeypatch):
+    """product_type_template tests on two scopes, for a fixed alias, plus a fail result"""
+    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getproducttypetemplate.xml'))
+    alias = "insolites_produit"
+    inventory_management = InventoryManagement(ShibaConnection("test", "test", sandbox=True))
+    ptemplate = inventory_management.product_type_template(alias, "")
+    assert "producttypetemplateresult" in ptemplate.content.tag
 
 
-def mock_get_available_shipping_types(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getavailableshippingtypes.xml'))
-    response = Response()
-    response._content = datas.read()
-    return response
+def test_get_available_shipping_types(monkeypatch):
+    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getavailableshippingtypes.xml'))
+    inventory_management = InventoryManagement(ShibaConnection("test", "test", sandbox=True))
+    obj = inventory_management.get_available_shipping_types()
+    assert "getavailableshippingtypesresult" in obj.content.tag
 
 
-def mock_export_inventory(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_exportinventory.xml'))
-    response = Response()
-    response._content = datas.read()
-    return response
+def test_export_inventory(monkeypatch):
+    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_exportinventory.xml'))
+    inventory_management = InventoryManagement(ShibaConnection("test", "test", sandbox=True))
+    obj = inventory_management.export_inventory()
+    assert "inventoryresult" in obj.content.tag
 
 
-def mock_generic_import_file(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_genericimportfile.xml'))
-    return datas.read()
+def test_generic_import_file(monkeypatch):
+    """generic_import_file test, from an XML file. Conversion is done by xmltodict from a dict or OrderedDict , as well
+    with objectify with an objectified ElementTree element"""
 
+    monkeypatch.setattr('shiba.shibatools.post_request', make_simple_text_mock('sample_genericimportfile.xml'))
 
-class InventoryManagementTest(unittest.TestCase):
-    def setUp(self):
-        self.init = InventoryManagement(ShibaConnection("test", "test", sandbox=True))
+    f = open(op.join(op.dirname(__file__), 'Assets', 'genericimportfile.xml'), 'rb')
+    testdict = xmltodict.parse(f)
+    inventory_management = InventoryManagement(ShibaConnection("test", "test", sandbox=True))
+    ret = inventory_management.generic_import_file(testdict)
+    assert "OK" == ret.content.response.status
 
-    @mock.patch('requests.get', side_effect=mock_product_types)
-    def test_product_types(self, urlopen):
-        """product_types return test"""
-        ptypes = self.init.product_types()
-        self.assertIn("producttypesresult", ptypes.content.tag)
-
-    @mock.patch('requests.get', side_effect=mock_product_type_template)
-    def test_product_type_template(self, urlopen):
-        """product_type_template tests on two scopes, for a fixed alias, plus a fail result"""
-        alias = "insolites_produit"
-        ptemplate = self.init.product_type_template(alias, "")
-        self.assertIn("producttypetemplateresult", ptemplate.content.tag)
-
-    @mock.patch('shiba.shibatools.post_request', side_effect=mock_generic_import_file)
-    def test_generic_import_file(self, post_request):
-        """generic_import_file test, from an XML file. Conversion is done by xmltodict from a dict or OrderedDict
-        , as well with objectify with an objectified ElementTree element"""
-        f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
-        testdict = xmltodict.parse(f)
-        ret = self.init.generic_import_file(testdict)
-        self.assertEqual("OK", ret.content.response.status)
-        f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
-        testobj = objectify.parse(f)
-        ret = self.init.generic_import_file(testobj)
-        self.assertEqual("OK", ret.content.response.status)
-
-    @mock.patch('requests.get', side_effect=mock_get_available_shipping_types)
-    def test_get_available_shipping_types(self, urlopen):
-        obj = self.init.get_available_shipping_types()
-        self.assertIn("getavailableshippingtypesresult", obj.content.tag)
-
-    @mock.patch('requests.get', side_effect=mock_export_inventory)
-    def test_export_inventory(self, urlopen):
-        obj = self.init.export_inventory()
-        self.assertIn("inventoryresult", obj.content.tag)
+    f = open(op.join(op.dirname(__file__), 'Assets', 'genericimportfile.xml'), 'rb')
+    testobj = objectify.parse(f)
+    inventory_management = InventoryManagement(ShibaConnection("test", "test", sandbox=True))
+    ret = inventory_management.generic_import_file(testobj)
+    assert "OK" == ret.content.response.status

@@ -1,76 +1,55 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Class ShibaToolsTest
-# Unit tests each reachable method from ShibaTools class
-
 from __future__ import unicode_literals
 
-from requests import Response
-from shiba.shibatools import *
-from shiba.shibaexceptions import *
+import os.path as op
+import xmltodict
+
+from shiba.shibatools import inf_constructor, retrieve_obj_from_url, url_constructor
+from shiba.shibaexceptions import ShibaQuotaExceededError
 from shiba.shibaconnection import ShibaConnection
 
 from shiba.inventorymanagement import InventoryManagement
 
-import os
-import mock
-import xmltodict
-
-import unittest
+from . import make_requests_get_mock, make_simple_text_mock, assert_raises
 
 
-def return_xml_for_url(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/note.xml'))
-    response = Response()
-    response._content = datas.read()
-    return response
+def test_retrieve_obj_from_url(monkeypatch):
+    """retrieve_obj_from_url test with a remote XML file"""
+    monkeypatch.setattr('requests.get', make_requests_get_mock('note.xml'))
+    obj = retrieve_obj_from_url("http://www.w3schools.com/xml/note.xml")
+    assert "note" in obj.content.tag
+    assert "to" in obj.content.to.tag and obj.content.to == "Tove"
+    assert "heading" in obj.content.heading.tag and obj.content.heading == "Reminder"
+    assert "body" in obj.content.body.tag and obj.content.body == "Don't forget me this weekend!"
 
 
-def return_quota_exceeded_messages(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/quota_exceeded_message.xml'))
-    return datas.read()
+def test_inf_constructor():
+    connection = ShibaConnection("test", "test")
+    action = "genericimportreport"
+    ret = inf_constructor(connection, action, inf1="info1", inf2="info2")
+    assert "inf1" in ret
+    assert "inf2" in ret
+    assert ret["inf1"] == "info1"
+    assert ret["action"] == "genericimportreport"
 
 
-class ShibaToolsTest(unittest.TestCase):
-    def setUp(self):
-        pass
+def test_url_constructor():
+    connection = ShibaConnection("test", "test")
+    action = "genericimportreport"
+    ret = inf_constructor(connection, action, inf1="info1", inf2="info2")
+    url = url_constructor(connection, ret)
+    assert ("https://ws.priceminister.com/stock_ws?action=genericimportreport&inf1=info1&inf2=info2&login=test&"
+            "pwd=test&version=2011-11-29" == url)
 
-    @mock.patch('requests.get', side_effect=return_xml_for_url)
-    def test_retrieve_obj_from_url(self, urlopen):
-        """retrieve_obj_from_url test with a remote XML file"""
-        obj = retrieve_obj_from_url("http://www.w3schools.com/xml/note.xml")
-        self.assertIn("note", obj.content.tag)
-        self.assertTrue("to" in obj.content.to.tag and obj.content.to == "Tove")
-        self.assertTrue("heading" in obj.content.heading.tag and obj.content.heading == "Reminder")
-        self.assertTrue("body" in obj.content.body.tag and obj.content.body == "Don't forget me this weekend!")
 
-    def test_create_obj_from_xml(self):
-        """This function is entirely implicitely tested from the InventoryManagementTest.test_generic_import_file"""
-        pass
+def test_assert_quota_exeeded(monkeypatch):
+    """raises ShibaQuotaExceededError exception"""
+    monkeypatch.setattr('shiba.shibatools.post_request', make_simple_text_mock('quota_exceeded_message.xml'))
 
-    def test_inf_constructor(self):
-        connection = ShibaConnection("test", "test")
-        action = "genericimportreport"
-        ret = inf_constructor(connection, action, inf1="info1", inf2="info2")
-        self.assertIn("inf1", ret)
-        self.assertIn("inf2", ret)
-        self.assertEqual(ret["inf1"], "info1")
-        self.assertEqual(ret["action"], "genericimportreport")
-
-    def test_url_constructor(self):
-        connection = ShibaConnection("test", "test")
-        action = "genericimportreport"
-        ret = inf_constructor(connection, action, inf1="info1", inf2="info2")
-        url = url_constructor(connection, ret)
-        self.assertEqual("https://ws.priceminister.com/stock_ws?pwd=test&version=2011-11-29&action=genericimportreport&"
-                         "login=test&inf2=info2&inf1=info1", url)
-
-    @mock.patch('shiba.shibatools.post_request', side_effect=return_quota_exceeded_messages)
-    def test_assert_quota_exeeded(self, post_request):
-        """raises ShibaQuotaExceededError exception"""
-        connection = ShibaConnection("test", "test")
-        inventory = InventoryManagement(connection)
-        f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
-        testdict = xmltodict.parse(f)
-        self.assertRaises(ShibaQuotaExceededError, inventory.generic_import_file, data=testdict)
+    connection = ShibaConnection("test", "test")
+    inventory = InventoryManagement(connection)
+    f = open(op.join(op.dirname(__file__), 'Assets', 'genericimportfile.xml'), 'rb')
+    testdict = xmltodict.parse(f)
+    with assert_raises(ShibaQuotaExceededError):
+        inventory.generic_import_file(data=testdict)

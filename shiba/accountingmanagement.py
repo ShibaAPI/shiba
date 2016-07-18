@@ -24,7 +24,7 @@ class AccountingManagement(object):
     def get_operations(self, lastoperationdate=""):
         """Get global operations which happened on your wallet, compensationid given back from XML can be used
         in the get_compensation_details method below to get more detailed information about a specific operation.
-        
+
         :param lastoperationdate: as follows : dd/mm/yyyy-hh:mm:ss and as string or date instance.
         """
         operationcause = "salestransfer"

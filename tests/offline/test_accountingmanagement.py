@@ -1,52 +1,23 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Class AccountingManagementTest
-# Testing AccountingManagement Class methods
-# https://developer.priceminister.com/blog/fr/documentation/accounting
-
-
 from __future__ import unicode_literals
 
 from shiba.accountingmanagement import AccountingManagement
 from shiba.shibaconnection import ShibaConnection
-from requests import Response
 
-import os
-
-import unittest
-import mock
+from . import make_requests_get_mock
 
 
-def mock_get_operations(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getoperations.xml'))
-    response = Response()
-    response._content = datas.read()
-    return response
+def test_get_operations(monkeypatch):
+    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getoperations.xml'))
+    account = AccountingManagement(ShibaConnection("test", "test", "https://ws.sandbox.priceminister.com"))
+    operations = account.get_operations()
+    assert "getoperationsresult" in operations.content.tag
+    assert operations.content.request.user == "vendeur"
+    assert operations.content.request.operationcause == "salestransfer"
 
 
-def mock_get_compensation_details(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getcompensationdetails.xml'))
-    response = Response()
-    response._content = datas.read()
-    return response
-
-
-class AccountingManagementTest(unittest.TestCase):
-
-    def setUp(self):
-        self.init = AccountingManagement(ShibaConnection("test", "test", "https://ws.sandbox.priceminister.com"))
-
-    @mock.patch('requests.get', side_effect=mock_get_operations)
-    def test_get_operations(self, urlopen):
-        """get_operations routine test"""
-        obj = self.init.get_operations()
-        self.assertIn("getoperationsresult", obj.content.tag)
-        self.assertEqual(obj.content.request.user, "vendeur")
-        self.assertEqual(obj.content.request.operationcause, "salestransfer")
-
-    @mock.patch('requests.get', side_effect=mock_get_compensation_details)
-    def test_get_compensation_details(self, urlopen):
-        """get_compensation_details test"""
-        obj = self.init.get_compensation_details("1337")
-        self.assertEqual(obj.content.tag, "getcompensationdetailsresult")
+def test_get_compensation_details(monkeypatch):
+    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getcompensationdetails.xml'))
+    account = AccountingManagement(ShibaConnection("test", "test", "https://ws.sandbox.priceminister.com"))
+    compensation_details = account.get_compensation_details("1337")
+    assert compensation_details.content.tag == "getcompensationdetailsresult"

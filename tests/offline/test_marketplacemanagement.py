@@ -1,61 +1,41 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Class MarketplaceManagementTest
-# Testing MarketplaceManagement Class methods
-# https://developer.priceminister.com/blog/fr/documentation/product-data
-
-
 from __future__ import unicode_literals
 
-from requests import Response
 from shiba.marketplacemanagement import MarketplaceManagement
 from shiba.shibaconnection import ShibaConnection
-from shiba.shibaexceptions import *
 
-import unittest
-
-import os
-import mock
+# from shiba.shibaexceptions import ShibaParameterError
+# from . import assert_raises
+from . import make_requests_get_mock
 
 
-def mock_get_product_list(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getproductlist.xml'))
-    response = Response()
-    response._content = datas.read()
-    return response
+def test_get_product_list(monkeypatch):
+    """testing get_product_list methods with different queries, with some invalid ones as well"""
+    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getproductlist.xml'))
+
+    shiba_connection = ShibaConnection("test", "test" "https://ws.sandbox.priceminister.com")
+    marketplace_management = MarketplaceManagement(shiba_connection)
+
+    # TODO: to remove ?
+    # with assert_raises(ShibaParameterError):
+    #     marketplace_management.get_product_list()
+
+    product_list = marketplace_management.get_product_list(kw="livre")
+    assert "listingresult" in product_list.content.tag
+
+    # TODO: to remove ?
+    # with assert_raises(ShibaParameterError):
+    #     marketplace_management.get_product_list(nbproductsperpage=-15, kw="livre")
+
+    product_list = marketplace_management.get_product_list(kw="informatique", scope="PRICING")
+    assert "listingresult" in product_list.content.tag
 
 
-def mock_get_category_map(*args, **kwargs):
-    datas = open(os.path.join(os.path.dirname(__file__), 'Assets/sample_getcategorymap.xml'))
-    response = Response()
-    response._content = datas.read()
-    return response
+def test_get_category_map(monkeypatch):
+    """get_category_map regular test"""
+    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getcategorymap.xml'))
+    shiba_connection = ShibaConnection("test", "test" "https://ws.sandbox.priceminister.com")
+    marketplace_management = MarketplaceManagement(shiba_connection)
 
-
-class MarketplaceManagementTest(unittest.TestCase):
-
-    def setUp(self):
-        self.init = MarketplaceManagement(ShibaConnection("test", "test" "https://ws.sandbox.priceminister.com"))
-
-    @mock.patch('requests.get', side_effect=mock_get_product_list)
-    def test_get_product_list(self, urlopen):
-        """testing get_product_list methods with different queries, with some invalid ones as well"""
-        try:
-            obj = self.init.get_product_list()
-        except ShibaParameterError:
-            pass
-        obj = self.init.get_product_list(kw="livre")
-        self.assertIn("listingresult", obj.content.tag)
-        try:
-            obj = self.init.get_product_list(nbproductsperpage=-15, kw="livre")
-        except ShibaParameterError:
-            pass
-        obj = self.init.get_product_list(kw="informatique", scope="PRICING")
-        self.assertIn("listingresult", obj.content.tag)
-
-    @mock.patch('requests.get', side_effect=mock_get_category_map)
-    def test_get_category_map(self, urlopen):
-        """get_category_map regular test"""
-        obj = self.init.get_category_map()
-        self.assertIn("categorymap", obj.content.tag)
+    obj = marketplace_management.get_category_map()
+    assert "categorymap" in obj.content.tag
