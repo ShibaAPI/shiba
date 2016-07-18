@@ -63,7 +63,7 @@ def post_request(url, data):
     """
     header = {"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE; rv:1.9.0.10) "
                             "Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)"}
-    data = data.encode('utf-8')
+    data = to_unicode(data).encode('utf-8')
     d = {"file": data}
     r = requests.post(url, files=d, headers=header)
     return r.text
