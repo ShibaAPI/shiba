@@ -15,7 +15,7 @@ def read(fname):
         return fd.read()
 
 readme = read('README.rst')
-
+changelog = read('CHANGES.rst').replace('.. :changelog:', '')
 
 requirements = [
     "requests",
@@ -42,7 +42,7 @@ setup(
     install_requires=requirements,
     zip_safe=True,
     description="A Python API for PriceMinister WebServices",
-    long_description=readme,
+    long_description=readme + '\n\n' + changelog,
     keywords=["api", "priceminister", "python", "webservices"],
     license='GPLv3',
     classifiers=[
