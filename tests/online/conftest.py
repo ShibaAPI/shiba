@@ -8,14 +8,26 @@ import pytest
 from shiba.shibaconnection import ShibaConnection
 
 
-ONLINE_TEST_DISABLED = os.environ.get("SHIBA_API_LOGIN", None) is None
+ONLINE_TEST_ENABLED = os.environ.get("SHIBA_API_LOGIN", None) is not None
 
 
-@pytest.fixture(params=[pytest.mark.skipif(ONLINE_TEST_DISABLED,  reason='need online credentials')('parameter')])
-def connection():
+def get_connection():
     login = os.environ['SHIBA_API_LOGIN']
     password = os.environ['SHIBA_API_PASSWORD']
     return ShibaConnection(login, password, "https://ws.sandbox.priceminister.com")
+
+
+def check_sandbox_up():
+    if ONLINE_TEST_ENABLED:
+        # connection = get_connection()
+        # TODO: handle HTTP 50x error, to skip online test
+        # import pdb; pdb.set_trace()  # noqa
+        return True
+
+
+@pytest.fixture(params=[pytest.mark.skipif(not check_sandbox_up(),  reason='need access to the sandbox')('parameter')])
+def connection():
+    return get_connection()
 
 
 @pytest.fixture
