@@ -26,34 +26,6 @@ else:
     from httplib import HTTPException
 
 
-def __errors_check(obj):
-    """Errors checking from the returned XML as object. Handling errors as internal exceptions raising
-
-    :param obj: objectified element to check errors from
-
-    :rtype: objectified element if errors have been found, False if the WebService hasn't encountered an error
-    """
-    if "errorresponse" in obj.tag:
-        if "ServerError" == obj.error.code:
-            raise ShibaParameterError("Parameter error : " + obj.error.message +
-                                      " - Reason : " + obj.error.details.detail)
-        if "ParameterError" == obj.error.code:
-            raise ShibaParameterError("Parameter error : " + obj.error.message +
-                                      " - Reason : " + obj.error.details.detail)
-        if "InvalidUserConnection" == obj.error.code:
-            raise ShibaLoginError("Invalid user connection : " + obj.error.message +
-                                  " - Reason : " + obj.error.details.detail)
-        if "InvalidUserRights" == obj.error.code:
-            if "Quota exceeded" in obj.error.message.text:
-                raise ShibaQuotaExceededError("Too many requests : " + obj.error.message +
-                                              " - Reason : " + obj.error.details.detail)
-            else:
-                raise ShibaRightsError("Invalid user rights : " + obj.error.message +
-                                       " - Reason : " + obj.error.details.detail)
-        return obj
-    return False
-
-
 def post_request(url, data):
     """Method creating and submitting the multipart request of the wished to be imported XML file.
 
@@ -105,7 +77,7 @@ def retrieve_obj_from_url(url, data=None):
     except:
         raise ShibaUnknownServiceError(
             "Unknown error from service or from internal modules : Service returned : " + xml)
-    if __errors_check(obj) is not False:
+    if _check_errors(obj) is not False:
         try:
             if "Unknown error" == obj.error.code:
                 raise ShibaServiceError("Unknown error from WebService (maybe the sale isn't confirmed yet?)"
@@ -184,3 +156,31 @@ def url_constructor(shibaconnection, inf, domain=None):
         ordered_inf[k] = inf[k]
     url = primary + urlencode(ordered_inf)
     return url
+
+
+def _check_errors(obj):
+    """Errors checking from the returned XML as object. Handling errors as internal exceptions raising
+
+    :param obj: objectified element to check errors from
+
+    :rtype: objectified element if errors have been found, False if the WebService hasn't encountered an error
+    """
+    if "errorresponse" in obj.tag:
+        if "ServerError" == obj.error.code:
+            raise ShibaParameterError("Parameter error : " + obj.error.message +
+                                      " - Reason : " + obj.error.details.detail)
+        if "ParameterError" == obj.error.code:
+            raise ShibaParameterError("Parameter error : " + obj.error.message +
+                                      " - Reason : " + obj.error.details.detail)
+        if "InvalidUserConnection" == obj.error.code:
+            raise ShibaLoginError("Invalid user connection : " + obj.error.message +
+                                  " - Reason : " + obj.error.details.detail)
+        if "InvalidUserRights" == obj.error.code:
+            if "Quota exceeded" in obj.error.message.text:
+                raise ShibaQuotaExceededError("Too many requests : " + obj.error.message +
+                                              " - Reason : " + obj.error.details.detail)
+            else:
+                raise ShibaRightsError("Invalid user rights : " + obj.error.message +
+                                       " - Reason : " + obj.error.details.detail)
+        return obj
+    return False
