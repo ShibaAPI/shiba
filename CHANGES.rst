@@ -7,3 +7,5 @@ Version 1.1.5
 -------------
 
 Released on July 21st 2016
+
+- Python 3 support
