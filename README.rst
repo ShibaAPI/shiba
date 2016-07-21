@@ -2,7 +2,7 @@ Shiba
 =====
 
 **Shiba** is a Python package that provides interfaces to **PriceMinister Web services**. Currently, all features works
-with *Python 2.7*.
+with *Python 2.7* and *Python3.4*.
 
 Shiba supports all the Web services introduced by the *PriceMinister developper blog*.
 
