@@ -51,6 +51,7 @@ class InventoryManagement(object):
 
         :param data: must be a object/dict (OrderedDict is better) containing your inventory wished to be imported. \
         You must respect the XML hierarchy detailed from the WebService documentation inside the object/dict
+        :para skip: with this parameter to True, you could directly send xml according to the XML hierarchy detailed from the WebService documentation
         """
         if skip is False:
             data = create_xml_from_item_obj(data)
