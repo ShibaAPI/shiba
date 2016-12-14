@@ -16,13 +16,11 @@ from .shibaresponseobject import ShibaResponseObject
 from .shibaexceptions import (ShibaParameterError, ShibaLoginError, ShibaQuotaExceededError,
                               ShibaRightsError, ShibaConnectionError, ShibaUnknownServiceError, ShibaServiceError,
                               ShibaCallingError)
-from .compat import is_py3, to_unicode
+from .compat import is_py3, to_unicode, urlencode
 
 if is_py3:
     from http.client import HTTPException
-    from urllib.parse import urlencode
 else:
-    from urllib import urlencode
     from httplib import HTTPException
 
 

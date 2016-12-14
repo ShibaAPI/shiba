@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
+from collections import OrderedDict
 
 # Syntax sugar.
 _ver = sys.version_info
@@ -29,6 +30,7 @@ except:  # pragma: no cover
 
 
 if is_py3:
+    from urllib.parse import urlencode as builtin_urlencode
     builtin_str = str
     str = str
     bytes = bytes
@@ -59,6 +61,8 @@ if is_py3:
         return isinstance(obj, Callable)
 
 else:
+    from urllib import urlencode as builtin_urlencode
+
     builtin_str = str
     bytes = str
     str = unicode
@@ -108,3 +112,13 @@ def to_unicode(obj, encoding='utf-8'):
             return str(obj, encoding)
 
     return str(obj)
+
+
+def urlencode(query, encoding="utf-8", **kwargs):
+    if is_py3:
+        return builtin_urlencode(query, encoding=encoding, **kwargs)
+    else:
+        encoded_query = OrderedDict()
+        for k, v in iteritems(query):
+            encoded_query[k] = to_unicode(query[k], encoding=encoding).encode(encoding)
+        return builtin_urlencode(encoded_query)
