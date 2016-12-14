@@ -154,7 +154,7 @@ def url_constructor(shibaconnection, inf, domain=None):
     ordered_inf = OrderedDict()
     for k in sorted([key for key in inf]):
         ordered_inf[k] = inf[k]
-    url = primary + urlencode(ordered_inf)
+    url = primary + urlencode(ordered_inf, 'utf-8')
     return url
 
 
