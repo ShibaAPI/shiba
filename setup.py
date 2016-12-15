@@ -21,6 +21,7 @@ requirements = [
     "requests",
     "xmltodict",
     "lxml",
+    "furl",
 ]
 
 version = ''
