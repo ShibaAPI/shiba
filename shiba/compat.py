@@ -87,7 +87,7 @@ def with_metaclass(meta, base=object):
     return meta("NewBase", (base,), {})
 
 
-def to_unicode(obj, encoding='utf-8'):
+def to_unicode(obj, encoding='utf-8', errors='strict'):
     """
     Convert ``obj`` to unicode"""
     # unicode support
@@ -97,14 +97,14 @@ def to_unicode(obj, encoding='utf-8'):
     # bytes support
     if is_bytes(obj):
         if hasattr(obj, 'tobytes'):
-            return str(obj.tobytes(), encoding)
-        return str(obj, encoding)
+            return str(obj.tobytes(), encoding, errors=errors)
+        return str(obj, encoding, errors=errors)
 
     # string support
     if isinstance(obj, basestring):
         if hasattr(obj, 'decode'):
-            return obj.decode(encoding)
+            return obj.decode(encoding, errors=errors)
         else:
-            return str(obj, encoding)
+            return str(obj, encoding, errors=errors)
 
     return str(obj)

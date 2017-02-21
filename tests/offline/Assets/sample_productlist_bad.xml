@@ -1,0 +1,1426 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+
+
+
+
+
+
+
+<listingresult xmlns="https://pmcdn.staticpmrk.com/res/schema/listing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://pmcdn.staticpmrk.com/res/schema/listing https://pmcdn.staticpmrk.com/res/schema/listing/listing.2015-07-05.xsd"> 
+  <request>
+    <version>2015-07-05</version>
+    <login>capriceDjeux</login>
+    
+    
+      <refs><![CDATA[0789368053322,0095081102811,8809179556095,0644766870318,0714298528527,0783707495422,0661656111122,0082764063620,0887961287288,3338889910415,0781264076191,6195573019482,0762486030260,0639277008831,6195573077192,0781264209575,5023224042323,0884501974110,4988003312527,0635133289048,9552262814693,8421331009104,9781483816807,0083061551025,4007246648047,0726672474115,0614187307724,0072348493660,0028941621122,0743214054321,0039915026324,0750532100128,0697198180425,0787799845134,0743217407124,0614187452127,5053199106744,5012093102214,0713002494721,0029116541610,0074646915912,6212003253572,0060249812253,6195573012148,0088561105426,0039897905105,6297847360815,0786851303322,0465000530184,0005677505162,0734000058227,5099765555363,0016861922429,0510001022067,0736126241583,6137490339670,0042283821019,5870215515591,5099920390822,0780014800123,6698651049727,0075679056016,0669910541265,7640113544522,0603967164626,3421271300410,6287100131184,4542519003494,0885444251276,4988008889338,0013491150222,6195573041469,0047997693327,0634154068847,0660355397929,0885561131765,0834227865124,0045802547803,0725543128027,0021331837608,9899999983446,9398730001123,0724389748765,0713803226668,0775020591325,0013189122623,6254202099766,0090204813261,6195573018072,0693409506046,0669910016589,0778325002404,0616892441441,0844842095103,0019071808514,0748320787736,0783583363747,0803680259627,0765326399251,0710567821627]]></refs>
+    
+    
+    
+    
+    <pagenumber>1</pagenumber>
+    
+    
+    <nbproductsperpage>100</nbproductsperpage>
+    
+    
+  </request>
+  
+  <response>
+  
+    <status>ok</status>
+    <lastversion>2015-07-05</lastversion>
+    <resultcount>20</resultcount>
+    <totalresultcount>20</totalresultcount>
+  
+    <navigation>
+   
+    </navigation>
+  
+    <products>
+      
+        <product>
+          <productid>1152433907</productid>
+          <alias>jouet</alias>
+          <headline><![CDATA[Mon 1er Couffin Pour Bb 30cm]]></headline>
+          <caption><![CDATA[Corolle]]></caption>
+          <topic><![CDATA[Jouet]]></topic>
+          <offercounts>
+            <total>2</total>
+            <new>1</new>
+            <used>1</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>34.95</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>6.7</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Normal</shippingtype>
+            
+            
+            </global>
+             
+            <new>
+              <advertprice>
+                  <amount>34.95</amount>
+                  <currency>EUR</currency>
+              </advertprice>
+                <shippingcost>
+                    <amount>6.7</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </new>
+            
+            <used>
+                <advertprice>
+                    <amount>59.03</amount>
+                    <currency>EUR</currency>
+                </advertprice>
+                <shippingcost>
+                    <amount>13.1</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </used>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/1152433907/mon-1er-couffin-pour-bb-30cm.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/1065566973_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0887961287288</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Jouets & Enfant]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Enfant&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Jouets]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Enfant_jouets&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Poupées et accessoires]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Enfant_jouets_poupee&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>294374339</productid>
+          <alias>jouet</alias>
+          <headline><![CDATA[Papo - 53018 - Figurine - Mouflon]]></headline>
+          <caption><![CDATA[Papo]]></caption>
+          <topic><![CDATA[Jouet]]></topic>
+          <offercounts>
+            <total>2</total>
+            <new>2</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>18.99</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>5.15</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Normal</shippingtype>
+            
+            
+            </global>
+             
+            <new>
+              <advertprice>
+                  <amount>18.99</amount>
+                  <currency>EUR</currency>
+              </advertprice>
+                <shippingcost>
+                    <amount>5.15</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </new>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/294374339/papo-53018.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/987481271_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0465000530184</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Jouets & Enfant]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Enfant&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Jouets]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Enfant_jouets&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Figurine]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Enfant_jouets_figurine&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Figurine (Autre)]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f8=Non%2Bpr%25E9cis%25E9&login=capriceDjeux&nav=Enfant_jouets_figurine&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>66612174</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[Little Do They Know]]></headline>
+          <caption><![CDATA[Wizard]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>1</total>
+            <new>1</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>22.45</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>2.3</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Normal</shippingtype>
+            
+            
+            </global>
+             
+            <new>
+              <advertprice>
+                  <amount>22.45</amount>
+                  <currency>EUR</currency>
+              </advertprice>
+                <shippingcost>
+                    <amount>2.3</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </new>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/66612174/Little-Do-They-Know-CD-Album.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/834311424_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0780014800123</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Variétés internationales]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Vari%25E9t%25E9s%2Binternationales&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>5667717</productid>
+          <alias>vinyles_produit</alias>
+          <headline><![CDATA[All for you]]></headline>
+          <caption><![CDATA[Janet Jackson]]></caption>
+          <topic><![CDATA[33 Tours]]></topic>
+          <offercounts>
+            <total>2</total>
+            <new>0</new>
+            <used>2</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>166.28</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>0.0</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Recommandé</shippingtype>
+            
+            
+            </global>
+             
+            <used>
+                <advertprice>
+                    <amount>166.28</amount>
+                    <currency>EUR</currency>
+                </advertprice>
+                <shippingcost>
+                    <amount>0.0</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Recommandé</shippingtype>
+            </used>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/5667717/Jackson-Janet-All-For-You-33-Tours.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/869516622_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0724381014417</barcode> 
+              
+            <barcode>0724389748765</barcode> 
+              
+          </references>
+          <reviews>
+            
+                <averagenote>3</averagenote>
+                <count>1</count>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Vinyle]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_Vinyle&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Vinyle Pop]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f2=Pop&login=capriceDjeux&nav=Musique_Vinyle&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>61229041</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[Tribute to Che Guevara]]></headline>
+          <caption><![CDATA[Collectif]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>2</total>
+            <new>2</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>4.62</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>2.3</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Normal</shippingtype>
+            
+            
+            </global>
+             
+            <new>
+              <advertprice>
+                  <amount>4.62</amount>
+                  <currency>EUR</currency>
+              </advertprice>
+                <shippingcost>
+                    <amount>2.3</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </new>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/61229041/Collectif-Tribute-To-Che-Guevara-CD-Album.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/1052255847_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0090204813261</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Musiques du monde]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Musiques%2Bdu%2Bmonde&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>49028896</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[Complete Recorded Works In Chronological Order, Vol. 5, 1939-1940]]></headline>
+          <caption><![CDATA[Walter Davis]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>1</total>
+            <new>1</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>51.99</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>2.3</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Normal</shippingtype>
+            
+            
+            </global>
+             
+            <new>
+              <advertprice>
+                  <amount>51.99</amount>
+                  <currency>EUR</currency>
+              </advertprice>
+                <shippingcost>
+                    <amount>2.3</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </new>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/49028896/Walter-Davis-Complete-Recorded-Works-In-Chronological-Order-Vol-5-1939-1940-CD.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/949271586_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0714298528527</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Blues]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Blues&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>66443485</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[Glimpse]]></headline>
+          <caption><![CDATA[Andy Simon]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>1</total>
+            <new>1</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>19.45</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>2.3</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Normal</shippingtype>
+            
+            
+            </global>
+             
+            <new>
+              <advertprice>
+                  <amount>19.45</amount>
+                  <currency>EUR</currency>
+              </advertprice>
+                <shippingcost>
+                    <amount>2.3</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </new>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/66443485/Glimpse-CD-Album.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/834532770_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0783707495422</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Variétés internationales]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Vari%25E9t%25E9s%2Binternationales&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>139797876</productid>
+          <alias>mev_jeux_societe</alias>
+          <headline><![CDATA[Quarto Classic]]></headline>
+          <caption><![CDATA[Gigamic]]></caption>
+          <topic><![CDATA[Jeux de société]]></topic>
+          <offercounts>
+            <total>9</total>
+            <new>5</new>
+            <used>3</used>
+            <collectible>1</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>25.0</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>5.5</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Point relais Mondial Relay</shippingtype>
+            
+            
+            </global>
+             
+            <new>
+              <advertprice>
+                  <amount>35.0</amount>
+                  <currency>EUR</currency>
+              </advertprice>
+                <shippingcost>
+                    <amount>0.1</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Suivi</shippingtype>
+            </new>
+            
+            <used>
+                <advertprice>
+                    <amount>25.0</amount>
+                    <currency>EUR</currency>
+                </advertprice>
+                <shippingcost>
+                    <amount>5.5</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Point relais Mondial Relay</shippingtype>
+            </used>
+            
+              <collectible>
+                  <advertprice>
+                      <amount>300.0</amount>
+                      <currency>EUR</currency>
+                  </advertprice>
+              </collectible>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/139797876/quarto-classic.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/910206411_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>3421271300410</barcode> 
+              
+          </references>
+          <reviews>
+            
+                <averagenote>4.8</averagenote>
+                <count>6</count>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Jouets & Enfant]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Enfant&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Jeux de société]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Enfant_jeux-societe&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Jeux de société (Autre)]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f1=Non%2Bpr%25E9cis%25E9&login=capriceDjeux&nav=Enfant_jeux-societe&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>154697595</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[Time lines - import usa]]></headline>
+          <caption><![CDATA[Darrel Tidaback]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>1</total>
+            <new>0</new>
+            <used>1</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>28.99</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>2.3</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Normal</shippingtype>
+            
+            
+            </global>
+             
+            <used>
+                <advertprice>
+                    <amount>28.99</amount>
+                    <currency>EUR</currency>
+                </advertprice>
+                <shippingcost>
+                    <amount>2.3</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </used>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/154697595/time-lines-import-usa-darrel-tidaback.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/910497934_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0750532100128</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Rock progressif]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Rock%2Bprogressif&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>221870059</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[Computerized Personality]]></headline>
+          <caption><![CDATA[Pinkloop]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>1</total>
+            <new>0</new>
+            <used>1</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>10.99</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>2.3</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Normal</shippingtype>
+            
+            
+            </global>
+             
+            <used>
+                <advertprice>
+                    <amount>10.99</amount>
+                    <currency>EUR</currency>
+                </advertprice>
+                <shippingcost>
+                    <amount>2.3</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </used>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/221870059/computerized-personality-pinkloop.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/1048879354_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>4988008889338</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Musiques du monde]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Musiques%2Bdu%2Bmonde&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>1103171432</productid>
+          <alias>vinyles_produit</alias>
+          <headline><![CDATA[Street Cinema]]></headline>
+          <caption><![CDATA[Sporty Thievz]]></caption>
+          <topic><![CDATA[33 Tours]]></topic>
+          <offercounts>
+            <total>1</total>
+            <new>0</new>
+            <used>1</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>37.99</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>5.15</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Normal</shippingtype>
+            
+            
+            </global>
+             
+            <used>
+                <advertprice>
+                    <amount>37.99</amount>
+                    <currency>EUR</currency>
+                </advertprice>
+                <shippingcost>
+                    <amount>5.15</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </used>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/1103171432/street-cinema-sporty-thievz.html]]></url>
+          
+          <image>
+             
+          </image>
+          <references>
+            
+            <barcode>0074646915912</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Vinyle]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_Vinyle&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Vinyle Hip Hop]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f2=Hip%2BHop&login=capriceDjeux&nav=Musique_Vinyle&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>70251316</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[I Did'nt Want To Need You..the Night + The Will To Love3 Trks]]></headline>
+          <caption><![CDATA[Heart]]></caption>
+          <topic><![CDATA[CD Single]]></topic>
+          <offercounts>
+            <total>1</total>
+            <new>0</new>
+            <used>1</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          <global>
+            <advertprice>
+                <amount>5.96</amount>
+                <currency>EUR</currency>
+            </advertprice>
+            
+              <shippingcost>
+                  <amount>0.0</amount>
+                  <currency>EUR</currency>
+              </shippingcost>
+              <shippingtype>Normal</shippingtype>
+            
+            
+            </global>
+             
+            <used>
+                <advertprice>
+                    <amount>5.96</amount>
+                    <currency>EUR</currency>
+                </advertprice>
+                <shippingcost>
+                    <amount>0.0</amount>
+                    <currency>EUR</currency>
+                </shippingcost>
+                <shippingtype>Normal</shippingtype>
+            </used>
+            
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/70251316/I-Did-nt-Want-To-Need-You-The-Night-The-Will-To-Love-3-Trks-CD-Single.html]]></url>
+          
+          <image>
+             
+          </image>
+          <references>
+            
+            <barcode>5099920390822</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD (Autre)]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Non%2Bpr%25E9cis%25E9&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>1671950187</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[The Man Who Sold The World]]></headline>
+          <caption><![CDATA[Lulu]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>0</total>
+            <new>0</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/1671950187/theman-who-sold-the-world-lulu.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/1097495045_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>5023224042323</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Pop]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Pop&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>1053451766</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[Pavarotti]]></headline>
+          <caption><![CDATA[Luciano Pavarotti]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>0</total>
+            <new>0</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/1053451766/pavarotti-luciano-pavarotti.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/1055101605_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0005677505162</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Opéra]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=opera&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>57487676</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[Life's A Collection Of Experiences]]></headline>
+          <caption><![CDATA[Dl Incognito]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>0</total>
+            <new>0</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/57487676/Life-s-A-Collection-Of-Experiences-CD-Album.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/882691440_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0775020591325</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Acid Jazz]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Acid%2BJazz&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>61449162</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[2 hot]]></headline>
+          <caption><![CDATA[Two H]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>0</total>
+            <new>0</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/61449162/Two-H-2-Hot---Dutch-Import-CD-Album.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/1052143344_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>7640113544522</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Blues]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Blues&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>89744583</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[When a boyscout gets the]]></headline>
+          <caption><![CDATA[Shithook]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>0</total>
+            <new>0</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/89744583/shithook-when-a-boyscout-gets-the-cd-album.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/1022235578_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0725543128027</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Variétés internationales]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Vari%25E9t%25E9s%2Binternationales&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>59449503</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[G-Force]]></headline>
+          <caption><![CDATA[Gary Moore]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>0</total>
+            <new>0</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/59449503/Moore-Gary-G-Force-CD-Album.html]]></url>
+          
+          <image>
+             
+            <url><![CDATA[https://pmcdn.priceminister.com/photo/1055005296_ML.jpg]]></url>
+            
+          </image>
+          <references>
+            
+            <barcode>0016861922429</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Rock]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Rock&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>1053597032</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[Sonata Fantasy]]></headline>
+          <caption><![CDATA[Scriabin]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>0</total>
+            <new>0</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/1053597032/sonata-fantasy-scriabin.html]]></url>
+          
+          <image>
+             
+          </image>
+          <references>
+            
+            <barcode>0789368053322</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Musique de chambre]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Musique%2Bde%2Bchambre&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+        <product>
+          <productid>222381774</productid>
+          <alias>mev_cd_produit</alias>
+          <headline><![CDATA[Mahler: Symphony No. 4 (Historic Live Recording, 1939)]]></headline>
+          <caption><![CDATA[Jo Vincent]]></caption>
+          <topic><![CDATA[CD Album]]></topic>
+          <offercounts>
+            <total>0</total>
+            <new>0</new>
+            <used>0</used>
+            <collectible>0</collectible>
+          </offercounts>
+          <bestprices>
+          
+          </bestprices>
+          <url><![CDATA[http://www.priceminister.com/offer/buy/222381774/mahler-symphony-no-4-historic-live-recording-1939-jo-vincent.html]]></url>
+          
+          <image>
+             
+          </image>
+          <references>
+            
+            <barcode>0028941621122</barcode> 
+              
+          </references>
+          <reviews>
+            
+          </reviews>
+          <breadcrumbselements>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[Musique]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+                 <breadcrumbselement>
+                   <label><![CDATA[CD Orchestre]]></label>
+                   <url><![CDATA[https://ws.priceminister.com/listing_ssl_ws?action=listing&f3=Orchestre&login=capriceDjeux&nav=Musique_CD&pwd=8dfc184ce63b4e8e8c33928537f13e3f&version=2015-07-05]]></url>
+                 </breadcrumbselement>
+          
+          </breadcrumbselements> 
+          
+        </product>
+      
+    </products>
+  </response>
+</listingresult>
