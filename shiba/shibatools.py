@@ -64,18 +64,16 @@ def retrieve_obj_from_url(url, data=None):
         raise ShibaConnectionError("HTTP unknown error =" + " - On URL: " + url)
     except:
         raise
-    try:
-        namespace = re.search(pattern='xmlns="[^"]', string=xml)
-        if namespace is not None:
-            namespace = namespace.group()
-        else:
-            namespace = ""
-        xmlepured = re.sub(pattern=' xmlns="[^"]+"', repl='', string=xml, flags=0)
-        xmlepured = xmlepured.encode('utf-8')
-        obj = objectify.fromstring(xmlepured)
-    except:
-        raise ShibaUnknownServiceError(
-            "Unknown error from service or from internal modules : Service returned : " + xml)
+
+    namespace = re.search(pattern='xmlns="[^"]', string=xml)
+    if namespace is not None:
+        namespace = namespace.group()
+    else:
+        namespace = ""
+    xmlepured = re.sub(pattern=' xmlns="[^"]+"', repl='', string=xml, flags=0)
+    xmlepured = to_unicode(xmlepured).encode('utf-8')
+    obj = objectify.fromstring(xmlepured)
+
     if _check_errors(obj) is not False:
         try:
             if "Unknown error" == obj.error.code:
