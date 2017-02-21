@@ -8,6 +8,7 @@ from collections import OrderedDict
 import requests
 import xmltodict
 
+from furl import furl
 from lxml import etree
 from lxml import objectify
 
@@ -20,9 +21,7 @@ from .compat import is_py3, to_unicode
 
 if is_py3:
     from http.client import HTTPException
-    from urllib.parse import urlencode
 else:
-    from urllib import urlencode
     from httplib import HTTPException
 
 
@@ -137,25 +136,23 @@ def inf_constructor(shibaconnection, action, **kwargs):
     return newkwargs
 
 
-def url_constructor(shibaconnection, inf, domain=None):
+def url_constructor(shibaconnection, params, domain=None):
     """URL constructor, formatting input and adding as many URL arguments as given.
 
-    :param inf: info dict, from inf_constructor
+    :param params: info dict, from inf_constructor
     :param domain: force URL domain, useful for some actions needing to go with http instead of https
 
     :rtype: formatted URL string
     """
-    if domain is None:
-        domain = shibaconnection.domain
-    pop = inf.pop("cat")
-    if "self" in inf:
-        inf.pop("self")
-    primary = "%s/%s?" % (domain, pop)
-    ordered_inf = OrderedDict()
-    for k in sorted([key for key in inf]):
-        ordered_inf[k] = inf[k]
-    url = primary + urlencode(ordered_inf)
-    return url
+    params.pop("self", None)
+    category = params.pop("cat")
+    ordered_params = OrderedDict(((k, params[k]) for k in sorted([k for k in params])))
+
+    f = furl(domain or shibaconnection.domain)
+    f.path.segments.append(category)
+    f.path.normalize()
+    f.add(ordered_params)
+    return f.url
 
 
 def _check_errors(obj):

@@ -5,7 +5,7 @@ import os.path as op
 
 
 from codecs import open
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 def read(fname):
@@ -21,6 +21,7 @@ requirements = [
     "requests",
     "xmltodict",
     "lxml",
+    "furl",
 ]
 
 version = ''
@@ -38,7 +39,7 @@ setup(
     author_email="maxime.boguta@epitech.eu",
     version=version,
     url='https://github.com/ShibaAPI/shiba',
-    packages=find_packages(),
+    packages=["shiba"],
     install_requires=requirements,
     zip_safe=True,
     description="A Python API for PriceMinister WebServices",

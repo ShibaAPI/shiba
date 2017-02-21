@@ -34,6 +34,15 @@ def test_inf_constructor():
     assert ret["action"] == "genericimportreport"
 
 
+def test_url_constructor_with_accent():
+    connection = ShibaConnection("test", "test")
+    action = "genericimportreport"
+    ret = inf_constructor(connection, action, inf1=u"é", inf2=u"à")
+    url = url_constructor(connection, ret)
+    assert ("https://ws.priceminister.com/stock_ws?action=genericimportreport&inf1=%C3%A9&inf2=%C3%A0&login=test&"
+            "pwd=test&version=2011-11-29" == url)
+
+
 def test_url_constructor():
     connection = ShibaConnection("test", "test")
     action = "genericimportreport"
