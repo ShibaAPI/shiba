@@ -14,6 +14,7 @@ def read(fname):
     with open(op.join(here, fname), 'r', 'utf-8') as fd:
         return fd.read()
 
+
 readme = read('README.rst')
 changelog = read('CHANGES.rst').replace('.. :changelog:', '')
 
@@ -22,6 +23,7 @@ requirements = [
     "xmltodict",
     "lxml",
     "furl",
+    "ftfy",
 ]
 
 version = ''

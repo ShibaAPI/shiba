@@ -11,6 +11,9 @@ import xmltodict
 from furl import furl
 from lxml import etree
 from lxml import objectify
+from lxml.etree import XMLSyntaxError
+
+from ftfy import fix_text
 
 from .shibaconnection import ShibaConnection
 from .shibaresponseobject import ShibaResponseObject
@@ -70,9 +73,15 @@ def retrieve_obj_from_url(url, data=None):
         namespace = namespace.group()
     else:
         namespace = ""
+
     xmlepured = re.sub(pattern=' xmlns="[^"]+"', repl='', string=xml, flags=0)
-    xmlepured = to_unicode(xmlepured).encode('utf-8')
-    obj = objectify.fromstring(xmlepured)
+    xmlepured = fix_text(to_unicode(xmlepured)).encode('utf-8')
+
+    try:
+        obj = objectify.fromstring(xmlepured)
+    except XMLSyntaxError:
+        print(xmlepured)
+        raise
 
     if _check_errors(obj) is not False:
         try:
