@@ -46,13 +46,17 @@ class InventoryManagement(object):
         obj = retrieve_obj_from_url(url)
         return obj
 
-    def generic_import_file(self, data):
+    def generic_import_file(self, data,skip=False):
         """Import XML file to your PriceMinister inventory trough a POST request.
 
         :param data: must be a object/dict (OrderedDict is better) containing your inventory wished to be imported. \
         You must respect the XML hierarchy detailed from the WebService documentation inside the object/dict
+        :para skip: with this parameter to True, you could directly send xml according to the XML hierarchy detailed from the WebService documentation
         """
-        data = create_xml_from_item_obj(data)
+        if skip is False:
+            data = create_xml_from_item_obj(data)
+        else:
+            data = data
         inf = inf_constructor(self.connection, "genericimportfile")
         url = url_constructor(self.connection, inf)
         obj = retrieve_obj_from_url(url, data)
