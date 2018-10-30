@@ -9,6 +9,7 @@ Version 1.1.11
 Released on October 30 2018
 
 - Add python3.7 support
+- Drop support for python27 and python33
 - Fix documentation
 - Merge 'bypass xmlcreation' from tboulogne
 - Change endpoints to rakuten
