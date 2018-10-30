@@ -93,7 +93,7 @@ def test_get_item_infos(connection):
     obj = None
     try:
         obj = sales_management.get_item_infos("181063")
-    except ShibaServiceError:
+    except ShibaParameterError:
         pass
     assert obj is None
 
@@ -104,7 +104,7 @@ def test_cancel_item(connection):
     obj = None
     try:
         obj = sales_management.cancel_item("1337", "comment")
-    except ShibaServiceError:
+    except ShibaParameterError:
         pass
     assert obj is None
 
