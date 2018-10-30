@@ -39,8 +39,8 @@ def test_url_constructor_with_accent():
     action = "genericimportreport"
     ret = inf_constructor(connection, action, inf1=u"é", inf2=u"à")
     url = url_constructor(connection, ret)
-    assert ("https://ws.priceminister.com/stock_ws?action=genericimportreport&inf1=%C3%A9&inf2=%C3%A0&login=test&"
-            "pwd=test&version=2011-11-29" == url)
+    assert ("https://ws.fr.shopping.rakuten.com/stock_ws?action=genericimportreport&inf1=%C3%A9&inf2=%C3%A0&login=test&"
+            "pwd=test&version=2017-02-10" == url)
 
 
 def test_url_constructor():
@@ -48,8 +48,8 @@ def test_url_constructor():
     action = "genericimportreport"
     ret = inf_constructor(connection, action, inf1="info1", inf2="info2")
     url = url_constructor(connection, ret)
-    assert ("https://ws.priceminister.com/stock_ws?action=genericimportreport&inf1=info1&inf2=info2&login=test&"
-            "pwd=test&version=2011-11-29" == url)
+    assert ("https://ws.fr.shopping.rakuten.com/stock_ws?action=genericimportreport&inf1=info1&inf2=info2&login=test&"
+            "pwd=test&version=2017-02-10" == url)
 
 
 def test_assert_quota_exeeded(monkeypatch):

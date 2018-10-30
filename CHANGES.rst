@@ -3,10 +3,15 @@
 Shiba : Python API for PriceMinister WebServices
 ================================================
 
-Version 1.1.11.dev0
+Version 1.1.11
 -------------------
 
-**unreleased**
+Released on October 30 2018
+
+- Add python3.7 support
+- Fix documentation
+- Merge 'bypass xmlcreation' from tboulogne
+- Change endpoints to rakuten
 
 Version 1.1.10
 --------------

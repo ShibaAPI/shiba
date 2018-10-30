@@ -26,7 +26,7 @@
 <category>
 <link>
 <label><![CDATA[Livres]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Livres&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Livres&version=2014-01-28]]></url>
 </link>
 <resultcount>13170362</resultcount>
 </category>
@@ -35,7 +35,7 @@
 <category>
 <link>
 <label><![CDATA[Musique]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Musique&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Musique&version=2014-01-28]]></url>
 </link>
 <resultcount>13327</resultcount>
 </category>
@@ -44,7 +44,7 @@
 <category>
 <link>
 <label><![CDATA[DVD & Blu-Ray]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Video&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Video&version=2014-01-28]]></url>
 </link>
 <resultcount>770</resultcount>
 </category>
@@ -53,7 +53,7 @@
 <category>
 <link>
 <label><![CDATA[Jeux Vidéo]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Jeux-Video-et-Consoles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Jeux-Video-et-Consoles&version=2014-01-28]]></url>
 </link>
 <resultcount>1056</resultcount>
 </category>
@@ -62,7 +62,7 @@
 <category>
 <link>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Tel-PDA&version=2014-01-28]]></url>
 </link>
 <resultcount>10809</resultcount>
 </category>
@@ -71,7 +71,7 @@
 <category>
 <link>
 <label><![CDATA[Informatique & Tablettes]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Informatique&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Informatique&version=2014-01-28]]></url>
 </link>
 <resultcount>168</resultcount>
 </category>
@@ -80,7 +80,7 @@
 <category>
 <link>
 <label><![CDATA[Image & Son]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Hifi&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Hifi&version=2014-01-28]]></url>
 </link>
 <resultcount>174</resultcount>
 </category>
@@ -89,7 +89,7 @@
 <category>
 <link>
 <label><![CDATA[Maison & Electroménager]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Maison&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Maison&version=2014-01-28]]></url>
 </link>
 <resultcount>2806</resultcount>
 </category>
@@ -98,7 +98,7 @@
 <category>
 <link>
 <label><![CDATA[Bricolage]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=bricolage&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=bricolage&version=2014-01-28]]></url>
 </link>
 <resultcount>206</resultcount>
 </category>
@@ -107,7 +107,7 @@
 <category>
 <link>
 <label><![CDATA[Jardin & Piscine]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=jardin&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=jardin&version=2014-01-28]]></url>
 </link>
 <resultcount>104</resultcount>
 </category>
@@ -116,7 +116,7 @@
 <category>
 <link>
 <label><![CDATA[Sports & Loisirs]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Loisirs&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Loisirs&version=2014-01-28]]></url>
 </link>
 <resultcount>869</resultcount>
 </category>
@@ -125,7 +125,7 @@
 <category>
 <link>
 <label><![CDATA[Mode & Beauté]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Mode&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Mode&version=2014-01-28]]></url>
 </link>
 <resultcount>1685</resultcount>
 </category>
@@ -134,7 +134,7 @@
 <category>
 <link>
 <label><![CDATA[Jouets & Enfant]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Enfant&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Enfant&version=2014-01-28]]></url>
 </link>
 <resultcount>4494</resultcount>
 </category>
@@ -143,7 +143,7 @@
 <category>
 <link>
 <label><![CDATA[Art & Collection]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=livre&nav=Art-Collection&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=livre&nav=Art-Collection&version=2014-01-28]]></url>
 </link>
 <resultcount>25570</resultcount>
 </category>
@@ -234,17 +234,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Livres]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Littérature]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres_Litterature&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres_Litterature&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Poches littérature internationale (Autre)]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f11=Poches+litt%E9rature+internationale&f13=Non+pr%E9cis%E9&nav=Livres_Litterature&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f11=Poches+litt%E9rature+internationale&f13=Non+pr%E9cis%E9&nav=Livres_Litterature&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -338,17 +338,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Livres]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Livres sur l'histoire, l'actualité et la politique]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres_Histoire-actualite-politique&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres_Histoire-actualite-politique&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Livres Actualité politique France]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f11=Actualit%E9s+et+m%E9dias&f13=Actualit%E9+politique+France&nav=Livres_Histoire-actualite-politique&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f11=Actualit%E9s+et+m%E9dias&f13=Actualit%E9+politique+France&nav=Livres_Histoire-actualite-politique&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -407,12 +407,12 @@
 
 <breadcrumbselement>
 <label><![CDATA[Livres]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Livres divers]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres_Autres&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres_Autres&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -483,17 +483,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Coque Samsung]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -578,17 +578,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Etui Autre]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Autre&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Autre&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -668,17 +668,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Livres]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Livres sur les sports et loisirs]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres_Sport-et-loisirs&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres_Sport-et-loisirs&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Livres Histoire automobile]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f13=Histoire+automobile&nav=Livres_Sport-et-loisirs&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f13=Histoire+automobile&nav=Livres_Sport-et-loisirs&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -770,17 +770,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[DVD & Blu-Ray]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Video&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Video&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[DVD Zone 2]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[DVD Aventure]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f8=Aventure&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f8=Aventure&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -849,17 +849,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Etui Apple]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Apple&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Apple&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -944,17 +944,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Etui Autre]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Autre&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Autre&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1039,17 +1039,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Etui Samsung]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1120,17 +1120,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Coque Samsung]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1215,17 +1215,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Livres]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Littérature]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres_Litterature&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres_Litterature&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Littérature française (Autre)]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f11=Litt%E9rature+fran%E7aise&f13=Non+pr%E9cis%E9&nav=Livres_Litterature&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f11=Litt%E9rature+fran%E7aise&f13=Non+pr%E9cis%E9&nav=Livres_Litterature&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1294,17 +1294,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Etui Samsung]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1389,17 +1389,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Coque Nokia]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Nokia&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Nokia&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1484,17 +1484,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[DVD & Blu-Ray]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Video&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Video&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[DVD Zone 2]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[DVD Séries TV]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f8=S%E9ries+TV&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f8=S%E9ries+TV&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1563,17 +1563,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Etui Sony Ericsson]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Sony&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Sony&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1658,17 +1658,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Livres]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Livres sur l'histoire, l'actualité et la politique]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Livres_Histoire-actualite-politique&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Livres_Histoire-actualite-politique&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Livres Actualité politique France]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f11=Actualit%E9s+et+m%E9dias&f13=Actualit%E9+politique+France&nav=Livres_Histoire-actualite-politique&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f11=Actualit%E9s+et+m%E9dias&f13=Actualit%E9+politique+France&nav=Livres_Histoire-actualite-politique&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1753,17 +1753,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Etui Samsung]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1841,17 +1841,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[DVD & Blu-Ray]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Video&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Video&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[DVD Zone 2]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[DVD Comédie]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f8=Com%E9die&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f8=Com%E9die&nav=Video_DVD-Zone-2&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>
@@ -1920,17 +1920,17 @@
 
 <breadcrumbselement>
 <label><![CDATA[Téléphonie & GPS]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Accessoires téléphone portable]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 <breadcrumbselement>
 <label><![CDATA[Etui Apple]]></label>
-<url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Apple&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
+<url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Apple&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&version=2014-01-28]]></url>
 </breadcrumbselement>
 
 </breadcrumbselements>

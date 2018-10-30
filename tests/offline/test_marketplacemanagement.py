@@ -13,7 +13,7 @@ def test_get_product_list(monkeypatch):
     """testing get_product_list methods with different queries, with some invalid ones as well"""
     monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getproductlist.xml'))
 
-    shiba_connection = ShibaConnection("test", "test" "https://ws.sandbox.priceminister.com")
+    shiba_connection = ShibaConnection("test", "test" "https://ws.fr.shopping.rakuten.com")
     marketplace_management = MarketplaceManagement(shiba_connection)
 
     # TODO: to remove ?
@@ -35,7 +35,7 @@ def test_product_list_bad(monkeypatch):
     """testing get_product_list methods with different queries, with some invalid ones as well"""
     monkeypatch.setattr('requests.get', make_requests_get_mock('sample_productlist_bad.xml'))
 
-    shiba_connection = ShibaConnection("test", "test" "https://ws.sandbox.priceminister.com")
+    shiba_connection = ShibaConnection("test", "test" "https://ws.fr.shopping.rakuten.com")
     marketplace_management = MarketplaceManagement(shiba_connection)
 
     product_list = marketplace_management.get_product_list(kw="livre")
@@ -45,7 +45,7 @@ def test_product_list_bad(monkeypatch):
 def test_get_category_map(monkeypatch):
     """get_category_map regular test"""
     monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getcategorymap.xml'))
-    shiba_connection = ShibaConnection("test", "test" "https://ws.sandbox.priceminister.com")
+    shiba_connection = ShibaConnection("test", "test" "https://ws.fr.shopping.rakuten.com")
     marketplace_management = MarketplaceManagement(shiba_connection)
 
     obj = marketplace_management.get_category_map()

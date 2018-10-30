@@ -21,7 +21,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Livres]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Livres&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Livres&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>137</resultcount>
                 </category>
@@ -30,7 +30,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Musique]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Musique&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Musique&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>74</resultcount>
                 </category>
@@ -39,7 +39,7 @@
                 <category>
                     <link>
                         <label><![CDATA[DVD & Blu-Ray]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Video&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Video&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>12</resultcount>
                 </category>
@@ -48,7 +48,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Jeux Vidéo]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Jeux-Video-et-Consoles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Jeux-Video-et-Consoles&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>31</resultcount>
                 </category>
@@ -57,7 +57,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>3812</resultcount>
                 </category>
@@ -66,7 +66,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Informatique]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Informatique&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Informatique&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>5099</resultcount>
                 </category>
@@ -75,7 +75,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Image & Son]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Hifi&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Hifi&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>208</resultcount>
                 </category>
@@ -84,7 +84,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Maison & Electroménager]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Maison&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Maison&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>493</resultcount>
                 </category>
@@ -93,7 +93,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Mode]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Mode&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Mode&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>115</resultcount>
                 </category>
@@ -102,7 +102,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Sports & Loisirs]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Loisirs&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Loisirs&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>397</resultcount>
                 </category>
@@ -111,7 +111,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Enfant]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Enfant&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Enfant&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>80</resultcount>
                 </category>
@@ -120,7 +120,7 @@
                 <category>
                     <link>
                         <label><![CDATA[Art & Collection]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&kw=s3&nav=Art-Collection&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&kw=s3&nav=Art-Collection&scope=PRICING&version=2012-10-23]]></url>
                     </link>
                     <resultcount>8</resultcount>
                 </category>
@@ -207,17 +207,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Film de protection Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Film+de+protection&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Film+de+protection&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -475,17 +475,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Housse Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Housse&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Housse&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -727,17 +727,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Coque Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -995,17 +995,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Coque Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -1233,17 +1233,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Coque Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Coque&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -1489,17 +1489,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Téléphones mobiles]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Samsung Galaxy]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f4=Samsung+Galaxy&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f4=Samsung+Galaxy&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -1791,17 +1791,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Téléphones mobiles]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Samsung Galaxy]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f4=Samsung+Galaxy&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f4=Samsung+Galaxy&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -2029,17 +2029,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Chargeur voiture Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Chargeur+voiture&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Chargeur+voiture&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -2221,17 +2221,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Film de protection Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Film+de+protection&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Film+de+protection&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -2565,17 +2565,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Etui (Autre)]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Non+pr%E9cis%E9&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Non+pr%E9cis%E9&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -2851,17 +2851,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Téléphones mobiles]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Samsung Galaxy]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f4=Samsung+Galaxy&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f4=Samsung+Galaxy&nav=Tel-PDA_Telephones-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -3239,17 +3239,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Support voiture Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Support+voiture&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Support+voiture&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -3479,17 +3479,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Film de protection (Autre)]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Non+pr%E9cis%E9&f5=Film+de+protection&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Non+pr%E9cis%E9&f5=Film+de+protection&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -3717,17 +3717,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Film de protection Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Film+de+protection&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Film+de+protection&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -3955,17 +3955,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Etui Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -4207,17 +4207,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Film de protection Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Film+de+protection&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Film+de+protection&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -4475,17 +4475,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Chargeur voiture Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Chargeur+voiture&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Chargeur+voiture&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -4729,17 +4729,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Etui (Autre)]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Non+pr%E9cis%E9&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Non+pr%E9cis%E9&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -4999,17 +4999,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Etui (Autre)]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Non+pr%E9cis%E9&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Non+pr%E9cis%E9&f5=Etui&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>
@@ -5191,17 +5191,17 @@
 
                     <breadcrumbselement>
                         <label><![CDATA[Tél & PDA]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Accessoires téléphone portable]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                     <breadcrumbselement>
                         <label><![CDATA[Housse Samsung]]></label>
-                        <url><![CDATA[http://ws.priceminister.com/listing_ws?action=listing&f3=Samsung&f5=Housse&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
+                        <url><![CDATA[http://ws.fr.shopping.rakuten.com/listing_ws?action=listing&f3=Samsung&f5=Housse&nav=Tel-PDA_Accessoires-mobiles&scope=PRICING&version=2012-10-23]]></url>
                     </breadcrumbselement>
 
                 </breadcrumbselements>

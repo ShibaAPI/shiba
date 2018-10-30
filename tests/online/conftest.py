@@ -14,7 +14,7 @@ ONLINE_TEST_ENABLED = os.environ.get("SHIBA_API_LOGIN", None) is not None
 def get_connection():
     login = os.environ['SHIBA_API_LOGIN']
     password = os.environ['SHIBA_API_PASSWORD']
-    return ShibaConnection(login, password, "https://ws.sandbox.priceminister.com")
+    return ShibaConnection(login, password, "https://ws.fr.shopping.rakuten.com")
 
 
 def check_sandbox_up():
@@ -32,4 +32,4 @@ def connection():
 
 @pytest.fixture
 def fake_connection():
-    return ShibaConnection("Qvuik5bZVHbmg4mWsdsd0ik9", "RInDsddsdsdZ72tfA", "https://ws.sandbox.priceminister.com")
+    return ShibaConnection("Qvuik5bZVHbmg4mWsdsd0ik9", "RInDsddsdsdZ72tfA", "https://ws.fr.shopping.rakuten.com")
