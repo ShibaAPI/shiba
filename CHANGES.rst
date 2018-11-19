@@ -3,6 +3,13 @@
 Shiba : Python API for PriceMinister WebServices
 ================================================
 
+Version 1.1.12
+-------------------
+
+Released on November 19 2018
+
+- Fix utf8 py3 way
+
 Version 1.1.11
 -------------------
 

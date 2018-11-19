@@ -20,12 +20,8 @@ from .shibaresponseobject import ShibaResponseObject
 from .shibaexceptions import (ShibaParameterError, ShibaLoginError, ShibaQuotaExceededError,
                               ShibaRightsError, ShibaConnectionError, ShibaUnknownServiceError, ShibaServiceError,
                               ShibaCallingError)
-from .compat import is_py3, to_unicode
 
-if is_py3:
-    from http.client import HTTPException
-else:
-    from httplib import HTTPException
+from http.client import HTTPException
 
 
 def post_request(url, data):
@@ -37,7 +33,6 @@ def post_request(url, data):
     """
     header = {"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE; rv:1.9.0.10) "
                             "Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)"}
-    data = to_unicode(data).encode('utf-8')
     d = {"file": data}
     r = requests.post(url, files=d, headers=header)
     return r.text
@@ -62,11 +57,9 @@ def retrieve_obj_from_url(url, data=None):
     except requests.ConnectionError:
         raise ShibaConnectionError("HTTP error = Connection error - On URL: " + url)
     except requests.HTTPError as e:
-        raise ShibaConnectionError("URL error = " + to_unicode(e.reason) + " - On URL: " + url)
+        raise ShibaConnectionError("URL error = " + e.reason + " - On URL: " + url)
     except HTTPException:
         raise ShibaConnectionError("HTTP unknown error =" + " - On URL: " + url)
-    except:
-        raise
 
     namespace = re.search(pattern='xmlns="[^"]', string=xml)
     if namespace is not None:
@@ -75,7 +68,7 @@ def retrieve_obj_from_url(url, data=None):
         namespace = ""
 
     xmlepured = re.sub(pattern=' xmlns="[^"]+"', repl='', string=xml, flags=0)
-    xmlepured = fix_text(to_unicode(xmlepured)).encode('utf-8')
+    xmlepured = fix_text(xmlepured).encode('utf-8')
 
     try:
         obj = objectify.fromstring(xmlepured)
@@ -91,7 +84,7 @@ def retrieve_obj_from_url(url, data=None):
         except ShibaServiceError:
             raise ShibaServiceError("Unknown error from WebService (maybe the sale isn't confirmed yet?)"
                                     " : " + obj.error.message + " - Reason : " + obj.error.details.detail)
-        except:
+        except Exception:
             raise ShibaUnknownServiceError("An unknown error from the WebService has occurred - XML dump : " +
                                            etree.tostring(obj))
     return ShibaResponseObject(namespace, obj, xml.encode('utf-8'))
@@ -110,7 +103,7 @@ def create_xml_from_item_obj(inv):
     elif type(inv) is dict or type(inv) is OrderedDict:
         try:
             return xmltodict.unparse(inv)
-        except:
+        except Exception:
             raise ShibaCallingError("error from dictionary to xml : can't create XML from dictionary,"
                                     " refers to xmltodict documentation"
                                     "(you don't need to add a root element 'items' to your items)")
@@ -137,7 +130,7 @@ def inf_constructor(shibaconnection, action, **kwargs):
     newkwargs = {}
     for each in kwargs:
         if kwargs[each] is not None and kwargs[each] != "":
-            newkwargs[each] = to_unicode(kwargs[each])
+            newkwargs[each] = kwargs[each]
     newkwargs.update(shibaconnection.actionsinfo[action])
     newkwargs["action"] = action
     return newkwargs
