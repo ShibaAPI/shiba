@@ -25,7 +25,8 @@ def check_sandbox_up():
         return True
 
 
-@pytest.fixture(params=[pytest.mark.skipif(not check_sandbox_up(),  reason='need access to the sandbox')('parameter')])
+@pytest.fixture
+@pytest.mark.skipif(not check_sandbox_up(),  reason='need access to the sandbox')
 def connection():
     return get_connection()
 
