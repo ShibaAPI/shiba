@@ -2,7 +2,7 @@ Shiba
 =====
 
 **Shiba** is a Python package that provides interfaces to **PriceMinister Web services**. Currently, all features works
-with *Python 2.7* and *Python3.4*.
+with *Python3.x*. (3.4, 3.5, 3.6, 3.7)
 
 Shiba supports all the Web services introduced by the *PriceMinister developper blog*.
 
@@ -42,8 +42,8 @@ You're good to go!
 
 ::
 
-	from Shiba.shibaconnection import ShibaConnection
-	from Shiba.salesmanagement import SalesManagement
+	from shiba.shibaconnection import ShibaConnection
+	from shiba.salesmanagement import SalesManagement
 
 	connection = ShibaConnection("mylogin", "mytoken")
 	sales = SalesManagement(connection)
