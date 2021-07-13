@@ -12,16 +12,26 @@ from requests import Response
 def make_requests_get_mock(filename):
     def mockreturn(*args, **kwargs):
         response = Response()
-        with open(os.path.join(os.path.dirname(__file__), 'Assets', filename), 'r', 'ISO-8859-1') as fd:
-            response._content = fd.read().encode('utf-8')
+        with open(
+            os.path.join(os.path.dirname(__file__), "Assets", filename),
+            "r",
+            "ISO-8859-1",
+        ) as fd:
+            response._content = fd.read().encode("utf-8")
         return response
+
     return mockreturn
 
 
 def make_simple_text_mock(filename):
     def mockreturn(*args, **kwargs):
-        with open(os.path.join(os.path.dirname(__file__), 'Assets', filename), 'r', 'ISO-8859-1') as fd:
+        with open(
+            os.path.join(os.path.dirname(__file__), "Assets", filename),
+            "r",
+            "ISO-8859-1",
+        ) as fd:
             return fd.read()
+
     return mockreturn
 
 
@@ -31,5 +41,5 @@ def assert_raises(exception_class, msg=None):
     with pytest.raises(exception_class) as exception:
         yield
     if msg is not None:
-        message = '%s' % exception
+        message = "%s" % exception
         assert msg.lower() in message.lower()

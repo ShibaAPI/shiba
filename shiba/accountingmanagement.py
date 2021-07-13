@@ -10,13 +10,15 @@ from .compat import basestring
 
 
 class AccountingManagement(object):
-    """ Accounting Management class, showing global financial operations on your account, or specific financial details
-        about an operation
+    """Accounting Management class, showing global financial operations on your account, or specific financial details
+    about an operation
     """
 
     def __init__(self, connection):
         if not isinstance(connection, ShibaConnection):
-            raise ValueError("expecting a ShibaConnection instance, got '%s'" % type(connection))
+            raise ValueError(
+                "expecting a ShibaConnection instance, got '%s'" % type(connection)
+            )
         self.connection = connection
 
     def get_operations(self, lastoperationdate=""):
@@ -27,8 +29,13 @@ class AccountingManagement(object):
         """
         operationcause = "salestransfer"
 
-        if not isinstance(lastoperationdate, date) and not isinstance(lastoperationdate, basestring):
-            raise ValueError("expected string or date for 'lastoperationdate', got '%s'" % type(lastoperationdate))
+        if not isinstance(lastoperationdate, date) and not isinstance(
+            lastoperationdate, basestring
+        ):
+            raise ValueError(
+                "expected string or date for 'lastoperationdate', got '%s'"
+                % type(lastoperationdate)
+            )
 
         if isinstance(lastoperationdate, date):
             lastoperationdate = lastoperationdate.strftime("%d/%m/%y-%H:%M:%S")

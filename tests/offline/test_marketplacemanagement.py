@@ -11,9 +11,13 @@ from . import make_requests_get_mock
 
 def test_get_product_list(monkeypatch):
     """testing get_product_list methods with different queries, with some invalid ones as well"""
-    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getproductlist.xml'))
+    monkeypatch.setattr(
+        "requests.get", make_requests_get_mock("sample_getproductlist.xml")
+    )
 
-    shiba_connection = ShibaConnection("test", "test" "https://ws.fr.shopping.rakuten.com")
+    shiba_connection = ShibaConnection(
+        "test", "test" "https://ws.fr.shopping.rakuten.com"
+    )
     marketplace_management = MarketplaceManagement(shiba_connection)
 
     # TODO: to remove ?
@@ -27,15 +31,21 @@ def test_get_product_list(monkeypatch):
     # with assert_raises(ShibaParameterError):
     #     marketplace_management.get_product_list(nbproductsperpage=-15, kw="livre")
 
-    product_list = marketplace_management.get_product_list(kw="informatique", scope="PRICING")
+    product_list = marketplace_management.get_product_list(
+        kw="informatique", scope="PRICING"
+    )
     assert "listingresult" in product_list.content.tag
 
 
 def test_product_list_bad(monkeypatch):
     """testing get_product_list methods with different queries, with some invalid ones as well"""
-    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_productlist_bad.xml'))
+    monkeypatch.setattr(
+        "requests.get", make_requests_get_mock("sample_productlist_bad.xml")
+    )
 
-    shiba_connection = ShibaConnection("test", "test" "https://ws.fr.shopping.rakuten.com")
+    shiba_connection = ShibaConnection(
+        "test", "test" "https://ws.fr.shopping.rakuten.com"
+    )
     marketplace_management = MarketplaceManagement(shiba_connection)
 
     product_list = marketplace_management.get_product_list(kw="livre")
@@ -44,8 +54,12 @@ def test_product_list_bad(monkeypatch):
 
 def test_get_category_map(monkeypatch):
     """get_category_map regular test"""
-    monkeypatch.setattr('requests.get', make_requests_get_mock('sample_getcategorymap.xml'))
-    shiba_connection = ShibaConnection("test", "test" "https://ws.fr.shopping.rakuten.com")
+    monkeypatch.setattr(
+        "requests.get", make_requests_get_mock("sample_getcategorymap.xml")
+    )
+    shiba_connection = ShibaConnection(
+        "test", "test" "https://ws.fr.shopping.rakuten.com"
+    )
     marketplace_management = MarketplaceManagement(shiba_connection)
 
     obj = marketplace_management.get_category_map()

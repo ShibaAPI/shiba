@@ -12,5 +12,5 @@ def assert_raises(exception_class, msg=None):
     with pytest.raises(exception_class) as exception:
         yield
     if msg is not None:
-        message = '%s' % exception
+        message = "%s" % exception
         assert msg.lower() in message.lower()

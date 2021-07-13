@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from shiba.shibatools import inf_constructor, retrieve_obj_from_url, url_constructor, post_request
+from shiba.shibatools import (
+    inf_constructor,
+    retrieve_obj_from_url,
+    url_constructor,
+    post_request,
+)
 from shiba.shibaconnection import ShibaConnection
 
 
@@ -11,7 +16,10 @@ def test_retrieve_obj_from_url():
     assert "note" in obj.content.tag
     assert "to" in obj.content.to.tag and obj.content.to == "Tove"
     assert "heading" in obj.content.heading.tag and obj.content.heading == "Reminder"
-    assert "body" in obj.content.body.tag and obj.content.body == "Don't forget me this weekend!"
+    assert (
+        "body" in obj.content.body.tag
+        and obj.content.body == "Don't forget me this weekend!"
+    )
 
 
 def test_post_request():
@@ -41,5 +49,8 @@ def test_url_constructor(fake_connection):
     action = "genericimportreport"
     ret = inf_constructor(connection, action, inf1="info1", inf2="info2")
     url = url_constructor(connection, ret)
-    assert (url == "https://ws.fr.shopping.rakuten.com/stock_ws?action=genericimportreport&inf1=info1&inf2=info2&login"
-                   "=test&pwd=test&version=2017-02-10")
+    assert (
+        url
+        == "https://ws.fr.shopping.rakuten.com/stock_ws?action=genericimportreport&inf1=info1&inf2=info2&login"
+        "=test&pwd=test&version=2017-02-10"
+    )
