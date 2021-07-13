@@ -39,8 +39,8 @@ if not version:
 
 setup(
     name="Shiba",
-    author="Maxime Boguta",
-    author_email="maxime.boguta@epitech.eu",
+    author="Nicolas Baccelli",
+    author_email="nicolas.baccelli@abc-culturel.fr",
     version=version,
     url="https://github.com/ShibaAPI/shiba",
     packages=["shiba"],

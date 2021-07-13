@@ -5,12 +5,13 @@ Credits
 Development Lead
 ----------------
 
-* Quentin Vaudaine
-* Boguta Maxime
+* Nicolas Baccelli
 
 Contributors
 ------------
 
-* Nicolas Baccelli
 * Jocelyn Griselle
 * Salem Harrache
+* Quentin Vaudaine
+* Boguta Maxime
+* Nicolas Baccelli
