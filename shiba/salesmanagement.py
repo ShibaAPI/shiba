@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from datetime import date
 
 from .shibaconnection import ShibaConnection
@@ -11,9 +9,12 @@ from .compat import basestring
 
 class SalesManagement(object):
     """Primary sales management class, gather all sales-related methods."""
+
     def __init__(self, connection):
         if (isinstance(connection, ShibaConnection)) is False:
-            raise ShibaCallingError("error : you must give this class a ShibaConnection instance")
+            raise ShibaCallingError(
+                "error : you must give this class a ShibaConnection instance"
+            )
         self.connection = connection
 
     def get_new_sales(self):
@@ -23,10 +24,11 @@ class SalesManagement(object):
         obj = retrieve_obj_from_url(url)
         return obj
 
-    def accept_sale(self, itemid):
+    def accept_sale(self, itemid, shippingfromcountry):
         """Accept the "itemid" sale.
 
         :param itemid: string for item ID
+        :param shippingfromcountry: string ISO code for country
         """
         inf = inf_constructor(self.connection, "acceptsale", **locals())
         url = url_constructor(self.connection, inf)
@@ -53,8 +55,13 @@ class SalesManagement(object):
         if ispendingpreorder != "" and ispendingpreorder != "y":
             raise ShibaCallingError("ispendingpreorder parameter must be empty or 'y'")
 
-        if not isinstance(purchasedate, date) and not isinstance(purchasedate, basestring):
-            raise ValueError("expected string or date for 'purchasedate', got '%s'" % type(purchasedate))
+        if not isinstance(purchasedate, date) and not isinstance(
+            purchasedate, basestring
+        ):
+            raise ValueError(
+                "expected string or date for 'purchasedate', got '%s'"
+                % type(purchasedate)
+            )
 
         if isinstance(purchasedate, date):
             purchasedate = purchasedate.strftime("%d/%m/%y-%H:%M:%S")
@@ -140,7 +147,9 @@ class SalesManagement(object):
         obj = retrieve_obj_from_url(url)
         return obj
 
-    def set_tracking_package_infos(self, itemid, transporter_name, tracking_number, tracking_url=""):
+    def set_tracking_package_infos(
+        self, itemid, transporter_name, tracking_number, tracking_url=""
+    ):
         """Send to buyer tracking information, such as the transporter's name "transporter_name",
         tracking number "tracking_number" and the optional tracking url "tracking_url".
         Please note that giving "Autre" as transporter_name brings the tracking url as mandatory.
@@ -152,8 +161,10 @@ class SalesManagement(object):
         :param tracking_url: tracking URL for the package, as string, mandatory if transporter_name is 'Autre'
         """
         if transporter_name == "Autre" and len(tracking_url) == 0:
-            raise ShibaCallingError("Shiba code error : if 'Autre' is specified as transporter_name, a tracking_url "
-                                    "must be specified too")
+            raise ShibaCallingError(
+                "Shiba code error : if 'Autre' is specified as transporter_name, a tracking_url "
+                "must be specified too"
+            )
         inf = inf_constructor(self.connection, "settrackingpackageinfos", **locals())
         url = url_constructor(self.connection, inf)
         obj = retrieve_obj_from_url(url)
@@ -167,7 +178,9 @@ class SalesManagement(object):
         :param stock: string or integer, must be positive
         """
         if int(stock) <= 0:
-            raise ShibaCallingError("Shiba code error : stock must be a positive number")
+            raise ShibaCallingError(
+                "Shiba code error : stock must be a positive number"
+            )
         inf = inf_constructor(self.connection, "confirmpreorder", **locals())
         url = url_constructor(self.connection, inf)
         obj = retrieve_obj_from_url(url)

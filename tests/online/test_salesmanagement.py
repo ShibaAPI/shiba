@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from shiba.salesmanagement import SalesManagement
 from shiba.shibaexceptions import *
 
@@ -16,9 +14,10 @@ def test_accept_sale(connection):
     """Only fail result, as accepting an actual sale is not simulable"""
     sales_management = SalesManagement(connection)
     itemid = "000000"
+    shippingfromcountry = "CN"
     obj = None
     try:
-        obj = sales_management.accept_sale(itemid)
+        obj = sales_management.accept_sale(itemid, shippingfromcountry)
     except ShibaServiceError:
         pass
     except ShibaParameterError:

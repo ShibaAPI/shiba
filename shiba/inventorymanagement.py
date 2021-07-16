@@ -1,17 +1,23 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from .shibaconnection import ShibaConnection
 from .shibaexceptions import ShibaCallingError
-from .shibatools import inf_constructor, url_constructor, retrieve_obj_from_url, create_xml_from_item_obj
+from .shibatools import (
+    inf_constructor,
+    url_constructor,
+    retrieve_obj_from_url,
+    create_xml_from_item_obj,
+)
 
 
 class InventoryManagement(object):
     """This class permits you to manage your inventory, get information about your products and even import products
     from XML to the PriceMinister platform"""
+
     def __init__(self, connection):
         if isinstance(connection, ShibaConnection) is False:
-            raise ShibaCallingError("Shiba subclass init error : expecting a ShibaConnection instance")
+            raise ShibaCallingError(
+                "Shiba subclass init error : expecting a ShibaConnection instance"
+            )
         self.connection = connection
 
     def product_types(self):
@@ -46,7 +52,7 @@ class InventoryManagement(object):
         obj = retrieve_obj_from_url(url)
         return obj
 
-    def generic_import_file(self, data,skip=False):
+    def generic_import_file(self, data, skip=False):
         """Import XML file to your PriceMinister inventory trough a POST request.
 
         :param data: must be a object/dict (OrderedDict is better) containing your inventory wished to be imported. \

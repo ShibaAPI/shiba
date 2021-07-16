@@ -34,7 +34,7 @@ init:  ## Install the project in development mode (using virtualenv is highly re
 	# Useful to build the documentation
 	pip install sphinx sphinx-readable-theme
 	# Useful for dev
-	pip install tox ipdb jedi pytest pytest-cov flake8 wheel bumpversion httpie
+	pip install tox ipdb jedi pytest pytest-cov flake8 wheel bumpversion httpie black
 
 clean: clean-build clean-pyc clean-test  ## Remove all build, test, coverage and Python artifacts
 

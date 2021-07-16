@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """ Tools used by Shiba data retrieving classes"""
-from __future__ import unicode_literals
-
 import re
 from collections import OrderedDict
 
@@ -17,9 +15,16 @@ from ftfy import fix_text
 
 from .shibaconnection import ShibaConnection
 from .shibaresponseobject import ShibaResponseObject
-from .shibaexceptions import (ShibaParameterError, ShibaLoginError, ShibaQuotaExceededError,
-                              ShibaRightsError, ShibaConnectionError, ShibaUnknownServiceError, ShibaServiceError,
-                              ShibaCallingError)
+from .shibaexceptions import (
+    ShibaParameterError,
+    ShibaLoginError,
+    ShibaQuotaExceededError,
+    ShibaRightsError,
+    ShibaConnectionError,
+    ShibaUnknownServiceError,
+    ShibaServiceError,
+    ShibaCallingError,
+)
 
 from http.client import HTTPException
 
@@ -31,8 +36,10 @@ def post_request(url, data):
 
     :rtype: plain text from servers response
     """
-    header = {"User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE; rv:1.9.0.10) "
-                            "Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)"}
+    header = {
+        "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE; rv:1.9.0.10) "
+        "Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)"
+    }
     d = {"file": data}
     r = requests.post(url, files=d, headers=header)
     return r.text
@@ -67,8 +74,8 @@ def retrieve_obj_from_url(url, data=None):
     else:
         namespace = ""
 
-    xmlepured = re.sub(pattern=' xmlns="[^"]+"', repl='', string=xml, flags=0)
-    xmlepured = fix_text(xmlepured).encode('utf-8')
+    xmlepured = re.sub(pattern=' xmlns="[^"]+"', repl="", string=xml, flags=0)
+    xmlepured = fix_text(xmlepured).encode("utf-8")
 
     try:
         obj = objectify.fromstring(xmlepured)
@@ -79,15 +86,24 @@ def retrieve_obj_from_url(url, data=None):
     if _check_errors(obj) is not False:
         try:
             if "Unknown error" == obj.error.code:
-                raise ShibaServiceError("Unknown error from WebService (maybe the sale isn't confirmed yet?)"
-                                        " : " + obj.error.message + " - Reason : " + obj.error.details.detail)
+                raise ShibaServiceError(
+                    "Unknown error from WebService (maybe the sale isn't confirmed yet?)"
+                    " : "
+                    + obj.error.message
+                    + " - Reason : "
+                    + obj.error.details.detail
+                )
         except ShibaServiceError:
-            raise ShibaServiceError("Unknown error from WebService (maybe the sale isn't confirmed yet?)"
-                                    " : " + obj.error.message + " - Reason : " + obj.error.details.detail)
+            raise ShibaServiceError(
+                "Unknown error from WebService (maybe the sale isn't confirmed yet?)"
+                " : " + obj.error.message + " - Reason : " + obj.error.details.detail
+            )
         except Exception:
-            raise ShibaUnknownServiceError("An unknown error from the WebService has occurred - XML dump : " +
-                                           etree.tostring(obj))
-    return ShibaResponseObject(namespace, obj, xml.encode('utf-8'))
+            raise ShibaUnknownServiceError(
+                "An unknown error from the WebService has occurred - XML dump : "
+                + etree.tostring(obj)
+            )
+    return ShibaResponseObject(namespace, obj, xml.encode("utf-8"))
 
 
 def create_xml_from_item_obj(inv):
@@ -104,12 +120,16 @@ def create_xml_from_item_obj(inv):
         try:
             return xmltodict.unparse(inv)
         except Exception:
-            raise ShibaCallingError("error from dictionary to xml : can't create XML from dictionary,"
-                                    " refers to xmltodict documentation"
-                                    "(you don't need to add a root element 'items' to your items)")
+            raise ShibaCallingError(
+                "error from dictionary to xml : can't create XML from dictionary,"
+                " refers to xmltodict documentation"
+                "(you don't need to add a root element 'items' to your items)"
+            )
     else:
-        raise ShibaCallingError("error : bad input parameter given, "
-                                "expecting dict, objectify object or ElementTree element")
+        raise ShibaCallingError(
+            "error : bad input parameter given, "
+            "expecting dict, objectify object or ElementTree element"
+        )
 
 
 def inf_constructor(shibaconnection, action, **kwargs):
@@ -122,11 +142,16 @@ def inf_constructor(shibaconnection, action, **kwargs):
     :rtype epured and updated dict
     """
     if isinstance(shibaconnection, ShibaConnection) is False:
-        raise ShibaCallingError("Internal parameter error : shibaconnection parameter is not "
-                                "a ShibaConnection instance")
+        raise ShibaCallingError(
+            "Internal parameter error : shibaconnection parameter is not "
+            "a ShibaConnection instance"
+        )
     if action not in shibaconnection.actionsinfo:
-        raise ShibaCallingError("Internal parameter error : action parameter " +
-                                action + " is unknown from the actions list")
+        raise ShibaCallingError(
+            "Internal parameter error : action parameter "
+            + action
+            + " is unknown from the actions list"
+        )
     newkwargs = {}
     for each in kwargs:
         if kwargs[each] is not None and kwargs[each] != "":
@@ -164,20 +189,40 @@ def _check_errors(obj):
     """
     if "errorresponse" in obj.tag:
         if "ServerError" == obj.error.code:
-            raise ShibaParameterError("Parameter error : " + obj.error.message +
-                                      " - Reason : " + obj.error.details.detail)
+            raise ShibaParameterError(
+                "Parameter error : "
+                + obj.error.message
+                + " - Reason : "
+                + obj.error.details.detail
+            )
         if "ParameterError" == obj.error.code:
-            raise ShibaParameterError("Parameter error : " + obj.error.message +
-                                      " - Reason : " + obj.error.details.detail)
+            raise ShibaParameterError(
+                "Parameter error : "
+                + obj.error.message
+                + " - Reason : "
+                + obj.error.details.detail
+            )
         if "InvalidUserConnection" == obj.error.code:
-            raise ShibaLoginError("Invalid user connection : " + obj.error.message +
-                                  " - Reason : " + obj.error.details.detail)
+            raise ShibaLoginError(
+                "Invalid user connection : "
+                + obj.error.message
+                + " - Reason : "
+                + obj.error.details.detail
+            )
         if "InvalidUserRights" == obj.error.code:
             if "Quota exceeded" in obj.error.message.text:
-                raise ShibaQuotaExceededError("Too many requests : " + obj.error.message +
-                                              " - Reason : " + obj.error.details.detail)
+                raise ShibaQuotaExceededError(
+                    "Too many requests : "
+                    + obj.error.message
+                    + " - Reason : "
+                    + obj.error.details.detail
+                )
             else:
-                raise ShibaRightsError("Invalid user rights : " + obj.error.message +
-                                       " - Reason : " + obj.error.details.detail)
+                raise ShibaRightsError(
+                    "Invalid user rights : "
+                    + obj.error.message
+                    + " - Reason : "
+                    + obj.error.details.detail
+                )
         return obj
     return False

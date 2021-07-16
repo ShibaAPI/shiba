@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from shiba.shibaexceptions import ShibaRightsError
 from shiba.inventorymanagement import InventoryManagement
 
@@ -38,12 +36,18 @@ def test_generic_import_file(connection):
     , as well with objectify with an objectified ElementTree element"""
     inventory_management = InventoryManagement(connection)
 
-    f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
+    f = open(
+        os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml",
+        "rb",
+    )
     testdict = xmltodict.parse(f)
     ret = inventory_management.generic_import_file(testdict)
     assert "OK" == ret.content.response.status
 
-    f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
+    f = open(
+        os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml",
+        "rb",
+    )
     testobj = objectify.parse(f)
     ret = inventory_management.generic_import_file(testobj)
     assert "OK" == ret.content.response.status
@@ -52,7 +56,10 @@ def test_generic_import_file(connection):
 def test_generic_import_report(connection):
     """genreic_import_report method test from an import file call"""
     inventory_management = InventoryManagement(connection)
-    f = open(os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml", "rb")
+    f = open(
+        os.path.dirname(os.path.realpath(__file__)) + "/Assets/genericimportfile.xml",
+        "rb",
+    )
     testobj = objectify.parse(f)
     ret = inventory_management.generic_import_file(testobj)
     importid = ret.content.response.importid
