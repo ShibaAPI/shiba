@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from shiba.accountingmanagement import AccountingManagement
 from shiba.shibaconnection import ShibaConnection
 

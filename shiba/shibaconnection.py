@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 
 class ShibaConnection(object):
     """The main Shiba class, standing as an initialization and mandatory for each submodules instancing.
@@ -76,7 +74,7 @@ class ShibaConnection(object):
             },
             "acceptsale": {
                 "cat": "sales_ws",
-                "version": "2010-09-20",
+                "version": "2021-04-08",
                 "login": self.login,
                 "pwd": self.pwd,
             },

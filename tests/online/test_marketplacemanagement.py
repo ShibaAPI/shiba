@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-from __future__ import unicode_literals
-
 from shiba.marketplacemanagement import MarketplaceManagement
 from shiba.shibaexceptions import *
 

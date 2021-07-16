@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from datetime import date
 
 from .shibaconnection import ShibaConnection
@@ -26,10 +24,11 @@ class SalesManagement(object):
         obj = retrieve_obj_from_url(url)
         return obj
 
-    def accept_sale(self, itemid):
+    def accept_sale(self, itemid, shippingfromcountry):
         """Accept the "itemid" sale.
 
         :param itemid: string for item ID
+        :param shippingfromcountry: string ISO code for country
         """
         inf = inf_constructor(self.connection, "acceptsale", **locals())
         url = url_constructor(self.connection, inf)

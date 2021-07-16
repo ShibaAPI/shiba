@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from shiba.salesmanagement import SalesManagement
 from shiba.shibaconnection import ShibaConnection
 from shiba.shibaexceptions import (
@@ -34,14 +32,16 @@ def test_accept_sale(monkeypatch):
         ShibaConnection("test", "test", "https://ws.fr.shopping.rakuten.com")
     )
     itemid = "000000"
+    shippingfromcountry = "CN"
     obj = None
     try:
-        obj = sales_management.accept_sale(itemid)
+        obj = sales_management.accept_sale(itemid, shippingfromcountry)
     except ShibaServiceError:
         pass
     except ShibaParameterError:
         pass
     assert obj is not None
+
 
 
 def test_refuse_sale(monkeypatch):

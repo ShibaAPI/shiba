@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 import os.path as op
 from shiba.inventorymanagement import InventoryManagement
 from shiba.shibaconnection import ShibaConnection

@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from shiba.shibaexceptions import ShibaRightsError
 from shiba.inventorymanagement import InventoryManagement
 

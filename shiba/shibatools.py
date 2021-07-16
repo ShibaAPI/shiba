@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """ Tools used by Shiba data retrieving classes"""
-from __future__ import unicode_literals
-
 import re
 from collections import OrderedDict
 

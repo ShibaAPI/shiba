@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from .shibaconnection import ShibaConnection
 from .shibatools import inf_constructor, url_constructor, retrieve_obj_from_url
 from .compat import basestring

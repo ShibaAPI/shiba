@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 
 class ShibaResponseObject(object):
     """This class gathers all content from the returned XML. Separating the namespace for further usage and the actual

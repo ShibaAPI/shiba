@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """ Those exception classes will usually be raised after an error returned from the WebServices."""
-from __future__ import unicode_literals
-
 
 class ShibaException(Exception):
     """Main exception class, as you can catch the whole of Shiba exceptions from it"""

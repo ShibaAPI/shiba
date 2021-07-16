@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from .shibaconnection import ShibaConnection
 from .shibaexceptions import ShibaCallingError
 from .shibatools import (

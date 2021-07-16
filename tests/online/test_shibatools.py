@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from shiba.shibatools import (
     inf_constructor,
     retrieve_obj_from_url,
