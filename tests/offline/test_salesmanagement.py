@@ -43,7 +43,6 @@ def test_accept_sale(monkeypatch):
     assert obj is not None
 
 
-
 def test_refuse_sale(monkeypatch):
     """Only fail result, as refusing an actual sale is not simulable"""
     monkeypatch.setattr(
@@ -178,6 +177,36 @@ def test_set_tracking_package_infos(monkeypatch):
     obj = None
     try:
         obj = sales_management.set_tracking_package_infos("1337", "Autre", "0000000000")
+    except ShibaCallingError:
+        pass
+    assert obj is None
+
+
+def test_import_item_shipping_status(monkeypatch):
+    """import_item_shipping_status on multiple products. Testing internal error catching as well."""
+    monkeypatch.setattr(
+        "requests.post", make_requests_get_mock("sample_importitemshippingstatus.xml")
+    )
+    sales_management = SalesManagement(
+        ShibaConnection("test", "test", "https://ws.fr.shopping.rakuten.com")
+    )
+    items_list = [
+        {
+            "purchaseid": 123456,
+            "itemid": 123456789,
+        },
+    ]
+    obj = sales_management.import_item_shipping_status(items_list=items_list)
+    assert obj.content.tag == "importresult"
+
+    obj = None
+    try:
+        items_list = [
+            {
+                "purchaseid": 123456,
+            },
+        ]
+        obj = sales_management.import_item_shipping_status(items_list=items_list)
     except ShibaCallingError:
         pass
     assert obj is None

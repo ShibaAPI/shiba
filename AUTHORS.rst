@@ -15,3 +15,4 @@ Contributors
 * Quentin Vaudaine
 * Boguta Maxime
 * Nicolas Baccelli
+* Alicia Florez

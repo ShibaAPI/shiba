@@ -3,6 +3,13 @@
 Shiba : Python API for PriceMinister WebServices
 ================================================
 
+Version 1.2.1
+-------------------
+
+Released on November 24th 2022
+
+- Add importitemshippingstatus call
+
 Version 1.2.0
 -------------------
 
