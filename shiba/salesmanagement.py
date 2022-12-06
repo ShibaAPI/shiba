@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import xml.etree.ElementTree as ET
 from datetime import date
 
 from .shibaconnection import ShibaConnection
@@ -145,6 +146,52 @@ class SalesManagement(object):
         inf = inf_constructor(self.connection, "contactuseraboutitem", **locals())
         url = url_constructor(self.connection, inf)
         obj = retrieve_obj_from_url(url)
+        return obj
+
+    def import_item_shipping_status(self, items_list):
+        """Send tracking information for multiple orders, such as the transporter's name "transporter_name",
+        tracking number "tracking_number" and the optional tracking url "tracking_url".
+        This WebService email the "itemid" customer, including a link for package tracking.
+
+        Check data to use:
+        https://global.fr.shopping.rakuten.com/developpeur/confirmer-lenvoi-des-commandes-importitemshippingstatus/
+
+        Example for items_list: [
+            {  # "suivi" ou "recommandé" shipment
+                "purchaseid": 429492423,
+                "itemid": 670873525,
+                "transporter": "Autre",
+                "trackingnumber": "LF046851565FR",
+                "trackingurl": "https://a1.asendiausa.com/tracking/?trackingnumber=LF046851565FR",
+            },
+            {  # "normal" shipment
+                "purchaseid": 432832715,
+                "itemid": 673690604,
+            },
+        ]
+
+        :param items_list: list of dict with data for each item. All the dicts need purchaseid and
+        itemid keys. transporter, trackingnumber and trackingurl are needed for tracked shipments.
+        """
+        # Create the XML file to send
+        items = ET.Element("items")
+        for i in items_list:
+            # Check purchaseid and itemid
+            if not all(key in i for key in ["purchaseid", "itemid"]):
+                raise ShibaCallingError(
+                    "Shiba code error: purchaseid and itemid are mandatory keys for each dict of items_list."
+                )
+            item = ET.SubElement(items, "item")
+            ET.SubElement(item, "purchaseid").text = str(i["purchaseid"])
+            ET.SubElement(item, "itemid").text = str(i["itemid"])
+            ET.SubElement(item, "transporter").text = i.get("transporter", "")
+            ET.SubElement(item, "trackingnumber").text = i.get("trackingnumber", "Oui")
+            ET.SubElement(item, "trackingurl").text = i.get("trackingurl", "")
+        file = ET.tostring(items)
+
+        inf = inf_constructor(self.connection, "importitemshippingstatus")
+        url = url_constructor(self.connection, inf)
+        obj = retrieve_obj_from_url(url, file)
         return obj
 
     def set_tracking_package_infos(

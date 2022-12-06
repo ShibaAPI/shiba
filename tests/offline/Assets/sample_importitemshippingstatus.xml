@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<importresult xmlns="https://fr.shopping.rakuten.com/res/schema/importitemshippingstatus">
+    <request>
+        <user><![CDATA[ test ]]></user>
+        <version>2016-05-09></version>
+    </request>
+    <response>
+        <lastversion>2021-06-29</lastversion>
+        <status>OK</status>
+    </response>
+</importresult>

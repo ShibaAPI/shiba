@@ -156,4 +156,10 @@ class ShibaConnection(object):
                 "login": self.login,
                 "pwd": self.pwd,
             },
+            "importitemshippingstatus": {
+                "cat": "sales_ws",
+                "version": "2016-05-09",
+                "login": self.login,
+                "pwd": self.pwd,
+            },
         }
